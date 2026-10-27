@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bailabu – Kids Songs, Games & Stories</title>
+<meta name="description" content="Happy sing-along songs, little games and picture stories for toddlers and preschoolers (ages 1–5) with Bailabu the bear and his island friends.">
+<meta name="theme-color" content="#3DB8F5">
+<link rel="icon" type="image/png" href="assets/brand/favicon.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bailabu">
+<meta property="og:title" content="Bailabu – Kids Songs, Games & Stories">
+<meta property="og:description" content="Sing, dance and play on Bailabu Island! Songs, games and stories for little ones (ages 1–5).">
+<meta property="og:image" content="https://bailabu.com/assets/brand/og.jpg">
+<meta property="og:url" content="https://bailabu.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/baloo2.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Bailabu","url":"https://bailabu.com/","logo":"https://bailabu.com/assets/brand/badge.webp",
+ "sameAs":["https://www.youtube.com/@bailabuisland","https://www.youtube.com/@TontisAdaTV"]}
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          sky:    { DEFAULT: '#3DB8F5', dark: '#1E8FD0', light: '#DDF3FF' },
+          coral:  { DEFAULT: '#FF6F91', light: '#FFE3EA' },
+          leaf:   { DEFAULT: '#5CC85A', light: '#E2F7E1' },
+          sun:    { DEFAULT: '#FFC83D', light: '#FFF4D6' },
+          violet: { DEFAULT: '#8E6CF0', light: '#EEE8FF' },
+          tangerine: '#F6A23A',
+          berry:  '#FF5A5F',
+          ink:    '#16395A',
+          cream:  '#FFF9EE',
+        },
+        fontFamily: { display: ['"Baloo 2"', 'ui-rounded', 'system-ui', 'sans-serif'] },
+        boxShadow: { pop: '0 6px 0 rgba(22,57,90,.12)', 'pop-lg': '0 10px 0 rgba(22,57,90,.12)' },
+      },
+    },
+  };
+</script>
+<style>
+  @font-face { font-family: "Baloo 2"; src: url(assets/fonts/baloo2.woff2) format("woff2"); font-weight: 400 800; font-display: swap; }
+  @font-face { font-family: "Baloo Bhaijaan 2"; src: url(assets/fonts/baloo-bhaijaan2.woff2) format("woff2"); font-weight: 400 800; font-display: swap; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { font-family: "Baloo 2", ui-rounded, system-ui, sans-serif; }
+  html[dir="rtl"] body { font-family: "Baloo Bhaijaan 2", "Baloo 2", system-ui, sans-serif; }
+
+  /* rainbow wordmark */
+  .wordmark span { display: inline-block; text-shadow: 0 2px 0 rgba(22,57,90,.18); }
+  .wordmark span:nth-child(odd) { transform: translateY(-1px) rotate(-3deg); }
+  .wordmark span:nth-child(even) { transform: translateY(1px) rotate(3deg); }
+
+  /* floating notes + bouncy bits */
+  @keyframes floaty { 0%,100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-14px) rotate(6deg); } }
+  @keyframes wiggle { 0%,100% { transform: rotate(0) scale(1); } 25% { transform: rotate(-8deg) scale(1.08); } 75% { transform: rotate(8deg) scale(1.08); } }
+  @keyframes popin { 0% { transform: scale(.4); opacity: 0; } 70% { transform: scale(1.12); opacity: 1; } 100% { transform: scale(1); } }
+  @keyframes shake { 0%,100% { transform: translateX(0); } 20%,60% { transform: translateX(-7px); } 40%,80% { transform: translateX(7px); } }
+  @keyframes fall { to { transform: translate3d(var(--dx), 110vh, 0) rotate(720deg); } }
+  @keyframes praise { 0% { transform: translate(-50%, 10px) scale(.6); opacity: 0; } 20% { transform: translate(-50%, 0) scale(1.1); opacity: 1; } 80% { opacity: 1; } 100% { transform: translate(-50%, -30px) scale(1); opacity: 0; } }
+  .floaty { animation: floaty 4s ease-in-out infinite; }
+  .wiggle { animation: wiggle .6s ease-in-out; }
+  .popin { animation: popin .45s cubic-bezier(.2,.9,.3,1.3) both; }
+  .shake { animation: shake .45s ease-in-out; }
+  .confetti { position: fixed; top: -20px; width: 12px; height: 16px; border-radius: 3px; z-index: 80; pointer-events: none; animation: fall 1.8s ease-in forwards; }
+  .praise { position: absolute; left: 50%; top: 40%; z-index: 20; pointer-events: none; animation: praise 1.3s ease-out forwards; }
+
+  /* memory cards */
+  .mcard { perspective: 800px; }
+  .mcard-inner { position: relative; width: 100%; height: 100%; transition: transform .45s; transform-style: preserve-3d; }
+  .mcard.flipped .mcard-inner { transform: rotateY(180deg); }
+  .mface { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 1.25rem; display: grid; place-items: center; }
+  .mfront { transform: rotateY(180deg); }
+  .mback { background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.45) 0 12%, transparent 13%), radial-gradient(circle at 75% 70%, rgba(255,255,255,.3) 0 10%, transparent 11%), linear-gradient(135deg, #3DB8F5, #8E6CF0); }
+
+  .silhouette { filter: brightness(0) saturate(100%) opacity(.82); transition: filter .6s ease; }
+  .silhouette.revealed { filter: none; }
+
+  .wave { display: block; width: 100%; height: 48px; }
+  @media (min-width: 768px) { .wave { height: 72px; } }
+
+  dialog::backdrop { background: rgba(22,57,90,.55); backdrop-filter: blur(3px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .floaty, .wiggle, .popin, .shake, .confetti, .praise { animation: none !important; }
+    .mcard-inner, .silhouette { transition: none; }
+  }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:start-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded-xl" data-i18n="skip">Skip to content</a>
+
+<!-- ============ Header ============ -->
+<header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b-4 border-sky-light">
+  <div class="mx-auto max-w-6xl px-4 h-16 md:h-20 flex items-center gap-3">
+    <a href="#top" class="flex items-center gap-2 shrink-0" aria-label="Bailabu">
+      <img src="assets/brand/badge.webp" alt="" width="56" height="56" class="w-11 h-11 md:w-14 md:h-14 rounded-full shadow-pop">
+      <span class="leading-none">
+        <span class="wordmark block font-display font-extrabold text-2xl md:text-3xl tracking-wide" dir="ltr" aria-hidden="true"><span class="text-berry">B</span><span class="text-tangerine">a</span><span class="text-sun">i</span><span class="text-leaf">l</span><span class="text-sky">a</span><span class="text-violet">b</span><span class="text-coral">u</span></span>
+        <span class="block text-xs md:text-sm font-bold text-sky-dark -mt-0.5" data-i18n="island">Island</span>
+      </span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1 ms-auto font-bold text-lg" aria-label="Main">
+      <a href="#songs" class="px-3 py-1.5 rounded-full hover:bg-sky-light" data-i18n="nav_songs">Songs</a>
+      <a href="#play" class="px-3 py-1.5 rounded-full hover:bg-sun-light" data-i18n="nav_play">Games</a>
+      <a href="#stories" class="px-3 py-1.5 rounded-full hover:bg-coral-light" data-i18n="nav_stories">Stories</a>
+      <a href="#channels" class="px-3 py-1.5 rounded-full hover:bg-leaf-light" data-i18n="nav_channels">Channels</a>
+    </nav>
+
+    <div class="relative ms-auto md:ms-2">
+      <button id="langBtn" type="button" class="flex items-center gap-2 rounded-full bg-sky-light hover:bg-sky/25 px-3 py-2 font-bold focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu">
+        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+        <span id="langCur">EN</span>
+      </button>
+      <ul id="langMenu" role="listbox" class="hidden absolute end-0 mt-2 w-48 rounded-2xl bg-white shadow-xl ring-4 ring-sky-light p-2 font-bold"></ul>
+    </div>
+
+    <button id="menuBtn" type="button" class="md:hidden rounded-full bg-sun-light p-2.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-sun" aria-expanded="false" aria-controls="mobileNav" data-i18n-aria="menu" aria-label="Menu">
+      <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav id="mobileNav" class="md:hidden hidden border-t-2 border-sky-light bg-white" aria-label="Mobile">
+    <div class="grid grid-cols-2 gap-2 p-3 font-bold text-lg">
+      <a href="#songs" class="rounded-2xl bg-sky-light px-4 py-3" data-i18n="nav_songs">Songs</a>
+      <a href="#play" class="rounded-2xl bg-sun-light px-4 py-3" data-i18n="nav_play">Games</a>
+      <a href="#stories" class="rounded-2xl bg-coral-light px-4 py-3" data-i18n="nav_stories">Stories</a>
+      <a href="#channels" class="rounded-2xl bg-leaf-light px-4 py-3" data-i18n="nav_channels">Channels</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<!-- ============ Hero ============ -->
+<section id="top" class="relative overflow-hidden bg-sky-light">
+  <img src="assets/brand/hero.webp" alt="" width="2000" height="1116" fetchpriority="high"
+       class="w-full h-60 sm:h-80 object-cover object-[78%_45%] md:absolute md:inset-0 md:h-full md:object-[62%_50%] rtl:-scale-x-100">
+  <div class="hidden md:block absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-white/75 via-white/25 to-transparent"></div>
+  <span class="floaty pointer-events-none absolute top-8 start-[8%] text-4xl text-coral hidden md:block" aria-hidden="true">♪</span>
+  <span class="floaty pointer-events-none absolute top-24 start-[40%] text-5xl text-violet hidden md:block" style="animation-delay:-1.3s" aria-hidden="true">♫</span>
+  <span class="floaty pointer-events-none absolute bottom-40 start-[30%] text-3xl text-sun hidden md:block" style="animation-delay:-2.4s" aria-hidden="true">★</span>
+
+  <div class="relative mx-auto max-w-6xl px-4 pt-6 pb-10 md:pt-24 md:pb-36">
+    <div class="max-w-xl">
+      <p class="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-1.5 font-bold text-sky-dark shadow-pop" data-i18n="kicker">Kids songs · games · stories</p>
+      <h1 class="mt-4 font-display font-extrabold text-4xl leading-[1.05] sm:text-5xl md:text-6xl text-ink" data-i18n="hero_title">Sing, dance & play on Bailabu Island!</h1>
+      <p class="mt-4 text-lg md:text-xl font-semibold text-ink/80" data-i18n="hero_text">Happy sing-along songs, little games and picture stories for toddlers and preschoolers (ages 1–5) – with Bailabu the bear and all his island friends.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a id="ctaWatch" href="https://www.youtube.com/@bailabuisland" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 rounded-full bg-berry px-6 py-3.5 text-lg font-extrabold text-white shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-berry/40">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg>
+          <span data-i18n="cta_watch">Watch on YouTube</span>
+        </a>
+        <a href="#play" class="inline-flex items-center gap-2 rounded-full bg-sun px-6 py-3.5 text-lg font-extrabold text-ink shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sun/60">
+          <span aria-hidden="true">🎲</span><span data-i18n="cta_play">Let's play!</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <svg class="wave absolute bottom-0 inset-x-0 text-cream" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 40c120-30 240-30 360 0s240 30 360 0 240-30 360 0 240 30 360 0v40H0z"/></svg>
+</section>
+
+<!-- ============ Friends ============ -->
+<section id="friends" class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+  <div class="text-center">
+    <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="friends_title">Meet the island friends</h2>
+    <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="friends_text">Tap a friend to say hello!</p>
+  </div>
+  <ul id="friendsGrid" class="mt-8 grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-3 md:gap-4"></ul>
+</section>
+
+<!-- ============ Songs ============ -->
+<section id="songs" class="relative bg-sky-light">
+  <svg class="wave text-cream" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
+  <div class="mx-auto max-w-6xl px-4 pb-14 pt-4 md:pb-20">
+    <div class="flex flex-col md:flex-row md:items-end gap-4 md:justify-between">
+      <div>
+        <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="songs_title">Songs to sing along</h2>
+        <p class="mt-2 text-lg font-semibold text-ink/70 max-w-2xl" data-i18n="songs_text">Easy lyrics on screen, a gentle tempo and lots of clapping and dancing.</p>
+      </div>
+      <p class="inline-flex self-start md:self-auto items-center gap-2 rounded-full bg-white px-4 py-2 font-extrabold text-sky-dark shadow-pop"><span aria-hidden="true">🎵</span><span data-i18n="songs_friday">New songs every Friday</span></p>
+    </div>
+    <ul id="songsGrid" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></ul>
+  </div>
+</section>
+
+<!-- ============ Games ============ -->
+<section id="play" class="relative bg-sun-light">
+  <svg class="wave text-sky-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
+  <div class="mx-auto max-w-5xl px-4 pb-14 pt-4 md:pb-20">
+    <div class="text-center">
+      <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="play_title">Games & riddles</h2>
+      <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="play_text">Little games for little hands – no reading needed. Just tap!</p>
+    </div>
+
+    <div class="mt-8 rounded-[2rem] bg-white shadow-pop-lg ring-4 ring-sun/60 overflow-hidden">
+      <div id="gameTabs" role="tablist" class="grid grid-cols-4 gap-1.5 sm:gap-3 p-2 sm:p-3 bg-sun/30"></div>
+      <div class="flex items-center gap-2 px-4 pt-4">
+        <button id="sayAgain" type="button" class="shrink-0 rounded-full bg-sky-light p-2.5 hover:bg-sky/25 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" data-i18n-aria="say_again" aria-label="Say it again">
+          <svg viewBox="0 0 24 24" class="w-6 h-6 text-sky-dark" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+        </button>
+        <p id="gamePrompt" class="font-display font-extrabold text-2xl md:text-3xl leading-tight" aria-live="polite"></p>
+        <div class="ms-auto flex items-center gap-2">
+          <span class="inline-flex items-center gap-1 rounded-full bg-sun-light px-3 py-1.5 font-extrabold" aria-live="polite"><span aria-hidden="true">⭐</span><span id="starCount">0</span></span>
+          <button id="soundBtn" type="button" class="rounded-full bg-leaf-light p-2.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-leaf/50" aria-pressed="true" data-i18n-aria="sound" aria-label="Sound">
+            <svg id="soundOn" viewBox="0 0 24 24" class="w-6 h-6 text-leaf" fill="currentColor" aria-hidden="true"><path d="M12 3v10.6A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+            <svg id="soundOff" viewBox="0 0 24 24" class="w-6 h-6 text-ink/40 hidden" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 13.6V3h6v4h-4M4 4l16 16"/><circle cx="10" cy="17" r="3.2"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="gameStage" class="relative min-h-[22rem] p-4 md:p-6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Stories ============ -->
+<section id="stories" class="relative bg-coral-light">
+  <svg class="wave text-sun-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
+  <div class="mx-auto max-w-6xl px-4 pb-14 pt-4 md:pb-20">
+    <div class="text-center">
+      <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="stories_title">Picture stories</h2>
+      <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="stories_text">Read together, count together, laugh together.</p>
+    </div>
+    <div class="mt-8 grid gap-5 lg:grid-cols-3">
+      <article class="lg:col-span-2 rounded-[2rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-coral/40 flex flex-col">
+        <button type="button" id="openStory" class="group relative block text-start focus:outline-none focus-visible:ring-4 focus-visible:ring-coral">
+          <img src="assets/story/cake-09.webp" alt="" width="1280" height="720" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-[1.02] transition">
+          <span class="absolute bottom-3 start-3 inline-flex items-center gap-2 rounded-full bg-coral px-5 py-2.5 text-lg font-extrabold text-white shadow-pop">
+            <span aria-hidden="true">📖</span><span data-i18n="open_book">Open the book</span>
+          </span>
+        </button>
+        <div class="p-5">
+          <h3 class="font-display font-extrabold text-2xl" data-i18n="story1_title">Memo & Tonton: The Strawberry Cake</h3>
+          <p class="mt-1 font-semibold text-ink/70" data-i18n="story1_text">Memo and his teddy Tonton decorate a cake – with cream, counting and a little surprise on Tonton's nose.</p>
+        </div>
+      </article>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+        <article class="relative rounded-[2rem] bg-white/70 overflow-hidden ring-4 ring-white">
+          <img src="assets/songs/kiko.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-[16/8] object-cover opacity-70 grayscale-[30%]">
+          <span class="absolute top-3 end-3 rounded-full bg-violet px-3 py-1 font-extrabold text-white text-sm" data-i18n="soon">Coming soon</span>
+          <p class="p-4 font-bold text-ink/70" data-i18n="soon_kiko">Kiko's big jump</p>
+        </article>
+        <article class="relative rounded-[2rem] bg-white/70 overflow-hidden ring-4 ring-white">
+          <img src="assets/songs/rolly.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-[16/8] object-cover opacity-70 grayscale-[30%]">
+          <span class="absolute top-3 end-3 rounded-full bg-violet px-3 py-1 font-extrabold text-white text-sm" data-i18n="soon">Coming soon</span>
+          <p class="p-4 font-bold text-ink/70" data-i18n="soon_rolly">Rolly's rainy-day trip</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Channels ============ -->
+<section id="channels" class="relative bg-leaf-light">
+  <svg class="wave text-coral-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
+  <div class="mx-auto max-w-6xl px-4 pb-14 pt-4 md:pb-20">
+    <div class="text-center">
+      <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="channels_title">One island – many languages</h2>
+      <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="channels_text">Bailabu sings in your language. Pick your channel and subscribe!</p>
+    </div>
+    <ul id="channelGrid" class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></ul>
+  </div>
+</section>
+
+<!-- ============ Parents ============ -->
+<section id="parents" class="mx-auto max-w-6xl px-4 py-14 md:py-20">
+  <div class="rounded-[2rem] bg-white p-6 md:p-10 shadow-pop-lg ring-4 ring-violet-light grid gap-8 md:grid-cols-[220px_1fr] items-center">
+    <img src="assets/brand/bear-round.webp" alt="" width="512" height="512" loading="lazy" class="w-40 md:w-full mx-auto floaty">
+    <div>
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl" data-i18n="parents_title">For parents</h2>
+      <ul class="mt-5 grid gap-4 sm:grid-cols-3">
+        <li class="rounded-2xl bg-leaf-light p-4"><p class="text-2xl" aria-hidden="true">🌈</p><h3 class="font-extrabold text-lg" data-i18n="p1_t">Gentle & safe</h3><p class="font-semibold text-ink/70" data-i18n="p1">No scary moments – every story has a happy ending.</p></li>
+        <li class="rounded-2xl bg-sky-light p-4"><p class="text-2xl" aria-hidden="true">🔢</p><h3 class="font-extrabold text-lg" data-i18n="p2_t">Made for learning</h3><p class="font-semibold text-ink/70" data-i18n="p2">Counting, colors, animals and sharing – through music and play.</p></li>
+        <li class="rounded-2xl bg-sun-light p-4"><p class="text-2xl" aria-hidden="true">🌙</p><h3 class="font-extrabold text-lg" data-i18n="p3_t">Calm by design</h3><p class="font-semibold text-ink/70" data-i18n="p3">Slower songs for little ones and soft lullabies for bedtime. No ads and no tracking on this website.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-ink text-white">
+  <div class="mx-auto max-w-6xl px-4 py-10 flex flex-col md:flex-row items-center gap-4 md:justify-between text-center md:text-start">
+    <div class="flex items-center gap-3">
+      <img src="assets/brand/badge.webp" alt="" width="48" height="48" loading="lazy" class="w-12 h-12 rounded-full">
+      <div>
+        <p class="wordmark font-display font-extrabold text-2xl" dir="ltr" aria-label="Bailabu"><span class="text-berry">B</span><span class="text-tangerine">a</span><span class="text-sun">i</span><span class="text-leaf">l</span><span class="text-sky">a</span><span class="text-violet">b</span><span class="text-coral">u</span></p>
+        <p class="text-white/70 font-semibold" data-i18n="footer_love">Made with love for little ones.</p>
+      </div>
+    </div>
+    <p class="text-white/60 text-sm font-semibold">© <span id="year">2026</span> Bailabu · Tontiş Ada</p>
+  </div>
+</footer>
+
+<!-- ============ Story reader ============ -->
+<dialog id="storyDlg" class="w-[min(100vw-1rem,60rem)] max-h-[calc(100dvh-1rem)] rounded-[2rem] p-0 bg-white text-ink shadow-2xl" aria-labelledby="storyTitle">
+  <div class="relative">
+    <img id="storyImg" alt="" width="1280" height="720" class="w-full aspect-video object-cover bg-coral-light">
+    <button id="storyClose" type="button" class="absolute top-3 end-3 rounded-full bg-white/90 p-2.5 shadow-pop focus:outline-none focus-visible:ring-4 focus-visible:ring-coral" data-i18n-aria="close" aria-label="Close">
+      <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <span id="storyPageNo" class="absolute top-3 start-3 rounded-full bg-white/90 px-3 py-1 font-extrabold shadow-pop"></span>
+  </div>
+  <div class="p-4 md:p-6">
+    <h2 id="storyTitle" class="sr-only"></h2>
+    <p id="storyText" class="font-display font-bold text-xl md:text-3xl leading-snug min-h-[4.5rem]" aria-live="polite"></p>
+    <div id="storyExtra" class="mt-3"></div>
+    <div class="mt-4 flex flex-wrap items-center gap-2">
+      <button id="storyPrev" type="button" class="rounded-full bg-coral-light px-4 py-2.5 font-extrabold disabled:opacity-40 focus:outline-none focus-visible:ring-4 focus-visible:ring-coral" data-i18n="prev">Back</button>
+      <div id="storyDots" class="flex gap-1.5 mx-auto" aria-hidden="true"></div>
+      <button id="storyRead" type="button" class="rounded-full bg-sky-light px-4 py-2.5 font-extrabold focus:outline-none focus-visible:ring-4 focus-visible:ring-sky" aria-pressed="false"><span aria-hidden="true">🔊</span> <span id="storyReadLbl" data-i18n="read_to_me">Read to me</span></button>
+      <button id="storyNext" type="button" class="rounded-full bg-coral px-5 py-2.5 font-extrabold text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-coral/50" data-i18n="next">Next</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+"use strict";
+
+/* ---------------- Data ---------------- */
+const LANGS = ["en", "es", "de", "pt", "ar", "tr"];
+const NATIVE = { en: "English", es: "Español", de: "Deutsch", pt: "Português", ar: "العربية", tr: "Türkçe" };
+const SPEECH = { en: "en-US", es: "es-MX", de: "de-DE", pt: "pt-BR", ar: "ar-SA", tr: "tr-TR" };
+
+// live: the channel is public and has videos. Flip to true when a channel launches.
+const CHANNELS = [
+  { code: "en", name: "Bailabu Island – Kids Songs",          handle: "bailabuisland",  color: "#3DB8F5", live: true },
+  { code: "es", name: "Isla Bailabú – Canciones Infantiles",  handle: "islabailabu",    color: "#FF6F91", live: false },
+  { code: "de", name: "Bailabu Insel – Kinderlieder",         handle: "bailabuinsel",   color: "#5CC85A", live: false },
+  { code: "pt", name: "Ilha Bailabu – Músicas Infantis",      handle: "ilhabailabu",    color: "#FFC83D", live: false },
+  { code: "ar", name: "جزيرة بايلابو – أغاني الأطفال",          handle: "jazeerabailabu", color: "#8E6CF0", live: false },
+  { code: "tr", name: "Tontiş Ada",                          handle: "TontisAdaTV",    color: "#F6A23A", live: true },
+];
+
+// cast: names per language (see _shared/brand/bailabu/BRAND.md)
+const CAST = [
+  { id: "bailabu_bear", bg: "#DDF3FF", sfx: "pop",   name: { all: "Bailabu", es: "Bailabú", ar: "بايلابو" },
+    role: { en: "the dancing bear", de: "der Tanzbär", es: "el osito bailarín", pt: "o ursinho dançarino", tr: "dansçı ayıcık", ar: "الدبدوب الراقص" } },
+  { id: "afacan", bg: "#E2F7E1", sfx: "pop",   name: { all: "Kiko", tr: "Afacan", ar: "كيكو" },
+    role: { en: "the jumpy frog", de: "der Hüpffrosch", es: "la ranita saltarina", pt: "o sapinho pulador", tr: "zıp zıp kurbağa", ar: "الضفدع النطّاط" } },
+  { id: "paytak", bg: "#FFF4D6", sfx: "quack", name: { all: "Lulu", es: "Lulú", tr: "Paytak", ar: "لولو" },
+    role: { en: "the little duckling", de: "das kleine Entchen", es: "la patita", pt: "a patinha", tr: "minik ördek", ar: "البطّة الصغيرة" } },
+  { id: "balli", bg: "#FFF4D6", sfx: "buzz",  name: { all: "Bibi", tr: "Ballı", ar: "بيبي" },
+    role: { en: "the busy bee", de: "die fleißige Biene", es: "la abejita", pt: "a abelhinha", tr: "çalışkan arı", ar: "النحلة النشيطة" } },
+  { id: "renkli", bg: "#FFE3EA", sfx: "honk",  name: { all: "Rolly", tr: "Renkli", ar: "رولي" },
+    role: { en: "the rainbow bus", de: "der Regenbogenbus", es: "el autobús arcoíris", pt: "o ônibus arco-íris", tr: "renkli otobüs", ar: "الباص الملوّن" } },
+  { id: "minik_balik", bg: "#DDF3FF", sfx: "blub", name: { all: "Blub", tr: "Minik Balık", ar: "بلوب" },
+    role: { en: "the little fish", de: "der kleine Fisch", es: "el pececito", pt: "o peixinho", tr: "denizin neşesi", ar: "السمكة الصغيرة" } },
+  { id: "pamuk", bg: "#EEE8FF", sfx: "pop",   name: { all: "Pompom", tr: "Pamuk", ar: "بومبوم" },
+    role: { en: "the fluffy lamb", de: "das flauschige Lamm", es: "la ovejita", pt: "o carneirinho", tr: "pamuk kuzu", ar: "الخروف الصغير" } },
+  { id: "findik", bg: "#FFE3EA", sfx: "pop",   name: { all: "Toby", tr: "Fındık", ar: "توبي" },
+    role: { en: "the happy puppy", de: "der fröhliche Welpe", es: "el perrito", pt: "o cachorrinho", tr: "neşeli köpek", ar: "الجرو المرح" } },
+  { id: "kuku", bg: "#E2F7E1", sfx: "pop",   name: { all: "Kuku", tr: "Kükü", ar: "كوكو" },
+    role: { en: "the friendly lion", de: "der liebe Löwe", es: "el leoncito", pt: "o leãozinho", tr: "sevimli aslan", ar: "الأسد اللطيف" } },
+];
+
+const OBJ = {
+  apple_red:     { kind: "fruit",  en: "apple", de: "Apfel", es: "manzana", pt: "maçã", tr: "elma", ar: "تفاحة" },
+  banana:        { kind: "fruit",  en: "banana", de: "Banane", es: "plátano", pt: "banana", tr: "muz", ar: "موزة" },
+  pear_green:    { kind: "fruit",  en: "pear", de: "Birne", es: "pera", pt: "pera", tr: "armut", ar: "كمثرى" },
+  strawberry:    { kind: "fruit",  en: "strawberry", de: "Erdbeere", es: "fresa", pt: "morango", tr: "çilek", ar: "فراولة" },
+  star_yellow:   { kind: "toy",    en: "star", de: "Stern", es: "estrella", pt: "estrela", tr: "yıldız", ar: "نجمة" },
+  ball_blue:     { kind: "toy",    en: "ball", de: "Ball", es: "pelota", pt: "bola", tr: "top", ar: "كرة" },
+  car_blue:      { kind: "toy",    en: "car", de: "Auto", es: "carrito", pt: "carrinho", tr: "araba", ar: "سيارة" },
+  elephant:      { kind: "animal", en: "elephant", de: "Elefant", es: "elefante", pt: "elefante", tr: "fil", ar: "فيل" },
+  flamingo_pink: { kind: "animal", en: "flamingo", de: "Flamingo", es: "flamenco", pt: "flamingo", tr: "flamingo", ar: "فلامينغو" },
+  kitten_white:  { kind: "animal", en: "kitten", de: "Kätzchen", es: "gatito", pt: "gatinho", tr: "kedicik", ar: "قطة صغيرة" },
+  turtle_green:  { kind: "animal", en: "turtle", de: "Schildkröte", es: "tortuga", pt: "tartaruga", tr: "kaplumbağa", ar: "سلحفاة" },
+};
+CAST.forEach(c => { if (c.id !== "renkli") OBJ[c.id] = { kind: "animal", cast: c }; });
+OBJ.renkli = { kind: "toy", cast: CAST.find(c => c.id === "renkli") };
+
+const SONGS = [
+  { id: "kiko",    tag: "dance",     t: { en: "Kiko the Little Frog", es: "La Ranita Kiko", de: "Kiko, der kleine Frosch", pt: "Kiko, o Sapinho", ar: "كيكو الضفدع الصغير", tr: "Küçük Kurbağa" } },
+  { id: "rolly",   tag: "singalong", t: { en: "Rolly the Rainbow Bus", es: "Rolly, el Autobús Arcoíris", de: "Rolly, der Regenbogenbus", pt: "Rolly, o Ônibus Arco-Íris", ar: "رولي الباص الملوّن", tr: "Renkli Otobüs" } },
+  { id: "ducks",   tag: "counting",  t: { en: "Five Little Ducks", es: "Cinco Patitos", de: "Fünf kleine Entchen", pt: "Cinco Patinhos", ar: "خمس بطّات صغيرة", tr: "Beş Küçük Ördek" } },
+  { id: "bibi",    tag: "colors",    t: { en: "Bibi the Busy Bee", es: "La Abejita Bibi", de: "Biene Bibi summt", pt: "A Abelhinha Bibi", ar: "النحلة بيبي", tr: "Arı Vız Vız" } },
+  { id: "tractor", tag: "farm",      t: { en: "Putt Putt, Look at the Tractor!", es: "¡Put Put, Mira el Tractor!", de: "Tuck Tuck, schau, der Traktor!", pt: "Tuc Tuc, Olha o Trator!", ar: "تُكْ تُكْ، انظرْ إلى الجرّار!", tr: "Pat Pat Traktör" } },
+  { id: "lumi",    tag: "lullaby",   t: { en: "Lumi, the Little Star", es: "Lumi, la Estrellita", de: "Lumi, das kleine Sternchen", pt: "Lumi, a Estrelinha", ar: "لومي النجمة الصغيرة", tr: "Parla Yıldız" } },
+  { id: "sleepy",  tag: "lullaby",   t: { en: "Sleepy Time on the Farm", es: "Hora de Dormir en la Granja", de: "Schlafenszeit auf dem Bauernhof", pt: "Hora de Dormir na Fazenda", ar: "وقتُ النوم في المزرعة", tr: "Çiftlikte Uyku Vakti" } },
+];
+const TAG_COLOR = { dance: "bg-leaf", singalong: "bg-coral", counting: "bg-sky", colors: "bg-violet", farm: "bg-tangerine", lullaby: "bg-ink" };
+
+/* ---------------- Texts ---------------- */
+const T = {
+en: {
+  title: "Bailabu – Kids Songs, Games & Stories",
+  desc: "Happy sing-along songs, little games and picture stories for toddlers and preschoolers (ages 1–5) with Bailabu the bear and his island friends.",
+  skip: "Skip to content", menu: "Menu", island: "Island",
+  nav_songs: "Songs", nav_play: "Games", nav_stories: "Stories", nav_channels: "Channels",
+  kicker: "Kids songs · games · stories",
+  hero_title: "Sing, dance & play on Bailabu Island!",
+  hero_text: "Happy sing-along songs, little games and picture stories for toddlers and preschoolers (ages 1–5) – with Bailabu the bear and all his island friends.",
+  cta_watch: "Watch on YouTube", cta_play: "Let's play!",
+  friends_title: "Meet the island friends", friends_text: "Tap a friend to say hello!", hello: "Hello",
+  songs_title: "Songs to sing along", songs_text: "Easy lyrics on screen, a gentle tempo and lots of clapping and dancing.",
+  songs_friday: "New songs every Friday", watch: "Watch",
+  tag_dance: "Dance", tag_singalong: "Sing-along", tag_counting: "Counting", tag_colors: "Colors", tag_farm: "Farm animals", tag_lullaby: "Lullaby",
+  play_title: "Games & riddles", play_text: "Little games for little hands – no reading needed. Just tap!",
+  g_memory: "Memory", g_odd: "Odd one out", g_shadow: "Shadows", g_count: "Counting",
+  q_memory: "Find the pairs!", q_odd: "Which one is different?", q_shadow: "Whose shadow is this?", q_count: "How many do you see?",
+  memory_done: "You found all the pairs!", again: "Play again", pairs: "pairs",
+  praise: ["Great job!", "Super!", "Yay!", "Well done!"],
+  say_again: "Say it again", sound: "Sound on/off",
+  stories_title: "Picture stories", stories_text: "Read together, count together, laugh together.",
+  open_book: "Open the book", story1_title: "Memo & Tonton: The Strawberry Cake",
+  story1_text: "Memo and his teddy Tonton decorate a cake – with cream, counting and a little surprise on Tonton's nose.",
+  soon: "Coming soon", soon_kiko: "Kiko's big jump", soon_rolly: "Rolly's rainy-day trip",
+  prev: "Back", next: "Next", read_to_me: "Read to me", stop: "Stop", the_end: "The End", read_again: "Read again", close: "Close",
+  count_tap: "Tap the strawberries to count!",
+  story: [
+    "Memo and Tonton have a big cake. But look – the top is still empty!",
+    "What's in the bowl? Strawberries! What color are they? Red!",
+    "How many strawberries are there? Let's count: one, two, three!",
+    "Memo spreads the soft white cream. Slowly, slowly…",
+    "Oops! Cream on Tonton's nose! Wipe, wipe… all clean!",
+    "Tonton has an idea: let's take turns!",
+    "Memo puts on the first strawberry – one! Tonton puts on the next – two!",
+    "And the last strawberry? They put it on together – three!",
+    "The cake is ready! One for you, one for me, and one together.",
+  ],
+  channels_title: "One island – many languages", channels_text: "Bailabu sings in your language. Pick your channel and subscribe!",
+  subscribe: "Subscribe", your_lang: "Your language",
+  parents_title: "For parents",
+  p1_t: "Gentle & safe", p1: "No scary moments – every story has a happy ending.",
+  p2_t: "Made for learning", p2: "Counting, colors, animals and sharing – through music and play.",
+  p3_t: "Calm by design", p3: "Slower songs for little ones and soft lullabies for bedtime. No ads and no tracking on this website.",
+  footer_love: "Made with love for little ones.",
+},
+de: {
+  title: "Bailabu – Kinderlieder, Spiele & Geschichten",
+  desc: "Fröhliche Mitsinglieder, kleine Spiele und Bildergeschichten für Kinder von 1 bis 5 Jahren – mit Bailabu, dem Bären, und seinen Inselfreunden.",
+  skip: "Zum Inhalt springen", menu: "Menü", island: "Insel",
+  nav_songs: "Lieder", nav_play: "Spiele", nav_stories: "Geschichten", nav_channels: "Kanäle",
+  kicker: "Kinderlieder · Spiele · Geschichten",
+  hero_title: "Singen, tanzen & spielen auf der Bailabu-Insel!",
+  hero_text: "Fröhliche Mitsinglieder, kleine Spiele und Bildergeschichten für Kinder von 1 bis 5 Jahren – mit Bailabu, dem Bären, und all seinen Freunden von der Insel.",
+  cta_watch: "Auf YouTube ansehen", cta_play: "Los, spielen!",
+  friends_title: "Das sind die Inselfreunde", friends_text: "Tippe auf einen Freund und sag Hallo!", hello: "Hallo",
+  songs_title: "Lieder zum Mitsingen", songs_text: "Einfache Texte im Bild, ein ruhiges Tempo und viel Klatschen und Tanzen.",
+  songs_friday: "Jeden Freitag neue Lieder", watch: "Ansehen",
+  tag_dance: "Tanzen", tag_singalong: "Mitsingen", tag_counting: "Zählen", tag_colors: "Farben", tag_farm: "Bauernhof", tag_lullaby: "Schlaflied",
+  play_title: "Spiele & Rätsel", play_text: "Kleine Spiele für kleine Hände – ganz ohne Lesen. Einfach tippen!",
+  g_memory: "Memory", g_odd: "Was passt nicht?", g_shadow: "Schatten", g_count: "Zählen",
+  q_memory: "Finde die Paare!", q_odd: "Welches ist anders?", q_shadow: "Wessen Schatten ist das?", q_count: "Wie viele siehst du?",
+  memory_done: "Du hast alle Paare gefunden!", again: "Nochmal", pairs: "Paare",
+  praise: ["Super!", "Toll gemacht!", "Juhu!", "Prima!"],
+  say_again: "Nochmal sagen", sound: "Ton an/aus",
+  stories_title: "Bildergeschichten", stories_text: "Zusammen lesen, zusammen zählen, zusammen lachen.",
+  open_book: "Buch öffnen", story1_title: "Memo & Tonton: Die Erdbeertorte",
+  story1_text: "Memo und sein Teddy Tonton verzieren eine Torte – mit Sahne, Zählen und einer kleinen Überraschung auf Tontons Nase.",
+  soon: "Bald", soon_kiko: "Kikos großer Sprung", soon_rolly: "Rollys Regentag-Ausflug",
+  prev: "Zurück", next: "Weiter", read_to_me: "Vorlesen", stop: "Stopp", the_end: "Ende", read_again: "Nochmal lesen", close: "Schließen",
+  count_tap: "Tippe auf die Erdbeeren und zähle mit!",
+  story: [
+    "Memo und Tonton haben eine große Torte. Aber schau – oben ist sie noch ganz leer!",
+    "Was ist in der Schüssel? Erdbeeren! Welche Farbe haben sie? Rot!",
+    "Wie viele Erdbeeren sind es? Wir zählen: eins, zwei, drei!",
+    "Memo streicht die weiche, weiße Sahne auf. Langsam, langsam …",
+    "Hoppla! Sahne auf Tontons Nase! Wisch, wisch … alles sauber!",
+    "Tonton hat eine Idee: Wir wechseln uns ab!",
+    "Memo legt die erste Erdbeere drauf – eins! Tonton legt die nächste drauf – zwei!",
+    "Und die letzte Erdbeere? Die legen sie zusammen drauf – drei!",
+    "Die Torte ist fertig! Eine für dich, eine für mich und eine für uns beide.",
+  ],
+  channels_title: "Eine Insel – viele Sprachen", channels_text: "Bailabu singt in deiner Sprache. Such dir deinen Kanal aus und abonniere ihn!",
+  subscribe: "Abonnieren", your_lang: "Deine Sprache",
+  parents_title: "Für Eltern",
+  p1_t: "Sanft & sicher", p1: "Keine gruseligen Momente – jede Geschichte geht gut aus.",
+  p2_t: "Spielend lernen", p2: "Zählen, Farben, Tiere und Teilen – mit Musik und Spiel.",
+  p3_t: "Ruhig gestaltet", p3: "Langsamere Lieder für die Kleinsten und sanfte Schlaflieder zur Nacht. Keine Werbung und kein Tracking auf dieser Website.",
+  footer_love: "Mit Liebe für die Kleinsten gemacht.",
+},
+es: {
+  title: "Bailabú – Canciones infantiles, juegos y cuentos",
+  desc: "Canciones alegres para cantar, juegos sencillos y cuentos ilustrados para niños de 1 a 5 años, con el osito Bailabú y sus amigos de la isla.",
+  skip: "Ir al contenido", menu: "Menú", island: "Isla",
+  nav_songs: "Canciones", nav_play: "Juegos", nav_stories: "Cuentos", nav_channels: "Canales",
+  kicker: "Canciones infantiles · juegos · cuentos",
+  hero_title: "¡Canta, baila y juega en la Isla Bailabú!",
+  hero_text: "Canciones alegres para cantar, juegos sencillos y cuentos ilustrados para niños de 1 a 5 años, con el osito Bailabú y todos sus amigos de la isla.",
+  cta_watch: "Ver en YouTube", cta_play: "¡A jugar!",
+  friends_title: "Conoce a los amigos de la isla", friends_text: "¡Toca a un amigo para saludar!", hello: "¡Hola",
+  songs_title: "Canciones para cantar", songs_text: "Letras fáciles en pantalla, un ritmo tranquilo y muchas palmas y bailes.",
+  songs_friday: "Canciones nuevas cada viernes", watch: "Ver",
+  tag_dance: "Baile", tag_singalong: "Para cantar", tag_counting: "Contar", tag_colors: "Colores", tag_farm: "Granja", tag_lullaby: "Canción de cuna",
+  play_title: "Juegos y adivinanzas", play_text: "Juegos pequeños para manos pequeñas, sin necesidad de leer. ¡Solo toca!",
+  g_memory: "Memoria", g_odd: "El diferente", g_shadow: "Sombras", g_count: "Contar",
+  q_memory: "¡Encuentra las parejas!", q_odd: "¿Cuál es diferente?", q_shadow: "¿De quién es esta sombra?", q_count: "¿Cuántos ves?",
+  memory_done: "¡Encontraste todas las parejas!", again: "Otra vez", pairs: "parejas",
+  praise: ["¡Muy bien!", "¡Súper!", "¡Bravo!", "¡Genial!"],
+  say_again: "Repetir", sound: "Sonido sí/no",
+  stories_title: "Cuentos ilustrados", stories_text: "Leer juntos, contar juntos, reír juntos.",
+  open_book: "Abrir el cuento", story1_title: "Memo y Tonton: El pastel de fresas",
+  story1_text: "Memo y su osito Tonton decoran un pastel, con crema, números y una sorpresita en la nariz de Tonton.",
+  soon: "Muy pronto", soon_kiko: "El gran salto de Kiko", soon_rolly: "Rolly en un día de lluvia",
+  prev: "Atrás", next: "Siguiente", read_to_me: "Léeme", stop: "Parar", the_end: "Fin", read_again: "Leer otra vez", close: "Cerrar",
+  count_tap: "¡Toca las fresas para contar!",
+  story: [
+    "Memo y Tonton tienen un pastel grande. Pero mira: ¡arriba todavía está vacío!",
+    "¿Qué hay en el tazón? ¡Fresas! ¿De qué color son? ¡Rojas!",
+    "¿Cuántas fresas hay? Vamos a contar: ¡una, dos, tres!",
+    "Memo unta la crema blanca y suave. Despacio, despacio…",
+    "¡Ups! ¡Crema en la nariz de Tonton! Limpia, limpia… ¡ya está!",
+    "Tonton tiene una idea: ¡vamos por turnos!",
+    "Memo pone la primera fresa: ¡una! Tonton pone la siguiente: ¡dos!",
+    "¿Y la última fresa? La ponen juntos: ¡tres!",
+    "¡El pastel está listo! Una para ti, una para mí y una para los dos.",
+  ],
+  channels_title: "Una isla, muchos idiomas", channels_text: "Bailabú canta en tu idioma. ¡Elige tu canal y suscríbete!",
+  subscribe: "Suscribirse", your_lang: "Tu idioma",
+  parents_title: "Para las familias",
+  p1_t: "Tierno y seguro", p1: "Sin momentos de miedo: cada cuento tiene un final feliz.",
+  p2_t: "Para aprender", p2: "Contar, colores, animales y compartir, con música y juego.",
+  p3_t: "Diseño tranquilo", p3: "Canciones más lentas para los más pequeños y canciones de cuna suaves para dormir. Este sitio no tiene anuncios ni rastreo.",
+  footer_love: "Hecho con cariño para los más pequeños.",
+},
+pt: {
+  title: "Bailabu – Músicas infantis, jogos e histórias",
+  desc: "Músicas alegres para cantar junto, joguinhos e histórias ilustradas para crianças de 1 a 5 anos, com o ursinho Bailabu e os amigos da ilha.",
+  skip: "Ir para o conteúdo", menu: "Menu", island: "Ilha",
+  nav_songs: "Músicas", nav_play: "Jogos", nav_stories: "Histórias", nav_channels: "Canais",
+  kicker: "Músicas infantis · jogos · histórias",
+  hero_title: "Cante, dance e brinque na Ilha Bailabu!",
+  hero_text: "Músicas alegres para cantar junto, joguinhos e histórias ilustradas para crianças de 1 a 5 anos, com o ursinho Bailabu e todos os amigos da ilha.",
+  cta_watch: "Assistir no YouTube", cta_play: "Vamos brincar!",
+  friends_title: "Conheça os amigos da ilha", friends_text: "Toque em um amigo para dizer oi!", hello: "Oi",
+  songs_title: "Músicas para cantar junto", songs_text: "Letras fáceis na tela, um ritmo tranquilo e muitas palmas e danças.",
+  songs_friday: "Músicas novas toda sexta-feira", watch: "Assistir",
+  tag_dance: "Dança", tag_singalong: "Cante junto", tag_counting: "Contar", tag_colors: "Cores", tag_farm: "Fazenda", tag_lullaby: "Canção de ninar",
+  play_title: "Jogos e charadas", play_text: "Joguinhos para mãozinhas – não precisa saber ler. É só tocar!",
+  g_memory: "Memória", g_odd: "O diferente", g_shadow: "Sombras", g_count: "Contar",
+  q_memory: "Encontre os pares!", q_odd: "Qual é diferente?", q_shadow: "De quem é esta sombra?", q_count: "Quantos você vê?",
+  memory_done: "Você achou todos os pares!", again: "De novo", pairs: "pares",
+  praise: ["Muito bem!", "Super!", "Oba!", "Parabéns!"],
+  say_again: "Repetir", sound: "Som liga/desliga",
+  stories_title: "Histórias ilustradas", stories_text: "Ler juntos, contar juntos, rir juntos.",
+  open_book: "Abrir a história", story1_title: "Memo e Tonton: O bolo de morango",
+  story1_text: "Memo e seu ursinho Tonton enfeitam um bolo – com creme, contagem e uma surpresinha no nariz do Tonton.",
+  soon: "Em breve", soon_kiko: "O grande pulo do Kiko", soon_rolly: "Rolly num dia de chuva",
+  prev: "Voltar", next: "Próxima", read_to_me: "Leia para mim", stop: "Parar", the_end: "Fim", read_again: "Ler de novo", close: "Fechar",
+  count_tap: "Toque nos morangos para contar!",
+  story: [
+    "Memo e Tonton têm um bolo grande. Mas olha: em cima ainda está vazio!",
+    "O que tem na tigela? Morangos! De que cor eles são? Vermelhos!",
+    "Quantos morangos tem? Vamos contar: um, dois, três!",
+    "Memo passa o creme branquinho e macio. Devagar, devagarinho…",
+    "Opa! Creme no nariz do Tonton! Limpa, limpa… pronto, limpinho!",
+    "Tonton tem uma ideia: vamos revezar!",
+    "Memo coloca o primeiro morango: um! Tonton coloca o próximo: dois!",
+    "E o último morango? Eles colocam juntos: três!",
+    "O bolo está pronto! Um para você, um para mim e um para nós dois.",
+  ],
+  channels_title: "Uma ilha, muitos idiomas", channels_text: "O Bailabu canta no seu idioma. Escolha o seu canal e se inscreva!",
+  subscribe: "Inscrever-se", your_lang: "Seu idioma",
+  parents_title: "Para as famílias",
+  p1_t: "Gentil e seguro", p1: "Nada de sustos: toda história tem final feliz.",
+  p2_t: "Feito para aprender", p2: "Contar, cores, animais e dividir – com música e brincadeira.",
+  p3_t: "Design tranquilo", p3: "Músicas mais lentas para os pequenos e canções de ninar suaves. Este site não tem anúncios nem rastreamento.",
+  footer_love: "Feito com carinho para os pequenos.",
+},
+tr: {
+  title: "Tontiş Ada – Çocuk şarkıları, oyunlar ve hikâyeler",
+  desc: "1–5 yaş için neşeli şarkılar, küçük oyunlar ve resimli hikâyeler – Bailabu ayıcık ve adanın tüm arkadaşlarıyla.",
+  skip: "İçeriğe geç", menu: "Menü", island: "Tontiş Ada",
+  nav_songs: "Şarkılar", nav_play: "Oyunlar", nav_stories: "Hikâyeler", nav_channels: "Kanallar",
+  kicker: "Çocuk şarkıları · oyunlar · hikâyeler",
+  hero_title: "Tontiş Ada'da şarkı söyle, dans et ve oyna!",
+  hero_text: "1–5 yaş için neşeli şarkılar, küçük oyunlar ve resimli hikâyeler – Bailabu ayıcık ve adanın tüm arkadaşlarıyla birlikte.",
+  cta_watch: "YouTube'da izle", cta_play: "Hadi oynayalım!",
+  friends_title: "Adanın arkadaşlarıyla tanış", friends_text: "Merhaba demek için bir arkadaşa dokun!", hello: "Merhaba",
+  songs_title: "Birlikte söyleyelim", songs_text: "Ekranda kolay sözler, sakin bir tempo, bol bol alkış ve dans.",
+  songs_friday: "Her cuma yeni şarkı", watch: "İzle",
+  tag_dance: "Dans", tag_singalong: "Birlikte söyle", tag_counting: "Sayılar", tag_colors: "Renkler", tag_farm: "Çiftlik", tag_lullaby: "Ninni",
+  play_title: "Oyunlar ve bilmeceler", play_text: "Küçük eller için küçük oyunlar – okumaya gerek yok. Sadece dokun!",
+  g_memory: "Hafıza", g_odd: "Hangisi farklı", g_shadow: "Gölgeler", g_count: "Sayalım",
+  q_memory: "Eşleri bul!", q_odd: "Hangisi farklı?", q_shadow: "Bu gölge kimin?", q_count: "Kaç tane görüyorsun?",
+  memory_done: "Bütün eşleri buldun!", again: "Tekrar", pairs: "eş",
+  praise: ["Aferin!", "Süper!", "Yaşasın!", "Harika!"],
+  say_again: "Tekrar söyle", sound: "Ses aç/kapat",
+  stories_title: "Resimli hikâyeler", stories_text: "Birlikte oku, birlikte say, birlikte gül.",
+  open_book: "Kitabı aç", story1_title: "Memo ve Tonton: Çilekli Pasta",
+  story1_text: "Memo ile oyuncak ayısı Tonton bir pastayı süslüyor – krema, sayılar ve Tonton'un burnunda küçük bir sürprizle.",
+  soon: "Çok yakında", soon_kiko: "Afacan'ın büyük zıplayışı", soon_rolly: "Renkli yağmurlu bir günde",
+  prev: "Geri", next: "İleri", read_to_me: "Bana oku", stop: "Dur", the_end: "Son", read_again: "Tekrar oku", close: "Kapat",
+  count_tap: "Saymak için çileklere dokun!",
+  story: [
+    "Memo ile Tonton'un önünde kocaman bir pasta var. Ama bak, üstü bomboş!",
+    "Kâsede ne var? Çilekler! Çilekler ne renk? Kırmızı!",
+    "Kaç tane çilek var? Hadi sayalım: bir, iki, üç!",
+    "Memo yumuşacık beyaz kremayı sürüyor. Yavaş yavaş…",
+    "Hoppala! Krema Tonton'un burnuna kondu! Sil sil… tertemiz!",
+    "Tonton'un aklına bir fikir geliyor: Sırayla koyalım!",
+    "Memo ilk çileği koyuyor: bir! Sıra Tonton'da: iki!",
+    "Ya son çilek? Onu birlikte koyuyorlar: üç!",
+    "Pasta hazır! Bir senden, bir benden, bir de ikimizden.",
+  ],
+  channels_title: "Bir ada – birçok dil", channels_text: "Bailabu senin dilinde şarkı söylüyor. Kanalını seç ve abone ol!",
+  subscribe: "Abone ol", your_lang: "Senin dilin",
+  parents_title: "Ebeveynler için",
+  p1_t: "Yumuşak ve güvenli", p1: "Korkutucu an yok – her hikâyenin mutlu bir sonu var.",
+  p2_t: "Öğrenmek için", p2: "Saymak, renkler, hayvanlar ve paylaşmak – müzik ve oyunla.",
+  p3_t: "Sakin tasarım", p3: "Küçükler için daha yavaş şarkılar, uyku için yumuşak ninniler. Bu sitede reklam ve takip yok.",
+  footer_love: "Küçükler için sevgiyle yapıldı.",
+},
+ar: {
+  title: "بايلابو – أغاني أطفال وألعاب وقصص",
+  desc: "أغانٍ مرحة للغناء معًا، وألعاب صغيرة، وقصص مصوّرة للأطفال من سنة إلى خمس سنوات، مع الدبدوب بايلابو وأصدقائه في الجزيرة.",
+  skip: "انتقل إلى المحتوى", menu: "القائمة", island: "جزيرة",
+  nav_songs: "أغانٍ", nav_play: "ألعاب", nav_stories: "قصص", nav_channels: "القنوات",
+  kicker: "أغاني أطفال · ألعاب · قصص",
+  hero_title: "غنِّ وارقصْ والعبْ في جزيرة بايلابو!",
+  hero_text: "أغانٍ مرحة للغناء معًا، وألعاب صغيرة، وقصص مصوّرة للأطفال من سنة إلى خمس سنوات، مع الدبدوب بايلابو وكل أصدقائه في الجزيرة.",
+  cta_watch: "شاهِدْ على يوتيوب", cta_play: "هيّا نلعب!",
+  friends_title: "تعرَّفْ على أصدقاء الجزيرة", friends_text: "المسْ صديقًا لتقول له: مرحبًا!", hello: "مرحبًا",
+  songs_title: "أغانٍ نغنّيها معًا", songs_text: "كلمات سهلة على الشاشة، وإيقاع هادئ، وكثير من التصفيق والرقص.",
+  songs_friday: "أغانٍ جديدة كل يوم جمعة", watch: "شاهِدْ",
+  tag_dance: "رقص", tag_singalong: "غناء جماعي", tag_counting: "العدّ", tag_colors: "الألوان", tag_farm: "المزرعة", tag_lullaby: "تهويدة",
+  play_title: "ألعاب وألغاز", play_text: "ألعاب صغيرة للأيدي الصغيرة، بلا حاجة إلى القراءة. المسْ فقط!",
+  g_memory: "الذاكرة", g_odd: "المختلف", g_shadow: "الظلال", g_count: "العدّ",
+  q_memory: "جِدِ الأزواج المتشابهة!", q_odd: "أيُّها مختلف؟", q_shadow: "ظِلُّ مَن هذا؟", q_count: "كم واحدًا ترى؟",
+  memory_done: "وجدتَ كل الأزواج!", again: "مرة أخرى", pairs: "أزواج",
+  praise: ["أحسنت!", "رائع!", "ممتاز!", "برافو!"],
+  say_again: "أعِدْ", sound: "الصوت",
+  stories_title: "قصص مصوّرة", stories_text: "نقرأ معًا، ونعدّ معًا، ونضحك معًا.",
+  open_book: "افتحِ القصة", story1_title: "ميمو وتونتون: كعكة الفراولة",
+  story1_text: "ميمو ودبدوبه تونتون يزيّنان كعكة، بالكريمة والعدّ ومفاجأة صغيرة على أنف تونتون.",
+  soon: "قريبًا", soon_kiko: "قفزة كيكو الكبيرة", soon_rolly: "رولي في يوم ممطر",
+  prev: "السابق", next: "التالي", read_to_me: "اقرأ لي", stop: "توقّف", the_end: "النهاية", read_again: "اقرأ مرة أخرى", close: "إغلاق",
+  count_tap: "المسِ الفراولات لتعدَّها!",
+  story: [
+    "عند ميمو وتونتون كعكة كبيرة. لكن انظرْ، أعلاها ما زال فارغًا!",
+    "ماذا في الوعاء؟ فراولة! ما لونها؟ أحمر!",
+    "كم حبّةَ فراولة هنا؟ هيّا نعدّ: واحد، اثنان، ثلاثة!",
+    "ميمو يدهن الكريمة البيضاء الناعمة. ببطء، ببطء…",
+    "أوه! كريمة على أنف تونتون! يمسح، يمسح… أصبح نظيفًا!",
+    "عند تونتون فكرة: هيّا نتناوب!",
+    "ميمو يضع أول حبّة فراولة: واحد! وتونتون يضع التالية: اثنان!",
+    "والحبّة الأخيرة؟ يضعانها معًا: ثلاثة!",
+    "الكعكة جاهزة! واحدة لك، وواحدة لي، وواحدة لنا معًا.",
+  ],
+  channels_title: "جزيرة واحدة… ولغات كثيرة", channels_text: "بايلابو يغنّي بلغتك. اخترْ قناتك واشتركْ!",
+  subscribe: "اشترِكْ", your_lang: "لغتك",
+  parents_title: "للآباء والأمهات",
+  p1_t: "لطيف وآمن", p1: "لا لحظات مخيفة، فلكل قصة نهاية سعيدة.",
+  p2_t: "للتعلّم", p2: "العدّ والألوان والحيوانات والمشاركة، بالموسيقى واللعب.",
+  p3_t: "تصميم هادئ", p3: "أغانٍ أبطأ للصغار، وتهويدات ناعمة قبل النوم. لا إعلانات ولا تتبّع في هذا الموقع.",
+  footer_love: "صُنع بحبّ للصغار.",
+},
+};
+
+/* ---------------- Helpers ---------------- */
+const $ = (s, el = document) => el.querySelector(s);
+const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("bailabu." + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem("bailabu." + k, JSON.stringify(v)); } catch {} },
+};
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+let lang = "en";
+const t = k => (T[lang] && T[lang][k] != null ? T[lang][k] : T.en[k]);
+const num = n => lang === "ar" ? String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]) : String(n);
+const castName = c => c.name[lang] || c.name.all;
+const objName = id => { const o = OBJ[id]; return o.cast ? castName(o.cast) : (o[lang] || o.en); };
+const img = (id, cls = "", alt = "") => `<img src="assets/chars/${id}.webp" alt="${esc(alt)}" width="360" height="360" draggable="false" class="${cls}">`;
+
+/* ---------------- Sound + voice ---------------- */
+let soundOn = store.get("sound", true);
+const audioCache = {};
+function sfx(name) {
+  if (!soundOn) return;
+  try {
+    const a = audioCache[name] || (audioCache[name] = new Audio(`assets/sfx/${name}.mp3`));
+    a.currentTime = 0; a.volume = .7; a.play().catch(() => {});
+  } catch {}
+}
+function say(text) {
+  if (!soundOn || !("speechSynthesis" in window) || !text) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = SPEECH[lang]; u.rate = .9; u.pitch = 1.15;
+  const v = speechSynthesis.getVoices().find(v => v.lang && v.lang.toLowerCase().startsWith(lang));
+  if (v) u.voice = v;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+  return u;
+}
+function confetti() {
+  if (reduceMotion) return;
+  const colors = ["#FF5A5F", "#F6A23A", "#FFC83D", "#5CC85A", "#3DB8F5", "#8E6CF0", "#FF6F91"];
+  for (let i = 0; i < 42; i++) {
+    const c = el("span", "confetti");
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.background = pick(colors);
+    c.style.setProperty("--dx", (Math.random() * 200 - 100) + "px");
+    c.style.animationDelay = Math.random() * .4 + "s";
+    c.style.animationDuration = 1.4 + Math.random() * 1 + "s";
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3000);
+  }
+}
+function praise(stage) {
+  const p = el("div", "praise rounded-full bg-white px-6 py-2 font-display font-extrabold text-3xl text-leaf shadow-pop-lg ring-4 ring-leaf/40 whitespace-nowrap", esc(pick(t("praise"))));
+  stage.appendChild(p); setTimeout(() => p.remove(), 1400);
+}
+function retrigger(node, cls) { node.classList.remove(cls); void node.offsetWidth; node.classList.add(cls); }
+
+/* ---------------- Language ---------------- */
+function detectLang() {
+  const q = new URLSearchParams(location.search).get("lang");
+  if (q && T[q]) return q;
+  const s = store.get("lang", null);
+  if (s && T[s]) return s;
+  for (const l of navigator.languages || [navigator.language || "en"]) {
+    const c = String(l).slice(0, 2).toLowerCase();
+    if (T[c]) return c;
+  }
+  return "en";
+}
+function channelFor(code) {
+  const c = CHANNELS.find(c => c.code === code);
+  return c && c.live ? c : CHANNELS.find(c => c.code === "en");
+}
+function applyLang(code, user) {
+  lang = code;
+  const html = document.documentElement;
+  html.lang = code; html.dir = code === "ar" ? "rtl" : "ltr";
+  document.title = t("title");
+  $('meta[name="description"]').setAttribute("content", t("desc"));
+  document.querySelectorAll("[data-i18n]").forEach(n => { n.textContent = t(n.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-aria]").forEach(n => n.setAttribute("aria-label", t(n.dataset.i18nAria)));
+  $("#langCur").textContent = code.toUpperCase();
+  $("#ctaWatch").href = `https://www.youtube.com/@${channelFor(code).handle}`;
+  if (user) {
+    store.set("lang", code);
+    const u = new URL(location.href); u.searchParams.set("lang", code); history.replaceState(null, "", u);
+  }
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  renderLangMenu(); renderFriends(); renderSongs(); renderChannels(); renderTabs(); game.restart();
+  if (story.open) story.show(story.page);
+}
+function renderLangMenu() {
+  const ul = $("#langMenu"); ul.innerHTML = "";
+  LANGS.forEach(c => {
+    const li = el("li");
+    const b = el("button", `w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light ${c === lang ? "bg-sky-light text-sky-dark" : ""}`,
+      `<span class="inline-block w-8 text-ink/50">${c.toUpperCase()}</span>${esc(NATIVE[c])}`);
+    b.type = "button"; b.setAttribute("role", "option"); b.setAttribute("aria-selected", c === lang);
+    b.lang = c; b.addEventListener("click", () => { closeLangMenu(); applyLang(c, true); });
+    li.appendChild(b); ul.appendChild(li);
+  });
+}
+const langBtn = $("#langBtn"), langMenu = $("#langMenu");
+function closeLangMenu() { langMenu.classList.add("hidden"); langBtn.setAttribute("aria-expanded", "false"); }
+langBtn.addEventListener("click", e => {
+  e.stopPropagation();
+  const open = langMenu.classList.toggle("hidden") === false;
+  langBtn.setAttribute("aria-expanded", open);
+  if (open) $("button", langMenu)?.focus();
+});
+document.addEventListener("click", e => { if (!langMenu.contains(e.target)) closeLangMenu(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeLangMenu(); });
+
+const menuBtn = $("#menuBtn"), mobileNav = $("#mobileNav");
+menuBtn.addEventListener("click", () => { const open = mobileNav.classList.toggle("hidden") === false; menuBtn.setAttribute("aria-expanded", open); });
+mobileNav.addEventListener("click", e => { if (e.target.closest("a")) { mobileNav.classList.add("hidden"); menuBtn.setAttribute("aria-expanded", "false"); } });
+
+/* ---------------- Friends / songs / channels ---------------- */
+function renderFriends() {
+  const ul = $("#friendsGrid"); ul.innerHTML = "";
+  CAST.forEach((c, i) => {
+    const li = el("li");
+    const b = el("button", "group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50",
+      `<span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:${c.bg}">${img(c.id, "w-full h-full object-contain")}</span>
+       <span class="font-display font-extrabold text-lg leading-tight">${esc(castName(c))}</span>
+       <span class="text-sm font-semibold text-ink/60 leading-tight">${esc(c.role[lang] || c.role.en)}</span>`);
+    b.type = "button";
+    b.addEventListener("click", () => { retrigger(b.firstElementChild, "wiggle"); sfx(c.sfx); setTimeout(() => say(`${t("hello")}, ${castName(c)}!`), 250); });
+    li.appendChild(b); ul.appendChild(li);
+  });
+}
+function renderSongs() {
+  const ul = $("#songsGrid"); ul.innerHTML = "";
+  const ch = channelFor(lang);
+  SONGS.forEach(s => {
+    const title = s.t[ch.code] || s.t.en;
+    const href = `https://www.youtube.com/@${ch.handle}/search?query=${encodeURIComponent(title)}`;
+    const li = el("li", "group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition",
+      `<a href="${href}" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/${s.id}.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full ${TAG_COLOR[s.tag]} px-3 py-1 text-sm font-extrabold text-white shadow-pop">${esc(t("tag_" + s.tag))}</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">${esc(s.t[lang] || s.t.en)}</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">${esc(t("watch"))}</span>
+        </span>
+      </a>`);
+    ul.appendChild(li);
+  });
+}
+function renderChannels() {
+  const ul = $("#channelGrid"); ul.innerHTML = "";
+  const order = [lang, ...LANGS.filter(c => c !== lang)];
+  order.forEach(code => {
+    const c = CHANNELS.find(x => x.code === code);
+    const mine = code === lang;
+    const badge = code === "tr" ? "badge-tr" : "bear-round";
+    const li = el("li", `relative flex items-center gap-4 rounded-[1.75rem] bg-white p-4 shadow-pop ${mine ? "ring-4" : "ring-2 ring-white"}`);
+    if (mine) li.style.setProperty("--tw-ring-color", c.color);
+    li.innerHTML = `
+      <span class="shrink-0 w-16 h-16 rounded-full p-1" style="background:${c.color}"><img src="assets/brand/${badge}.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full rounded-full object-cover"></span>
+      <span class="min-w-0">
+        <span class="block text-sm font-extrabold" style="color:${c.color}" lang="${code}">${esc(NATIVE[code])}${mine ? ` · ${esc(t("your_lang"))}` : ""}</span>
+        <span class="block font-display font-extrabold text-lg leading-tight" lang="${code}" dir="${code === "ar" ? "rtl" : "ltr"}">${esc(c.name)}</span>
+        <span class="block text-sm font-semibold text-ink/50" dir="ltr">@${esc(c.handle)}</span>
+      </span>`;
+    const cta = c.live
+      ? `<a href="https://www.youtube.com/@${c.handle}?sub_confirmation=1" target="_blank" rel="noopener" class="ms-auto shrink-0 rounded-full bg-berry px-4 py-2 font-extrabold text-white shadow-pop hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-berry/40">${esc(t("subscribe"))}</a>`
+      : `<span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1.5 text-sm font-extrabold text-ink/50">${esc(t("soon"))}</span>`;
+    li.insertAdjacentHTML("beforeend", cta);
+    ul.appendChild(li);
+  });
+}
+
+/* ---------------- Games ---------------- */
+const stage = $("#gameStage"), promptEl = $("#gamePrompt");
+let stars = store.get("stars", 0);
+const addStar = () => { stars++; store.set("stars", stars); $("#starCount").textContent = num(stars); };
+
+const GAMES = [
+  { id: "memory", icon: "bailabu_bear", label: "g_memory", q: "q_memory", start: startMemory },
+  { id: "odd",    icon: "banana",       label: "g_odd",    q: "q_odd",    start: startOdd },
+  { id: "shadow", icon: "afacan",       label: "g_shadow", q: "q_shadow", start: startShadow, silhouette: true },
+  { id: "count",  icon: "strawberry",   label: "g_count",  q: "q_count",  start: startCount },
+];
+const game = {
+  cur: GAMES[0], timers: [],
+  later(fn, ms) { this.timers.push(setTimeout(fn, ms)); },
+  clear() { this.timers.forEach(clearTimeout); this.timers = []; },
+  select(g, speak) { this.cur = g; renderTabs(); this.restart(speak); },
+  restart(speak) {
+    this.clear(); stage.innerHTML = "";
+    promptEl.textContent = t(this.cur.q);
+    $("#starCount").textContent = num(stars);
+    this.cur.start();
+    if (speak) say(t(this.cur.q));
+  },
+};
+function renderTabs() {
+  const box = $("#gameTabs"); box.innerHTML = "";
+  GAMES.forEach(g => {
+    const on = g === game.cur;
+    const b = el("button", `flex flex-col items-center gap-1 rounded-2xl px-1 py-2 sm:py-3 font-extrabold text-xs sm:text-base leading-tight transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50 ${on ? "bg-white shadow-pop text-ink" : "text-ink/70 hover:bg-white/60"}`,
+      `${img(g.icon, `w-10 h-10 sm:w-14 sm:h-14 object-contain ${g.silhouette ? "silhouette" : ""}`)}<span>${esc(t(g.label))}</span>`);
+    b.type = "button"; b.setAttribute("role", "tab"); b.setAttribute("aria-selected", on);
+    b.addEventListener("click", () => game.select(g, true));
+    box.appendChild(b);
+  });
+}
+$("#sayAgain").addEventListener("click", () => say(promptEl.textContent));
+function renderSound() {
+  $("#soundBtn").setAttribute("aria-pressed", soundOn);
+  $("#soundOn").classList.toggle("hidden", !soundOn);
+  $("#soundOff").classList.toggle("hidden", soundOn);
+}
+$("#soundBtn").addEventListener("click", () => { soundOn = !soundOn; store.set("sound", soundOn); if (!soundOn && "speechSynthesis" in window) speechSynthesis.cancel(); renderSound(); });
+
+function win(node) { addStar(); sfx("ding"); praise(stage); if (node) retrigger(node, "wiggle"); }
+function oops(node) { sfx("tick"); retrigger(node, "shake"); }
+function tile(id, extra = "") {
+  const b = el("button", `relative grid place-items-center rounded-3xl bg-cream p-3 shadow-pop ring-4 ring-transparent hover:ring-sky/40 transition focus:outline-none focus-visible:ring-sky ${extra}`,
+    img(id, "w-full h-full object-contain pointer-events-none"));
+  b.type = "button"; b.setAttribute("aria-label", objName(id));
+  return b;
+}
+function doneBox(msg) {
+  const box = el("div", "absolute inset-0 grid place-items-center bg-white/85 rounded-[1.5rem] popin");
+  box.innerHTML = `<div class="text-center p-6">${img("bailabu_bear", "w-32 h-32 mx-auto object-contain floaty")}<p class="mt-2 font-display font-extrabold text-2xl md:text-3xl">${esc(msg)}</p></div>`;
+  const again = el("button", "mt-4 rounded-full bg-sun px-6 py-3 font-extrabold text-lg shadow-pop-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-sun", esc(t("again")));
+  again.type = "button"; again.addEventListener("click", () => game.restart(true));
+  box.firstElementChild.appendChild(again);
+  return box;
+}
+
+// 1) Memory
+let memoryPairs = store.get("pairs", 3);
+function startMemory() {
+  const sizes = el("div", "flex justify-center gap-2 mb-4");
+  [3, 6].forEach(n => {
+    const b = el("button", `rounded-full px-4 py-1.5 font-extrabold ring-2 focus:outline-none focus-visible:ring-4 ${n === memoryPairs ? "bg-sky text-white ring-sky" : "bg-white ring-sky-light"}`, `${num(n)} ${esc(t("pairs"))}`);
+    b.type = "button"; b.setAttribute("aria-pressed", n === memoryPairs);
+    b.addEventListener("click", () => { memoryPairs = n; store.set("pairs", n); game.restart(); });
+    sizes.appendChild(b);
+  });
+  stage.appendChild(sizes);
+  const ids = shuffle(CAST.map(c => c.id)).slice(0, memoryPairs);
+  const deck = shuffle([...ids, ...ids]);
+  const grid = el("div", `relative mx-auto grid gap-2 sm:gap-3 ${memoryPairs === 3 ? "grid-cols-3 max-w-md" : "grid-cols-3 sm:grid-cols-4 max-w-xl"}`);
+  let open = [], lock = false, found = 0;
+  deck.forEach(id => {
+    const card = el("button", "mcard aspect-square focus:outline-none focus-visible:ring-4 focus-visible:ring-sky rounded-[1.25rem]",
+      `<span class="mcard-inner block">
+         <span class="mface mback shadow-pop"><span class="text-4xl sm:text-5xl text-white/90 font-extrabold" aria-hidden="true">★</span></span>
+         <span class="mface mfront bg-cream shadow-pop ring-4 ring-sun/60 p-2">${img(id, "w-full h-full object-contain")}</span>
+       </span>`);
+    card.type = "button"; card.setAttribute("aria-label", "?");
+    card.addEventListener("click", () => {
+      if (lock || card.classList.contains("flipped")) return;
+      card.classList.add("flipped"); card.setAttribute("aria-label", objName(id)); sfx("swish"); open.push({ card, id });
+      if (open.length < 2) return;
+      const [a, b] = open; open = [];
+      if (a.id === b.id) {
+        found++;
+        game.later(() => { win(b.card); say(objName(id)); if (found === memoryPairs) game.later(() => { sfx("cheer"); confetti(); grid.appendChild(doneBox(t("memory_done"))); }, 700); }, 350);
+      } else {
+        lock = true;
+        game.later(() => { [a, b].forEach(x => { x.card.classList.remove("flipped"); x.card.setAttribute("aria-label", "?"); }); lock = false; }, 950);
+      }
+    });
+    grid.appendChild(card);
+  });
+  stage.appendChild(grid);
+}
+
+// 2) Odd one out
+let oddRound = 0;
+function startOdd() {
+  const fruits = Object.keys(OBJ).filter(k => OBJ[k].kind === "fruit");
+  const animals = Object.keys(OBJ).filter(k => OBJ[k].kind === "animal");
+  const toys = Object.keys(OBJ).filter(k => OBJ[k].kind === "toy");
+  const all = Object.keys(OBJ);
+  let items, odd;
+  const type = oddRound < 3 ? "same" : pick(["same", "fruit", "animal"]);
+  if (type === "same") {
+    const base = pick(all); odd = pick(all.filter(k => k !== base)); items = [base, base, base];
+  } else if (type === "fruit") {
+    items = shuffle(fruits).slice(0, 3); odd = pick([...animals, ...toys]);
+  } else {
+    items = shuffle(animals).slice(0, 3); odd = pick([...fruits, ...toys]);
+  }
+  const grid = el("div", "mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-2xl");
+  shuffle([...items.map(id => ({ id, ok: false })), { id: odd, ok: true }]).forEach(({ id, ok }, i) => {
+    const b = tile(id, "aspect-square popin"); b.style.animationDelay = i * 80 + "ms";
+    b.addEventListener("click", () => {
+      if (grid.dataset.done) return;
+      if (!ok) return oops(b);
+      grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light"); win(b); say(objName(id));
+      oddRound++; game.later(() => game.restart(), 1700);
+    });
+    grid.appendChild(b);
+  });
+  stage.appendChild(grid);
+}
+
+// 3) Whose shadow?
+const SHADOW_POOL = ["afacan", "paytak", "balli", "renkli", "elephant", "flamingo_pink", "turtle_green", "kuku", "findik", "minik_balik", "bailabu_bear", "star_yellow", "banana", "car_blue", "kitten_white"];
+let lastShadow = null;
+function startShadow() {
+  const target = pick(SHADOW_POOL.filter(k => k !== lastShadow)); lastShadow = target;
+  const opts = shuffle([target, ...shuffle(SHADOW_POOL.filter(k => k !== target)).slice(0, 2)]);
+  const wrap = el("div", "grid gap-5 md:grid-cols-[1fr_1.4fr] items-center max-w-3xl mx-auto");
+  const shadowBox = el("div", "rounded-[2rem] bg-sky-light p-6 grid place-items-center", img(target, "silhouette w-44 h-44 md:w-56 md:h-56 object-contain", ""));
+  const grid = el("div", "grid grid-cols-3 gap-3");
+  opts.forEach((id, i) => {
+    const b = tile(id, "aspect-square popin"); b.style.animationDelay = i * 90 + "ms";
+    b.addEventListener("click", () => {
+      if (grid.dataset.done) return;
+      if (id !== target) return oops(b);
+      grid.dataset.done = 1; $("img", shadowBox).classList.add("revealed"); b.classList.add("ring-leaf", "bg-leaf-light");
+      win(shadowBox); say(objName(id));
+      const c = OBJ[id].cast; if (c && c.sfx !== "pop") game.later(() => sfx(c.sfx), 500);
+      game.later(() => game.restart(), 2000);
+    });
+    grid.appendChild(b);
+  });
+  wrap.append(shadowBox, grid); stage.appendChild(wrap);
+}
+
+// 4) How many?
+const COUNT_POOL = ["strawberry", "apple_red", "star_yellow", "ball_blue", "paytak", "minik_balik", "balli", "banana"];
+let countRound = 0;
+function startCount() {
+  const max = countRound < 3 ? 3 : 5;
+  const n = 1 + Math.floor(Math.random() * max);
+  const id = pick(COUNT_POOL);
+  const field = el("div", "flex flex-wrap justify-center gap-2 sm:gap-4 rounded-[2rem] bg-sky-light p-4 sm:p-6 min-h-[10rem] max-w-3xl mx-auto");
+  let counted = 0;
+  for (let i = 0; i < n; i++) {
+    const b = el("button", "relative w-20 h-20 sm:w-28 sm:h-28 popin focus:outline-none focus-visible:ring-4 focus-visible:ring-sky rounded-2xl", img(id, "w-full h-full object-contain pointer-events-none"));
+    b.type = "button"; b.style.animationDelay = i * 90 + "ms"; b.setAttribute("aria-label", objName(id));
+    b.addEventListener("click", () => {
+      if (b.dataset.n) { say(num(b.dataset.n)); return; }
+      counted++; b.dataset.n = counted; sfx("pop"); say(String(counted));
+      b.insertAdjacentHTML("beforeend", `<span class="absolute -top-2 -end-2 grid place-items-center w-9 h-9 rounded-full bg-violet text-white font-extrabold text-lg shadow-pop popin">${num(counted)}</span>`);
+    });
+    field.appendChild(b);
+  }
+  const answers = el("div", "mt-5 flex justify-center gap-3");
+  const opts = shuffle([n, ...shuffle([1, 2, 3, 4, 5].filter(x => x !== n)).slice(0, 2)]).sort((a, b) => a - b);
+  opts.forEach(v => {
+    const b = el("button", "w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white font-display font-extrabold text-4xl sm:text-5xl shadow-pop-lg ring-4 ring-violet/30 hover:-translate-y-1 transition focus:outline-none focus-visible:ring-violet", num(v));
+    b.type = "button";
+    b.addEventListener("click", () => {
+      if (answers.dataset.done) return;
+      if (v !== n) return oops(b);
+      answers.dataset.done = 1; b.classList.replace("bg-white", "bg-leaf"); b.classList.add("text-white");
+      win(b); say(String(n)); countRound++;
+      if (countRound % 5 === 0) game.later(() => { sfx("cheer"); confetti(); }, 400);
+      game.later(() => game.restart(), 1800);
+    });
+    answers.appendChild(b);
+  });
+  stage.append(field, answers);
+}
+
+/* ---------------- Story reader ---------------- */
+const dlg = $("#storyDlg");
+const STORY_IMGS = Array.from({ length: 9 }, (_, i) => `assets/story/cake-${String(i + 1).padStart(2, "0")}.webp`);
+const COUNT_PAGE = 2;
+const story = {
+  page: 0, open: false, reading: false,
+  start() { this.open = true; this.show(0); dlg.showModal(); },
+  stop() { this.reading = false; $("#storyRead").setAttribute("aria-pressed", "false"); $("#storyReadLbl").textContent = t("read_to_me"); if ("speechSynthesis" in window) speechSynthesis.cancel(); },
+  show(p) {
+    const pages = t("story");
+    this.page = Math.max(0, Math.min(pages.length - 1, p));
+    const last = this.page === pages.length - 1;
+    $("#storyImg").src = STORY_IMGS[this.page];
+    $("#storyTitle").textContent = t("story1_title");
+    $("#storyText").textContent = pages[this.page];
+    $("#storyPageNo").textContent = `${num(this.page + 1)} / ${num(pages.length)}`;
+    $("#storyPrev").disabled = this.page === 0;
+    $("#storyNext").textContent = last ? t("read_again") : t("next");
+    if (!this.reading) $("#storyReadLbl").textContent = t("read_to_me");
+    const dots = $("#storyDots"); dots.innerHTML = "";
+    pages.forEach((_, i) => dots.appendChild(el("span", `w-2.5 h-2.5 rounded-full ${i === this.page ? "bg-coral" : "bg-coral/25"}`)));
+    const extra = $("#storyExtra"); extra.innerHTML = "";
+    if (this.page === COUNT_PAGE) {
+      extra.appendChild(el("p", "font-bold text-ink/60", esc(t("count_tap"))));
+      const row = el("div", "mt-2 flex gap-3"); let c = 0;
+      for (let i = 0; i < 3; i++) {
+        const b = el("button", "relative w-16 h-16 rounded-2xl bg-coral-light p-1.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-coral", img("strawberry", "w-full h-full object-contain"));
+        b.type = "button"; b.setAttribute("aria-label", objName("strawberry"));
+        b.addEventListener("click", () => {
+          if (b.dataset.n) return;
+          c++; b.dataset.n = c; sfx("pop"); say(String(c));
+          b.insertAdjacentHTML("beforeend", `<span class="absolute -top-2 -end-2 grid place-items-center w-8 h-8 rounded-full bg-violet text-white font-extrabold shadow-pop popin">${num(c)}</span>`);
+          if (c === 3) setTimeout(() => { sfx("cheer"); confetti(); }, 500);
+        });
+        row.appendChild(b);
+      }
+      extra.appendChild(row);
+    } else if (last) {
+      extra.appendChild(el("p", "font-display font-extrabold text-2xl text-coral", esc(t("the_end")) + " ♥"));
+    }
+    if (this.reading) this.readCurrent();
+  },
+  readCurrent() {
+    const u = say(t("story")[this.page]);
+    if (!u) { this.stop(); return; }
+    const pageAt = this.page;
+    u.onend = () => {
+      if (!this.reading || this.page !== pageAt) return;
+      if (this.page < t("story").length - 1) setTimeout(() => this.reading && this.page === pageAt && this.show(this.page + 1), 900);
+      else this.stop();
+    };
+  },
+};
+$("#openStory").addEventListener("click", () => story.start());
+$("#storyClose").addEventListener("click", () => dlg.close());
+dlg.addEventListener("close", () => { story.open = false; story.stop(); });
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+$("#storyPrev").addEventListener("click", () => story.show(story.page - 1));
+$("#storyNext").addEventListener("click", () => {
+  if (story.page === t("story").length - 1) { story.stop(); story.show(0); } else story.show(story.page + 1);
+});
+$("#storyRead").addEventListener("click", () => {
+  if (story.reading) return story.stop();
+  if (!("speechSynthesis" in window)) return;
+  if (!soundOn) { soundOn = true; store.set("sound", true); renderSound(); }
+  story.reading = true; $("#storyRead").setAttribute("aria-pressed", "true"); $("#storyReadLbl").textContent = t("stop");
+  story.readCurrent();
+});
+dlg.addEventListener("keydown", e => {
+  const fwd = document.documentElement.dir === "rtl" ? "ArrowLeft" : "ArrowRight";
+  const back = document.documentElement.dir === "rtl" ? "ArrowRight" : "ArrowLeft";
+  if (e.key === fwd) story.show(story.page + 1);
+  if (e.key === back) story.show(story.page - 1);
+});
+let touchX = null;
+dlg.addEventListener("touchstart", e => { touchX = e.touches[0].clientX; }, { passive: true });
+dlg.addEventListener("touchend", e => {
+  if (touchX == null) return;
+  const dx = e.changedTouches[0].clientX - touchX; touchX = null;
+  if (Math.abs(dx) < 50) return;
+  const forward = (dx < 0) !== (document.documentElement.dir === "rtl");
+  story.show(story.page + (forward ? 1 : -1));
+});
+
+/* ---------------- Boot ---------------- */
+$("#year").textContent = new Date().getFullYear();
+renderSound();
+if ("speechSynthesis" in window) speechSynthesis.getVoices();
+applyLang(detectLang(), false);
+})();
+</script>
+</body>
+</html>
