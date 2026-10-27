@@ -395,14 +395,15 @@ CAST.forEach(c => { if (c.id !== "renkli") OBJ[c.id] = { kind: "animal", cast: c
 OBJ.renkli = { kind: "toy", cast: CAST.find(c => c.id === "renkli") };
 
 // live: channel codes where the song is online (cards elsewhere show "Coming soon"). Add the code when a video goes public.
+// yt: YouTube video ID per channel code; the card opens the video, otherwise a search on the channel.
 const SONGS = [
-  { id: "minik",   tag: "singalong", live: ["tr"], t: { en: "Blub, the Little Fish", es: "Blub, el Pececito", de: "Blub, der kleine Fisch", pt: "Blub, o Peixinho", ar: "بلوب السمكة الصغيرة", tr: "Minik Balık Kaç" } },
+  { id: "minik",   tag: "singalong", live: ["tr"], yt: { tr: "FPQXRUMN2Z8" }, t: { en: "Blub, the Little Fish", es: "Blub, el Pececito", de: "Blub, der kleine Fisch", pt: "Blub, o Peixinho", ar: "بلوب السمكة الصغيرة", tr: "Minik Balık Kaç" } },
   { id: "kiko",    tag: "dance",     t: { en: "Kiko the Little Frog", es: "La Ranita Kiko", de: "Kiko, der kleine Frosch", pt: "Kiko, o Sapinho", ar: "كيكو الضفدع الصغير", tr: "Küçük Kurbağa" } },
-  { id: "rolly",   tag: "singalong", live: ["tr"], t: { en: "Rolly the Rainbow Bus", es: "Rolly, el Autobús Arcoíris", de: "Rolly, der Regenbogenbus", pt: "Rolly, o Ônibus Arco-Íris", ar: "رولي الباص الملوّن", tr: "Renkli Otobüs" } },
+  { id: "rolly",   tag: "singalong", live: ["tr"], yt: { tr: "5nh1MCtzWP8" }, t: { en: "Rolly the Rainbow Bus", es: "Rolly, el Autobús Arcoíris", de: "Rolly, der Regenbogenbus", pt: "Rolly, o Ônibus Arco-Íris", ar: "رولي الباص الملوّن", tr: "Renkli Otobüs" } },
   { id: "ducks",   tag: "counting",  t: { en: "Five Little Ducks", es: "Cinco Patitos", de: "Fünf kleine Entchen", pt: "Cinco Patinhos", ar: "خمس بطّات صغيرة", tr: "Beş Küçük Ördek" } },
-  { id: "bibi",    tag: "colors",    live: ["tr"], t: { en: "Bibi the Busy Bee", es: "La Abejita Bibi", de: "Biene Bibi summt", pt: "A Abelhinha Bibi", ar: "النحلة بيبي", tr: "Arı Vız Vız" } },
-  { id: "tractor", tag: "farm",      live: ["tr"], t: { en: "Putt Putt, Look at the Tractor!", es: "¡Put Put, Mira el Tractor!", de: "Tuck Tuck, schau, der Traktor!", pt: "Tuc Tuc, Olha o Trator!", ar: "تُكْ تُكْ، انظرْ إلى الجرّار!", tr: "Pat Pat Traktör" } },
-  { id: "lumi",    tag: "lullaby",   live: ["tr"], t: { en: "Lumi, the Little Star", es: "Lumi, la Estrellita", de: "Lumi, das kleine Sternchen", pt: "Lumi, a Estrelinha", ar: "لومي النجمة الصغيرة", tr: "Parla Yıldız" } },
+  { id: "bibi",    tag: "colors",    live: ["tr"], yt: { tr: "0cYJ_DREVI0" }, t: { en: "Bibi the Busy Bee", es: "La Abejita Bibi", de: "Biene Bibi summt", pt: "A Abelhinha Bibi", ar: "النحلة بيبي", tr: "Arı Vız Vız" } },
+  { id: "tractor", tag: "farm",      live: ["tr"], yt: { tr: "-Y1mYE75VGs" }, t: { en: "Putt Putt, Look at the Tractor!", es: "¡Put Put, Mira el Tractor!", de: "Tuck Tuck, schau, der Traktor!", pt: "Tuc Tuc, Olha o Trator!", ar: "تُكْ تُكْ، انظرْ إلى الجرّار!", tr: "Pat Pat Traktör" } },
+  { id: "lumi",    tag: "lullaby",   live: ["tr"], yt: { tr: "DtAjpss6hpQ" }, t: { en: "Lumi, the Little Star", es: "Lumi, la Estrellita", de: "Lumi, das kleine Sternchen", pt: "Lumi, a Estrelinha", ar: "لومي النجمة الصغيرة", tr: "Parla Yıldız" } },
   { id: "sleepy",  tag: "lullaby",   t: { en: "Sleepy Time on the Farm", es: "Hora de Dormir en la Granja", de: "Schlafenszeit auf dem Bauernhof", pt: "Hora de Dormir na Fazenda", ar: "وقتُ النوم في المزرعة", tr: "Çiftlikte Uyku Vakti" } },
 ];
 const TAG_COLOR = { dance: "bg-leaf", singalong: "bg-coral", counting: "bg-sky", colors: "bg-violet", farm: "bg-tangerine", lullaby: "bg-ink" };
@@ -838,7 +839,8 @@ function renderSongs() {
   [...SONGS.filter(isLive), ...SONGS.filter(s => !isLive(s))].forEach(s => {
     const live = isLive(s);
     const title = s.t[ch.code] || s.t.en;
-    const href = `https://www.youtube.com/@${ch.handle}/search?query=${encodeURIComponent(title)}`;
+    const vid = (s.yt || {})[ch.code];
+    const href = vid ? `https://www.youtube.com/watch?v=${vid}` : `https://www.youtube.com/@${ch.handle}/search?query=${encodeURIComponent(title)}`;
     const body = `
         <span class="relative block overflow-hidden">
           <img src="assets/songs/${s.id}.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover ${live ? "group-hover:scale-105 transition duration-300" : "opacity-80"}">
