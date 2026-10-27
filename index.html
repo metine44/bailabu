@@ -76,6 +76,24 @@
   .mfront { transform: rotateY(180deg); }
   .mback { background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.45) 0 12%, transparent 13%), radial-gradient(circle at 75% 70%, rgba(255,255,255,.3) 0 10%, transparent 11%), linear-gradient(135deg, #3DB8F5, #8E6CF0); }
 
+  /* bubbles: the button rises, the inner span sways (two transforms, two elements) */
+  @keyframes rise { to { transform: translateY(-640px); } }
+  @keyframes sway { from { transform: translateX(-14px); } to { transform: translateX(14px); } }
+  @keyframes popout { to { transform: scale(1.6); opacity: 0; } }
+  .bubble { position: absolute; bottom: -140px; border-radius: 9999px; animation: rise var(--dur, 7s) linear forwards; touch-action: manipulation; }
+  .bubble > span { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 9999px; animation: sway 2.2s ease-in-out infinite alternate;
+    background: radial-gradient(circle at 30% 28%, rgba(255,255,255,.95) 0 7%, rgba(255,255,255,.35) 8% 45%, rgba(61,184,245,.18) 46% 100%);
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,.85), inset -8px -10px 18px rgba(142,108,240,.25), 0 6px 14px rgba(22,57,90,.12); }
+  .bubble.popped { animation: none; pointer-events: none; }
+  .bubble.popped > span { animation: popout .28s ease-out forwards; }
+
+  /* music: bear bops, notes fly up from the pads */
+  @keyframes bop { 0%,100% { transform: translateY(0) rotate(0); } 30% { transform: translateY(-12px) rotate(-6deg); } 60% { transform: translateY(0) rotate(5deg); } }
+  @keyframes noteup { from { transform: translate(-50%, 0) scale(.6); opacity: 1; } to { transform: translate(-50%, -90px) scale(1.2); opacity: 0; } }
+  .bop { animation: bop .45s ease-out; }
+  .note-fly { position: absolute; left: 50%; top: 10%; font-size: 2rem; font-weight: 800; color: #fff; text-shadow: 0 2px 0 rgba(22,57,90,.25); pointer-events: none; animation: noteup .9s ease-out forwards; }
+  .pad.lit { filter: brightness(1.15); box-shadow: 0 0 0 6px #fff, 0 0 24px 6px rgba(255,255,255,.9); }
+
   .silhouette { filter: brightness(0) saturate(100%) opacity(.82); transition: filter .6s ease; }
   .silhouette.revealed { filter: none; }
 
@@ -86,7 +104,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .floaty, .wiggle, .popin, .shake, .confetti, .praise { animation: none !important; }
+    .floaty, .wiggle, .popin, .shake, .confetti, .praise, .bop, .note-fly, .bubble, .bubble > span { animation: none !important; }
+    .note-fly { display: none; }
     .mcard-inner, .silhouette { transition: none; }
   }
 </style>
@@ -199,7 +218,7 @@
     </div>
 
     <div class="mt-8 rounded-[2rem] bg-white shadow-pop-lg ring-4 ring-sun/60 overflow-hidden">
-      <div id="gameTabs" role="tablist" class="grid grid-cols-4 gap-1.5 sm:gap-3 p-2 sm:p-3 bg-sun/30"></div>
+      <div id="gameTabs" role="tablist" class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-1.5 sm:gap-2 p-2 sm:p-3 bg-sun/30"></div>
       <div class="flex items-center gap-2 px-4 pt-4">
         <button id="sayAgain" type="button" class="shrink-0 rounded-full bg-sky-light p-2.5 hover:bg-sky/25 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" data-i18n-aria="say_again" aria-label="Say it again">
           <svg viewBox="0 0 24 24" class="w-6 h-6 text-sky-dark" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
@@ -404,6 +423,10 @@ en: {
   play_title: "Games & riddles", play_text: "Little games for little hands – no reading needed. Just tap!",
   g_memory: "Memory", g_odd: "Odd one out", g_shadow: "Shadows", g_count: "Counting",
   q_memory: "Find the pairs!", q_odd: "Which one is different?", q_shadow: "Whose shadow is this?", q_count: "How many do you see?",
+  g_find: "Where is?", g_colors: "Colors", g_bubbles: "Bubbles", g_music: "Music", g_pattern: "What's next?",
+  q_find: "Where is {n}?", q_colors: "Find the {c} one!", q_bubbles: "Pop the bubbles!", q_music: "Tap and make music!", q_pattern: "What comes next?",
+  colors: { red: "red", yellow: "yellow", blue: "blue", green: "green", pink: "pink", white: "white", orange: "orange" },
+  copy_me: "Copy me!", your_turn: "Your turn!", listen: "Listen…",
   memory_done: "You found all the pairs!", again: "Play again", pairs: "pairs",
   praise: ["Great job!", "Super!", "Yay!", "Well done!"],
   say_again: "Say it again", sound: "Sound on/off",
@@ -448,6 +471,10 @@ de: {
   play_title: "Spiele & Rätsel", play_text: "Kleine Spiele für kleine Hände – ganz ohne Lesen. Einfach tippen!",
   g_memory: "Memory", g_odd: "Was passt nicht?", g_shadow: "Schatten", g_count: "Zählen",
   q_memory: "Finde die Paare!", q_odd: "Welches ist anders?", q_shadow: "Wessen Schatten ist das?", q_count: "Wie viele siehst du?",
+  g_find: "Wo ist …?", g_colors: "Farben", g_bubbles: "Blasen", g_music: "Musik", g_pattern: "Was kommt?",
+  q_find: "Wo ist {n}?", q_colors: "Was ist {c}?", q_bubbles: "Lass die Blasen platzen!", q_music: "Tippe und mach Musik!", q_pattern: "Was kommt als Nächstes?",
+  colors: { red: "rot", yellow: "gelb", blue: "blau", green: "grün", pink: "rosa", white: "weiß", orange: "orange" },
+  copy_me: "Mach mir nach!", your_turn: "Jetzt du!", listen: "Hör zu …",
   memory_done: "Du hast alle Paare gefunden!", again: "Nochmal", pairs: "Paare",
   praise: ["Super!", "Toll gemacht!", "Juhu!", "Prima!"],
   say_again: "Nochmal sagen", sound: "Ton an/aus",
@@ -492,6 +519,10 @@ es: {
   play_title: "Juegos y adivinanzas", play_text: "Juegos pequeños para manos pequeñas, sin necesidad de leer. ¡Solo toca!",
   g_memory: "Memoria", g_odd: "El diferente", g_shadow: "Sombras", g_count: "Contar",
   q_memory: "¡Encuentra las parejas!", q_odd: "¿Cuál es diferente?", q_shadow: "¿De quién es esta sombra?", q_count: "¿Cuántos ves?",
+  g_find: "¿Dónde está?", g_colors: "Colores", g_bubbles: "Burbujas", g_music: "Música", g_pattern: "¿Qué sigue?",
+  q_find: "¿Dónde está {n}?", q_colors: "¿Dónde está el color {c}?", q_bubbles: "¡Revienta las burbujas!", q_music: "¡Toca y haz música!", q_pattern: "¿Qué sigue?",
+  colors: { red: "rojo", yellow: "amarillo", blue: "azul", green: "verde", pink: "rosa", white: "blanco", orange: "naranja" },
+  copy_me: "¡Imítame!", your_turn: "¡Ahora tú!", listen: "Escucha…",
   memory_done: "¡Encontraste todas las parejas!", again: "Otra vez", pairs: "parejas",
   praise: ["¡Muy bien!", "¡Súper!", "¡Bravo!", "¡Genial!"],
   say_again: "Repetir", sound: "Sonido sí/no",
@@ -536,6 +567,10 @@ pt: {
   play_title: "Jogos e charadas", play_text: "Joguinhos para mãozinhas – não precisa saber ler. É só tocar!",
   g_memory: "Memória", g_odd: "O diferente", g_shadow: "Sombras", g_count: "Contar",
   q_memory: "Encontre os pares!", q_odd: "Qual é diferente?", q_shadow: "De quem é esta sombra?", q_count: "Quantos você vê?",
+  g_find: "Onde está?", g_colors: "Cores", g_bubbles: "Bolhas", g_music: "Música", g_pattern: "O que vem?",
+  q_find: "Onde está {n}?", q_colors: "Onde está a cor {c}?", q_bubbles: "Estoure as bolhas!", q_music: "Toque e faça música!", q_pattern: "O que vem depois?",
+  colors: { red: "vermelha", yellow: "amarela", blue: "azul", green: "verde", pink: "rosa", white: "branca", orange: "laranja" },
+  copy_me: "Me imite!", your_turn: "Agora é você!", listen: "Escute…",
   memory_done: "Você achou todos os pares!", again: "De novo", pairs: "pares",
   praise: ["Muito bem!", "Super!", "Oba!", "Parabéns!"],
   say_again: "Repetir", sound: "Som liga/desliga",
@@ -580,6 +615,10 @@ tr: {
   play_title: "Oyunlar ve bilmeceler", play_text: "Küçük eller için küçük oyunlar – okumaya gerek yok. Sadece dokun!",
   g_memory: "Hafıza", g_odd: "Hangisi farklı", g_shadow: "Gölgeler", g_count: "Sayalım",
   q_memory: "Eşleri bul!", q_odd: "Hangisi farklı?", q_shadow: "Bu gölge kimin?", q_count: "Kaç tane görüyorsun?",
+  g_find: "Nerede?", g_colors: "Renkler", g_bubbles: "Baloncuk", g_music: "Müzik", g_pattern: "Sırada ne?",
+  q_find: "{n} nerede?", q_colors: "Hangisi {c}?", q_bubbles: "Baloncukları patlat!", q_music: "Dokun ve müzik yap!", q_pattern: "Sırada ne var?",
+  colors: { red: "kırmızı", yellow: "sarı", blue: "mavi", green: "yeşil", pink: "pembe", white: "beyaz", orange: "turuncu" },
+  copy_me: "Beni taklit et!", your_turn: "Şimdi sen!", listen: "Dinle…",
   memory_done: "Bütün eşleri buldun!", again: "Tekrar", pairs: "eş",
   praise: ["Aferin!", "Süper!", "Yaşasın!", "Harika!"],
   say_again: "Tekrar söyle", sound: "Ses aç/kapat",
@@ -624,6 +663,10 @@ ar: {
   play_title: "ألعاب وألغاز", play_text: "ألعاب صغيرة للأيدي الصغيرة، بلا حاجة إلى القراءة. المسْ فقط!",
   g_memory: "الذاكرة", g_odd: "المختلف", g_shadow: "الظلال", g_count: "العدّ",
   q_memory: "جِدِ الأزواج المتشابهة!", q_odd: "أيُّها مختلف؟", q_shadow: "ظِلُّ مَن هذا؟", q_count: "كم واحدًا ترى؟",
+  g_find: "أين؟", g_colors: "الألوان", g_bubbles: "الفقاعات", g_music: "موسيقى", g_pattern: "ماذا بعد؟",
+  q_find: "أين {n}؟", q_colors: "أين اللون {c}؟", q_bubbles: "فرقِعِ الفقاعات!", q_music: "المسْ واصنعْ موسيقى!", q_pattern: "ماذا يأتي بعد ذلك؟",
+  colors: { red: "الأحمر", yellow: "الأصفر", blue: "الأزرق", green: "الأخضر", pink: "الوردي", white: "الأبيض", orange: "البرتقالي" },
+  copy_me: "قلِّدْني!", your_turn: "دورُك!", listen: "استمعْ…",
   memory_done: "وجدتَ كل الأزواج!", again: "مرة أخرى", pairs: "أزواج",
   praise: ["أحسنت!", "رائع!", "ممتاز!", "برافو!"],
   say_again: "أعِدْ", sound: "الصوت",
@@ -838,23 +881,29 @@ const stage = $("#gameStage"), promptEl = $("#gamePrompt");
 let stars = store.get("stars", 0);
 const addStar = () => { stars++; store.set("stars", stars); $("#starCount").textContent = num(stars); };
 
+// talk: the question changes every round, so it is spoken on every round once the child has started playing
 const GAMES = [
-  { id: "memory", icon: "bailabu_bear", label: "g_memory", q: "q_memory", start: startMemory },
-  { id: "odd",    icon: "banana",       label: "g_odd",    q: "q_odd",    start: startOdd },
-  { id: "shadow", icon: "afacan",       label: "g_shadow", q: "q_shadow", start: startShadow, silhouette: true },
-  { id: "count",  icon: "strawberry",   label: "g_count",  q: "q_count",  start: startCount },
+  { id: "memory",  icon: "kuku",         label: "g_memory",  q: "q_memory",  start: startMemory },
+  { id: "odd",     icon: "banana",       label: "g_odd",     q: "q_odd",     start: startOdd },
+  { id: "shadow",  icon: "afacan",       label: "g_shadow",  q: "q_shadow",  start: startShadow, silhouette: true },
+  { id: "count",   icon: "strawberry",   label: "g_count",   q: "q_count",   start: startCount },
+  { id: "find",    icon: "paytak",       label: "g_find",    q: "q_find",    start: startFind, talk: true },
+  { id: "colors",  icon: "ball_blue",    label: "g_colors",  q: "q_colors",  start: startColors, talk: true },
+  { id: "bubbles", icon: "minik_balik",  label: "g_bubbles", q: "q_bubbles", start: startBubbles },
+  { id: "music",   icon: "bailabu_bear", label: "g_music",   q: "q_music",   start: startMusic },
+  { id: "pattern", icon: "star_yellow",  label: "g_pattern", q: "q_pattern", start: startPattern },
 ];
 const game = {
-  cur: GAMES[0], timers: [],
+  cur: GAMES[0], timers: [], active: false,
   later(fn, ms) { this.timers.push(setTimeout(fn, ms)); },
   clear() { this.timers.forEach(clearTimeout); this.timers = []; },
-  select(g, speak) { this.cur = g; renderTabs(); this.restart(speak); },
+  select(g, speak) { this.cur = g; this.active = true; renderTabs(); this.restart(speak); },
   restart(speak) {
     this.clear(); stage.innerHTML = "";
-    promptEl.textContent = t(this.cur.q);
     $("#starCount").textContent = num(stars);
-    this.cur.start();
-    if (speak) say(t(this.cur.q));
+    const q = this.cur.start() || t(this.cur.q);
+    promptEl.textContent = q;
+    if (speak || (this.cur.talk && this.active)) say(q);
   },
 };
 function renderTabs() {
@@ -876,7 +925,7 @@ function renderSound() {
 }
 $("#soundBtn").addEventListener("click", () => { soundOn = !soundOn; store.set("sound", soundOn); if (!soundOn && "speechSynthesis" in window) speechSynthesis.cancel(); renderSound(); });
 
-function win(node) { addStar(); sfx("ding"); praise(stage); if (node) retrigger(node, "wiggle"); }
+function win(node) { game.active = true; addStar(); sfx("ding"); praise(stage); if (node) retrigger(node, "wiggle"); }
 function oops(node) { sfx("tick"); retrigger(node, "shake"); }
 function tile(id, extra = "") {
   const b = el("button", `relative grid place-items-center rounded-3xl bg-cream p-3 shadow-pop ring-4 ring-transparent hover:ring-sky/40 transition focus:outline-none focus-visible:ring-sky ${extra}`,
@@ -1022,6 +1071,195 @@ function startCount() {
     answers.appendChild(b);
   });
   stage.append(field, answers);
+}
+
+// 5) Where is …?
+let findRound = 0, lastFind = null;
+function startFind() {
+  const n = findRound < 3 ? 3 : 4;
+  const target = pick(CAST.filter(c => c.id !== lastFind)); lastFind = target.id;
+  const opts = shuffle([target, ...shuffle(CAST.filter(c => c !== target)).slice(0, n - 1)]);
+  const grid = el("div", `mx-auto grid gap-3 sm:gap-4 ${n === 3 ? "grid-cols-3 max-w-xl" : "grid-cols-2 sm:grid-cols-4 max-w-2xl"}`);
+  opts.forEach((c, i) => {
+    const b = tile(c.id, "aspect-square popin"); b.style.animationDelay = i * 80 + "ms";
+    b.addEventListener("click", () => {
+      if (grid.dataset.done) return;
+      if (c !== target) { oops(b); say(castName(c)); return; }   // wrong tap still teaches the name
+      grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light"); win(b);
+      game.later(() => sfx(c.sfx), 300);
+      game.later(() => say(`${t("hello")}, ${castName(c)}!`), 700);
+      findRound++; game.later(() => game.restart(), 2400);
+    });
+    grid.appendChild(b);
+  });
+  stage.appendChild(grid);
+  return t("q_find").replace("{n}", castName(target));
+}
+
+// 6) Colors
+const COLOR_OBJ = {
+  red: ["apple_red", "strawberry"], yellow: ["banana", "star_yellow", "paytak"], blue: ["ball_blue", "car_blue"],
+  green: ["pear_green", "afacan"], pink: ["flamingo_pink"], white: ["kitten_white", "pamuk"], orange: ["minik_balik", "kuku"],
+};
+const COLOR_HEX = { red: "#FF4B5C", yellow: "#FFD93B", blue: "#2F80ED", green: "#4CD964", pink: "#FF7EB6", white: "#FFFFFF", orange: "#FF9A2E" };
+const COLOR_NEAR = { red: ["orange", "pink"], orange: ["red", "yellow"], yellow: ["orange"], pink: ["red"] };   // never ask these side by side
+let colorRound = 0, lastColor = null;
+function startColors() {
+  const c = pick(Object.keys(COLOR_OBJ).filter(k => k !== lastColor)); lastColor = c;
+  const wrong = colorRound < 3 ? 2 : 3;
+  const others = shuffle(Object.keys(COLOR_OBJ).filter(k => k !== c && !(COLOR_NEAR[c] || []).includes(k))).slice(0, wrong).map(k => pick(COLOR_OBJ[k]));
+  const target = pick(COLOR_OBJ[c]), name = t("colors")[c];
+  const wrap = el("div", "flex flex-col items-center gap-5");
+  const blob = el("button", "w-20 h-20 sm:w-24 sm:h-24 rounded-full shadow-pop-lg ring-8 ring-sun-light outline outline-2 outline-ink/10 popin focus:outline-none focus-visible:ring-sky");
+  blob.type = "button"; blob.style.background = COLOR_HEX[c]; blob.setAttribute("aria-label", name);
+  blob.addEventListener("click", () => { retrigger(blob, "wiggle"); say(name); });
+  const grid = el("div", `grid gap-3 sm:gap-4 w-full ${wrong === 2 ? "grid-cols-3 max-w-xl" : "grid-cols-2 sm:grid-cols-4 max-w-2xl"}`);
+  shuffle([target, ...others]).forEach((id, i) => {
+    const b = tile(id, "aspect-square popin"); b.style.animationDelay = 120 + i * 80 + "ms";
+    b.addEventListener("click", () => {
+      if (grid.dataset.done) return;
+      if (id !== target) return oops(b);
+      grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light"); win(b); say(name);
+      colorRound++; game.later(() => game.restart(), 1900);
+    });
+    grid.appendChild(b);
+  });
+  wrap.append(blob, grid); stage.appendChild(wrap);
+  return t("q_colors").replace("{c}", name);
+}
+
+// 7) Bubbles: nothing to get wrong, a star every 10 pops
+function startBubbles() {
+  const field = el("div", "relative mx-auto max-w-3xl h-[22rem] sm:h-[26rem] rounded-[2rem] overflow-hidden");
+  field.style.background = "linear-gradient(180deg, #DDF3FF, #9EE0F7)";
+  const counter = el("div", "absolute top-3 end-3 z-10 rounded-full bg-white/90 px-4 py-1 font-display font-extrabold text-2xl shadow-pop", num(0));
+  counter.setAttribute("aria-live", "polite");
+  field.appendChild(counter);
+  const pool = Object.keys(OBJ);
+  let count = 0, first = 4;
+  const spawn = () => {
+    if (!field.isConnected) return;
+    if (field.querySelectorAll(".bubble:not(.popped)").length < 6) {
+      const id = pick(pool), size = Math.round(84 + Math.random() * 40);
+      const b = el("button", "bubble focus:outline-none focus-visible:ring-4 focus-visible:ring-sky", `<span>${img(id, "w-3/5 h-3/5 object-contain pointer-events-none")}</span>`);
+      b.type = "button"; b.setAttribute("aria-label", objName(id));
+      Object.assign(b.style, { width: size + "px", height: size + "px", left: `calc(${4 + Math.random() * 84}% - ${size / 2}px)` });
+      const dur = 6 + Math.random() * 3;
+      b.style.setProperty("--dur", dur.toFixed(1) + "s");
+      if (first > 0) { first--; b.style.animationDelay = `-${(dur * (.15 + first * .15)).toFixed(1)}s`; }   // the field starts full, not empty
+      b.firstElementChild.style.animationDelay = -Math.random() * 2 + "s";
+      if (reduceMotion) { b.style.bottom = "auto"; b.style.top = `${8 + Math.random() * 60}%`; }
+      b.addEventListener("animationend", e => { if (e.animationName === "rise") b.remove(); });
+      b.addEventListener("click", () => {
+        if (b.classList.contains("popped")) return;
+        b.style.transform = getComputedStyle(b).transform;   // freeze where it was hit
+        b.classList.add("popped"); sfx("pop"); say(objName(id));
+        count++; counter.textContent = num(count); retrigger(counter, "wiggle");
+        if (count % 10 === 0) { win(null); confetti(); }
+        setTimeout(() => b.remove(), 320);
+      });
+      field.appendChild(b);
+    }
+    game.later(spawn, reduceMotion ? 1400 : 750);
+  };
+  stage.appendChild(field); spawn();
+}
+
+// 8) Music: free play on six pads + "Copy me!" (Bailabu plays, the child repeats; grows from 2 to 5 notes)
+const NOTES = [261.63, 293.66, 329.63, 392.0, 440.0, 523.25];   // C major pentatonic + high C: every order sounds nice
+const PADS = [
+  { id: "afacan", c: "#4CD964" }, { id: "paytak", c: "#FFD93B" }, { id: "minik_balik", c: "#FF9A2E" },
+  { id: "renkli", c: "#FF6F91" }, { id: "balli", c: "#8E6CF0" }, { id: "findik", c: "#2EC4D6" },
+];
+let actx = null, copyLen = 2;
+function tone(f, dur = .7) {
+  if (!soundOn) return;
+  try {
+    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+    if (actx.state === "suspended") actx.resume();
+    const t0 = actx.currentTime, g = actx.createGain(), o = actx.createOscillator(), o2 = actx.createOscillator(), g2 = actx.createGain();
+    o.type = "sine"; o.frequency.value = f; o2.type = "sine"; o2.frequency.value = f * 4; g2.gain.value = .1;   // soft marimba-ish
+    g.gain.setValueAtTime(.0001, t0); g.gain.exponentialRampToValueAtTime(.32, t0 + .012); g.gain.exponentialRampToValueAtTime(.0001, t0 + dur);
+    o.connect(g); o2.connect(g2); g2.connect(g); g.connect(actx.destination);
+    [o, o2].forEach(x => { x.start(t0); x.stop(t0 + dur + .05); });
+  } catch {}
+}
+function startMusic() {
+  const wrap = el("div", "flex flex-col items-center gap-4");
+  const bear = el("div", "w-28 h-28 sm:w-36 sm:h-36", img("bailabu_bear", "w-full h-full object-contain"));
+  const pads = el("div", "grid grid-cols-3 sm:grid-cols-6 gap-3 w-full max-w-3xl");
+  const btns = PADS.map(p => {
+    const b = el("button", "pad relative aspect-square rounded-3xl p-2 shadow-pop-lg ring-4 ring-white/70 transition active:scale-95 focus:outline-none focus-visible:ring-sky",
+      img(p.id, "w-full h-full object-contain pointer-events-none"));
+    b.type = "button"; b.style.background = p.c; b.setAttribute("aria-label", objName(p.id));
+    pads.appendChild(b); return b;
+  });
+  const copyBtn = el("button", "rounded-full bg-violet px-6 py-3 font-extrabold text-lg text-white shadow-pop-lg hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-violet/40",
+    `<span aria-hidden="true">🎵</span> ${esc(t("copy_me"))}`);
+  copyBtn.type = "button";
+  let seq = null, pos = 0, busy = false;
+  const hit = i => {
+    tone(NOTES[i]); retrigger(btns[i], "wiggle"); retrigger(bear, "bop");
+    btns[i].classList.add("lit"); setTimeout(() => btns[i].classList.remove("lit"), 260);
+    const n = el("span", "note-fly", pick(["♪", "♫"])); btns[i].appendChild(n); setTimeout(() => n.remove(), 950);
+  };
+  const playSeq = () => {
+    busy = true; pos = 0; promptEl.textContent = t("listen");
+    seq.forEach((n, k) => game.later(() => hit(n), 700 + k * 650));
+    game.later(() => { busy = false; promptEl.textContent = t("your_turn"); say(t("your_turn")); }, 700 + seq.length * 650 + 150);
+  };
+  btns.forEach((b, i) => b.addEventListener("click", () => {
+    if (busy) return;
+    hit(i);
+    if (!seq) return;
+    if (i !== seq[pos]) { oops(b); game.later(playSeq, 700); return; }
+    if (++pos === seq.length) {
+      seq = null; copyLen = Math.min(5, copyLen + 1);
+      game.later(() => { win(bear); promptEl.textContent = t("q_music"); copyBtn.classList.remove("invisible"); }, 350);
+    }
+  }));
+  copyBtn.addEventListener("click", () => {
+    game.active = true;
+    seq = [Math.floor(Math.random() * 6)];
+    while (seq.length < copyLen) { const n = Math.floor(Math.random() * 6); if (n !== seq[seq.length - 1]) seq.push(n); }
+    copyBtn.classList.add("invisible"); say(t("listen")); playSeq();
+  });
+  wrap.append(bear, pads, copyBtn); stage.appendChild(wrap);
+}
+
+// 9) What comes next? AB first, then AAB / ABB, then ABC
+const PATTERN_POOL = ["apple_red", "banana", "star_yellow", "ball_blue", "strawberry", "pear_green", "afacan", "paytak", "minik_balik", "balli", "car_blue", "flamingo_pink"];
+let patRound = 0;
+function startPattern() {
+  const kind = pick(patRound < 3 ? ["AB"] : patRound < 6 ? ["AB", "AAB", "ABB"] : ["AAB", "ABB", "ABC"]);
+  const pool = shuffle(PATTERN_POOL), map = { A: pool[0], B: pool[1], C: pool[2] };
+  const unit = kind.split("").map(k => map[k]);
+  const len = unit.length === 2 ? 5 : 6;
+  const seqv = Array.from({ length: len }, (_, i) => unit[i % unit.length]);
+  const answer = seqv[len - 1];
+  const opts = shuffle([...new Set([answer, ...Object.values(map), pool[3]])].filter(x => x !== answer)).slice(0, 2);
+  const row = el("div", "flex flex-wrap justify-center items-center gap-1.5 sm:gap-3 rounded-[2rem] bg-sky-light p-4 sm:p-6 max-w-3xl mx-auto");
+  seqv.slice(0, -1).forEach((id, i) => {
+    const s = el("span", "block w-12 h-12 sm:w-20 sm:h-20 popin", img(id, "w-full h-full object-contain", objName(id)));
+    s.style.animationDelay = i * 110 + "ms"; row.appendChild(s);
+  });
+  const slot = el("span", "grid place-items-center w-14 h-14 sm:w-24 sm:h-24 rounded-2xl border-4 border-dashed border-sky bg-white font-display font-extrabold text-3xl sm:text-5xl text-sky-dark popin", "?");
+  slot.style.animationDelay = (len - 1) * 110 + "ms"; row.appendChild(slot);
+  const grid = el("div", "mt-5 mx-auto grid grid-cols-3 gap-3 sm:gap-4 max-w-md");
+  shuffle([answer, ...opts]).forEach((id, i) => {
+    const b = tile(id, "aspect-square popin"); b.style.animationDelay = 600 + i * 90 + "ms";
+    b.addEventListener("click", () => {
+      if (grid.dataset.done) return;
+      if (id !== answer) return oops(b);
+      grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light");
+      slot.className = "block w-14 h-14 sm:w-24 sm:h-24 rounded-2xl bg-leaf-light ring-4 ring-leaf p-1 popin"; slot.innerHTML = img(id, "w-full h-full object-contain");
+      win(slot); say(objName(id)); patRound++;
+      if (patRound % 5 === 0) game.later(() => { sfx("cheer"); confetti(); }, 400);
+      game.later(() => game.restart(), 2000);
+    });
+    grid.appendChild(b);
+  });
+  stage.append(row, grid);
 }
 
 /* ---------------- Story reader ---------------- */

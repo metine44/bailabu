@@ -7,7 +7,7 @@ One static `index.html` (semantic HTML5, Tailwind via CDN, vanilla JS), hosted o
 - **Language**: `?lang=xx` → saved choice → browser language (`navigator.languages`) → English. Arabic switches to RTL (font Baloo Bhaijaan 2, Eastern Arabic digits).
 - **Friends**: tap a character → wiggle, sound and spoken name.
 - **Songs**: cards link to a search on the channel of the visitor's language (falls back to the English channel while a channel is not live).
-- **Games & riddles** (no reading needed, prompts are spoken via the browser's speech synthesis): Memory (3/6 pairs), Odd one out, Whose shadow?, How many?
+- **Games & riddles** (no reading needed, prompts are spoken via the browser's speech synthesis): Memory (3/6 pairs), Odd one out, Whose shadow?, How many?, Where is …? (find the friend by name), Colors, Bubbles (pop, no way to fail), Music (6 pads, WebAudio pentatonic, "Copy me!" echo mode growing from 2 to 5 notes), What comes next? (AB → AAB/ABB → ABC patterns)
 - **Stories**: picture book reader "Memo & Tonton: The Strawberry Cake" with "Read to me", swipe/arrow keys and a counting page.
 - No cookies, no analytics, no ads. `localStorage` only keeps language, sound on/off, stars and memory size. Fonts are self-hosted.
 
