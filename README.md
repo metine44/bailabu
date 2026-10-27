@@ -6,7 +6,7 @@ One static `index.html` (semantic HTML5, Tailwind via CDN, vanilla JS), hosted o
 ## What's on the page
 - **Language**: `?lang=xx` → saved choice → browser language (`navigator.languages`) → English. Arabic switches to RTL (font Baloo Bhaijaan 2, Eastern Arabic digits).
 - **Friends**: tap a character → wiggle, sound and spoken name.
-- **Songs**: cards link to a search on the channel of the visitor's language (falls back to the English channel while a channel is not live).
+- **Songs**: songs that are online on the visitor's channel come first and link to a search on that channel (falls back to the English channel while a channel is not live); the rest show "Coming soon". Online on Tontiş Ada (2026-10-27): Minik Balık Kaç, Renkli Otobüs, Arı Vız Vız, Pat Pat Traktör, Parla Yıldız.
 - **Games & riddles** (no reading needed, prompts are spoken via the browser's speech synthesis): Memory (3/6 pairs), Odd one out, Whose shadow?, How many?, Where is …? (find the friend by name), Colors, Bubbles (pop, no way to fail), Music (6 pads, WebAudio pentatonic, "Copy me!" echo mode growing from 2 to 5 notes), What comes next? (AB → AAB/ABB → ABC patterns)
 - **Stories**: picture book reader "Memo & Tonton: The Strawberry Cake" with "Read to me", swipe/arrow keys and a counting page.
 - No cookies, no analytics, no ads. `localStorage` only keeps language, sound on/off, stars and memory size. Fonts are self-hosted.
@@ -14,6 +14,7 @@ One static `index.html` (semantic HTML5, Tailwind via CDN, vanilla JS), hosted o
 ## Editing
 - Texts: `T` object in `index.html` (one block per language). Characters: `CAST`, songs: `SONGS`, channels: `CHANNELS`.
 - **When a channel launches**: set `live: true` for it in `CHANNELS`.
+- **When a video goes public**: add the channel code to the song's `live` list in `SONGS` (new song: add an entry + a `song` line in `tools/build_assets.sh` for its card image). Rule in `C:\Youtube\CLAUDE.md` → "Website sync".
 - New story: add images to `assets/story/` and the page texts to `story` in every language.
 - Assets are built from the YouTube project folders: `bash tools/build_assets.sh` (needs ffmpeg + uv).
 

@@ -24,6 +24,7 @@ song "Ari Viz Viz/images/final/I03.png"           bibi
 song "Ali Babanin Ciftligi/images/final/I03.png"  tractor
 song "Parla Yildiz/images/final/I01.png"          lumi
 song "Ciftlikte Uyku Vakti/images/final/I03.png"  sleepy
+song "Minik Balik/Bilder/V2/N05_Flucht_mit_Schwarm_v1.png" minik
 
 # story: Memo & Tonton E01 (raw 3:2 → 16:9), newest variant wins
 R="$Y/Memo ve Tonton/episodes/E01_Cilekli_Pasta/images/raw"

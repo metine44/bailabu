@@ -394,13 +394,15 @@ const OBJ = {
 CAST.forEach(c => { if (c.id !== "renkli") OBJ[c.id] = { kind: "animal", cast: c }; });
 OBJ.renkli = { kind: "toy", cast: CAST.find(c => c.id === "renkli") };
 
+// live: channel codes where the song is online (cards elsewhere show "Coming soon"). Add the code when a video goes public.
 const SONGS = [
+  { id: "minik",   tag: "singalong", live: ["tr"], t: { en: "Blub, the Little Fish", es: "Blub, el Pececito", de: "Blub, der kleine Fisch", pt: "Blub, o Peixinho", ar: "بلوب السمكة الصغيرة", tr: "Minik Balık Kaç" } },
   { id: "kiko",    tag: "dance",     t: { en: "Kiko the Little Frog", es: "La Ranita Kiko", de: "Kiko, der kleine Frosch", pt: "Kiko, o Sapinho", ar: "كيكو الضفدع الصغير", tr: "Küçük Kurbağa" } },
-  { id: "rolly",   tag: "singalong", t: { en: "Rolly the Rainbow Bus", es: "Rolly, el Autobús Arcoíris", de: "Rolly, der Regenbogenbus", pt: "Rolly, o Ônibus Arco-Íris", ar: "رولي الباص الملوّن", tr: "Renkli Otobüs" } },
+  { id: "rolly",   tag: "singalong", live: ["tr"], t: { en: "Rolly the Rainbow Bus", es: "Rolly, el Autobús Arcoíris", de: "Rolly, der Regenbogenbus", pt: "Rolly, o Ônibus Arco-Íris", ar: "رولي الباص الملوّن", tr: "Renkli Otobüs" } },
   { id: "ducks",   tag: "counting",  t: { en: "Five Little Ducks", es: "Cinco Patitos", de: "Fünf kleine Entchen", pt: "Cinco Patinhos", ar: "خمس بطّات صغيرة", tr: "Beş Küçük Ördek" } },
-  { id: "bibi",    tag: "colors",    t: { en: "Bibi the Busy Bee", es: "La Abejita Bibi", de: "Biene Bibi summt", pt: "A Abelhinha Bibi", ar: "النحلة بيبي", tr: "Arı Vız Vız" } },
-  { id: "tractor", tag: "farm",      t: { en: "Putt Putt, Look at the Tractor!", es: "¡Put Put, Mira el Tractor!", de: "Tuck Tuck, schau, der Traktor!", pt: "Tuc Tuc, Olha o Trator!", ar: "تُكْ تُكْ، انظرْ إلى الجرّار!", tr: "Pat Pat Traktör" } },
-  { id: "lumi",    tag: "lullaby",   t: { en: "Lumi, the Little Star", es: "Lumi, la Estrellita", de: "Lumi, das kleine Sternchen", pt: "Lumi, a Estrelinha", ar: "لومي النجمة الصغيرة", tr: "Parla Yıldız" } },
+  { id: "bibi",    tag: "colors",    live: ["tr"], t: { en: "Bibi the Busy Bee", es: "La Abejita Bibi", de: "Biene Bibi summt", pt: "A Abelhinha Bibi", ar: "النحلة بيبي", tr: "Arı Vız Vız" } },
+  { id: "tractor", tag: "farm",      live: ["tr"], t: { en: "Putt Putt, Look at the Tractor!", es: "¡Put Put, Mira el Tractor!", de: "Tuck Tuck, schau, der Traktor!", pt: "Tuc Tuc, Olha o Trator!", ar: "تُكْ تُكْ، انظرْ إلى الجرّار!", tr: "Pat Pat Traktör" } },
+  { id: "lumi",    tag: "lullaby",   live: ["tr"], t: { en: "Lumi, the Little Star", es: "Lumi, la Estrellita", de: "Lumi, das kleine Sternchen", pt: "Lumi, a Estrelinha", ar: "لومي النجمة الصغيرة", tr: "Parla Yıldız" } },
   { id: "sleepy",  tag: "lullaby",   t: { en: "Sleepy Time on the Farm", es: "Hora de Dormir en la Granja", de: "Schlafenszeit auf dem Bauernhof", pt: "Hora de Dormir na Fazenda", ar: "وقتُ النوم في المزرعة", tr: "Çiftlikte Uyku Vakti" } },
 ];
 const TAG_COLOR = { dance: "bg-leaf", singalong: "bg-coral", counting: "bg-sky", colors: "bg-violet", farm: "bg-tangerine", lullaby: "bg-ink" };
@@ -832,23 +834,27 @@ function renderFriends() {
 function renderSongs() {
   const ul = $("#songsGrid"); ul.innerHTML = "";
   const ch = channelFor(lang);
-  SONGS.forEach(s => {
+  const isLive = s => (s.live || []).includes(ch.code);
+  [...SONGS.filter(isLive), ...SONGS.filter(s => !isLive(s))].forEach(s => {
+    const live = isLive(s);
     const title = s.t[ch.code] || s.t.en;
     const href = `https://www.youtube.com/@${ch.handle}/search?query=${encodeURIComponent(title)}`;
-    const li = el("li", "group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition",
-      `<a href="${href}" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+    const body = `
         <span class="relative block overflow-hidden">
-          <img src="assets/songs/${s.id}.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <img src="assets/songs/${s.id}.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover ${live ? "group-hover:scale-105 transition duration-300" : "opacity-80"}">
           <span class="absolute top-3 start-3 rounded-full ${TAG_COLOR[s.tag]} px-3 py-1 text-sm font-extrabold text-white shadow-pop">${esc(t("tag_" + s.tag))}</span>
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+          ${live ? `<span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-          </span>
+          </span>` : ""}
         </span>
         <span class="flex items-center gap-3 p-4">
           <span class="font-display font-extrabold text-xl leading-tight">${esc(s.t[lang] || s.t.en)}</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">${esc(t("watch"))}</span>
-        </span>
-      </a>`);
+          ${live ? `<span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">${esc(t("watch"))}</span>`
+                 : `<span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">${esc(t("soon"))}</span>`}
+        </span>`;
+    const li = el("li", `group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white ${live ? "hover:ring-sky/40 transition" : ""}`,
+      live ? `<a href="${href}" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">${body}</a>`
+           : `<div>${body}</div>`);
     ul.appendChild(li);
   });
 }
