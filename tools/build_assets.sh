@@ -3,7 +3,7 @@
 set -euo pipefail
 Y=/c/Youtube
 A="$(cd "$(dirname "$0")/.." && pwd)/assets"
-mkdir -p "$A"/{brand,songs,story,chars,sfx,fonts}
+mkdir -p "$A"/{brand,songs,story,chars,sfx,fonts,print}
 ff() { ffmpeg -v error -y "$@"; }
 
 # brand
@@ -39,6 +39,17 @@ done
 for c in afacan balli bailabu_bear findik kuku minik_balik pamuk paytak renkli apple_red banana pear_green strawberry star_yellow ball_blue car_blue elephant flamingo_pink kitten_white turtle_green; do
   ff -i "$Y/Quiz/assets/objects/cut/$c.png" -vf "scale=360:360:force_original_aspect_ratio=decrease:flags=lanczos" -c:v libwebp -quality 82 -pix_fmt yuva420p "$A/chars/$c.webp"
 done
+
+# coloring pages (printables): English edition for every language for now; full 300-dpi PNG + small preview + one zip
+P="$Y/_shared/printables/en"
+mkdir -p "$A/print"
+rm -f "$A/print"/*
+for f in "$P"/*_lineart.png; do
+  n=$(basename "$f" _lineart.png)
+  cp "$f" "$A/print/bailabu-coloring-$n.png"
+  ff -i "$f" -vf "scale=320:-2:flags=lanczos" -c:v libwebp -quality 80 "$A/print/$n.webp"
+done
+(cd "$A/print" && rm -f bailabu-coloring-pages.zip && python -c "import zipfile,glob; z=zipfile.ZipFile('bailabu-coloring-pages.zip','w',zipfile.ZIP_STORED); [z.write(f) for f in sorted(glob.glob('bailabu-coloring-*.png'))]")
 
 # sfx (locally synthesized, Quiz/scripts/make_sfx.py)
 for s in ding pop cheer confetti quack honk buzz blub swish tick; do
