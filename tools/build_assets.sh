@@ -41,7 +41,7 @@ for c in afacan balli bailabu_bear findik kuku minik_balik pamuk paytak renkli a
   ff -i "$Y/Quiz/assets/objects/cut/$c.png" -vf "scale=360:360:force_original_aspect_ratio=decrease:flags=lanczos" -c:v libwebp -quality 82 -pix_fmt yuva420p "$A/chars/$c.webp"
 done
 
-# coloring pages (printables): English edition for every language for now; full 300-dpi PNG + small preview + one zip
+# coloring pages (printables): English edition for every language for now; full 300-dpi PNG (download + big preview) + small grid preview
 P="$Y/_shared/printables/en"
 mkdir -p "$A/print"
 rm -f "$A/print"/*
@@ -50,7 +50,6 @@ for f in "$P"/*_lineart.png; do
   cp "$f" "$A/print/bailabu-coloring-$n.png"
   ff -i "$f" -vf "scale=320:-2:flags=lanczos" -c:v libwebp -quality 80 "$A/print/$n.webp"
 done
-(cd "$A/print" && rm -f bailabu-coloring-pages.zip && python -c "import zipfile,glob; z=zipfile.ZipFile('bailabu-coloring-pages.zip','w',zipfile.ZIP_STORED); [z.write(f) for f in sorted(glob.glob('bailabu-coloring-*.png'))]")
 
 # sfx (locally synthesized, Quiz/scripts/make_sfx.py)
 for s in ding pop cheer confetti quack honk buzz blub swish tick; do

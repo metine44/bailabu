@@ -283,10 +283,7 @@
     <div class="text-center">
       <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="coloring_title">Coloring pages</h2>
       <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="coloring_text">Print, grab your crayons and color in your island friends!</p>
-      <a href="assets/print/bailabu-coloring-pages.zip" download class="mt-5 inline-flex items-center gap-2 rounded-full bg-violet px-6 py-3 text-lg font-extrabold text-white shadow-pop hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-violet/50">
-        <span aria-hidden="true">⬇️</span><span data-i18n="coloring_all">Download all (35 pages)</span>
-      </a>
-      <p class="mt-2 text-sm font-semibold text-ink/60" data-i18n="coloring_hint">PNG, 300 dpi – print on A4 or Letter. Free for use at home, in daycare and in kindergarten.</p>
+      <p class="mt-1 text-sm font-semibold text-ink/60" data-i18n="coloring_hint">PNG, 300 dpi – print on A4 or Letter. Free for use at home, in daycare and in kindergarten.</p>
     </div>
     <ul id="coloringGrid" class="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"></ul>
   </div>
@@ -352,6 +349,21 @@
       <button id="storyRead" type="button" class="rounded-full bg-sky-light px-4 py-2.5 font-extrabold focus:outline-none focus-visible:ring-4 focus-visible:ring-sky" aria-pressed="false"><span aria-hidden="true">🔊</span> <span id="storyReadLbl" data-i18n="read_to_me">Read to me</span></button>
       <button id="storyNext" type="button" class="rounded-full bg-coral px-5 py-2.5 font-extrabold text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-coral/50" data-i18n="next">Next</button>
     </div>
+  </div>
+</dialog>
+
+<dialog id="printDlg" class="w-[min(100vw-1rem,34rem)] max-h-[calc(100dvh-1rem)] rounded-[2rem] p-0 bg-white text-ink shadow-2xl" aria-labelledby="printName">
+  <div class="relative bg-white p-4 pb-0">
+    <img id="printImg" alt="" width="2160" height="2700" class="mx-auto w-auto max-w-full h-[min(70dvh,40rem)] object-contain">
+    <button id="printClose" type="button" class="absolute top-3 end-3 rounded-full bg-white/90 p-2.5 shadow-pop focus:outline-none focus-visible:ring-4 focus-visible:ring-violet" data-i18n-aria="close" aria-label="Close">
+      <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="flex items-center justify-between gap-3 p-4 md:px-6">
+    <h2 id="printName" class="font-display font-extrabold text-2xl" dir="ltr"></h2>
+    <a id="printDl" download class="inline-flex items-center gap-2 rounded-full bg-violet px-5 py-2.5 text-lg font-extrabold text-white shadow-pop hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-violet/50">
+      <span aria-hidden="true">⬇</span><span data-i18n="coloring_dl">Download</span>
+    </a>
   </div>
 </dialog>
 
@@ -444,7 +456,7 @@ en: {
   desc: "Happy sing-along songs, little games and picture stories for toddlers and preschoolers (ages 1–5) with Bailabu the bear and his island friends.",
   skip: "Skip to content", menu: "Menu", island: "Island",
   nav_songs: "Songs", nav_play: "Games", nav_stories: "Stories", nav_channels: "Channels",
-  nav_coloring: "Coloring", coloring_title: "Coloring pages", coloring_text: "Print, grab your crayons and color in your island friends!", coloring_all: "Download all (35 pages)", coloring_hint: "PNG, 300 dpi – print on A4 or Letter. Free for use at home, in daycare and in kindergarten.", coloring_dl: "Download",
+  nav_coloring: "Coloring", coloring_title: "Coloring pages", coloring_text: "Print, grab your crayons and color in your island friends!", coloring_hint: "PNG, 300 dpi – print on A4 or Letter. Free for use at home, in daycare and in kindergarten.", coloring_dl: "Download",
   kicker: "Kids songs · games · stories",
   hero_title: "Sing, dance & play on Bailabu Island!",
   hero_text: "Happy sing-along songs, little games and picture stories for toddlers and preschoolers (ages 1–5) – with Bailabu the bear and all his island friends.",
@@ -493,7 +505,7 @@ de: {
   desc: "Fröhliche Mitsinglieder, kleine Spiele und Bildergeschichten für Kinder von 1 bis 5 Jahren – mit Bailabu, dem Bären, und seinen Inselfreunden.",
   skip: "Zum Inhalt springen", menu: "Menü", island: "Insel",
   nav_songs: "Lieder", nav_play: "Spiele", nav_stories: "Geschichten", nav_channels: "Kanäle",
-  nav_coloring: "Malen", coloring_title: "Malvorlagen", coloring_text: "Ausdrucken, Stifte schnappen und die Inselfreunde bunt anmalen!", coloring_all: "Alle herunterladen (35 Seiten)", coloring_hint: "PNG, 300 dpi – auf A4 drucken. Kostenlos für zu Hause, Kita und Kindergarten.", coloring_dl: "Herunterladen",
+  nav_coloring: "Malen", coloring_title: "Malvorlagen", coloring_text: "Ausdrucken, Stifte schnappen und die Inselfreunde bunt anmalen!", coloring_hint: "PNG, 300 dpi – auf A4 drucken. Kostenlos für zu Hause, Kita und Kindergarten.", coloring_dl: "Herunterladen",
   kicker: "Kinderlieder · Spiele · Geschichten",
   hero_title: "Singen, tanzen & spielen auf der Bailabu-Insel!",
   hero_text: "Fröhliche Mitsinglieder, kleine Spiele und Bildergeschichten für Kinder von 1 bis 5 Jahren – mit Bailabu, dem Bären, und all seinen Freunden von der Insel.",
@@ -542,7 +554,7 @@ es: {
   desc: "Canciones alegres para cantar, juegos sencillos y cuentos ilustrados para niños de 1 a 5 años, con el osito Bailabú y sus amigos de la isla.",
   skip: "Ir al contenido", menu: "Menú", island: "Isla",
   nav_songs: "Canciones", nav_play: "Juegos", nav_stories: "Cuentos", nav_channels: "Canales",
-  nav_coloring: "Colorear", coloring_title: "Dibujos para colorear", coloring_text: "¡Imprime, toma tus crayones y colorea a tus amigos de la isla!", coloring_all: "Descargar todo (35 páginas)", coloring_hint: "PNG, 300 dpi – imprime en A4 o carta. Gratis para casa, guardería y preescolar.", coloring_dl: "Descargar",
+  nav_coloring: "Colorear", coloring_title: "Dibujos para colorear", coloring_text: "¡Imprime, toma tus crayones y colorea a tus amigos de la isla!", coloring_hint: "PNG, 300 dpi – imprime en A4 o carta. Gratis para casa, guardería y preescolar.", coloring_dl: "Descargar",
   kicker: "Canciones infantiles · juegos · cuentos",
   hero_title: "¡Canta, baila y juega en la Isla Bailabú!",
   hero_text: "Canciones alegres para cantar, juegos sencillos y cuentos ilustrados para niños de 1 a 5 años, con el osito Bailabú y todos sus amigos de la isla.",
@@ -591,7 +603,7 @@ pt: {
   desc: "Músicas alegres para cantar junto, joguinhos e histórias ilustradas para crianças de 1 a 5 anos, com o ursinho Bailabu e os amigos da ilha.",
   skip: "Ir para o conteúdo", menu: "Menu", island: "Ilha",
   nav_songs: "Músicas", nav_play: "Jogos", nav_stories: "Histórias", nav_channels: "Canais",
-  nav_coloring: "Colorir", coloring_title: "Desenhos para colorir", coloring_text: "Imprima, pegue seus gizes de cera e pinte seus amigos da ilha!", coloring_all: "Baixar tudo (35 páginas)", coloring_hint: "PNG, 300 dpi – imprima em A4. Grátis para usar em casa, na creche e na pré-escola.", coloring_dl: "Baixar",
+  nav_coloring: "Colorir", coloring_title: "Desenhos para colorir", coloring_text: "Imprima, pegue seus gizes de cera e pinte seus amigos da ilha!", coloring_hint: "PNG, 300 dpi – imprima em A4. Grátis para usar em casa, na creche e na pré-escola.", coloring_dl: "Baixar",
   kicker: "Músicas infantis · jogos · histórias",
   hero_title: "Cante, dance e brinque na Ilha Bailabu!",
   hero_text: "Músicas alegres para cantar junto, joguinhos e histórias ilustradas para crianças de 1 a 5 anos, com o ursinho Bailabu e todos os amigos da ilha.",
@@ -640,7 +652,7 @@ tr: {
   desc: "1–5 yaş için neşeli şarkılar, küçük oyunlar ve resimli hikâyeler – Bailabu ayıcık ve adanın tüm arkadaşlarıyla.",
   skip: "İçeriğe geç", menu: "Menü", island: "Tontiş Ada",
   nav_songs: "Şarkılar", nav_play: "Oyunlar", nav_stories: "Hikâyeler", nav_channels: "Kanallar",
-  nav_coloring: "Boyama", coloring_title: "Boyama sayfaları", coloring_text: "Yazdır, boya kalemlerini al ve ada arkadaşlarını boya!", coloring_all: "Hepsini indir (35 sayfa)", coloring_hint: "PNG, 300 dpi – A4 kâğıda yazdır. Evde, kreşte ve anaokulunda ücretsiz kullanılabilir.", coloring_dl: "İndir",
+  nav_coloring: "Boyama", coloring_title: "Boyama sayfaları", coloring_text: "Yazdır, boya kalemlerini al ve ada arkadaşlarını boya!", coloring_hint: "PNG, 300 dpi – A4 kâğıda yazdır. Evde, kreşte ve anaokulunda ücretsiz kullanılabilir.", coloring_dl: "İndir",
   kicker: "Çocuk şarkıları · oyunlar · hikâyeler",
   hero_title: "Tontiş Ada'da şarkı söyle, dans et ve oyna!",
   hero_text: "1–5 yaş için neşeli şarkılar, küçük oyunlar ve resimli hikâyeler – Bailabu ayıcık ve adanın tüm arkadaşlarıyla birlikte.",
@@ -689,7 +701,7 @@ ar: {
   desc: "أغانٍ مرحة للغناء معًا، وألعاب صغيرة، وقصص مصوّرة للأطفال من سنة إلى خمس سنوات، مع الدبدوب بايلابو وأصدقائه في الجزيرة.",
   skip: "انتقل إلى المحتوى", menu: "القائمة", island: "جزيرة",
   nav_songs: "أغانٍ", nav_play: "ألعاب", nav_stories: "قصص", nav_channels: "القنوات",
-  nav_coloring: "تلوين", coloring_title: "صفحات التلوين", coloring_text: "اطبعْ، وأمسكْ ألوانك، ولوّنْ أصدقاءك في الجزيرة!", coloring_all: "تنزيل الكل (٣٥ صفحة)", coloring_hint: "PNG بدقة ٣٠٠ نقطة – للطباعة على ورق A4. مجانًا للاستخدام في البيت والحضانة والروضة.", coloring_dl: "تنزيل",
+  nav_coloring: "تلوين", coloring_title: "صفحات التلوين", coloring_text: "اطبعْ، وأمسكْ ألوانك، ولوّنْ أصدقاءك في الجزيرة!", coloring_hint: "PNG بدقة ٣٠٠ نقطة – للطباعة على ورق A4. مجانًا للاستخدام في البيت والحضانة والروضة.", coloring_dl: "تنزيل",
   kicker: "أغاني أطفال · ألعاب · قصص",
   hero_title: "غنِّ وارقصْ والعبْ في جزيرة بايلابو!",
   hero_text: "أغانٍ مرحة للغناء معًا، وألعاب صغيرة، وقصص مصوّرة للأطفال من سنة إلى خمس سنوات، مع الدبدوب بايلابو وكل أصدقائه في الجزيرة.",
@@ -871,16 +883,24 @@ function renderColoring() {
   const ul = $("#coloringGrid"); ul.innerHTML = "";
   PRINTS.forEach(([id, name]) => {
     const li = el("li");
-    li.appendChild(el("a", "group block rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet",
+    const b = el("button", "group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet",
       `<img src="assets/print/${id}.webp" alt="" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 flex items-center justify-between gap-2"><span class="font-extrabold leading-tight" dir="ltr">${esc(name)}</span><span class="shrink-0 rounded-full bg-violet-light px-2.5 py-1 text-sm font-extrabold text-violet" aria-hidden="true">⬇</span></span>`));
-    const a = li.firstChild;
-    a.href = `assets/print/bailabu-coloring-${id}.png`;
-    a.setAttribute("download", "");
-    a.setAttribute("aria-label", `${t("coloring_dl")}: ${name}`);
-    ul.appendChild(li);
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">${esc(name)}</span>`);
+    b.type = "button";
+    b.addEventListener("click", () => openPrint(id, name));
+    li.appendChild(b); ul.appendChild(li);
   });
 }
+const printDlg = $("#printDlg");
+function openPrint(id, name) {
+  const src = `assets/print/bailabu-coloring-${id}.png`;
+  $("#printImg").src = src;
+  $("#printName").textContent = name;
+  $("#printDl").href = src;
+  printDlg.showModal();
+}
+$("#printClose").addEventListener("click", () => printDlg.close());
+printDlg.addEventListener("click", e => { if (e.target === printDlg) printDlg.close(); });
 function renderSongs() {
   const ul = $("#songsGrid"); ul.innerHTML = "";
   const ch = channelFor(lang);
