@@ -222,9 +222,6 @@
     <div class="mt-8 rounded-[2rem] bg-white shadow-pop-lg ring-4 ring-sun/60 overflow-hidden">
       <div id="gameTabs" role="tablist" class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-1.5 sm:gap-2 p-2 sm:p-3 bg-sun/30"></div>
       <div class="flex items-center gap-2 px-4 pt-4">
-        <button id="sayAgain" type="button" class="shrink-0 rounded-full bg-sky-light p-2.5 hover:bg-sky/25 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" data-i18n-aria="say_again" aria-label="Say it again">
-          <svg viewBox="0 0 24 24" class="w-6 h-6 text-sky-dark" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
-        </button>
         <p id="gamePrompt" class="font-display font-extrabold text-2xl md:text-3xl leading-tight" aria-live="polite"></p>
         <div class="ms-auto flex items-center gap-2">
           <span class="inline-flex items-center gap-1 rounded-full bg-sun-light px-3 py-1.5 font-extrabold" aria-live="polite"><span aria-hidden="true">⭐</span><span id="starCount">0</span></span>
@@ -474,7 +471,7 @@ en: {
   copy_me: "Copy me!", your_turn: "Your turn!", listen: "Listen…",
   memory_done: "You found all the pairs!", again: "Play again", pairs: "pairs",
   praise: ["Great job!", "Super!", "Yay!", "Well done!"],
-  say_again: "Say it again", sound: "Sound on/off",
+  sound: "Sound on/off",
   stories_title: "Picture stories", stories_text: "Read together, count together, laugh together.",
   open_book: "Open the book", story1_title: "Memo & Tonton: The Strawberry Cake",
   story1_text: "Memo and his teddy Tonton decorate a cake – with cream, counting and a little surprise on Tonton's nose.",
@@ -523,7 +520,7 @@ de: {
   copy_me: "Mach mir nach!", your_turn: "Jetzt du!", listen: "Hör zu …",
   memory_done: "Du hast alle Paare gefunden!", again: "Nochmal", pairs: "Paare",
   praise: ["Super!", "Toll gemacht!", "Juhu!", "Prima!"],
-  say_again: "Nochmal sagen", sound: "Ton an/aus",
+  sound: "Ton an/aus",
   stories_title: "Bildergeschichten", stories_text: "Zusammen lesen, zusammen zählen, zusammen lachen.",
   open_book: "Buch öffnen", story1_title: "Memo & Tonton: Die Erdbeertorte",
   story1_text: "Memo und sein Teddy Tonton verzieren eine Torte – mit Sahne, Zählen und einer kleinen Überraschung auf Tontons Nase.",
@@ -572,7 +569,7 @@ es: {
   copy_me: "¡Imítame!", your_turn: "¡Ahora tú!", listen: "Escucha…",
   memory_done: "¡Encontraste todas las parejas!", again: "Otra vez", pairs: "parejas",
   praise: ["¡Muy bien!", "¡Súper!", "¡Bravo!", "¡Genial!"],
-  say_again: "Repetir", sound: "Sonido sí/no",
+  sound: "Sonido sí/no",
   stories_title: "Cuentos ilustrados", stories_text: "Leer juntos, contar juntos, reír juntos.",
   open_book: "Abrir el cuento", story1_title: "Memo y Tonton: El pastel de fresas",
   story1_text: "Memo y su osito Tonton decoran un pastel, con crema, números y una sorpresita en la nariz de Tonton.",
@@ -621,7 +618,7 @@ pt: {
   copy_me: "Me imite!", your_turn: "Agora é você!", listen: "Escute…",
   memory_done: "Você achou todos os pares!", again: "De novo", pairs: "pares",
   praise: ["Muito bem!", "Super!", "Oba!", "Parabéns!"],
-  say_again: "Repetir", sound: "Som liga/desliga",
+  sound: "Som liga/desliga",
   stories_title: "Histórias ilustradas", stories_text: "Ler juntos, contar juntos, rir juntos.",
   open_book: "Abrir a história", story1_title: "Memo e Tonton: O bolo de morango",
   story1_text: "Memo e seu ursinho Tonton enfeitam um bolo – com creme, contagem e uma surpresinha no nariz do Tonton.",
@@ -670,7 +667,7 @@ tr: {
   copy_me: "Beni taklit et!", your_turn: "Şimdi sen!", listen: "Dinle…",
   memory_done: "Bütün eşleri buldun!", again: "Tekrar", pairs: "eş",
   praise: ["Aferin!", "Süper!", "Yaşasın!", "Harika!"],
-  say_again: "Tekrar söyle", sound: "Ses aç/kapat",
+  sound: "Ses aç/kapat",
   stories_title: "Resimli hikâyeler", stories_text: "Birlikte oku, birlikte say, birlikte gül.",
   open_book: "Kitabı aç", story1_title: "Memo ve Tonton: Çilekli Pasta",
   story1_text: "Memo ile oyuncak ayısı Tonton bir pastayı süslüyor – krema, sayılar ve Tonton'un burnunda küçük bir sürprizle.",
@@ -719,7 +716,7 @@ ar: {
   copy_me: "قلِّدْني!", your_turn: "دورُك!", listen: "استمعْ…",
   memory_done: "وجدتَ كل الأزواج!", again: "مرة أخرى", pairs: "أزواج",
   praise: ["أحسنت!", "رائع!", "ممتاز!", "برافو!"],
-  say_again: "أعِدْ", sound: "الصوت",
+  sound: "الصوت",
   stories_title: "قصص مصوّرة", stories_text: "نقرأ معًا، ونعدّ معًا، ونضحك معًا.",
   open_book: "افتحِ القصة", story1_title: "ميمو وتونتون: كعكة الفراولة",
   story1_text: "ميمو ودبدوبه تونتون يزيّنان كعكة، بالكريمة والعدّ ومفاجأة صغيرة على أنف تونتون.",
@@ -875,7 +872,7 @@ function renderFriends() {
        <span class="font-display font-extrabold text-lg leading-tight">${esc(castName(c))}</span>
        <span class="text-sm font-semibold text-ink/60 leading-tight">${esc(c.role[lang] || c.role.en)}</span>`);
     b.type = "button";
-    b.addEventListener("click", () => { retrigger(b.firstElementChild, "wiggle"); sfx(c.sfx); setTimeout(() => say(`${t("hello")}, ${castName(c)}!`), 250); });
+    b.addEventListener("click", () => { retrigger(b.firstElementChild, "wiggle"); sfx(c.sfx); });
     li.appendChild(b); ul.appendChild(li);
   });
 }
@@ -958,14 +955,13 @@ const stage = $("#gameStage"), promptEl = $("#gamePrompt");
 let stars = store.get("stars", 0);
 const addStar = () => { stars++; store.set("stars", stars); $("#starCount").textContent = num(stars); };
 
-// talk: the question changes every round, so it is spoken on every round once the child has started playing
 const GAMES = [
   { id: "memory",  icon: "kuku",         label: "g_memory",  q: "q_memory",  start: startMemory },
   { id: "odd",     icon: "banana",       label: "g_odd",     q: "q_odd",     start: startOdd },
   { id: "shadow",  icon: "afacan",       label: "g_shadow",  q: "q_shadow",  start: startShadow, silhouette: true },
   { id: "count",   icon: "strawberry",   label: "g_count",   q: "q_count",   start: startCount },
-  { id: "find",    icon: "paytak",       label: "g_find",    q: "q_find",    start: startFind, talk: true },
-  { id: "colors",  icon: "ball_blue",    label: "g_colors",  q: "q_colors",  start: startColors, talk: true },
+  { id: "find",    icon: "paytak",       label: "g_find",    q: "q_find",    start: startFind },
+  { id: "colors",  icon: "ball_blue",    label: "g_colors",  q: "q_colors",  start: startColors },
   { id: "bubbles", icon: "minik_balik",  label: "g_bubbles", q: "q_bubbles", start: startBubbles },
   { id: "music",   icon: "bailabu_bear", label: "g_music",   q: "q_music",   start: startMusic },
   { id: "pattern", icon: "star_yellow",  label: "g_pattern", q: "q_pattern", start: startPattern },
@@ -974,13 +970,12 @@ const game = {
   cur: GAMES[0], timers: [], active: false,
   later(fn, ms) { this.timers.push(setTimeout(fn, ms)); },
   clear() { this.timers.forEach(clearTimeout); this.timers = []; },
-  select(g, speak) { this.cur = g; this.active = true; renderTabs(); this.restart(speak); },
-  restart(speak) {
+  select(g) { this.cur = g; this.active = true; renderTabs(); this.restart(); },
+  restart() {
     this.clear(); stage.innerHTML = "";
     $("#starCount").textContent = num(stars);
     const q = this.cur.start() || t(this.cur.q);
     promptEl.textContent = q;
-    if (speak || (this.cur.talk && this.active)) say(q);
   },
 };
 function renderTabs() {
@@ -990,11 +985,10 @@ function renderTabs() {
     const b = el("button", `flex flex-col items-center gap-1 rounded-2xl px-1 py-2 sm:py-3 font-extrabold text-xs sm:text-base leading-tight transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50 ${on ? "bg-white shadow-pop text-ink" : "text-ink/70 hover:bg-white/60"}`,
       `${img(g.icon, `w-10 h-10 sm:w-14 sm:h-14 object-contain ${g.silhouette ? "silhouette" : ""}`)}<span>${esc(t(g.label))}</span>`);
     b.type = "button"; b.setAttribute("role", "tab"); b.setAttribute("aria-selected", on);
-    b.addEventListener("click", () => game.select(g, true));
+    b.addEventListener("click", () => game.select(g));
     box.appendChild(b);
   });
 }
-$("#sayAgain").addEventListener("click", () => say(promptEl.textContent));
 function renderSound() {
   $("#soundBtn").setAttribute("aria-pressed", soundOn);
   $("#soundOn").classList.toggle("hidden", !soundOn);
@@ -1014,7 +1008,7 @@ function doneBox(msg) {
   const box = el("div", "absolute inset-0 grid place-items-center bg-white/85 rounded-[1.5rem] popin");
   box.innerHTML = `<div class="text-center p-6">${img("bailabu_bear", "w-32 h-32 mx-auto object-contain floaty")}<p class="mt-2 font-display font-extrabold text-2xl md:text-3xl">${esc(msg)}</p></div>`;
   const again = el("button", "mt-4 rounded-full bg-sun px-6 py-3 font-extrabold text-lg shadow-pop-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-sun", esc(t("again")));
-  again.type = "button"; again.addEventListener("click", () => game.restart(true));
+  again.type = "button"; again.addEventListener("click", () => game.restart());
   box.firstElementChild.appendChild(again);
   return box;
 }
@@ -1048,7 +1042,7 @@ function startMemory() {
       const [a, b] = open; open = [];
       if (a.id === b.id) {
         found++;
-        game.later(() => { win(b.card); say(objName(id)); if (found === memoryPairs) game.later(() => { sfx("cheer"); confetti(); grid.appendChild(doneBox(t("memory_done"))); }, 700); }, 350);
+        game.later(() => { win(b.card); if (found === memoryPairs) game.later(() => { sfx("cheer"); confetti(); grid.appendChild(doneBox(t("memory_done"))); }, 700); }, 350);
       } else {
         lock = true;
         game.later(() => { [a, b].forEach(x => { x.card.classList.remove("flipped"); x.card.setAttribute("aria-label", "?"); }); lock = false; }, 950);
@@ -1081,7 +1075,7 @@ function startOdd() {
     b.addEventListener("click", () => {
       if (grid.dataset.done) return;
       if (!ok) return oops(b);
-      grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light"); win(b); say(objName(id));
+      grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light"); win(b);
       oddRound++; game.later(() => game.restart(), 1700);
     });
     grid.appendChild(b);
@@ -1104,7 +1098,7 @@ function startShadow() {
       if (grid.dataset.done) return;
       if (id !== target) return oops(b);
       grid.dataset.done = 1; $("img", shadowBox).classList.add("revealed"); b.classList.add("ring-leaf", "bg-leaf-light");
-      win(shadowBox); say(objName(id));
+      win(shadowBox);
       const c = OBJ[id].cast; if (c && c.sfx !== "pop") game.later(() => sfx(c.sfx), 500);
       game.later(() => game.restart(), 2000);
     });
@@ -1126,8 +1120,8 @@ function startCount() {
     const b = el("button", "relative w-20 h-20 sm:w-28 sm:h-28 popin focus:outline-none focus-visible:ring-4 focus-visible:ring-sky rounded-2xl", img(id, "w-full h-full object-contain pointer-events-none"));
     b.type = "button"; b.style.animationDelay = i * 90 + "ms"; b.setAttribute("aria-label", objName(id));
     b.addEventListener("click", () => {
-      if (b.dataset.n) { say(num(b.dataset.n)); return; }
-      counted++; b.dataset.n = counted; sfx("pop"); say(String(counted));
+      if (b.dataset.n) return;
+      counted++; b.dataset.n = counted; sfx("pop");
       b.insertAdjacentHTML("beforeend", `<span class="absolute -top-2 -end-2 grid place-items-center w-9 h-9 rounded-full bg-violet text-white font-extrabold text-lg shadow-pop popin">${num(counted)}</span>`);
     });
     field.appendChild(b);
@@ -1141,7 +1135,7 @@ function startCount() {
       if (answers.dataset.done) return;
       if (v !== n) return oops(b);
       answers.dataset.done = 1; b.classList.replace("bg-white", "bg-leaf"); b.classList.add("text-white");
-      win(b); say(String(n)); countRound++;
+      win(b); countRound++;
       if (countRound % 5 === 0) game.later(() => { sfx("cheer"); confetti(); }, 400);
       game.later(() => game.restart(), 1800);
     });
@@ -1161,10 +1155,9 @@ function startFind() {
     const b = tile(c.id, "aspect-square popin"); b.style.animationDelay = i * 80 + "ms";
     b.addEventListener("click", () => {
       if (grid.dataset.done) return;
-      if (c !== target) { oops(b); say(castName(c)); return; }   // wrong tap still teaches the name
+      if (c !== target) { oops(b); return; }
       grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light"); win(b);
       game.later(() => sfx(c.sfx), 300);
-      game.later(() => say(`${t("hello")}, ${castName(c)}!`), 700);
       findRound++; game.later(() => game.restart(), 2400);
     });
     grid.appendChild(b);
@@ -1189,14 +1182,14 @@ function startColors() {
   const wrap = el("div", "flex flex-col items-center gap-5");
   const blob = el("button", "w-20 h-20 sm:w-24 sm:h-24 rounded-full shadow-pop-lg ring-8 ring-sun-light outline outline-2 outline-ink/10 popin focus:outline-none focus-visible:ring-sky");
   blob.type = "button"; blob.style.background = COLOR_HEX[c]; blob.setAttribute("aria-label", name);
-  blob.addEventListener("click", () => { retrigger(blob, "wiggle"); say(name); });
+  blob.addEventListener("click", () => { retrigger(blob, "wiggle"); });
   const grid = el("div", `grid gap-3 sm:gap-4 w-full ${wrong === 2 ? "grid-cols-3 max-w-xl" : "grid-cols-2 sm:grid-cols-4 max-w-2xl"}`);
   shuffle([target, ...others]).forEach((id, i) => {
     const b = tile(id, "aspect-square popin"); b.style.animationDelay = 120 + i * 80 + "ms";
     b.addEventListener("click", () => {
       if (grid.dataset.done) return;
       if (id !== target) return oops(b);
-      grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light"); win(b); say(name);
+      grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light"); win(b);
       colorRound++; game.later(() => game.restart(), 1900);
     });
     grid.appendChild(b);
@@ -1230,7 +1223,7 @@ function startBubbles() {
       b.addEventListener("click", () => {
         if (b.classList.contains("popped")) return;
         b.style.transform = getComputedStyle(b).transform;   // freeze where it was hit
-        b.classList.add("popped"); sfx("pop"); say(objName(id));
+        b.classList.add("popped"); sfx("pop");
         count++; counter.textContent = num(count); retrigger(counter, "wiggle");
         if (count % 10 === 0) { win(null); confetti(); }
         setTimeout(() => b.remove(), 320);
@@ -1283,7 +1276,7 @@ function startMusic() {
   const playSeq = () => {
     busy = true; pos = 0; promptEl.textContent = t("listen");
     seq.forEach((n, k) => game.later(() => hit(n), 700 + k * 650));
-    game.later(() => { busy = false; promptEl.textContent = t("your_turn"); say(t("your_turn")); }, 700 + seq.length * 650 + 150);
+    game.later(() => { busy = false; promptEl.textContent = t("your_turn"); }, 700 + seq.length * 650 + 150);
   };
   btns.forEach((b, i) => b.addEventListener("click", () => {
     if (busy) return;
@@ -1299,7 +1292,7 @@ function startMusic() {
     game.active = true;
     seq = [Math.floor(Math.random() * 6)];
     while (seq.length < copyLen) { const n = Math.floor(Math.random() * 6); if (n !== seq[seq.length - 1]) seq.push(n); }
-    copyBtn.classList.add("invisible"); say(t("listen")); playSeq();
+    copyBtn.classList.add("invisible"); playSeq();
   });
   wrap.append(bear, pads, copyBtn); stage.appendChild(wrap);
 }
@@ -1330,7 +1323,7 @@ function startPattern() {
       if (id !== answer) return oops(b);
       grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light");
       slot.className = "block w-14 h-14 sm:w-24 sm:h-24 rounded-2xl bg-leaf-light ring-4 ring-leaf p-1 popin"; slot.innerHTML = img(id, "w-full h-full object-contain");
-      win(slot); say(objName(id)); patRound++;
+      win(slot); patRound++;
       if (patRound % 5 === 0) game.later(() => { sfx("cheer"); confetti(); }, 400);
       game.later(() => game.restart(), 2000);
     });
@@ -1369,7 +1362,7 @@ const story = {
         b.type = "button"; b.setAttribute("aria-label", objName("strawberry"));
         b.addEventListener("click", () => {
           if (b.dataset.n) return;
-          c++; b.dataset.n = c; sfx("pop"); say(String(c));
+          c++; b.dataset.n = c; sfx("pop");
           b.insertAdjacentHTML("beforeend", `<span class="absolute -top-2 -end-2 grid place-items-center w-8 h-8 rounded-full bg-violet text-white font-extrabold shadow-pop popin">${num(c)}</span>`);
           if (c === 3) setTimeout(() => { sfx("cheer"); confetti(); }, 500);
         });
