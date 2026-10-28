@@ -8,7 +8,7 @@ One static `index.html` (semantic HTML5, Tailwind via CDN, vanilla JS), hosted o
 - **Friends**: tap a character → wiggle, sound and spoken name.
 - **Songs**: songs that are online on the visitor's channel come first and open the video (`yt`), or a search on that channel while the ID is missing (falls back to the English channel while a channel is not live); the rest show "Coming soon". Online on Tontiş Ada (2026-10-27): Minik Balık Kaç, Renkli Otobüs, Arı Vız Vız, Pat Pat Traktör, Parla Yıldız.
 - **Games & riddles** (no spoken prompts: the browser voices sounded bad, user decision 2026-10-28; only sound effects play): Memory (3/6 pairs), Odd one out, Whose shadow?, How many?, Where is …? (find the friend by name), Colors, Bubbles (pop, no way to fail), Music (6 pads, WebAudio pentatonic, "Copy me!" echo mode growing from 2 to 5 notes), What comes next? (AB → AAB/ABB → ABC patterns)
-- **Stories**: picture book reader "Memo & Tonton: The Strawberry Cake" with "Read to me", swipe/arrow keys and a counting page.
+- **Stories**: picture book reader "Memo & Tonton: The Strawberry Cake" (no read-aloud: browser voices removed 2026-10-28), swipe/arrow keys and a counting page.
 - **Coloring pages**: 35 line-art pages (PNG, 300 dpi, 4:5) (`assets/print/`): tap a page → big preview with a download button. For now the English edition (English file names and character names) is shown in every language.
 - No cookies, no analytics, no ads. `localStorage` only keeps language, sound on/off, stars and memory size. Fonts are self-hosted.
 
