@@ -886,12 +886,21 @@ function openPrint(id, name) {
 }
 $("#printClose").addEventListener("click", () => printDlg.close());
 printDlg.addEventListener("click", e => { if (e.target === printDlg) printDlg.close(); });
+// a song links to the visitor's own language version, else the English one (languages without their own
+// recording point to EN), else the Turkish original
+function songChannel(s) {
+  for (const code of [lang, "en", "tr"]) {
+    const c = CHANNELS.find(x => x.code === code);
+    if (c && c.live && (s.live || []).includes(code)) return c;
+  }
+  return null;
+}
 function renderSongs() {
   const ul = $("#songsGrid"); ul.innerHTML = "";
-  const ch = channelFor(lang);
-  const isLive = s => (s.live || []).includes(ch.code);
+  const isLive = s => !!songChannel(s);
   [...SONGS.filter(isLive), ...SONGS.filter(s => !isLive(s))].forEach(s => {
     const live = isLive(s);
+    const ch = songChannel(s) || channelFor(lang);
     const title = s.t[ch.code] || s.t.en;
     const vid = (s.yt || {})[ch.code];
     const href = vid ? `https://www.youtube.com/watch?v=${vid}` : `https://www.youtube.com/@${ch.handle}/search?query=${encodeURIComponent(title)}`;
