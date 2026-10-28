@@ -17,7 +17,7 @@ One static `index.html` (semantic HTML5, Tailwind via CDN, vanilla JS), hosted o
 - **When a channel launches**: set `live: true` for it in `CHANNELS`.
 - **When a video goes public**: add the channel code to the song's `live` list in `SONGS` and its video ID to `yt` (e.g. `yt: { tr: "5nh1MCtzWP8" }`; without an ID the card opens a search on the channel) (new song: add an entry + a `song` line in `tools/build_assets.sh` for its card image). Rule in `C:\Youtube\CLAUDE.md` → "Website sync".
 - New story: add images to `assets/story/` and the page texts to `story` in every language.
-- Coloring pages: list `PRINTS` in `index.html`; files come from `C:\Youtube\_shared\printables\en\*_lineart.png` (built by `_pipelinebuild_coloring_book_v2.py`). New page: rebuild the printables, add an entry to `PRINTS`, run `build_assets.sh`, update the count in `coloring_all`.
+- Coloring pages: list `PRINTS` in `index.html`; files come from `C:\Youtube\_shared\printables\en\*_lineart.png` (built by `_pipeline\build_coloring_book_v2.py`). New page: rebuild the printables, add an entry to `PRINTS`, run `build_assets.sh`, update the count in `coloring_all`.
 - Assets are built from the YouTube project folders: `bash tools/build_assets.sh` (needs ffmpeg + uv).
 
 ## Domain
