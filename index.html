@@ -4,43 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bailabu – Kids Songs, Games & Stories</title>
-<meta name="description" content="Happy sing-along songs, little games and picture stories for toddlers and preschoolers (ages 1–5) with Bailabu the bear and his island friends.">
+<meta name="description" content="Happy songs and lullabies, quiz games, picture books and stories for toddlers and preschoolers (ages 1–5) with Bailabu the bear and his island friends.">
 <meta name="theme-color" content="#3DB8F5">
 <link rel="icon" type="image/png" href="assets/brand/favicon.png">
 <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bailabu">
 <meta property="og:title" content="Bailabu – Kids Songs, Games & Stories">
-<meta property="og:description" content="Sing, dance and play on Bailabu Island! Songs, games and stories for little ones (ages 1–5).">
+<meta property="og:description" content="Sing, dance and play on Bailabu Island! Songs, lullabies, quiz games, picture books and stories for little ones (ages 1–5).">
 <meta property="og:image" content="https://bailabu.com/assets/brand/og.jpg">
 <meta property="og:url" content="https://bailabu.com/">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://bailabu.com/?lang=en">
+<link rel="alternate" hreflang="es" href="https://bailabu.com/?lang=es">
+<link rel="alternate" hreflang="de" href="https://bailabu.com/?lang=de">
+<link rel="alternate" hreflang="pt" href="https://bailabu.com/?lang=pt">
+<link rel="alternate" hreflang="ar" href="https://bailabu.com/?lang=ar">
+<link rel="alternate" hreflang="tr" href="https://bailabu.com/?lang=tr">
+<link rel="alternate" hreflang="x-default" href="https://bailabu.com/">
 <link rel="preload" href="assets/fonts/baloo2.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Bailabu","url":"https://bailabu.com/","logo":"https://bailabu.com/assets/brand/badge.webp",
  "sameAs":["https://www.youtube.com/@bailabuisland","https://www.youtube.com/@TontisAdaTV"]}
-</script>
-<script src="https://cdn.tailwindcss.com/3.4.17"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          sky:    { DEFAULT: '#3DB8F5', dark: '#1E8FD0', light: '#DDF3FF' },
-          coral:  { DEFAULT: '#FF6F91', light: '#FFE3EA' },
-          leaf:   { DEFAULT: '#5CC85A', light: '#E2F7E1' },
-          sun:    { DEFAULT: '#FFC83D', light: '#FFF4D6' },
-          violet: { DEFAULT: '#8E6CF0', light: '#EEE8FF' },
-          tangerine: '#F6A23A',
-          berry:  '#FF5A5F',
-          ink:    '#16395A',
-          cream:  '#FFF9EE',
-        },
-        fontFamily: { display: ['"Baloo 2"', 'ui-rounded', 'system-ui', 'sans-serif'] },
-        boxShadow: { pop: '0 6px 0 rgba(22,57,90,.12)', 'pop-lg': '0 10px 0 rgba(22,57,90,.12)' },
-      },
-    },
-  };
 </script>
 <style>
   @font-face { font-family: "Baloo 2"; src: url(assets/fonts/baloo2.woff2) format("woff2"); font-weight: 400 800; font-display: swap; }
@@ -109,6 +94,7 @@
     .mcard-inner, .silhouette { transition: none; }
   }
 </style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="bg-cream text-ink antialiased">
 
@@ -126,7 +112,7 @@
     </a>
 
     <nav class="hidden md:flex items-center gap-1 ms-auto font-bold text-lg" aria-label="Main">
-      <a href="#songs" class="px-3 py-1.5 rounded-full hover:bg-sky-light" data-i18n="nav_songs">Songs</a>
+      <a href="#videos" class="px-3 py-1.5 rounded-full hover:bg-sky-light" data-i18n="nav_videos">Videos</a>
       <a href="#play" class="px-3 py-1.5 rounded-full hover:bg-sun-light" data-i18n="nav_play">Games</a>
       <a href="#stories" class="px-3 py-1.5 rounded-full hover:bg-coral-light" data-i18n="nav_stories">Stories</a>
       <a href="#coloring" class="px-3 py-1.5 rounded-full hover:bg-violet-light" data-i18n="nav_coloring">Coloring</a>
@@ -138,7 +124,7 @@
         <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
         <span id="langCur">EN</span>
       </button>
-      <ul id="langMenu" role="listbox" class="hidden absolute end-0 mt-2 w-48 rounded-2xl bg-white shadow-xl ring-4 ring-sky-light p-2 font-bold"></ul>
+      <ul id="langMenu" role="listbox" class="hidden absolute end-0 mt-2 w-48 rounded-2xl bg-white shadow-xl ring-4 ring-sky-light p-2 font-bold"><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light bg-sky-light text-sky-dark" type="button" role="option" aria-selected="true" lang="en"><span class="inline-block w-8 text-ink/50">EN</span>English</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="es"><span class="inline-block w-8 text-ink/50">ES</span>Español</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="de"><span class="inline-block w-8 text-ink/50">DE</span>Deutsch</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="pt"><span class="inline-block w-8 text-ink/50">PT</span>Português</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="ar"><span class="inline-block w-8 text-ink/50">AR</span>العربية</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="tr"><span class="inline-block w-8 text-ink/50">TR</span>Türkçe</button></li></ul>
     </div>
 
     <button id="menuBtn" type="button" class="md:hidden rounded-full bg-sun-light p-2.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-sun" aria-expanded="false" aria-controls="mobileNav" data-i18n-aria="menu" aria-label="Menu">
@@ -147,7 +133,7 @@
   </div>
   <nav id="mobileNav" class="md:hidden hidden border-t-2 border-sky-light bg-white" aria-label="Mobile">
     <div class="grid grid-cols-2 gap-2 p-3 font-bold text-lg">
-      <a href="#songs" class="rounded-2xl bg-sky-light px-4 py-3" data-i18n="nav_songs">Songs</a>
+      <a href="#videos" class="rounded-2xl bg-sky-light px-4 py-3" data-i18n="nav_videos">Videos</a>
       <a href="#play" class="rounded-2xl bg-sun-light px-4 py-3" data-i18n="nav_play">Games</a>
       <a href="#stories" class="rounded-2xl bg-coral-light px-4 py-3" data-i18n="nav_stories">Stories</a>
       <a href="#coloring" class="rounded-2xl bg-violet-light px-4 py-3" data-i18n="nav_coloring">Coloring</a>
@@ -159,7 +145,7 @@
 <main id="main">
 <!-- ============ Hero ============ -->
 <section id="top" class="relative overflow-hidden bg-sky-light">
-  <img src="assets/brand/hero.webp" alt="" width="2000" height="1116" fetchpriority="high"
+  <img src="assets/brand/hero.webp" alt="Bailabu the bear and his friends on a sunny island" data-i18n-alt="alt_hero" width="2000" height="1116" fetchpriority="high"
        class="w-full h-60 sm:h-80 object-cover object-[78%_45%] md:absolute md:inset-0 md:h-full md:object-[62%_50%] rtl:-scale-x-100">
   <div class="hidden md:block absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-white/75 via-white/25 to-transparent"></div>
   <span class="floaty pointer-events-none absolute top-8 start-[8%] text-4xl text-coral hidden md:block" aria-hidden="true">♪</span>
@@ -168,9 +154,9 @@
 
   <div class="relative mx-auto max-w-6xl px-4 pt-6 pb-10 md:pt-24 md:pb-36">
     <div class="max-w-xl">
-      <p class="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-1.5 font-bold text-sky-dark shadow-pop" data-i18n="kicker">Kids songs · games · stories</p>
+      <p class="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-1.5 font-bold text-sky-dark shadow-pop" data-i18n="kicker">Songs · quiz games · picture books · stories</p>
       <h1 class="mt-4 font-display font-extrabold text-4xl leading-[1.05] sm:text-5xl md:text-6xl text-ink" data-i18n="hero_title">Sing, dance & play on Bailabu Island!</h1>
-      <p class="mt-4 text-lg md:text-xl font-semibold text-ink/80" data-i18n="hero_text">Happy sing-along songs, little games and picture stories for toddlers and preschoolers (ages 1–5) – with Bailabu the bear and all his island friends.</p>
+      <p class="mt-4 text-lg md:text-xl font-semibold text-ink/80" data-i18n="hero_text">Happy songs and lullabies, quiz games, picture books and stories for toddlers and preschoolers (ages 1–5) – with Bailabu the bear and all his island friends.</p>
       <div class="mt-7 flex flex-wrap gap-3">
         <a id="ctaWatch" href="https://www.youtube.com/@bailabuisland" target="_blank" rel="noopener"
            class="inline-flex items-center gap-2 rounded-full bg-berry px-6 py-3.5 text-lg font-extrabold text-white shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-berry/40">
@@ -192,21 +178,218 @@
     <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="friends_title">Meet the island friends</h2>
     <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="friends_text">Tap a friend to say hello!</p>
   </div>
-  <ul id="friendsGrid" class="mt-8 grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-3 md:gap-4"></ul>
+  <ul id="friendsGrid" class="mt-8 grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-3 md:gap-4"><li><button class="group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" type="button"><span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:#DDF3FF"><img src="assets/chars/bailabu_bear.webp" alt="" width="360" height="360" draggable="false" class="w-full h-full object-contain"></span>
+       <span class="font-display font-extrabold text-lg leading-tight">Bailabu</span>
+       <span class="text-sm font-semibold text-ink/60 leading-tight">the dancing bear</span></button></li><li><button class="group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" type="button"><span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:#E2F7E1"><img src="assets/chars/afacan.webp" alt="" width="360" height="360" draggable="false" class="w-full h-full object-contain"></span>
+       <span class="font-display font-extrabold text-lg leading-tight">Kiko</span>
+       <span class="text-sm font-semibold text-ink/60 leading-tight">the jumpy frog</span></button></li><li><button class="group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" type="button"><span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:#FFF4D6"><img src="assets/chars/paytak.webp" alt="" width="360" height="360" draggable="false" class="w-full h-full object-contain"></span>
+       <span class="font-display font-extrabold text-lg leading-tight">Lulu</span>
+       <span class="text-sm font-semibold text-ink/60 leading-tight">the little duckling</span></button></li><li><button class="group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" type="button"><span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:#FFF4D6"><img src="assets/chars/balli.webp" alt="" width="360" height="360" draggable="false" class="w-full h-full object-contain"></span>
+       <span class="font-display font-extrabold text-lg leading-tight">Bibi</span>
+       <span class="text-sm font-semibold text-ink/60 leading-tight">the busy bee</span></button></li><li><button class="group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" type="button"><span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:#FFE3EA"><img src="assets/chars/renkli.webp" alt="" width="360" height="360" draggable="false" class="w-full h-full object-contain"></span>
+       <span class="font-display font-extrabold text-lg leading-tight">Rolly</span>
+       <span class="text-sm font-semibold text-ink/60 leading-tight">the rainbow bus</span></button></li><li><button class="group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" type="button"><span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:#DDF3FF"><img src="assets/chars/minik_balik.webp" alt="" width="360" height="360" draggable="false" class="w-full h-full object-contain"></span>
+       <span class="font-display font-extrabold text-lg leading-tight">Blub</span>
+       <span class="text-sm font-semibold text-ink/60 leading-tight">the little fish</span></button></li><li><button class="group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" type="button"><span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:#EEE8FF"><img src="assets/chars/pamuk.webp" alt="" width="360" height="360" draggable="false" class="w-full h-full object-contain"></span>
+       <span class="font-display font-extrabold text-lg leading-tight">Pompom</span>
+       <span class="text-sm font-semibold text-ink/60 leading-tight">the fluffy lamb</span></button></li><li><button class="group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" type="button"><span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:#FFE3EA"><img src="assets/chars/findik.webp" alt="" width="360" height="360" draggable="false" class="w-full h-full object-contain"></span>
+       <span class="font-display font-extrabold text-lg leading-tight">Toby</span>
+       <span class="text-sm font-semibold text-ink/60 leading-tight">the happy puppy</span></button></li><li><button class="group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" type="button"><span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:#E2F7E1"><img src="assets/chars/kuku.webp" alt="" width="360" height="360" draggable="false" class="w-full h-full object-contain"></span>
+       <span class="font-display font-extrabold text-lg leading-tight">Kuku</span>
+       <span class="text-sm font-semibold text-ink/60 leading-tight">the friendly lion</span></button></li></ul>
 </section>
 
-<!-- ============ Songs ============ -->
-<section id="songs" class="relative bg-sky-light">
+<!-- ============ Videos ============ -->
+<section id="videos" class="relative bg-sky-light">
+  <span id="songs"></span><span id="lullabies"></span><span id="quiz"></span><span id="books"></span><span id="tales"></span>
   <svg class="wave text-cream" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
   <div class="mx-auto max-w-6xl px-4 pb-14 pt-4 md:pb-20">
     <div class="flex flex-col md:flex-row md:items-end gap-4 md:justify-between">
       <div>
-        <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="songs_title">Songs to sing along</h2>
-        <p class="mt-2 text-lg font-semibold text-ink/70 max-w-2xl" data-i18n="songs_text">Easy lyrics on screen, a gentle tempo and lots of clapping and dancing.</p>
+        <h2 id="videosHeading" class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="videos_title">Videos for little ones</h2>
+        <p class="mt-2 text-lg font-semibold text-ink/70 max-w-2xl" data-i18n="videos_text">Songs, lullabies, quiz games, picture books and stories. Pick what fits the moment!</p>
       </div>
-      <p class="inline-flex self-start md:self-auto items-center gap-2 rounded-full bg-white px-4 py-2 font-extrabold text-sky-dark shadow-pop"><span aria-hidden="true">🎵</span><span data-i18n="songs_friday">New songs on the way</span></p>
+      <p class="inline-flex self-start md:self-auto shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2 font-extrabold text-sky-dark shadow-pop"><span aria-hidden="true">🎬</span><span data-i18n="videos_badge">New videos on the way</span></p>
     </div>
-    <ul id="songsGrid" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></ul>
+    <div id="videoTabs" role="group" aria-labelledby="videosHeading" class="mt-6 flex flex-wrap gap-2"><button class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-extrabold text-lg transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50 bg-sky-dark text-white shadow-pop" type="button" aria-pressed="true"><span aria-hidden="true">✨</span>All</button><button class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-extrabold text-lg transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50 bg-white text-ink hover:bg-white/70" type="button" aria-pressed="false"><span aria-hidden="true">🎵</span>Songs</button><button class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-extrabold text-lg transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50 bg-white text-ink hover:bg-white/70" type="button" aria-pressed="false"><span aria-hidden="true">🌙</span>Lullabies</button><button class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-extrabold text-lg transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50 bg-white text-ink hover:bg-white/70" type="button" aria-pressed="false"><span aria-hidden="true">🧩</span>Quiz &amp; games</button><button class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-extrabold text-lg transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50 bg-white text-ink hover:bg-white/70" type="button" aria-pressed="false"><span aria-hidden="true">📖</span>Picture books</button><button class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-extrabold text-lg transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50 bg-white text-ink hover:bg-white/70" type="button" aria-pressed="false"><span aria-hidden="true">🔍</span>Stories</button></div>
+    <ul id="videoGrid" class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=_WOZQbbG74Y" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/count10.webp" alt="Count to 10 with Rolly" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-sky px-3 py-1 text-sm font-extrabold text-white shadow-pop">Counting</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Count to 10 with Rolly</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=SM-wviZwHNU" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/odd.webp" alt="Which One Is Different?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Quiz</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Which One Is Different?</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=zggZGoe0eC8" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/honey.webp" alt="Who Ate the Honey?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
+          
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Who Ate the Honey?</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=vvpB91mGtvU" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/sleepy.webp" alt="Sleepy Time on the Farm" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-ink px-3 py-1 text-sm font-extrabold text-white shadow-pop">Lullaby</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Sleepy Time on the Farm</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=JIQyb865pkw" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/fruits.webp" alt="Learning Fruits with Bibi" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-leaf px-3 py-1 text-sm font-extrabold text-white shadow-pop">Picture book</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Learning Fruits with Bibi</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=0PIDXchwBhw" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/shadow.webp" alt="Whose Shadow Is This?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Quiz</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Whose Shadow Is This?</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=H7UfZulavrc" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/rapunzel.webp" alt="Rapunzel" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
+          
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Rapunzel</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=vbpu-4gaKPQ" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/cake.webp" alt="The Strawberry Cake" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">The Strawberry Cake</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=-Y1mYE75VGs" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/tractor.webp" alt="Putt Putt, Look at the Tractor!" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-tangerine px-3 py-1 text-sm font-extrabold text-white shadow-pop">Farm animals</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Putt Putt, Look at the Tractor!</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=5nh1MCtzWP8" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/rolly.webp" alt="Rolly the Rainbow Bus" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Sing-along</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Rolly the Rainbow Bus</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=DtAjpss6hpQ" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/lumi.webp" alt="Lumi, the Little Star" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-ink px-3 py-1 text-sm font-extrabold text-white shadow-pop">Lullaby</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Lumi, the Little Star</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=0cYJ_DREVI0" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/bibi.webp" alt="Bibi the Busy Bee" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Colors</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Bibi the Busy Bee</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=FPQXRUMN2Z8" target="_blank" rel="noopener" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/minik.webp" alt="Blub, the Little Fish" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
+          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Sing-along</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
+            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+          </span>
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Blub, the Little Fish</span>
+          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
+        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/kiko.webp" alt="Kiko the Little Frog" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
+          <span class="absolute top-3 start-3 rounded-full bg-leaf px-3 py-1 text-sm font-extrabold text-white shadow-pop">Dance</span>
+          
+          
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Kiko the Little Frog</span>
+          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
+        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
+        <span class="relative block overflow-hidden">
+          <img src="assets/songs/ducks.webp" alt="Five Little Ducks" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
+          <span class="absolute top-3 start-3 rounded-full bg-sky px-3 py-1 text-sm font-extrabold text-white shadow-pop">Counting</span>
+          
+          
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">Five Little Ducks</span>
+          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
+        </span></div></li></ul>
+    <p id="videoLangNote" class="mt-5 text-center font-semibold text-ink/60" data-i18n="videos_lang">TR or EN on a picture shows the language of the video. More languages are on the way.</p>
   </div>
 </section>
 
@@ -247,7 +430,7 @@
     <div class="mt-8 grid gap-5 lg:grid-cols-3">
       <article class="lg:col-span-2 rounded-[2rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-coral/40 flex flex-col">
         <button type="button" id="openStory" class="group relative block text-start focus:outline-none focus-visible:ring-4 focus-visible:ring-coral">
-          <img src="assets/story/cake-09.webp" alt="" width="1280" height="720" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-[1.02] transition">
+          <img src="assets/story/cake-09.webp" alt="Memo & Tonton: The Strawberry Cake" data-i18n-alt="story1_title" width="1280" height="720" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-[1.02] transition">
           <span class="absolute bottom-3 start-3 inline-flex items-center gap-2 rounded-full bg-coral px-5 py-2.5 text-lg font-extrabold text-white shadow-pop">
             <span aria-hidden="true">📖</span><span data-i18n="open_book">Open the book</span>
           </span>
@@ -258,16 +441,14 @@
         </div>
       </article>
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-        <article class="relative rounded-[2rem] bg-white/70 overflow-hidden ring-4 ring-white">
-          <img src="assets/songs/kiko.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-[16/8] object-cover opacity-70 grayscale-[30%]">
-          <span class="absolute top-3 end-3 rounded-full bg-violet px-3 py-1 font-extrabold text-white text-sm" data-i18n="soon">Coming soon</span>
-          <p class="p-4 font-bold text-ink/70" data-i18n="soon_kiko">Kiko's big jump</p>
-        </article>
-        <article class="relative rounded-[2rem] bg-white/70 overflow-hidden ring-4 ring-white">
-          <img src="assets/songs/rolly.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-[16/8] object-cover opacity-70 grayscale-[30%]">
-          <span class="absolute top-3 end-3 rounded-full bg-violet px-3 py-1 font-extrabold text-white text-sm" data-i18n="soon">Coming soon</span>
-          <p class="p-4 font-bold text-ink/70" data-i18n="soon_rolly">Rolly's rainy-day trip</p>
-        </article>
+        <a href="#tales" class="group block rounded-[2rem] bg-white shadow-pop overflow-hidden ring-4 ring-white hover:ring-coral/40 transition focus:outline-none focus-visible:ring-coral">
+          <img src="assets/songs/rapunzel.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-[16/8] object-cover">
+          <span class="flex items-center gap-2 p-4 font-extrabold text-lg"><span aria-hidden="true">🎬</span><span data-i18n="more_tales">Watch more stories</span></span>
+        </a>
+        <a href="#books" class="group block rounded-[2rem] bg-white shadow-pop overflow-hidden ring-4 ring-white hover:ring-coral/40 transition focus:outline-none focus-visible:ring-coral">
+          <img id="moreBooksImg" src="assets/songs/fruits.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-[16/8] object-cover">
+          <span class="flex items-center gap-2 p-4 font-extrabold text-lg"><span aria-hidden="true">📖</span><span data-i18n="more_books">Watch picture books</span></span>
+        </a>
       </div>
     </div>
   </div>
@@ -282,7 +463,42 @@
       <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="coloring_text">Print, grab your crayons and color in your island friends!</p>
       <p class="mt-1 text-sm font-semibold text-ink/60" data-i18n="coloring_hint">PNG, 300 dpi – print on A4 or Letter. Free for use at home, in daycare and in kindergarten.</p>
     </div>
-    <ul id="coloringGrid" class="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"></ul>
+    <ul id="coloringGrid" class="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/bailabu.webp" alt="Bailabu coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Bailabu</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/kiko.webp" alt="Kiko coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Kiko</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/bibi.webp" alt="Bibi coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Bibi</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/rolly.webp" alt="Rolly coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Rolly</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/blub.webp" alt="Blub coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Blub</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/lumi.webp" alt="Lumi coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Lumi</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/memo.webp" alt="Memo coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Memo</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/tonton.webp" alt="Tonton coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Tonton</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/dot.webp" alt="Dot coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Dot</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/miko.webp" alt="Miko coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Miko</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/kuku.webp" alt="Kuku coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Kuku</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/zippy.webp" alt="Zippy coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Zippy</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/pofi.webp" alt="Pofi coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Pofi</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/lulu.webp" alt="Lulu coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Lulu</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/mama_duck.webp" alt="Mama Duck coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Mama Duck</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/duckling_siblings.webp" alt="Duckling Siblings coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Duckling Siblings</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/farmer_ali.webp" alt="Farmer Ali coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Farmer Ali</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/tractor.webp" alt="Tractor coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Tractor</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/pompom.webp" alt="Pompom coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Pompom</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/mumu.webp" alt="Mumu coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Mumu</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/tula_and_the_chicks.webp" alt="Tula and the Chicks coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Tula and the Chicks</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/badi.webp" alt="Badi coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Badi</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/toby.webp" alt="Toby coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Toby</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/the_moon.webp" alt="The Moon coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">The Moon</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/elephant.webp" alt="Elephant coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Elephant</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/flamingo.webp" alt="Flamingo coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Flamingo</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/kitten.webp" alt="Kitten coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Kitten</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/turtle.webp" alt="Turtle coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Turtle</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/car.webp" alt="Car coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Car</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/apple.webp" alt="Apple coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Apple</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/banana.webp" alt="Banana coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Banana</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/pear.webp" alt="Pear coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Pear</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/strawberry.webp" alt="Strawberry coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Strawberry</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/ball.webp" alt="Ball coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Ball</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/star.webp" alt="Star coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+       <span class="mt-2 block font-extrabold leading-tight" dir="ltr">Star</span></button></li></ul>
   </div>
 </section>
 
@@ -294,7 +510,43 @@
       <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="channels_title">One island – many languages</h2>
       <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="channels_text">Bailabu sings in your language. Pick your channel and subscribe!</p>
     </div>
-    <ul id="channelGrid" class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></ul>
+    <ul id="channelGrid" class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"><li class="relative flex items-center gap-4 rounded-[1.75rem] bg-white p-4 shadow-pop ring-4" style="--tw-ring-color: #3DB8F5;">
+      <span class="shrink-0 w-16 h-16 rounded-full p-1" style="background:#3DB8F5"><img src="assets/brand/bear-round.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full rounded-full object-cover"></span>
+      <span class="min-w-0">
+        <span class="block text-sm font-extrabold" style="color:#3DB8F5" lang="en">English · Your language</span>
+        <span class="block font-display font-extrabold text-lg leading-tight" lang="en" dir="ltr">Bailabu Island – Kids Songs</span>
+        <span class="block text-sm font-semibold text-ink/50" dir="ltr">@bailabuisland</span>
+      </span><a href="https://www.youtube.com/@bailabuisland?sub_confirmation=1" target="_blank" rel="noopener" class="ms-auto shrink-0 rounded-full bg-berry px-4 py-2 font-extrabold text-white shadow-pop hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-berry/40">Subscribe</a></li><li class="relative flex items-center gap-4 rounded-[1.75rem] bg-white p-4 shadow-pop ring-2 ring-white">
+      <span class="shrink-0 w-16 h-16 rounded-full p-1" style="background:#FF6F91"><img src="assets/brand/bear-round.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full rounded-full object-cover"></span>
+      <span class="min-w-0">
+        <span class="block text-sm font-extrabold" style="color:#FF6F91" lang="es">Español</span>
+        <span class="block font-display font-extrabold text-lg leading-tight" lang="es" dir="ltr">Isla Bailabú – Canciones Infantiles</span>
+        <span class="block text-sm font-semibold text-ink/50" dir="ltr">@islabailabu</span>
+      </span><span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1.5 text-sm font-extrabold text-ink/50">Coming soon</span></li><li class="relative flex items-center gap-4 rounded-[1.75rem] bg-white p-4 shadow-pop ring-2 ring-white">
+      <span class="shrink-0 w-16 h-16 rounded-full p-1" style="background:#5CC85A"><img src="assets/brand/bear-round.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full rounded-full object-cover"></span>
+      <span class="min-w-0">
+        <span class="block text-sm font-extrabold" style="color:#5CC85A" lang="de">Deutsch</span>
+        <span class="block font-display font-extrabold text-lg leading-tight" lang="de" dir="ltr">Bailabu Insel – Kinderlieder</span>
+        <span class="block text-sm font-semibold text-ink/50" dir="ltr">@bailabuinsel</span>
+      </span><span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1.5 text-sm font-extrabold text-ink/50">Coming soon</span></li><li class="relative flex items-center gap-4 rounded-[1.75rem] bg-white p-4 shadow-pop ring-2 ring-white">
+      <span class="shrink-0 w-16 h-16 rounded-full p-1" style="background:#FFC83D"><img src="assets/brand/bear-round.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full rounded-full object-cover"></span>
+      <span class="min-w-0">
+        <span class="block text-sm font-extrabold" style="color:#FFC83D" lang="pt">Português</span>
+        <span class="block font-display font-extrabold text-lg leading-tight" lang="pt" dir="ltr">Ilha Bailabu – Músicas Infantis</span>
+        <span class="block text-sm font-semibold text-ink/50" dir="ltr">@ilhabailabu</span>
+      </span><span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1.5 text-sm font-extrabold text-ink/50">Coming soon</span></li><li class="relative flex items-center gap-4 rounded-[1.75rem] bg-white p-4 shadow-pop ring-2 ring-white">
+      <span class="shrink-0 w-16 h-16 rounded-full p-1" style="background:#8E6CF0"><img src="assets/brand/bear-round.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full rounded-full object-cover"></span>
+      <span class="min-w-0">
+        <span class="block text-sm font-extrabold" style="color:#8E6CF0" lang="ar">العربية</span>
+        <span class="block font-display font-extrabold text-lg leading-tight" lang="ar" dir="rtl">جزيرة بايلابو – أغاني الأطفال</span>
+        <span class="block text-sm font-semibold text-ink/50" dir="ltr">@jazeerabailabu</span>
+      </span><span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1.5 text-sm font-extrabold text-ink/50">Coming soon</span></li><li class="relative flex items-center gap-4 rounded-[1.75rem] bg-white p-4 shadow-pop ring-2 ring-white">
+      <span class="shrink-0 w-16 h-16 rounded-full p-1" style="background:#F6A23A"><img src="assets/brand/badge-tr.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full rounded-full object-cover"></span>
+      <span class="min-w-0">
+        <span class="block text-sm font-extrabold" style="color:#F6A23A" lang="tr">Türkçe</span>
+        <span class="block font-display font-extrabold text-lg leading-tight" lang="tr" dir="ltr">Tontiş Ada</span>
+        <span class="block text-sm font-semibold text-ink/50" dir="ltr">@TontisAdaTV</span>
+      </span><a href="https://www.youtube.com/@TontisAdaTV?sub_confirmation=1" target="_blank" rel="noopener" class="ms-auto shrink-0 rounded-full bg-berry px-4 py-2 font-extrabold text-white shadow-pop hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-berry/40">Subscribe</a></li></ul>
   </div>
 </section>
 
@@ -323,7 +575,7 @@
         <p class="text-white/70 font-semibold" data-i18n="footer_love">Made with love for little ones.</p>
       </div>
     </div>
-    <p class="text-white/60 text-sm font-semibold">© <span id="year">2026</span> Bailabu · Tontiş Ada</p>
+    <p class="text-white/60 text-sm font-semibold">© <span id="year">2026</span> Bailabu · Tontiş Ada · <button id="legalBtn" type="button" class="underline hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded" data-i18n="legal_privacy">Privacy</button></p>
   </div>
 </footer>
 
@@ -345,6 +597,16 @@
       <div id="storyDots" class="flex gap-1.5 mx-auto" aria-hidden="true"></div>
       <button id="storyNext" type="button" class="rounded-full bg-coral px-5 py-2.5 font-extrabold text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-coral/50" data-i18n="next">Next</button>
     </div>
+  </div>
+</dialog>
+
+<dialog id="legalDlg" class="w-[min(100vw-1rem,40rem)] max-h-[calc(100dvh-1rem)] rounded-[2rem] p-0 bg-white text-ink shadow-2xl" aria-labelledby="legalTitle">
+  <div class="relative p-5 md:p-7">
+    <button id="legalClose" type="button" class="absolute top-3 end-3 rounded-full bg-sky-light p-2.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky" data-i18n-aria="close" aria-label="Close">
+      <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <h2 id="legalTitle" class="font-display font-extrabold text-2xl pe-12" data-i18n="legal_privacy">Privacy</h2>
+    <div id="legalBody" class="mt-3 grid gap-3 font-semibold text-ink/80"></div>
   </div>
 </dialog>
 
@@ -419,19 +681,38 @@ const OBJ = {
 CAST.forEach(c => { if (c.id !== "renkli") OBJ[c.id] = { kind: "animal", cast: c }; });
 OBJ.renkli = { kind: "toy", cast: CAST.find(c => c.id === "renkli") };
 
-// live: channel codes where the song is online (cards elsewhere show "Coming soon"). Add the code when a video goes public.
+// Everything on the channels, in display order: one entry per video, whatever the format.
+// cat: filter tab (CATS). tag: label on the card. trArt: the card image has text, a -tr.webp variant exists.
+// live: channel codes where the video is online (cards elsewhere show "Coming soon"). Add the code when a video goes public.
 // yt: YouTube video ID per channel code; the card opens the video, otherwise a search on the channel.
-const SONGS = [
-  { id: "minik",   tag: "singalong", live: ["tr"], yt: { tr: "FPQXRUMN2Z8" }, t: { en: "Blub, the Little Fish", es: "Blub, el Pececito", de: "Blub, der kleine Fisch", pt: "Blub, o Peixinho", ar: "بلوب السمكة الصغيرة", tr: "Minik Balık Kaç" } },
-  { id: "kiko",    tag: "dance",     t: { en: "Kiko the Little Frog", es: "La Ranita Kiko", de: "Kiko, der kleine Frosch", pt: "Kiko, o Sapinho", ar: "كيكو الضفدع الصغير", tr: "Küçük Kurbağa" } },
-  { id: "rolly",   tag: "singalong", live: ["tr"], yt: { tr: "5nh1MCtzWP8" }, t: { en: "Rolly the Rainbow Bus", es: "Rolly, el Autobús Arcoíris", de: "Rolly, der Regenbogenbus", pt: "Rolly, o Ônibus Arco-Íris", ar: "رولي الباص الملوّن", tr: "Renkli Otobüs" } },
-  { id: "ducks",   tag: "counting",  t: { en: "Five Little Ducks", es: "Cinco Patitos", de: "Fünf kleine Entchen", pt: "Cinco Patinhos", ar: "خمس بطّات صغيرة", tr: "Beş Küçük Ördek" } },
-  { id: "bibi",    tag: "colors",    live: ["tr"], yt: { tr: "0cYJ_DREVI0" }, t: { en: "Bibi the Busy Bee", es: "La Abejita Bibi", de: "Biene Bibi summt", pt: "A Abelhinha Bibi", ar: "النحلة بيبي", tr: "Arı Vız Vız" } },
-  { id: "tractor", tag: "farm",      live: ["tr"], yt: { tr: "-Y1mYE75VGs" }, t: { en: "Putt Putt, Look at the Tractor!", es: "¡Put Put, Mira el Tractor!", de: "Tuck Tuck, schau, der Traktor!", pt: "Tuc Tuc, Olha o Trator!", ar: "تُكْ تُكْ، انظرْ إلى الجرّار!", tr: "Pat Pat Traktör" } },
-  { id: "lumi",    tag: "lullaby",   live: ["tr"], yt: { tr: "DtAjpss6hpQ" }, t: { en: "Lumi, the Little Star", es: "Lumi, la Estrellita", de: "Lumi, das kleine Sternchen", pt: "Lumi, a Estrelinha", ar: "لومي النجمة الصغيرة", tr: "Parla Yıldız" } },
-  { id: "sleepy",  tag: "lullaby",   t: { en: "Sleepy Time on the Farm", es: "Hora de Dormir en la Granja", de: "Schlafenszeit auf dem Bauernhof", pt: "Hora de Dormir na Fazenda", ar: "وقتُ النوم في المزرعة", tr: "Çiftlikte Uyku Vakti" } },
-  { id: "count10", tag: "counting",  t: { en: "Count to 10 with Rolly", es: "Cuenta hasta 10 con Rolly", de: "Zählen bis 10 mit Rolly", pt: "Conte até 10 com o Rolly", ar: "لِنَعُدَّ حتى ١٠ مع رولي", tr: "Sayıları Öğreniyorum" } },
+const VIDEOS = [
+  { id: "count10",  cat: "song",    tag: "counting",  live: ["tr"], yt: { tr: "_WOZQbbG74Y" }, t: { en: "Count to 10 with Rolly", es: "Cuenta hasta 10 con Rolly", de: "Zählen bis 10 mit Rolly", pt: "Conte até 10 com o Rolly", ar: "لِنَعُدَّ حتى ١٠ مع رولي", tr: "Sayıları Öğreniyorum" } },
+  { id: "odd",      cat: "quiz",    tag: "quiz",      live: ["tr"], yt: { tr: "SM-wviZwHNU" }, t: { en: "Which One Is Different?", es: "¿Cuál es diferente?", de: "Welches ist anders?", pt: "Qual é diferente?", ar: "أيُّها مختلف؟", tr: "Hangisi Farklı?" } },
+  { id: "honey",    cat: "story",   tag: "story",     trArt: true, live: ["tr", "en"], yt: { tr: "MkD3L4tKx-E", en: "zggZGoe0eC8" }, t: { en: "Who Ate the Honey?", es: "¿Quién se comió la miel?", de: "Wer hat den Honig genascht?", pt: "Quem comeu o mel?", ar: "مَن أكل العسل؟", tr: "Kim Yedi Balı?" } },
+  { id: "sleepy",   cat: "lullaby", tag: "lullaby",   live: ["tr"], yt: { tr: "vvpB91mGtvU" }, t: { en: "Sleepy Time on the Farm", es: "Hora de Dormir en la Granja", de: "Schlafenszeit auf dem Bauernhof", pt: "Hora de Dormir na Fazenda", ar: "وقتُ النوم في المزرعة", tr: "Çiftlikte Uyku Vakti" } },
+  { id: "fruits",   cat: "book",    tag: "book",      trArt: true, live: ["tr"], yt: { tr: "JIQyb865pkw" }, t: { en: "Learning Fruits with Bibi", es: "Aprendo las frutas con Bibi", de: "Obst entdecken mit Bibi", pt: "Aprendendo as frutas com a Bibi", ar: "أتعلَّم الفواكه مع بيبي", tr: "Meyveleri Öğreniyorum" } },
+  { id: "shadow",   cat: "quiz",    tag: "quiz",      live: ["tr"], yt: { tr: "0PIDXchwBhw" }, t: { en: "Whose Shadow Is This?", es: "¿De quién es esta sombra?", de: "Wessen Schatten ist das?", pt: "De quem é esta sombra?", ar: "ظلُّ مَن هذا؟", tr: "Bu Gölge Kimin?" } },
+  { id: "rapunzel", cat: "story",   tag: "story",     live: ["en"], yt: { en: "H7UfZulavrc" }, t: { en: "Rapunzel", es: "Rapunzel", de: "Rapunzel", pt: "Rapunzel", ar: "رابونزل", tr: "Rapunzel" } },
+  { id: "cake",     cat: "story",   tag: "story",     live: ["tr"], yt: { tr: "vbpu-4gaKPQ" }, t: { en: "The Strawberry Cake", es: "El Pastel de Fresas", de: "Der Erdbeerkuchen", pt: "O Bolo de Morango", ar: "كعكة الفراولة", tr: "Çilekli Pasta" } },
+  { id: "tractor",  cat: "song",    tag: "farm",      live: ["tr"], yt: { tr: "-Y1mYE75VGs" }, t: { en: "Putt Putt, Look at the Tractor!", es: "¡Put Put, Mira el Tractor!", de: "Tuck Tuck, schau, der Traktor!", pt: "Tuc Tuc, Olha o Trator!", ar: "تُكْ تُكْ، انظرْ إلى الجرّار!", tr: "Pat Pat Traktör" } },
+  { id: "rolly",    cat: "song",    tag: "singalong", live: ["tr"], yt: { tr: "5nh1MCtzWP8" }, t: { en: "Rolly the Rainbow Bus", es: "Rolly, el Autobús Arcoíris", de: "Rolly, der Regenbogenbus", pt: "Rolly, o Ônibus Arco-Íris", ar: "رولي الباص الملوّن", tr: "Renkli Otobüs" } },
+  { id: "lumi",     cat: "lullaby", tag: "lullaby",   live: ["tr"], yt: { tr: "DtAjpss6hpQ" }, t: { en: "Lumi, the Little Star", es: "Lumi, la Estrellita", de: "Lumi, das kleine Sternchen", pt: "Lumi, a Estrelinha", ar: "لومي النجمة الصغيرة", tr: "Parla Yıldız" } },
+  { id: "bibi",     cat: "song",    tag: "colors",    live: ["tr"], yt: { tr: "0cYJ_DREVI0" }, t: { en: "Bibi the Busy Bee", es: "La Abejita Bibi", de: "Biene Bibi summt", pt: "A Abelhinha Bibi", ar: "النحلة بيبي", tr: "Arı Vız Vız" } },
+  { id: "minik",    cat: "song",    tag: "singalong", live: ["tr"], yt: { tr: "FPQXRUMN2Z8" }, t: { en: "Blub, the Little Fish", es: "Blub, el Pececito", de: "Blub, der kleine Fisch", pt: "Blub, o Peixinho", ar: "بلوب السمكة الصغيرة", tr: "Minik Balık Kaç" } },
+  { id: "kiko",     cat: "song",    tag: "dance",     t: { en: "Kiko the Little Frog", es: "La Ranita Kiko", de: "Kiko, der kleine Frosch", pt: "Kiko, o Sapinho", ar: "كيكو الضفدع الصغير", tr: "Küçük Kurbağa" } },
+  { id: "ducks",    cat: "song",    tag: "counting",  t: { en: "Five Little Ducks", es: "Cinco Patitos", de: "Fünf kleine Entchen", pt: "Cinco Patinhos", ar: "خمس بطّات صغيرة", tr: "Beş Küçük Ördek" } },
 ];
+// filter tabs; hash = deep link (bailabu.com/#quiz), the anchors sit at the top of the videos section
+const CATS = [
+  { id: "all",     icon: "✨" },
+  { id: "song",    icon: "🎵", hash: "songs" },
+  { id: "lullaby", icon: "🌙", hash: "lullabies" },
+  { id: "quiz",    icon: "🧩", hash: "quiz" },
+  { id: "book",    icon: "📖", hash: "books" },
+  { id: "story",   icon: "🔍", hash: "tales" },
+];
+// Imprint (§ 5 DDG): fill in to show it in the legal dialog, e.g. { name: "", street: "", city: "", email: "" }
+const IMPRINT = null;
 /* Coloring pages (assets/print/, built from _shared/printables/en). English names on every language for now. */
 const PRINTS = [
   ["bailabu","Bailabu"],["kiko","Kiko"],["bibi","Bibi"],["rolly","Rolly"],["blub","Blub"],["lumi","Lumi"],
@@ -442,24 +723,25 @@ const PRINTS = [
   ["elephant","Elephant"],["flamingo","Flamingo"],["kitten","Kitten"],["turtle","Turtle"],["car","Car"],
   ["apple","Apple"],["banana","Banana"],["pear","Pear"],["strawberry","Strawberry"],["ball","Ball"],["star","Star"],
 ];
-const TAG_COLOR = { dance: "bg-leaf", singalong: "bg-coral", counting: "bg-sky", colors: "bg-violet", farm: "bg-tangerine", lullaby: "bg-ink" };
+const TAG_COLOR = { dance: "bg-leaf", singalong: "bg-coral", counting: "bg-sky", colors: "bg-violet", farm: "bg-tangerine", lullaby: "bg-ink", quiz: "bg-violet", book: "bg-leaf", story: "bg-coral" };
 
 /* ---------------- Texts ---------------- */
 const T = {
 en: {
   title: "Bailabu – Kids Songs, Games & Stories",
-  desc: "Happy sing-along songs, little games and picture stories for toddlers and preschoolers (ages 1–5) with Bailabu the bear and his island friends.",
+  desc: "Happy songs and lullabies, quiz games, picture books and stories for toddlers and preschoolers (ages 1–5) with Bailabu the bear and his island friends.",
   skip: "Skip to content", menu: "Menu", island: "Island",
-  nav_songs: "Songs", nav_play: "Games", nav_stories: "Stories", nav_channels: "Channels",
-  nav_coloring: "Coloring", coloring_title: "Coloring pages", coloring_text: "Print, grab your crayons and color in your island friends!", coloring_hint: "PNG, 300 dpi – print on A4 or Letter. Free for use at home, in daycare and in kindergarten.", coloring_dl: "Download",
-  kicker: "Kids songs · games · stories",
+  nav_videos: "Videos", nav_play: "Games", nav_stories: "Stories", nav_channels: "Channels",
+  nav_coloring: "Coloring", coloring_title: "Coloring pages", coloring_text: "Print, grab your crayons and color in your island friends!", coloring_hint: "PNG, 300 dpi – print on A4 or Letter. Free for use at home, in daycare and in kindergarten.", coloring_dl: "Download", coloring_alt: "{n} coloring page",
+  kicker: "Songs · quiz games · picture books · stories",
   hero_title: "Sing, dance & play on Bailabu Island!",
-  hero_text: "Happy sing-along songs, little games and picture stories for toddlers and preschoolers (ages 1–5) – with Bailabu the bear and all his island friends.",
+  hero_text: "Happy songs and lullabies, quiz games, picture books and stories for toddlers and preschoolers (ages 1–5) – with Bailabu the bear and all his island friends.",
   cta_watch: "Watch on YouTube", cta_play: "Let's play!",
   friends_title: "Meet the island friends", friends_text: "Tap a friend to say hello!", hello: "Hello",
-  songs_title: "Songs to sing along", songs_text: "Easy lyrics on screen, a gentle tempo and lots of clapping and dancing.",
-  songs_friday: "New songs on the way", watch: "Watch",
-  tag_dance: "Dance", tag_singalong: "Sing-along", tag_counting: "Counting", tag_colors: "Colors", tag_farm: "Farm animals", tag_lullaby: "Lullaby",
+  videos_title: "Videos for little ones", videos_text: "Songs, lullabies, quiz games, picture books and stories. Pick what fits the moment!",
+  videos_badge: "New videos on the way", videos_lang: "TR or EN on a picture shows the language of the video. More languages are on the way.", watch: "Watch",
+  cat_all: "All", cat_song: "Songs", cat_lullaby: "Lullabies", cat_quiz: "Quiz & games", cat_book: "Picture books", cat_story: "Stories",
+  tag_dance: "Dance", tag_singalong: "Sing-along", tag_counting: "Counting", tag_colors: "Colors", tag_farm: "Farm animals", tag_lullaby: "Lullaby", tag_quiz: "Quiz", tag_book: "Picture book", tag_story: "Story",
   play_title: "Games & riddles", play_text: "Little games for little hands – no reading needed. Just tap!",
   g_memory: "Memory", g_odd: "Odd one out", g_shadow: "Shadows", g_count: "Counting",
   q_memory: "Find the pairs!", q_odd: "Which one is different?", q_shadow: "Whose shadow is this?", q_count: "How many do you see?",
@@ -473,7 +755,7 @@ en: {
   stories_title: "Picture stories", stories_text: "Read together, count together, laugh together.",
   open_book: "Open the book", story1_title: "Memo & Tonton: The Strawberry Cake",
   story1_text: "Memo and his teddy Tonton decorate a cake – with cream, counting and a little surprise on Tonton's nose.",
-  soon: "Coming soon", soon_kiko: "Kiko's big jump", soon_rolly: "Rolly's rainy-day trip",
+  soon: "Coming soon", more_tales: "Watch more stories", more_books: "Watch picture books",
   prev: "Back", next: "Next", the_end: "The End", read_again: "Read again", close: "Close",
   count_tap: "Tap the strawberries to count!",
   story: [
@@ -494,21 +776,30 @@ en: {
   p2_t: "Made for learning", p2: "Counting, colors, animals and sharing – through music and play.",
   p3_t: "Calm by design", p3: "Slower songs for little ones and soft lullabies for bedtime. No ads and no tracking on this website.",
   footer_love: "Made with love for little ones.",
+  alt_hero: "Bailabu the bear and his friends on a sunny island", legal_privacy: "Privacy", legal_imprint: "Legal notice",
+  privacy: [
+    "This website has no cookies, no analytics, no ads and no forms. It collects no personal data about you or your child.",
+    "Hosting: the site is served by GitHub Pages (GitHub, Inc., USA). To deliver the pages, GitHub technically processes access data such as your IP address, browser and time of access (Art. 6(1)(f) GDPR: legitimate interest in running the site).",
+    "Your device: the language, sound setting, stars and memory size are kept in your browser's local storage. They never leave your device, and you can delete them in your browser.",
+    "YouTube: fonts, images and scripts all come from this site. YouTube is only contacted when you open a video or channel link. From then on, YouTube's (Google's) privacy policy applies.",
+    "You have the right to information, correction, deletion, restriction and objection, and the right to complain to a data protection authority.",
+  ],
 },
 de: {
   title: "Bailabu – Kinderlieder, Spiele & Geschichten",
-  desc: "Fröhliche Mitsinglieder, kleine Spiele und Bildergeschichten für Kinder von 1 bis 5 Jahren – mit Bailabu, dem Bären, und seinen Inselfreunden.",
+  desc: "Fröhliche Lieder und Schlaflieder, Ratespiele, Bilderbücher und Geschichten für Kinder von 1 bis 5 Jahren – mit Bailabu, dem Bären, und seinen Inselfreunden.",
   skip: "Zum Inhalt springen", menu: "Menü", island: "Insel",
-  nav_songs: "Lieder", nav_play: "Spiele", nav_stories: "Geschichten", nav_channels: "Kanäle",
-  nav_coloring: "Malen", coloring_title: "Malvorlagen", coloring_text: "Ausdrucken, Stifte schnappen und die Inselfreunde bunt anmalen!", coloring_hint: "PNG, 300 dpi – auf A4 drucken. Kostenlos für zu Hause, Kita und Kindergarten.", coloring_dl: "Herunterladen",
-  kicker: "Kinderlieder · Spiele · Geschichten",
+  nav_videos: "Videos", nav_play: "Spiele", nav_stories: "Geschichten", nav_channels: "Kanäle",
+  nav_coloring: "Malen", coloring_title: "Malvorlagen", coloring_text: "Ausdrucken, Stifte schnappen und die Inselfreunde bunt anmalen!", coloring_hint: "PNG, 300 dpi – auf A4 drucken. Kostenlos für zu Hause, Kita und Kindergarten.", coloring_dl: "Herunterladen", coloring_alt: "Malvorlage: {n}",
+  kicker: "Lieder · Ratespiele · Bilderbücher · Geschichten",
   hero_title: "Singen, tanzen & spielen auf der Bailabu-Insel!",
-  hero_text: "Fröhliche Mitsinglieder, kleine Spiele und Bildergeschichten für Kinder von 1 bis 5 Jahren – mit Bailabu, dem Bären, und all seinen Freunden von der Insel.",
+  hero_text: "Fröhliche Lieder und Schlaflieder, Ratespiele, Bilderbücher und Geschichten für Kinder von 1 bis 5 Jahren – mit Bailabu, dem Bären, und all seinen Freunden von der Insel.",
   cta_watch: "Auf YouTube ansehen", cta_play: "Los, spielen!",
   friends_title: "Das sind die Inselfreunde", friends_text: "Tippe auf einen Freund und sag Hallo!", hello: "Hallo",
-  songs_title: "Lieder zum Mitsingen", songs_text: "Einfache Texte im Bild, ein ruhiges Tempo und viel Klatschen und Tanzen.",
-  songs_friday: "Neue Lieder sind unterwegs", watch: "Ansehen",
-  tag_dance: "Tanzen", tag_singalong: "Mitsingen", tag_counting: "Zählen", tag_colors: "Farben", tag_farm: "Bauernhof", tag_lullaby: "Schlaflied",
+  videos_title: "Videos für die Kleinsten", videos_text: "Lieder, Schlaflieder, Ratespiele, Bilderbücher und Geschichten. Such aus, was gerade passt!",
+  videos_badge: "Neue Videos sind unterwegs", videos_lang: "TR oder EN auf dem Bild zeigt die Sprache des Videos. Weitere Sprachen sind unterwegs.", watch: "Ansehen",
+  cat_all: "Alle", cat_song: "Lieder", cat_lullaby: "Schlaflieder", cat_quiz: "Rätsel & Spiele", cat_book: "Bilderbücher", cat_story: "Geschichten",
+  tag_dance: "Tanzen", tag_singalong: "Mitsingen", tag_counting: "Zählen", tag_colors: "Farben", tag_farm: "Bauernhof", tag_lullaby: "Schlaflied", tag_quiz: "Rätsel", tag_book: "Bilderbuch", tag_story: "Geschichte",
   play_title: "Spiele & Rätsel", play_text: "Kleine Spiele für kleine Hände – ganz ohne Lesen. Einfach tippen!",
   g_memory: "Memory", g_odd: "Was passt nicht?", g_shadow: "Schatten", g_count: "Zählen",
   q_memory: "Finde die Paare!", q_odd: "Welches ist anders?", q_shadow: "Wessen Schatten ist das?", q_count: "Wie viele siehst du?",
@@ -522,7 +813,7 @@ de: {
   stories_title: "Bildergeschichten", stories_text: "Zusammen lesen, zusammen zählen, zusammen lachen.",
   open_book: "Buch öffnen", story1_title: "Memo & Tonton: Die Erdbeertorte",
   story1_text: "Memo und sein Teddy Tonton verzieren eine Torte – mit Sahne, Zählen und einer kleinen Überraschung auf Tontons Nase.",
-  soon: "Bald", soon_kiko: "Kikos großer Sprung", soon_rolly: "Rollys Regentag-Ausflug",
+  soon: "Bald", more_tales: "Mehr Geschichten ansehen", more_books: "Bilderbücher ansehen",
   prev: "Zurück", next: "Weiter", the_end: "Ende", read_again: "Nochmal lesen", close: "Schließen",
   count_tap: "Tippe auf die Erdbeeren und zähle mit!",
   story: [
@@ -543,21 +834,30 @@ de: {
   p2_t: "Spielend lernen", p2: "Zählen, Farben, Tiere und Teilen – mit Musik und Spiel.",
   p3_t: "Ruhig gestaltet", p3: "Langsamere Lieder für die Kleinsten und sanfte Schlaflieder zur Nacht. Keine Werbung und kein Tracking auf dieser Website.",
   footer_love: "Mit Liebe für die Kleinsten gemacht.",
+  alt_hero: "Bailabu, der Bär, und seine Freunde auf einer sonnigen Insel", legal_privacy: "Datenschutz", legal_imprint: "Impressum",
+  privacy: [
+    "Diese Website verwendet keine Cookies, keine Analyse-Tools, keine Werbung und keine Formulare. Sie erhebt keine personenbezogenen Daten über dich oder dein Kind.",
+    "Hosting: Die Seite wird über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Dabei verarbeitet GitHub technisch notwendige Zugriffsdaten wie IP-Adresse, Browser und Zeitpunkt des Abrufs (Art. 6 Abs. 1 lit. f DSGVO: berechtigtes Interesse am Betrieb der Website).",
+    "Dein Gerät: Sprache, Ton-Einstellung, Sterne und Memory-Größe werden im lokalen Speicher deines Browsers abgelegt. Sie verlassen dein Gerät nicht, und du kannst sie im Browser löschen.",
+    "YouTube: Schriften, Bilder und Skripte kommen alle von dieser Website. YouTube wird erst kontaktiert, wenn du einen Video- oder Kanal-Link öffnest. Ab dann gilt die Datenschutzerklärung von YouTube (Google).",
+    "Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung und Widerspruch sowie das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.",
+  ],
 },
 es: {
   title: "Bailabú – Canciones infantiles, juegos y cuentos",
-  desc: "Canciones alegres para cantar, juegos sencillos y cuentos ilustrados para niños de 1 a 5 años, con el osito Bailabú y sus amigos de la isla.",
+  desc: "Canciones alegres y de cuna, juegos de adivinanzas, libros ilustrados y cuentos para niños de 1 a 5 años, con el osito Bailabú y sus amigos de la isla.",
   skip: "Ir al contenido", menu: "Menú", island: "Isla",
-  nav_songs: "Canciones", nav_play: "Juegos", nav_stories: "Cuentos", nav_channels: "Canales",
-  nav_coloring: "Colorear", coloring_title: "Dibujos para colorear", coloring_text: "¡Imprime, toma tus crayones y colorea a tus amigos de la isla!", coloring_hint: "PNG, 300 dpi – imprime en A4 o carta. Gratis para casa, guardería y preescolar.", coloring_dl: "Descargar",
-  kicker: "Canciones infantiles · juegos · cuentos",
+  nav_videos: "Videos", nav_play: "Juegos", nav_stories: "Cuentos", nav_channels: "Canales",
+  nav_coloring: "Colorear", coloring_title: "Dibujos para colorear", coloring_text: "¡Imprime, toma tus crayones y colorea a tus amigos de la isla!", coloring_hint: "PNG, 300 dpi – imprime en A4 o carta. Gratis para casa, guardería y preescolar.", coloring_dl: "Descargar", coloring_alt: "{n} para colorear",
+  kicker: "Canciones · adivinanzas · libros · cuentos",
   hero_title: "¡Canta, baila y juega en la Isla Bailabú!",
-  hero_text: "Canciones alegres para cantar, juegos sencillos y cuentos ilustrados para niños de 1 a 5 años, con el osito Bailabú y todos sus amigos de la isla.",
+  hero_text: "Canciones alegres y de cuna, juegos de adivinanzas, libros ilustrados y cuentos para niños de 1 a 5 años, con el osito Bailabú y todos sus amigos de la isla.",
   cta_watch: "Ver en YouTube", cta_play: "¡A jugar!",
   friends_title: "Conoce a los amigos de la isla", friends_text: "¡Toca a un amigo para saludar!", hello: "¡Hola",
-  songs_title: "Canciones para cantar", songs_text: "Letras fáciles en pantalla, un ritmo tranquilo y muchas palmas y bailes.",
-  songs_friday: "Más canciones en camino", watch: "Ver",
-  tag_dance: "Baile", tag_singalong: "Para cantar", tag_counting: "Contar", tag_colors: "Colores", tag_farm: "Granja", tag_lullaby: "Canción de cuna",
+  videos_title: "Videos para los más pequeños", videos_text: "Canciones, canciones de cuna, juegos de adivinanzas, libros ilustrados y cuentos. ¡Elige lo que mejor te venga!",
+  videos_badge: "Más videos en camino", videos_lang: "TR o EN en la imagen indica el idioma del video. Pronto habrá más idiomas.", watch: "Ver",
+  cat_all: "Todos", cat_song: "Canciones", cat_lullaby: "Canciones de cuna", cat_quiz: "Adivinanzas y juegos", cat_book: "Libros ilustrados", cat_story: "Cuentos",
+  tag_dance: "Baile", tag_singalong: "Para cantar", tag_counting: "Contar", tag_colors: "Colores", tag_farm: "Granja", tag_lullaby: "Canción de cuna", tag_quiz: "Adivinanza", tag_book: "Libro ilustrado", tag_story: "Cuento",
   play_title: "Juegos y adivinanzas", play_text: "Juegos pequeños para manos pequeñas, sin necesidad de leer. ¡Solo toca!",
   g_memory: "Memoria", g_odd: "El diferente", g_shadow: "Sombras", g_count: "Contar",
   q_memory: "¡Encuentra las parejas!", q_odd: "¿Cuál es diferente?", q_shadow: "¿De quién es esta sombra?", q_count: "¿Cuántos ves?",
@@ -571,7 +871,7 @@ es: {
   stories_title: "Cuentos ilustrados", stories_text: "Leer juntos, contar juntos, reír juntos.",
   open_book: "Abrir el cuento", story1_title: "Memo y Tonton: El pastel de fresas",
   story1_text: "Memo y su osito Tonton decoran un pastel, con crema, números y una sorpresita en la nariz de Tonton.",
-  soon: "Muy pronto", soon_kiko: "El gran salto de Kiko", soon_rolly: "Rolly en un día de lluvia",
+  soon: "Muy pronto", more_tales: "Ver más cuentos", more_books: "Ver libros ilustrados",
   prev: "Atrás", next: "Siguiente", the_end: "Fin", read_again: "Leer otra vez", close: "Cerrar",
   count_tap: "¡Toca las fresas para contar!",
   story: [
@@ -592,21 +892,30 @@ es: {
   p2_t: "Para aprender", p2: "Contar, colores, animales y compartir, con música y juego.",
   p3_t: "Diseño tranquilo", p3: "Canciones más lentas para los más pequeños y canciones de cuna suaves para dormir. Este sitio no tiene anuncios ni rastreo.",
   footer_love: "Hecho con cariño para los más pequeños.",
+  alt_hero: "El osito Bailabú y sus amigos en una isla soleada", legal_privacy: "Privacidad", legal_imprint: "Aviso legal",
+  privacy: [
+    "Este sitio no usa cookies, ni analítica, ni anuncios, ni formularios. No recopila datos personales tuyos ni de tu hijo o hija.",
+    "Alojamiento: el sitio se sirve desde GitHub Pages (GitHub, Inc., EE. UU.). Para entregar las páginas, GitHub procesa datos técnicos de acceso como la dirección IP, el navegador y la hora (art. 6, apdo. 1, letra f del RGPD: interés legítimo en operar el sitio).",
+    "Tu dispositivo: el idioma, el sonido, las estrellas y el tamaño del juego de memoria se guardan en el almacenamiento local de tu navegador. No salen de tu dispositivo y puedes borrarlos desde el navegador.",
+    "YouTube: las fuentes, imágenes y scripts vienen de este sitio. Solo se contacta con YouTube cuando abres un enlace a un video o canal. A partir de ahí se aplica la política de privacidad de YouTube (Google).",
+    "Tienes derecho de acceso, rectificación, supresión, limitación y oposición, y a reclamar ante una autoridad de protección de datos.",
+  ],
 },
 pt: {
   title: "Bailabu – Músicas infantis, jogos e histórias",
-  desc: "Músicas alegres para cantar junto, joguinhos e histórias ilustradas para crianças de 1 a 5 anos, com o ursinho Bailabu e os amigos da ilha.",
+  desc: "Músicas alegres e canções de ninar, jogos de perguntas, livros ilustrados e histórias para crianças de 1 a 5 anos, com o ursinho Bailabu e os amigos da ilha.",
   skip: "Ir para o conteúdo", menu: "Menu", island: "Ilha",
-  nav_songs: "Músicas", nav_play: "Jogos", nav_stories: "Histórias", nav_channels: "Canais",
-  nav_coloring: "Colorir", coloring_title: "Desenhos para colorir", coloring_text: "Imprima, pegue seus gizes de cera e pinte seus amigos da ilha!", coloring_hint: "PNG, 300 dpi – imprima em A4. Grátis para usar em casa, na creche e na pré-escola.", coloring_dl: "Baixar",
-  kicker: "Músicas infantis · jogos · histórias",
+  nav_videos: "Vídeos", nav_play: "Jogos", nav_stories: "Histórias", nav_channels: "Canais",
+  nav_coloring: "Colorir", coloring_title: "Desenhos para colorir", coloring_text: "Imprima, pegue seus gizes de cera e pinte seus amigos da ilha!", coloring_hint: "PNG, 300 dpi – imprima em A4. Grátis para usar em casa, na creche e na pré-escola.", coloring_dl: "Baixar", coloring_alt: "{n} para colorir",
+  kicker: "Músicas · quiz · livros · histórias",
   hero_title: "Cante, dance e brinque na Ilha Bailabu!",
-  hero_text: "Músicas alegres para cantar junto, joguinhos e histórias ilustradas para crianças de 1 a 5 anos, com o ursinho Bailabu e todos os amigos da ilha.",
+  hero_text: "Músicas alegres e canções de ninar, jogos de perguntas, livros ilustrados e histórias para crianças de 1 a 5 anos, com o ursinho Bailabu e todos os amigos da ilha.",
   cta_watch: "Assistir no YouTube", cta_play: "Vamos brincar!",
   friends_title: "Conheça os amigos da ilha", friends_text: "Toque em um amigo para dizer oi!", hello: "Oi",
-  songs_title: "Músicas para cantar junto", songs_text: "Letras fáceis na tela, um ritmo tranquilo e muitas palmas e danças.",
-  songs_friday: "Mais músicas a caminho", watch: "Assistir",
-  tag_dance: "Dança", tag_singalong: "Cante junto", tag_counting: "Contar", tag_colors: "Cores", tag_farm: "Fazenda", tag_lullaby: "Canção de ninar",
+  videos_title: "Vídeos para os pequenos", videos_text: "Músicas, canções de ninar, jogos de perguntas, livros ilustrados e histórias. Escolha o que combina com o momento!",
+  videos_badge: "Mais vídeos a caminho", videos_lang: "TR ou EN na imagem indica o idioma do vídeo. Mais idiomas a caminho.", watch: "Assistir",
+  cat_all: "Todos", cat_song: "Músicas", cat_lullaby: "Canções de ninar", cat_quiz: "Quiz e jogos", cat_book: "Livros ilustrados", cat_story: "Histórias",
+  tag_dance: "Dança", tag_singalong: "Cante junto", tag_counting: "Contar", tag_colors: "Cores", tag_farm: "Fazenda", tag_lullaby: "Canção de ninar", tag_quiz: "Quiz", tag_book: "Livro ilustrado", tag_story: "História",
   play_title: "Jogos e charadas", play_text: "Joguinhos para mãozinhas – não precisa saber ler. É só tocar!",
   g_memory: "Memória", g_odd: "O diferente", g_shadow: "Sombras", g_count: "Contar",
   q_memory: "Encontre os pares!", q_odd: "Qual é diferente?", q_shadow: "De quem é esta sombra?", q_count: "Quantos você vê?",
@@ -620,7 +929,7 @@ pt: {
   stories_title: "Histórias ilustradas", stories_text: "Ler juntos, contar juntos, rir juntos.",
   open_book: "Abrir a história", story1_title: "Memo e Tonton: O bolo de morango",
   story1_text: "Memo e seu ursinho Tonton enfeitam um bolo – com creme, contagem e uma surpresinha no nariz do Tonton.",
-  soon: "Em breve", soon_kiko: "O grande pulo do Kiko", soon_rolly: "Rolly num dia de chuva",
+  soon: "Em breve", more_tales: "Ver mais histórias", more_books: "Ver livros ilustrados",
   prev: "Voltar", next: "Próxima", the_end: "Fim", read_again: "Ler de novo", close: "Fechar",
   count_tap: "Toque nos morangos para contar!",
   story: [
@@ -641,21 +950,30 @@ pt: {
   p2_t: "Feito para aprender", p2: "Contar, cores, animais e dividir – com música e brincadeira.",
   p3_t: "Design tranquilo", p3: "Músicas mais lentas para os pequenos e canções de ninar suaves. Este site não tem anúncios nem rastreamento.",
   footer_love: "Feito com carinho para os pequenos.",
+  alt_hero: "O ursinho Bailabu e seus amigos em uma ilha ensolarada", legal_privacy: "Privacidade", legal_imprint: "Aviso legal",
+  privacy: [
+    "Este site não usa cookies, análises, anúncios nem formulários. Ele não coleta dados pessoais seus nem do seu filho ou filha.",
+    "Hospedagem: o site é entregue pelo GitHub Pages (GitHub, Inc., EUA). Para isso, o GitHub processa dados técnicos de acesso, como endereço IP, navegador e horário (art. 6, n.º 1, al. f do RGPD: interesse legítimo em operar o site).",
+    "Seu dispositivo: idioma, som, estrelas e tamanho do jogo da memória ficam no armazenamento local do seu navegador. Eles não saem do seu dispositivo, e você pode apagá-los no navegador.",
+    "YouTube: fontes, imagens e scripts vêm deste site. O YouTube só é contatado quando você abre um link de vídeo ou canal. A partir daí vale a política de privacidade do YouTube (Google).",
+    "Você tem direito a acesso, correção, exclusão, limitação e oposição, e a reclamar junto a uma autoridade de proteção de dados.",
+  ],
 },
 tr: {
   title: "Tontiş Ada – Çocuk şarkıları, oyunlar ve hikâyeler",
-  desc: "1–5 yaş için neşeli şarkılar, küçük oyunlar ve resimli hikâyeler – Bailabu ayıcık ve adanın tüm arkadaşlarıyla.",
+  desc: "1–5 yaş için neşeli şarkılar, ninniler, bilgi oyunları, resimli kitaplar ve hikâyeler – Bailabu ayıcık ve adanın tüm arkadaşlarıyla.",
   skip: "İçeriğe geç", menu: "Menü", island: "Tontiş Ada",
-  nav_songs: "Şarkılar", nav_play: "Oyunlar", nav_stories: "Hikâyeler", nav_channels: "Kanallar",
-  nav_coloring: "Boyama", coloring_title: "Boyama sayfaları", coloring_text: "Yazdır, boya kalemlerini al ve ada arkadaşlarını boya!", coloring_hint: "PNG, 300 dpi – A4 kâğıda yazdır. Evde, kreşte ve anaokulunda ücretsiz kullanılabilir.", coloring_dl: "İndir",
-  kicker: "Çocuk şarkıları · oyunlar · hikâyeler",
+  nav_videos: "Videolar", nav_play: "Oyunlar", nav_stories: "Hikâyeler", nav_channels: "Kanallar",
+  nav_coloring: "Boyama", coloring_title: "Boyama sayfaları", coloring_text: "Yazdır, boya kalemlerini al ve ada arkadaşlarını boya!", coloring_hint: "PNG, 300 dpi – A4 kâğıda yazdır. Evde, kreşte ve anaokulunda ücretsiz kullanılabilir.", coloring_dl: "İndir", coloring_alt: "{n} boyama sayfası",
+  kicker: "Şarkılar · oyunlar · kitaplar · hikâyeler",
   hero_title: "Tontiş Ada'da şarkı söyle, dans et ve oyna!",
-  hero_text: "1–5 yaş için neşeli şarkılar, küçük oyunlar ve resimli hikâyeler – Bailabu ayıcık ve adanın tüm arkadaşlarıyla birlikte.",
+  hero_text: "1–5 yaş için neşeli şarkılar, ninniler, bilgi oyunları, resimli kitaplar ve hikâyeler – Bailabu ayıcık ve adanın tüm arkadaşlarıyla birlikte.",
   cta_watch: "YouTube'da izle", cta_play: "Hadi oynayalım!",
   friends_title: "Adanın arkadaşlarıyla tanış", friends_text: "Merhaba demek için bir arkadaşa dokun!", hello: "Merhaba",
-  songs_title: "Birlikte söyleyelim", songs_text: "Ekranda kolay sözler, sakin bir tempo, bol bol alkış ve dans.",
-  songs_friday: "Yeni şarkılar yolda", watch: "İzle",
-  tag_dance: "Dans", tag_singalong: "Birlikte söyle", tag_counting: "Sayılar", tag_colors: "Renkler", tag_farm: "Çiftlik", tag_lullaby: "Ninni",
+  videos_title: "Küçükler için videolar", videos_text: "Şarkılar, ninniler, bilgi oyunları, resimli kitaplar ve hikâyeler. O ana en uygun olanı seçin!",
+  videos_badge: "Yeni videolar yolda", videos_lang: "Resimdeki TR veya EN videonun dilini gösterir. Yeni diller yolda.", watch: "İzle",
+  cat_all: "Hepsi", cat_song: "Şarkılar", cat_lullaby: "Ninniler", cat_quiz: "Bilgi oyunları", cat_book: "Resimli kitaplar", cat_story: "Hikâyeler",
+  tag_dance: "Dans", tag_singalong: "Birlikte söyle", tag_counting: "Sayılar", tag_colors: "Renkler", tag_farm: "Çiftlik", tag_lullaby: "Ninni", tag_quiz: "Oyun", tag_book: "Resimli kitap", tag_story: "Hikâye",
   play_title: "Oyunlar ve bilmeceler", play_text: "Küçük eller için küçük oyunlar – okumaya gerek yok. Sadece dokun!",
   g_memory: "Hafıza", g_odd: "Hangisi farklı", g_shadow: "Gölgeler", g_count: "Sayalım",
   q_memory: "Eşleri bul!", q_odd: "Hangisi farklı?", q_shadow: "Bu gölge kimin?", q_count: "Kaç tane görüyorsun?",
@@ -669,7 +987,7 @@ tr: {
   stories_title: "Resimli hikâyeler", stories_text: "Birlikte oku, birlikte say, birlikte gül.",
   open_book: "Kitabı aç", story1_title: "Memo ve Tonton: Çilekli Pasta",
   story1_text: "Memo ile oyuncak ayısı Tonton bir pastayı süslüyor – krema, sayılar ve Tonton'un burnunda küçük bir sürprizle.",
-  soon: "Çok yakında", soon_kiko: "Afacan'ın büyük zıplayışı", soon_rolly: "Renkli yağmurlu bir günde",
+  soon: "Çok yakında", more_tales: "Daha fazla hikâye izle", more_books: "Resimli kitapları izle",
   prev: "Geri", next: "İleri", the_end: "Son", read_again: "Tekrar oku", close: "Kapat",
   count_tap: "Saymak için çileklere dokun!",
   story: [
@@ -690,21 +1008,30 @@ tr: {
   p2_t: "Öğrenmek için", p2: "Saymak, renkler, hayvanlar ve paylaşmak – müzik ve oyunla.",
   p3_t: "Sakin tasarım", p3: "Küçükler için daha yavaş şarkılar, uyku için yumuşak ninniler. Bu sitede reklam ve takip yok.",
   footer_love: "Küçükler için sevgiyle yapıldı.",
+  alt_hero: "Bailabu ayıcık ve arkadaşları güneşli bir adada", legal_privacy: "Gizlilik", legal_imprint: "Yasal bilgiler",
+  privacy: [
+    "Bu sitede çerez, analiz aracı, reklam ve form yoktur. Sizin veya çocuğunuzun kişisel verileri toplanmaz.",
+    "Barındırma: Site GitHub Pages (GitHub, Inc., ABD) üzerinden sunulur. Sayfaları iletmek için GitHub; IP adresi, tarayıcı ve erişim zamanı gibi teknik verileri işler (GDPR md. 6/1-f: sitenin işletilmesinde meşru menfaat).",
+    "Cihazınız: Dil, ses ayarı, yıldızlar ve hafıza oyunu boyutu tarayıcınızın yerel belleğinde tutulur. Cihazınızdan çıkmaz, tarayıcınızdan silebilirsiniz.",
+    "YouTube: Yazı tipleri, görseller ve betikler bu siteden gelir. YouTube'a yalnızca bir video veya kanal bağlantısını açtığınızda bağlanılır. Bundan sonra YouTube'un (Google) gizlilik politikası geçerlidir.",
+    "Bilgi alma, düzeltme, silme, kısıtlama ve itiraz haklarınız ile bir veri koruma kurumuna şikâyet hakkınız vardır.",
+  ],
 },
 ar: {
   title: "بايلابو – أغاني أطفال وألعاب وقصص",
-  desc: "أغانٍ مرحة للغناء معًا، وألعاب صغيرة، وقصص مصوّرة للأطفال من سنة إلى خمس سنوات، مع الدبدوب بايلابو وأصدقائه في الجزيرة.",
+  desc: "أغانٍ مرحة وتهويدات وألعاب أسئلة وكتب مصوّرة وقصص للأطفال من سنة إلى خمس سنوات، مع الدبدوب بايلابو وأصدقائه في الجزيرة.",
   skip: "انتقل إلى المحتوى", menu: "القائمة", island: "جزيرة",
-  nav_songs: "أغانٍ", nav_play: "ألعاب", nav_stories: "قصص", nav_channels: "القنوات",
-  nav_coloring: "تلوين", coloring_title: "صفحات التلوين", coloring_text: "اطبعْ، وأمسكْ ألوانك، ولوّنْ أصدقاءك في الجزيرة!", coloring_hint: "PNG بدقة ٣٠٠ نقطة – للطباعة على ورق A4. مجانًا للاستخدام في البيت والحضانة والروضة.", coloring_dl: "تنزيل",
-  kicker: "أغاني أطفال · ألعاب · قصص",
+  nav_videos: "فيديوهات", nav_play: "ألعاب", nav_stories: "قصص", nav_channels: "القنوات",
+  nav_coloring: "تلوين", coloring_title: "صفحات التلوين", coloring_text: "اطبعْ، وأمسكْ ألوانك، ولوّنْ أصدقاءك في الجزيرة!", coloring_hint: "PNG بدقة ٣٠٠ نقطة – للطباعة على ورق A4. مجانًا للاستخدام في البيت والحضانة والروضة.", coloring_dl: "تنزيل", coloring_alt: "صفحة تلوين: {n}",
+  kicker: "أغانٍ · مسابقات · كتب · قصص",
   hero_title: "غنِّ وارقصْ والعبْ في جزيرة بايلابو!",
-  hero_text: "أغانٍ مرحة للغناء معًا، وألعاب صغيرة، وقصص مصوّرة للأطفال من سنة إلى خمس سنوات، مع الدبدوب بايلابو وكل أصدقائه في الجزيرة.",
+  hero_text: "أغانٍ مرحة وتهويدات وألعاب أسئلة وكتب مصوّرة وقصص للأطفال من سنة إلى خمس سنوات، مع الدبدوب بايلابو وكل أصدقائه في الجزيرة.",
   cta_watch: "شاهِدْ على يوتيوب", cta_play: "هيّا نلعب!",
   friends_title: "تعرَّفْ على أصدقاء الجزيرة", friends_text: "المسْ صديقًا لتقول له: مرحبًا!", hello: "مرحبًا",
-  songs_title: "أغانٍ نغنّيها معًا", songs_text: "كلمات سهلة على الشاشة، وإيقاع هادئ، وكثير من التصفيق والرقص.",
-  songs_friday: "أغانٍ جديدة في الطريق", watch: "شاهِدْ",
-  tag_dance: "رقص", tag_singalong: "غناء جماعي", tag_counting: "العدّ", tag_colors: "الألوان", tag_farm: "المزرعة", tag_lullaby: "تهويدة",
+  videos_title: "فيديوهات للصغار", videos_text: "أغانٍ وتهويدات وألعاب أسئلة وكتب مصوّرة وقصص. اختاروا ما يناسبكم!",
+  videos_badge: "فيديوهات جديدة في الطريق", videos_lang: "يشير TR أو EN على الصورة إلى لغة الفيديو. لغات أخرى في الطريق.", watch: "شاهِدْ",
+  cat_all: "الكل", cat_song: "أغانٍ", cat_lullaby: "تهويدات", cat_quiz: "مسابقات وألعاب", cat_book: "كتب مصوّرة", cat_story: "قصص",
+  tag_dance: "رقص", tag_singalong: "غناء جماعي", tag_counting: "العدّ", tag_colors: "الألوان", tag_farm: "المزرعة", tag_lullaby: "تهويدة", tag_quiz: "مسابقة", tag_book: "كتاب مصوّر", tag_story: "قصة",
   play_title: "ألعاب وألغاز", play_text: "ألعاب صغيرة للأيدي الصغيرة، بلا حاجة إلى القراءة. المسْ فقط!",
   g_memory: "الذاكرة", g_odd: "المختلف", g_shadow: "الظلال", g_count: "العدّ",
   q_memory: "جِدِ الأزواج المتشابهة!", q_odd: "أيُّها مختلف؟", q_shadow: "ظِلُّ مَن هذا؟", q_count: "كم واحدًا ترى؟",
@@ -718,7 +1045,7 @@ ar: {
   stories_title: "قصص مصوّرة", stories_text: "نقرأ معًا، ونعدّ معًا، ونضحك معًا.",
   open_book: "افتحِ القصة", story1_title: "ميمو وتونتون: كعكة الفراولة",
   story1_text: "ميمو ودبدوبه تونتون يزيّنان كعكة، بالكريمة والعدّ ومفاجأة صغيرة على أنف تونتون.",
-  soon: "قريبًا", soon_kiko: "قفزة كيكو الكبيرة", soon_rolly: "رولي في يوم ممطر",
+  soon: "قريبًا", more_tales: "شاهِدوا مزيدًا من القصص", more_books: "شاهِدوا الكتب المصوّرة",
   prev: "السابق", next: "التالي", the_end: "النهاية", read_again: "اقرأ مرة أخرى", close: "إغلاق",
   count_tap: "المسِ الفراولات لتعدَّها!",
   story: [
@@ -739,6 +1066,14 @@ ar: {
   p2_t: "للتعلّم", p2: "العدّ والألوان والحيوانات والمشاركة، بالموسيقى واللعب.",
   p3_t: "تصميم هادئ", p3: "أغانٍ أبطأ للصغار، وتهويدات ناعمة قبل النوم. لا إعلانات ولا تتبّع في هذا الموقع.",
   footer_love: "صُنع بحبّ للصغار.",
+  alt_hero: "الدبدوب بايلابو وأصدقاؤه في جزيرة مشمسة", legal_privacy: "الخصوصية", legal_imprint: "معلومات قانونية",
+  privacy: [
+    "لا يستخدم هذا الموقع ملفات تعريف الارتباط ولا أدوات التحليل ولا الإعلانات ولا النماذج، ولا يجمع أي بيانات شخصية عنكم أو عن طفلكم.",
+    "الاستضافة: يُقدَّم الموقع عبر GitHub Pages (شركة GitHub، الولايات المتحدة). ولإيصال الصفحات تعالج GitHub بيانات تقنية مثل عنوان IP والمتصفح ووقت الزيارة (المادة 6(1)(و) من اللائحة العامة لحماية البيانات: المصلحة المشروعة في تشغيل الموقع).",
+    "جهازكم: تُحفظ اللغة وإعداد الصوت والنجوم وحجم لعبة الذاكرة في التخزين المحلي لمتصفحكم. ولا تغادر جهازكم، ويمكنكم حذفها من المتصفح.",
+    "يوتيوب: الخطوط والصور والبرامج النصية كلها من هذا الموقع. ولا يتم الاتصال بيوتيوب إلا عند فتح رابط فيديو أو قناة، وعندها تسري سياسة خصوصية يوتيوب (Google).",
+    "لكم الحق في الاطلاع والتصحيح والحذف والتقييد والاعتراض، والحق في تقديم شكوى إلى هيئة حماية البيانات.",
+  ],
 },
 };
 
@@ -815,13 +1150,14 @@ function applyLang(code, user) {
   $('meta[name="description"]').setAttribute("content", t("desc"));
   document.querySelectorAll("[data-i18n]").forEach(n => { n.textContent = t(n.dataset.i18n); });
   document.querySelectorAll("[data-i18n-aria]").forEach(n => n.setAttribute("aria-label", t(n.dataset.i18nAria)));
+  document.querySelectorAll("[data-i18n-alt]").forEach(n => { n.alt = t(n.dataset.i18nAlt); });
   $("#langCur").textContent = code.toUpperCase();
   $("#ctaWatch").href = `https://www.youtube.com/@${channelFor(code).handle}`;
   if (user) {
     store.set("lang", code);
     const u = new URL(location.href); u.searchParams.set("lang", code); history.replaceState(null, "", u);
   }
-  renderLangMenu(); renderFriends(); renderSongs(); renderColoring(); renderChannels(); renderTabs(); game.restart();
+  renderLangMenu(); renderFriends(); renderVideos(); renderColoring(); renderChannels(); renderTabs(); game.restart();
   if (story.open) story.show(story.page);
 }
 function renderLangMenu() {
@@ -869,7 +1205,7 @@ function renderColoring() {
   PRINTS.forEach(([id, name]) => {
     const li = el("li");
     const b = el("button", "group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet",
-      `<img src="assets/print/${id}.webp" alt="" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
+      `<img src="assets/print/${id}.webp" alt="${esc(t("coloring_alt").replace("{n}", name))}" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
        <span class="mt-2 block font-extrabold leading-tight" dir="ltr">${esc(name)}</span>`);
     b.type = "button";
     b.addEventListener("click", () => openPrint(id, name));
@@ -880,40 +1216,62 @@ const printDlg = $("#printDlg");
 function openPrint(id, name) {
   const src = `assets/print/bailabu-coloring-${id}.png`;
   $("#printImg").src = src;
+  $("#printImg").alt = t("coloring_alt").replace("{n}", name);
   $("#printName").textContent = name;
   $("#printDl").href = src;
   printDlg.showModal();
 }
 $("#printClose").addEventListener("click", () => printDlg.close());
 printDlg.addEventListener("click", e => { if (e.target === printDlg) printDlg.close(); });
-// a song links to the visitor's own language version, else the English one (languages without their own
+// a video links to the visitor's own language version, else the English one (languages without their own
 // recording point to EN), else the Turkish original
-function songChannel(s) {
+function videoChannel(s) {
   for (const code of [lang, "en", "tr"]) {
     const c = CHANNELS.find(x => x.code === code);
     if (c && c.live && (s.live || []).includes(code)) return c;
   }
   return null;
 }
-function renderSongs() {
-  const ul = $("#songsGrid"); ul.innerHTML = "";
-  const isLive = s => !!songChannel(s);
-  [...SONGS.filter(isLive), ...SONGS.filter(s => !isLive(s))].forEach(s => {
+const cardArt = s => `assets/songs/${s.id}${s.trArt && lang === "tr" ? "-tr" : ""}.webp`;
+let videoCat = "all";
+function renderVideoTabs() {
+  const box = $("#videoTabs"); box.innerHTML = "";
+  CATS.forEach(c => {
+    const on = c.id === videoCat;
+    const b = el("button", `inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-extrabold text-lg transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50 ${on ? "bg-sky-dark text-white shadow-pop" : "bg-white text-ink hover:bg-white/70"}`,
+      `<span aria-hidden="true">${c.icon}</span>${esc(t("cat_" + c.id))}`);
+    b.type = "button"; b.setAttribute("aria-pressed", on);
+    b.addEventListener("click", () => {
+      videoCat = c.id; renderVideos();
+      history.replaceState(null, "", "#" + (c.hash || "videos"));
+    });
+    box.appendChild(b);
+  });
+}
+function renderVideos() {
+  renderVideoTabs();
+  $("#moreBooksImg").src = cardArt(VIDEOS.find(s => s.id === "fruits"));
+  const ul = $("#videoGrid"); ul.innerHTML = "";
+  const isLive = s => !!videoChannel(s);
+  const shown = VIDEOS.filter(s => videoCat === "all" || s.cat === videoCat);
+  [...shown.filter(isLive), ...shown.filter(s => !isLive(s))].forEach(s => {
     const live = isLive(s);
-    const ch = songChannel(s) || channelFor(lang);
+    const ch = videoChannel(s) || channelFor(lang);
     const title = s.t[ch.code] || s.t.en;
     const vid = (s.yt || {})[ch.code];
     const href = vid ? `https://www.youtube.com/watch?v=${vid}` : `https://www.youtube.com/@${ch.handle}/search?query=${encodeURIComponent(title)}`;
+    const name = s.t[lang] || s.t.en;
     const body = `
         <span class="relative block overflow-hidden">
-          <img src="assets/songs/${s.id}.webp" alt="" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover ${live ? "group-hover:scale-105 transition duration-300" : "opacity-80"}">
+          <img src="${cardArt(s)}" alt="${esc(name)}" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover ${live ? "group-hover:scale-105 transition duration-300" : "opacity-80"}">
           <span class="absolute top-3 start-3 rounded-full ${TAG_COLOR[s.tag]} px-3 py-1 text-sm font-extrabold text-white shadow-pop">${esc(t("tag_" + s.tag))}</span>
+          ${live && ch.code !== lang ? `<span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">${ch.code.toUpperCase()}</span>` : ""}
           ${live ? `<span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           </span>` : ""}
         </span>
         <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight">${esc(s.t[lang] || s.t.en)}</span>
+          <span class="font-display font-extrabold text-xl leading-tight">${esc(name)}</span>
           ${live ? `<span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">${esc(t("watch"))}</span>`
                  : `<span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">${esc(t("soon"))}</span>`}
         </span>`;
@@ -922,7 +1280,23 @@ function renderSongs() {
            : `<div>${body}</div>`);
     ul.appendChild(li);
   });
+  $("#videoLangNote").classList.toggle("hidden", !shown.some(s => isLive(s) && videoChannel(s).code !== lang));
 }
+function catFromHash() {
+  const c = CATS.find(c => c.hash === location.hash.slice(1));
+  if (c && c.id !== videoCat) { videoCat = c.id; renderVideos(); }
+}
+addEventListener("hashchange", catFromHash);
+
+const legalDlg = $("#legalDlg");
+$("#legalBtn").addEventListener("click", () => {
+  const box = $("#legalBody"); box.innerHTML = "";
+  if (IMPRINT) box.appendChild(el("p", "", `<strong>${esc(t("legal_imprint"))}</strong><br>${[IMPRINT.name, IMPRINT.street, IMPRINT.city, IMPRINT.email].map(esc).join("<br>")}`));
+  t("privacy").forEach(p => box.appendChild(el("p", "", esc(p))));
+  legalDlg.showModal();
+});
+$("#legalClose").addEventListener("click", () => legalDlg.close());
+legalDlg.addEventListener("click", e => { if (e.target === legalDlg) legalDlg.close(); });
 function renderChannels() {
   const ul = $("#channelGrid"); ul.innerHTML = "";
   const order = [lang, ...LANGS.filter(c => c !== lang)];
@@ -1396,6 +1770,7 @@ dlg.addEventListener("touchend", e => {
 /* ---------------- Boot ---------------- */
 $("#year").textContent = new Date().getFullYear();
 renderSound();
+videoCat = (CATS.find(c => c.hash === location.hash.slice(1)) || CATS[0]).id;
 applyLang(detectLang(), false);
 })();
 </script>

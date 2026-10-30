@@ -26,6 +26,15 @@ song "Parla Yildiz/images/final/I01.png"          lumi
 song "Ciftlikte Uyku Vakti/images/final/I03.png"  sleepy
 song "Minik Balik/Bilder/V2/N05_Flucht_mit_Schwarm_v1.png" minik
 song "Sayilari Ögreniyorum/images/final/G10.png"  count10
+# video cards of the other formats = the real YouTube thumbnail; -tr = Turkish variant where the thumbnail has text
+song "Quiz/episodes/E01_Hangisi_Farkli/output/thumbnail.jpg" odd
+song "Quiz/episodes/E02_Kimin_Golgesi/output/thumbnail.jpg"  shadow
+song "Geschichten/episodes/D01_Kim_Yedi_Bali/output/thumbnail.en.jpg" honey
+song "Geschichten/episodes/D01_Kim_Yedi_Bali/output/thumbnail.tr.jpg" honey-tr
+song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.en.jpg" fruits
+song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.tr.jpg" fruits-tr
+song "Geschichten/episodes/K01_Rapunzel/output/thumbnail.en.jpg" rapunzel
+song "Memo ve Tonton/episodes/E01_Cilekli_Pasta/images/raw/I04.png" cake
 
 # story: Memo & Tonton E01 (raw 3:2 → 16:9), newest variant wins
 R="$Y/Memo ve Tonton/episodes/E01_Cilekli_Pasta/images/raw"

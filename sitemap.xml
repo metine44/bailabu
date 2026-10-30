@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://bailabu.com/?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bailabu.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bailabu.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bailabu.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://bailabu.com/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bailabu.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://bailabu.com/?lang=tr"/>
+  </url>
+  <url>
+    <loc>https://bailabu.com/?lang=es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bailabu.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bailabu.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bailabu.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://bailabu.com/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bailabu.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://bailabu.com/?lang=tr"/>
+  </url>
+  <url>
+    <loc>https://bailabu.com/?lang=de</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bailabu.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bailabu.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bailabu.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://bailabu.com/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bailabu.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://bailabu.com/?lang=tr"/>
+  </url>
+  <url>
+    <loc>https://bailabu.com/?lang=pt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bailabu.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bailabu.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bailabu.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://bailabu.com/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bailabu.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://bailabu.com/?lang=tr"/>
+  </url>
+  <url>
+    <loc>https://bailabu.com/?lang=ar</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bailabu.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bailabu.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bailabu.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://bailabu.com/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bailabu.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://bailabu.com/?lang=tr"/>
+  </url>
+  <url>
+    <loc>https://bailabu.com/?lang=tr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bailabu.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bailabu.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bailabu.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://bailabu.com/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bailabu.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://bailabu.com/?lang=tr"/>
+  </url>
+</urlset>
