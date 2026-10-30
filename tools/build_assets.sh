@@ -29,6 +29,12 @@ song "Sayilari Ögreniyorum/images/final/G10.png"  count10
 # video cards of the other formats = the real YouTube thumbnail; -tr = Turkish variant where the thumbnail has text
 song "Quiz/episodes/E01_Hangisi_Farkli/output/thumbnail.jpg" odd
 song "Quiz/episodes/E02_Kimin_Golgesi/output/thumbnail.jpg"  shadow
+song "Quiz/episodes/E03_Bu_Ses_Kimin/output/thumbnail.jpg" sound
+song "Quiz/episodes/E04_Ce_Kim_Saklandi/output/thumbnail.jpg" peekaboo
+song "Quiz/episodes/E05_Renk_Avi/output/thumbnail.jpg" colorhunt
+song "Quiz/episodes/E06_Kac_Tane/output/thumbnail.jpg" howmany
+song "Quiz/episodes/E07_Kim_Ne_Yer/output/thumbnail.jpg" whoeats
+song "Quiz/episodes/E08_Ne_Eksik/output/thumbnail.jpg" missing
 song "Geschichten/episodes/D01_Kim_Yedi_Bali/output/thumbnail.en.jpg" honey
 song "Geschichten/episodes/D01_Kim_Yedi_Bali/output/thumbnail.tr.jpg" honey-tr
 song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.en.jpg" fruits
