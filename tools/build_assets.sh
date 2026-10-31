@@ -35,6 +35,9 @@ song "Quiz/episodes/E05_Renk_Avi/output/thumbnail.jpg" colorhunt
 song "Quiz/episodes/E06_Kac_Tane/output/thumbnail.jpg" howmany
 song "Quiz/episodes/E07_Kim_Ne_Yer/output/thumbnail.jpg" whoeats
 song "Quiz/episodes/E08_Ne_Eksik/output/thumbnail.jpg" missing
+song "Quiz/episodes/E09_Bilmece/output/thumbnail.jpg" riddles
+song "Quiz/episodes/E11_Kutuda_Ne_Var/output/thumbnail.jpg" box
+song "Quiz/episodes/E12_Bahcede_Ne_Var/output/thumbnail.jpg" garden
 song "Geschichten/episodes/D01_Kim_Yedi_Bali/output/thumbnail.en.jpg" honey
 song "Geschichten/episodes/D01_Kim_Yedi_Bali/output/thumbnail.tr.jpg" honey-tr
 song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.en.jpg" fruits
