@@ -40,6 +40,8 @@ song "Geschichten/episodes/D01_Kim_Yedi_Bali/output/thumbnail.tr.jpg" honey-tr
 song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.en.jpg" fruits
 song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.tr.jpg" fruits-tr
 song "Geschichten/episodes/K01_Rapunzel/output/thumbnail.en.jpg" rapunzel
+song "Geschichten/episodes/M11_Sus_Tospik_Sus/output/thumbnail.en.jpg" toto
+song "Geschichten/episodes/M11_Sus_Tospik_Sus/output/thumbnail.tr.jpg" toto-tr
 song "Memo ve Tonton/episodes/E01_Cilekli_Pasta/images/raw/I04.png" cake
 
 # story: Memo & Tonton E01 (raw 3:2 → 16:9), newest variant wins
