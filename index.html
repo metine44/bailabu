@@ -695,7 +695,7 @@
         <p class="text-white/70 font-semibold" data-i18n="footer_love">Made with love for little ones.</p>
       </div>
     </div>
-    <p class="text-white/60 text-sm font-semibold">© <span id="year">2026</span> Bailabu · Tontiş Ada · <button id="legalBtn" type="button" class="underline hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded" data-i18n="legal_privacy">Privacy</button></p>
+    <p class="text-white/60 text-sm font-semibold">© <span id="year">2026</span> Bailabu · Tontiş Ada <span id="contactSep" hidden>· </span><button id="contactBtn" type="button" hidden class="underline hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded" data-i18n="contact">Contact</button> · <button id="legalBtn" type="button" class="underline hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded" data-i18n="legal_privacy">Privacy</button></p>
   </div>
 </footer>
 
@@ -727,6 +727,30 @@
     </button>
     <h2 id="legalTitle" class="font-display font-extrabold text-2xl pe-12" data-i18n="legal_privacy">Privacy</h2>
     <div id="legalBody" class="mt-3 grid gap-3 font-semibold text-ink/80"></div>
+  </div>
+</dialog>
+
+<dialog id="contactDlg" class="w-[min(100vw-1rem,34rem)] max-h-[calc(100dvh-1rem)] rounded-[2rem] p-0 bg-white text-ink shadow-2xl" aria-labelledby="contactTitle">
+  <div class="relative p-5 md:p-7">
+    <button id="contactClose" type="button" class="absolute top-3 end-3 rounded-full bg-sky-light p-2.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky" data-i18n-aria="close" aria-label="Close">
+      <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <h2 id="contactTitle" class="font-display font-extrabold text-2xl pe-12" data-i18n="contact_title">Contact us</h2>
+    <p class="mt-1 font-semibold text-ink/70" data-i18n="contact_intro">Questions, ideas or feedback? Write to us – we read every message.</p>
+    <form id="contactForm" class="mt-4 grid gap-3" novalidate>
+      <label class="font-extrabold"><span data-i18n="contact_name">Your name</span>
+        <input name="name" type="text" maxlength="100" autocomplete="name" class="mt-1 block w-full rounded-2xl border-2 border-sky-light bg-white px-4 py-2.5 font-semibold text-ink focus:outline-none focus:border-sky"></label>
+      <label class="font-extrabold"><span data-i18n="contact_email">Your email (for our reply)</span>
+        <input name="email" type="email" required maxlength="200" autocomplete="email" dir="ltr" class="mt-1 block w-full rounded-2xl border-2 border-sky-light bg-white px-4 py-2.5 font-semibold text-ink focus:outline-none focus:border-sky"></label>
+      <label class="font-extrabold"><span data-i18n="contact_msg">Message</span>
+        <textarea name="message" required rows="5" maxlength="5000" class="mt-1 block w-full rounded-2xl border-2 border-sky-light bg-white px-4 py-2.5 font-semibold text-ink focus:outline-none focus:border-sky resize-y"></textarea></label>
+      <input name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+      <p class="text-sm font-semibold text-ink/60" data-i18n="contact_note">For grown-ups only. Your message is sent via Web3Forms and only used to answer you.</p>
+      <div class="flex flex-wrap items-center gap-3">
+        <button id="contactSend" type="submit" class="rounded-full bg-sky px-6 py-2.5 text-lg font-extrabold text-white shadow-pop hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition disabled:opacity-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" data-i18n="contact_send">Send</button>
+        <p id="contactStatus" class="font-extrabold" role="status" aria-live="polite"></p>
+      </div>
+    </form>
   </div>
 </dialog>
 
@@ -845,6 +869,8 @@ const CATS = [
 ];
 // Imprint (§ 5 DDG): fill in to show it in the legal dialog, e.g. { name: "", street: "", city: "", email: "" }
 const IMPRINT = null;
+// Contact form: Web3Forms access key (web3forms.com) of the channel mailbox; the address itself never appears on the page. Empty = no Contact button.
+const CONTACT_KEY = "";
 /* Coloring pages (assets/print/, built from _shared/printables/en). English names on every language for now. */
 const PRINTS = [
   ["bailabu","Bailabu"],["kiko","Kiko"],["bibi","Bibi"],["rolly","Rolly"],["blub","Blub"],["lumi","Lumi"],
@@ -909,9 +935,11 @@ en: {
   p3_t: "Calm by design", p3: "Slower songs for little ones and soft lullabies for bedtime. No ads and no tracking on this website.",
   footer_love: "Made with love for little ones.",
   alt_hero: "Bailabu the bear and his friends on a sunny island", legal_privacy: "Privacy", legal_imprint: "Legal notice",
+  contact: "Contact", contact_title: "Contact us", contact_intro: "Questions, ideas or feedback? Write to us – we read every message.", contact_name: "Your name", contact_email: "Your email (for our reply)", contact_msg: "Message", contact_note: "For grown-ups only. Your message is sent via Web3Forms and only used to answer you.", contact_send: "Send", contact_sending: "Sending…", contact_ok: "Thank you! Your message is on its way.", contact_err: "Sorry, that didn't work. Please try again later.", contact_missing: "Please fill in your email and a message.",
   privacy: [
-    "This website has no cookies, no analytics, no ads and no forms. It collects no personal data about you or your child.",
+    "This website has no cookies, no analytics and no ads. It only collects personal data if you send us a message through the contact form.",
     "Hosting: the site is served by GitHub Pages (GitHub, Inc., USA). To deliver the pages, GitHub technically processes access data such as your IP address, browser and time of access (Art. 6(1)(f) GDPR: legitimate interest in running the site).",
+    "Contact form: your name, email and message are sent through Web3Forms (USA) to our mailbox and only used to answer you (Art. 6(1)(b) and (f) GDPR). We delete them when they are no longer needed.",
     "Your device: the language, sound setting, stars and memory size are kept in your browser's local storage. They never leave your device, and you can delete them in your browser.",
     "YouTube: fonts, images and scripts all come from this site. YouTube is only contacted when you open a video or channel link. From then on, YouTube's (Google's) privacy policy applies.",
     "You have the right to information, correction, deletion, restriction and objection, and the right to complain to a data protection authority.",
@@ -967,9 +995,11 @@ de: {
   p3_t: "Ruhig gestaltet", p3: "Langsamere Lieder für die Kleinsten und sanfte Schlaflieder zur Nacht. Keine Werbung und kein Tracking auf dieser Website.",
   footer_love: "Mit Liebe für die Kleinsten gemacht.",
   alt_hero: "Bailabu, der Bär, und seine Freunde auf einer sonnigen Insel", legal_privacy: "Datenschutz", legal_imprint: "Impressum",
+  contact: "Kontakt", contact_title: "Kontakt", contact_intro: "Fragen, Ideen oder Feedback? Schreib uns – wir lesen jede Nachricht.", contact_name: "Dein Name", contact_email: "Deine E-Mail (für unsere Antwort)", contact_msg: "Nachricht", contact_note: "Nur für Erwachsene. Deine Nachricht wird über Web3Forms verschickt und nur für die Antwort genutzt.", contact_send: "Senden", contact_sending: "Wird gesendet…", contact_ok: "Danke! Deine Nachricht ist unterwegs.", contact_err: "Das hat leider nicht geklappt. Bitte versuch es später noch einmal.", contact_missing: "Bitte gib deine E-Mail und eine Nachricht ein.",
   privacy: [
-    "Diese Website verwendet keine Cookies, keine Analyse-Tools, keine Werbung und keine Formulare. Sie erhebt keine personenbezogenen Daten über dich oder dein Kind.",
+    "Diese Website verwendet keine Cookies, keine Analyse-Tools und keine Werbung. Personenbezogene Daten werden nur erhoben, wenn du uns über das Kontaktformular schreibst.",
     "Hosting: Die Seite wird über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Dabei verarbeitet GitHub technisch notwendige Zugriffsdaten wie IP-Adresse, Browser und Zeitpunkt des Abrufs (Art. 6 Abs. 1 lit. f DSGVO: berechtigtes Interesse am Betrieb der Website).",
+    "Kontaktformular: Name, E-Mail und Nachricht werden über Web3Forms (USA) an unser Postfach geschickt und nur zur Beantwortung genutzt (Art. 6 Abs. 1 lit. b und f DSGVO). Wir löschen sie, sobald sie nicht mehr gebraucht werden.",
     "Dein Gerät: Sprache, Ton-Einstellung, Sterne und Memory-Größe werden im lokalen Speicher deines Browsers abgelegt. Sie verlassen dein Gerät nicht, und du kannst sie im Browser löschen.",
     "YouTube: Schriften, Bilder und Skripte kommen alle von dieser Website. YouTube wird erst kontaktiert, wenn du einen Video- oder Kanal-Link öffnest. Ab dann gilt die Datenschutzerklärung von YouTube (Google).",
     "Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung und Widerspruch sowie das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.",
@@ -1025,9 +1055,11 @@ es: {
   p3_t: "Diseño tranquilo", p3: "Canciones más lentas para los más pequeños y canciones de cuna suaves para dormir. Este sitio no tiene anuncios ni rastreo.",
   footer_love: "Hecho con cariño para los más pequeños.",
   alt_hero: "El osito Bailabú y sus amigos en una isla soleada", legal_privacy: "Privacidad", legal_imprint: "Aviso legal",
+  contact: "Contacto", contact_title: "Contáctanos", contact_intro: "¿Preguntas, ideas o comentarios? Escríbenos: leemos todos los mensajes.", contact_name: "Tu nombre", contact_email: "Tu correo (para responderte)", contact_msg: "Mensaje", contact_note: "Solo para personas adultas. Tu mensaje se envía a través de Web3Forms y solo se usa para responderte.", contact_send: "Enviar", contact_sending: "Enviando…", contact_ok: "¡Gracias! Tu mensaje va en camino.", contact_err: "Lo sentimos, no funcionó. Inténtalo de nuevo más tarde.", contact_missing: "Escribe tu correo y un mensaje.",
   privacy: [
-    "Este sitio no usa cookies, ni analítica, ni anuncios, ni formularios. No recopila datos personales tuyos ni de tu hijo o hija.",
+    "Este sitio no usa cookies, ni analítica, ni anuncios. Solo recopila datos personales si nos escribes con el formulario de contacto.",
     "Alojamiento: el sitio se sirve desde GitHub Pages (GitHub, Inc., EE. UU.). Para entregar las páginas, GitHub procesa datos técnicos de acceso como la dirección IP, el navegador y la hora (art. 6, apdo. 1, letra f del RGPD: interés legítimo en operar el sitio).",
+    "Formulario de contacto: tu nombre, correo y mensaje se envían a través de Web3Forms (EE. UU.) a nuestro buzón y solo se usan para responderte (art. 6, apdo. 1, letras b y f del RGPD). Los borramos cuando ya no se necesitan.",
     "Tu dispositivo: el idioma, el sonido, las estrellas y el tamaño del juego de memoria se guardan en el almacenamiento local de tu navegador. No salen de tu dispositivo y puedes borrarlos desde el navegador.",
     "YouTube: las fuentes, imágenes y scripts vienen de este sitio. Solo se contacta con YouTube cuando abres un enlace a un video o canal. A partir de ahí se aplica la política de privacidad de YouTube (Google).",
     "Tienes derecho de acceso, rectificación, supresión, limitación y oposición, y a reclamar ante una autoridad de protección de datos.",
@@ -1083,9 +1115,11 @@ pt: {
   p3_t: "Design tranquilo", p3: "Músicas mais lentas para os pequenos e canções de ninar suaves. Este site não tem anúncios nem rastreamento.",
   footer_love: "Feito com carinho para os pequenos.",
   alt_hero: "O ursinho Bailabu e seus amigos em uma ilha ensolarada", legal_privacy: "Privacidade", legal_imprint: "Aviso legal",
+  contact: "Contato", contact_title: "Fale conosco", contact_intro: "Dúvidas, ideias ou sugestões? Escreva para nós – lemos todas as mensagens.", contact_name: "Seu nome", contact_email: "Seu e-mail (para a resposta)", contact_msg: "Mensagem", contact_note: "Somente para adultos. Sua mensagem é enviada pelo Web3Forms e usada apenas para responder a você.", contact_send: "Enviar", contact_sending: "Enviando…", contact_ok: "Obrigado! Sua mensagem está a caminho.", contact_err: "Desculpe, não deu certo. Tente de novo mais tarde.", contact_missing: "Preencha seu e-mail e uma mensagem.",
   privacy: [
-    "Este site não usa cookies, análises, anúncios nem formulários. Ele não coleta dados pessoais seus nem do seu filho ou filha.",
+    "Este site não usa cookies, análises nem anúncios. Ele só coleta dados pessoais se você nos escrever pelo formulário de contato.",
     "Hospedagem: o site é entregue pelo GitHub Pages (GitHub, Inc., EUA). Para isso, o GitHub processa dados técnicos de acesso, como endereço IP, navegador e horário (art. 6, n.º 1, al. f do RGPD: interesse legítimo em operar o site).",
+    "Formulário de contato: seu nome, e-mail e mensagem são enviados pelo Web3Forms (EUA) para a nossa caixa de entrada e usados apenas para responder a você (art. 6(1)(b) e (f) do RGPD). Nós os apagamos quando não forem mais necessários.",
     "Seu dispositivo: idioma, som, estrelas e tamanho do jogo da memória ficam no armazenamento local do seu navegador. Eles não saem do seu dispositivo, e você pode apagá-los no navegador.",
     "YouTube: fontes, imagens e scripts vêm deste site. O YouTube só é contatado quando você abre um link de vídeo ou canal. A partir daí vale a política de privacidade do YouTube (Google).",
     "Você tem direito a acesso, correção, exclusão, limitação e oposição, e a reclamar junto a uma autoridade de proteção de dados.",
@@ -1141,9 +1175,11 @@ tr: {
   p3_t: "Sakin tasarım", p3: "Küçükler için daha yavaş şarkılar, uyku için yumuşak ninniler. Bu sitede reklam ve takip yok.",
   footer_love: "Küçükler için sevgiyle yapıldı.",
   alt_hero: "Bailabu ayıcık ve arkadaşları güneşli bir adada", legal_privacy: "Gizlilik", legal_imprint: "Yasal bilgiler",
+  contact: "İletişim", contact_title: "Bize yazın", contact_intro: "Sorunuz, fikriniz ya da görüşünüz mü var? Bize yazın, her mesajı okuyoruz.", contact_name: "Adınız", contact_email: "E-posta adresiniz (yanıt için)", contact_msg: "Mesajınız", contact_note: "Yalnızca yetişkinler için. Mesajınız Web3Forms aracılığıyla gönderilir ve yalnızca size yanıt vermek için kullanılır.", contact_send: "Gönder", contact_sending: "Gönderiliyor…", contact_ok: "Teşekkürler! Mesajınız yola çıktı.", contact_err: "Üzgünüz, gönderilemedi. Lütfen daha sonra tekrar deneyin.", contact_missing: "Lütfen e-posta adresinizi ve mesajınızı yazın.",
   privacy: [
-    "Bu sitede çerez, analiz aracı, reklam ve form yoktur. Sizin veya çocuğunuzun kişisel verileri toplanmaz.",
+    "Bu sitede çerez, analiz aracı ve reklam yoktur. Kişisel veriler yalnızca iletişim formuyla bize yazdığınızda toplanır.",
     "Barındırma: Site GitHub Pages (GitHub, Inc., ABD) üzerinden sunulur. Sayfaları iletmek için GitHub; IP adresi, tarayıcı ve erişim zamanı gibi teknik verileri işler (GDPR md. 6/1-f: sitenin işletilmesinde meşru menfaat).",
+    "İletişim formu: adınız, e-posta adresiniz ve mesajınız Web3Forms (ABD) aracılığıyla e-posta kutumuza gönderilir ve yalnızca size yanıt vermek için kullanılır (GDPR md. 6(1)(b) ve (f)). Artık gerekmediğinde silinir.",
     "Cihazınız: Dil, ses ayarı, yıldızlar ve hafıza oyunu boyutu tarayıcınızın yerel belleğinde tutulur. Cihazınızdan çıkmaz, tarayıcınızdan silebilirsiniz.",
     "YouTube: Yazı tipleri, görseller ve betikler bu siteden gelir. YouTube'a yalnızca bir video veya kanal bağlantısını açtığınızda bağlanılır. Bundan sonra YouTube'un (Google) gizlilik politikası geçerlidir.",
     "Bilgi alma, düzeltme, silme, kısıtlama ve itiraz haklarınız ile bir veri koruma kurumuna şikâyet hakkınız vardır.",
@@ -1199,9 +1235,11 @@ ar: {
   p3_t: "تصميم هادئ", p3: "أغانٍ أبطأ للصغار، وتهويدات ناعمة قبل النوم. لا إعلانات ولا تتبّع في هذا الموقع.",
   footer_love: "صُنع بحبّ للصغار.",
   alt_hero: "الدبدوب بايلابو وأصدقاؤه في جزيرة مشمسة", legal_privacy: "الخصوصية", legal_imprint: "معلومات قانونية",
+  contact: "اتصل بنا", contact_title: "تواصلوا معنا", contact_intro: "لديكم سؤال أو فكرة أو ملاحظة؟ اكتبوا لنا، فنحن نقرأ كل رسالة.", contact_name: "الاسم", contact_email: "البريد الإلكتروني (للرد عليكم)", contact_msg: "الرسالة", contact_note: "للكبار فقط. تُرسل رسالتكم عبر Web3Forms وتُستخدم للرد عليكم فقط.", contact_send: "إرسال", contact_sending: "جارٍ الإرسال…", contact_ok: "شكرًا لكم! رسالتكم في الطريق.", contact_err: "عذرًا، لم يتم الإرسال. يُرجى المحاولة لاحقًا.", contact_missing: "يُرجى كتابة البريد الإلكتروني والرسالة.",
   privacy: [
-    "لا يستخدم هذا الموقع ملفات تعريف الارتباط ولا أدوات التحليل ولا الإعلانات ولا النماذج، ولا يجمع أي بيانات شخصية عنكم أو عن طفلكم.",
+    "لا يستخدم هذا الموقع ملفات تعريف الارتباط ولا أدوات التحليل ولا الإعلانات، ولا يجمع بيانات شخصية إلا إذا راسلتمونا عبر نموذج الاتصال.",
     "الاستضافة: يُقدَّم الموقع عبر GitHub Pages (شركة GitHub، الولايات المتحدة). ولإيصال الصفحات تعالج GitHub بيانات تقنية مثل عنوان IP والمتصفح ووقت الزيارة (المادة 6(1)(و) من اللائحة العامة لحماية البيانات: المصلحة المشروعة في تشغيل الموقع).",
+    "نموذج الاتصال: يُرسل الاسم والبريد الإلكتروني والرسالة عبر Web3Forms (الولايات المتحدة) إلى بريدنا، وتُستخدم للرد عليكم فقط (المادة 6(1)(ب) و(و) من اللائحة العامة لحماية البيانات). ونحذفها عندما لا تعود هناك حاجة إليها.",
     "جهازكم: تُحفظ اللغة وإعداد الصوت والنجوم وحجم لعبة الذاكرة في التخزين المحلي لمتصفحكم. ولا تغادر جهازكم، ويمكنكم حذفها من المتصفح.",
     "يوتيوب: الخطوط والصور والبرامج النصية كلها من هذا الموقع. ولا يتم الاتصال بيوتيوب إلا عند فتح رابط فيديو أو قناة، وعندها تسري سياسة خصوصية يوتيوب (Google).",
     "لكم الحق في الاطلاع والتصحيح والحذف والتقييد والاعتراض، والحق في تقديم شكوى إلى هيئة حماية البيانات.",
@@ -1429,6 +1467,30 @@ $("#legalBtn").addEventListener("click", () => {
 });
 $("#legalClose").addEventListener("click", () => legalDlg.close());
 legalDlg.addEventListener("click", e => { if (e.target === legalDlg) legalDlg.close(); });
+const contactDlg = $("#contactDlg"), contactForm = $("#contactForm"), contactStatus = $("#contactStatus");
+$("#contactBtn").hidden = $("#contactSep").hidden = !CONTACT_KEY;
+$("#contactBtn").addEventListener("click", () => { contactStatus.textContent = ""; contactDlg.showModal(); });
+$("#contactClose").addEventListener("click", () => contactDlg.close());
+contactDlg.addEventListener("click", e => { if (e.target === contactDlg) contactDlg.close(); });
+contactForm.addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = contactForm.elements;
+  const say = (key, ok) => { contactStatus.textContent = t(key); contactStatus.className = `font-extrabold ${ok ? "text-sky-dark" : "text-berry"}`; };
+  if (f.botcheck.checked) return;
+  if (!contactForm.checkValidity()) { say("contact_missing", false); contactForm.reportValidity(); return; }
+  $("#contactSend").disabled = true; say("contact_sending", true);
+  try {
+    const email = f.email.value.trim();
+    const r = await fetch("https://api.web3forms.com/submit", {
+      method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ access_key: CONTACT_KEY, subject: `bailabu.com contact (${lang})`, from_name: "bailabu.com",
+        name: f.name.value.trim(), email, replyto: email, message: f.message.value.trim(), botcheck: false }),
+    });
+    if (!(await r.json()).success) throw new Error(r.status);
+    contactForm.reset(); say("contact_ok", true); sfx("ding");
+  } catch { say("contact_err", false); }
+  $("#contactSend").disabled = false;
+});
 function renderChannels() {
   const ul = $("#channelGrid"); ul.innerHTML = "";
   const order = [lang, ...LANGS.filter(c => c !== lang)];

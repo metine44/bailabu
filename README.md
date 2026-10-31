@@ -1,7 +1,7 @@
 # Bailabu – bailabu.com
 
 Landing page for the Bailabu kids channels (EN · ES · DE · PT-BR · AR) and the Turkish sister channel Tontiş Ada.
-One static `index.html` (semantic HTML5, vanilla JS) + compiled Tailwind `assets/site.css`, hosted on GitHub Pages. **After every change to `index.html`: `bash tools/build_page.sh`** (Tailwind build + static English lists for crawlers; needs node + Edge). No third-party request on page load.
+One static `index.html` (semantic HTML5, vanilla JS) + compiled Tailwind `assets/site.css`, hosted on GitHub Pages. **After every change to `index.html`: `bash tools/build_page.sh`** (Tailwind build + static English lists for crawlers; needs node + Edge). No third-party request on page load (only the contact form calls Web3Forms when sent).
 
 ## What's on the page
 - **Language**: `?lang=xx` → saved choice → browser language (`navigator.languages`) → English. Arabic switches to RTL (font Baloo Bhaijaan 2, Eastern Arabic digits).
@@ -11,6 +11,7 @@ One static `index.html` (semantic HTML5, vanilla JS) + compiled Tailwind `assets
 - **Stories**: links to the Stories and Picture books tabs, and the picture book reader "Memo & Tonton: The Strawberry Cake" (no read-aloud: browser voices removed 2026-10-28), swipe/arrow keys and a counting page.
 - **Coloring pages**: 35 line-art pages (PNG, 300 dpi, 4:5) (`assets/print/`): tap a page → big preview with a download button. For now the English edition (English file names and character names) is shown in every language.
 - **Privacy** link in the footer (legal dialog, text `privacy` in every language). The imprint appears as soon as `IMPRINT` in `index.html` is filled in (still empty: needs the operator's name and address).
+- **Contact** button in the footer (next to Privacy): form dialog (name, email, message) sent through Web3Forms (`fetch` to api.web3forms.com) to the channel mailbox; the address is never in the page, only the public access key `CONTACT_KEY` in `index.html`. While `CONTACT_KEY` is empty the button stays hidden. Honeypot `botcheck` against spam; the privacy text covers the form.
 - No cookies, no analytics, no ads. `localStorage` only keeps language, sound on/off, stars and memory size. Fonts are self-hosted.
 
 ## Editing
