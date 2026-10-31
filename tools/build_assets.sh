@@ -50,6 +50,9 @@ song "Geschichten/episodes/M11_Sus_Tospik_Sus/output/thumbnail.tr.jpg" toto-tr
 song "Geschichten/episodes/K03_Uc_Ayi/output/thumbnail.en.jpg" goldie
 song "Geschichten/episodes/K03_Uc_Ayi/output/thumbnail.tr.jpg" goldie-tr
 song "Memo ve Tonton/episodes/E01_Cilekli_Pasta/images/raw/I04.png" cake
+song "Memo ve Tonton/episodes/E02_Kayip_Kirmizi_Top/images/final/T01.png" ball
+song "Memo ve Tonton/episodes/E03_Sira_Bende_Sira_Sende/images/final/T01.png" turn
+song "Memo ve Tonton/episodes/E04_Yagmurlu_Gun/images/final/T01.png" rain
 
 # story: Memo & Tonton E01 (raw 3:2 → 16:9), newest variant wins
 R="$Y/Memo ve Tonton/episodes/E01_Cilekli_Pasta/images/raw"
