@@ -17,9 +17,9 @@ One static `index.html` (semantic HTML5, vanilla JS) + compiled Tailwind `assets
 ## Editing
 - Texts: `T` object in `index.html` (one block per language). Characters: `CAST`, videos of all formats: `VIDEOS`, channels: `CHANNELS`.
 - **When a channel launches**: set `live: true` for it in `CHANNELS`.
-- **When a video goes public**: add the channel code to the entry's `live` list in `VIDEOS` and its video ID to `yt` (e.g. `yt: { tr: "5nh1MCtzWP8" }`; without an ID the card opens a search on the channel) (new video: add an entry with `cat` + `tag` + a `song` line in `tools/build_assets.sh` for its card image; thumbnails with text get a `-tr` variant + `trArt: true`). Rule in `C:\Youtube\CLAUDE.md` → "Website sync".
+- **When a video goes public**: add the channel code to the entry's `live` list in `VIDEOS` and its video ID to `yt` (e.g. `yt: { tr: "5nh1MCtzWP8" }`; without an ID the card opens a search on the channel) (new video: add an entry with `cat` + `tag` + a `song` line in `tools/build_assets.sh` for its card image; thumbnails with text get a `-tr` variant + `trArt: true`). Rule in `CLAUDE.md` → "Website sync".
 - New story: add images to `assets/story/` and the page texts to `story` in every language.
-- Coloring pages: list `PRINTS` in `index.html`; files come from `C:\Youtube\_shared\printables\en\*_lineart.png` (built by `_pipeline\build_coloring_book_v2.py`). New page: rebuild the printables, add an entry to `PRINTS`, run `build_assets.sh`.
+- Coloring pages: list `PRINTS` in `index.html`; files come from `_shared\printables\en\*_lineart.png` (built by `_pipeline\build_coloring_book_v2.py`). New page: rebuild the printables, add an entry to `PRINTS`, run `build_assets.sh`.
 - Assets are built from the YouTube project folders: `bash tools/build_assets.sh` (needs ffmpeg + uv).
 
 ## Domain

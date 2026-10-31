@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# Rebuilds assets/ from the YouTube project folders (C:\Youtube). Needs ffmpeg with libwebp + libmp3lame.
+# Rebuilds assets/ from the YouTube project folders (the root is the folder that holds _pipeline). Needs ffmpeg with libwebp + libmp3lame.
 set -euo pipefail
-Y=/c/Youtube
+Y="$(cd "$(dirname "$0")/.." && pwd)"; while [ ! -d "$Y/_pipeline" ]; do Y="$(dirname "$Y")"; done
+at() { python "$Y/_pipeline/paths.py" resolve "$1"; }   # root path or project by name, wherever it lives
+QUIZ="$(at Quiz)"
 A="$(cd "$(dirname "$0")/.." && pwd)/assets"
 mkdir -p "$A"/{brand,songs,story,chars,sfx,fonts,print}
 ff() { ffmpeg -v error -y "$@"; }
@@ -16,7 +18,7 @@ ff -i "$Y/_channels/02_BailabuIsland_EN/raw/B01.png" -vf "scale=64:64:flags=lanc
 ff -i "$Y/_channels/01_TontisAdaTV_TR/final/profile_800.png" -vf "scale=320:320:flags=lanczos" -c:v libwebp -quality 85 "$A/brand/badge-tr.webp"
 
 # song cards (16:9 key art, no text)
-song() { ff -i "$Y/$1" -vf "scale=800:450:force_original_aspect_ratio=increase,crop=800:450" -c:v libwebp -quality 78 "$A/songs/$2.webp"; }
+song() { ff -i "$(at "$1")" -vf "scale=800:450:force_original_aspect_ratio=increase,crop=800:450" -c:v libwebp -quality 78 "$A/songs/$2.webp"; }
 song "Kücük Kurbaga/images/final/I01.png"         kiko
 song "Renkli Otobüs/images/final/I02.png"         rolly
 song "Bes Kücük Ördek/images/final/I01.png"       ducks
@@ -55,7 +57,7 @@ song "Memo ve Tonton/episodes/E03_Sira_Bende_Sira_Sende/images/final/T01.png" tu
 song "Memo ve Tonton/episodes/E04_Yagmurlu_Gun/images/final/T01.png" rain
 
 # story: Memo & Tonton E01 (raw 3:2 → 16:9), newest variant wins
-R="$Y/Memo ve Tonton/episodes/E01_Cilekli_Pasta/images/raw"
+R="$(at "Memo ve Tonton/episodes/E01_Cilekli_Pasta/images/raw")"
 n=1
 for i in I04 I13 I15 I16 I25 I27 I31 I34 I38; do
   f="$R/$i.png"; [ -f "$R/${i}_v2.png" ] && f="$R/${i}_v2.png"
@@ -65,7 +67,7 @@ done
 
 # character cut-outs (transparent)
 for c in afacan balli bailabu_bear findik kuku minik_balik pamuk paytak renkli apple_red banana pear_green strawberry star_yellow ball_blue car_blue elephant flamingo_pink kitten_white turtle_green; do
-  ff -i "$Y/Quiz/assets/objects/cut/$c.png" -vf "scale=360:360:force_original_aspect_ratio=decrease:flags=lanczos" -c:v libwebp -quality 82 -pix_fmt yuva420p "$A/chars/$c.webp"
+  ff -i "$QUIZ/assets/objects/cut/$c.png" -vf "scale=360:360:force_original_aspect_ratio=decrease:flags=lanczos" -c:v libwebp -quality 82 -pix_fmt yuva420p "$A/chars/$c.webp"
 done
 
 # coloring pages (printables): English edition for every language for now; full 300-dpi PNG (download + big preview) + small grid preview
@@ -80,7 +82,7 @@ done
 
 # sfx (locally synthesized, Quiz/scripts/make_sfx.py)
 for s in ding pop cheer confetti quack honk buzz blub swish tick; do
-  ff -i "$Y/Quiz/assets/sfx/$s.wav" -ac 1 -ar 44100 -c:a libmp3lame -b:a 64k "$A/sfx/$s.mp3"
+  ff -i "$QUIZ/assets/sfx/$s.wav" -ac 1 -ar 44100 -c:a libmp3lame -b:a 64k "$A/sfx/$s.mp3"
 done
 du -sh "$A"/*
 
