@@ -42,6 +42,8 @@ song "Geschichten/episodes/D01_Kim_Yedi_Bali/output/thumbnail.en.jpg" honey
 song "Geschichten/episodes/D01_Kim_Yedi_Bali/output/thumbnail.tr.jpg" honey-tr
 song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.en.jpg" fruits
 song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.tr.jpg" fruits-tr
+song "Bilderbuch/episodes/E02_Sebzeler/output/thumbnail.en.jpg" veggies
+song "Bilderbuch/episodes/E02_Sebzeler/output/thumbnail.tr.jpg" veggies-tr
 song "Geschichten/episodes/K01_Rapunzel/output/thumbnail.en.jpg" rapunzel
 song "Geschichten/episodes/M11_Sus_Tospik_Sus/output/thumbnail.en.jpg" toto
 song "Geschichten/episodes/M11_Sus_Tospik_Sus/output/thumbnail.tr.jpg" toto-tr
