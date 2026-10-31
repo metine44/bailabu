@@ -117,6 +117,7 @@
       <a href="#stories" class="px-3 py-1.5 rounded-full hover:bg-coral-light" data-i18n="nav_stories">Stories</a>
       <a href="#coloring" class="px-3 py-1.5 rounded-full hover:bg-violet-light" data-i18n="nav_coloring">Coloring</a>
       <a href="#channels" class="px-3 py-1.5 rounded-full hover:bg-leaf-light" data-i18n="nav_channels">Channels</a>
+      <button type="button" hidden class="contact-open ms-1 px-4 py-1.5 rounded-full bg-coral-light hover:bg-coral hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-coral/50" data-i18n="contact">Contact</button>
     </nav>
 
     <div class="relative ms-auto md:ms-2">
@@ -138,6 +139,7 @@
       <a href="#stories" class="rounded-2xl bg-coral-light px-4 py-3" data-i18n="nav_stories">Stories</a>
       <a href="#coloring" class="rounded-2xl bg-violet-light px-4 py-3" data-i18n="nav_coloring">Coloring</a>
       <a href="#channels" class="rounded-2xl bg-leaf-light px-4 py-3" data-i18n="nav_channels">Channels</a>
+      <button type="button" hidden class="contact-open rounded-2xl bg-coral-light px-4 py-3 text-start" data-i18n="contact">Contact</button>
     </div>
   </nav>
 </header>
@@ -695,7 +697,7 @@
         <p class="text-white/70 font-semibold" data-i18n="footer_love">Made with love for little ones.</p>
       </div>
     </div>
-    <p class="text-white/60 text-sm font-semibold">© <span id="year">2026</span> Bailabu · Tontiş Ada <span id="contactSep" hidden>· </span><button id="contactBtn" type="button" hidden class="underline hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded" data-i18n="contact">Contact</button> · <button id="legalBtn" type="button" class="underline hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded" data-i18n="legal_privacy">Privacy</button></p>
+    <p class="text-white/60 text-sm font-semibold">© <span id="year">2026</span> Bailabu · Tontiş Ada <span id="contactSep" hidden>· </span><button id="contactBtn" type="button" hidden class="contact-open underline hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded" data-i18n="contact">Contact</button> · <button id="legalBtn" type="button" class="underline hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded" data-i18n="legal_privacy">Privacy</button></p>
   </div>
 </footer>
 
@@ -1354,7 +1356,7 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closeLangMen
 
 const menuBtn = $("#menuBtn"), mobileNav = $("#mobileNav");
 menuBtn.addEventListener("click", () => { const open = mobileNav.classList.toggle("hidden") === false; menuBtn.setAttribute("aria-expanded", open); });
-mobileNav.addEventListener("click", e => { if (e.target.closest("a")) { mobileNav.classList.add("hidden"); menuBtn.setAttribute("aria-expanded", "false"); } });
+mobileNav.addEventListener("click", e => { if (e.target.closest("a, button")) { mobileNav.classList.add("hidden"); menuBtn.setAttribute("aria-expanded", "false"); } });
 
 /* ---------------- Friends / songs / channels ---------------- */
 function renderFriends() {
@@ -1468,8 +1470,11 @@ $("#legalBtn").addEventListener("click", () => {
 $("#legalClose").addEventListener("click", () => legalDlg.close());
 legalDlg.addEventListener("click", e => { if (e.target === legalDlg) legalDlg.close(); });
 const contactDlg = $("#contactDlg"), contactForm = $("#contactForm"), contactStatus = $("#contactStatus");
-$("#contactBtn").hidden = $("#contactSep").hidden = !CONTACT_KEY;
-$("#contactBtn").addEventListener("click", () => { contactStatus.textContent = ""; contactDlg.showModal(); });
+$("#contactSep").hidden = !CONTACT_KEY;
+document.querySelectorAll(".contact-open").forEach(b => {
+  b.hidden = !CONTACT_KEY;
+  b.addEventListener("click", () => { contactStatus.textContent = ""; contactDlg.showModal(); });
+});
 $("#contactClose").addEventListener("click", () => contactDlg.close());
 contactDlg.addEventListener("click", e => { if (e.target === contactDlg) contactDlg.close(); });
 contactForm.addEventListener("submit", async e => {

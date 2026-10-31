@@ -11,7 +11,7 @@ One static `index.html` (semantic HTML5, vanilla JS) + compiled Tailwind `assets
 - **Stories**: links to the Stories and Picture books tabs, and the picture book reader "Memo & Tonton: The Strawberry Cake" (no read-aloud: browser voices removed 2026-10-28), swipe/arrow keys and a counting page.
 - **Coloring pages**: 35 line-art pages (PNG, 300 dpi, 4:5) (`assets/print/`): tap a page → big preview with a download button. For now the English edition (English file names and character names) is shown in every language.
 - **Privacy** link in the footer (legal dialog, text `privacy` in every language). The imprint appears as soon as `IMPRINT` in `index.html` is filled in (still empty: needs the operator's name and address).
-- **Contact** button in the footer (next to Privacy): form dialog (name, email, message) sent through Web3Forms (`fetch` to api.web3forms.com) to the channel mailbox; the address is never in the page, only the public access key `CONTACT_KEY` in `index.html`. While `CONTACT_KEY` is empty the button stays hidden. Honeypot `botcheck` against spam; the privacy text covers the form.
+- **Contact** button in the top menu (desktop nav + mobile menu) and in the footer (next to Privacy), all `.contact-open`: form dialog (name, email, message) sent through Web3Forms (`fetch` to api.web3forms.com) to the channel mailbox; the address is never in the page, only the public access key `CONTACT_KEY` in `index.html`. While `CONTACT_KEY` is empty the button stays hidden. Honeypot `botcheck` against spam; the privacy text covers the form.
 - No cookies, no analytics, no ads. `localStorage` only keeps language, sound on/off, stars and memory size. Fonts are self-hosted.
 
 ## Editing
