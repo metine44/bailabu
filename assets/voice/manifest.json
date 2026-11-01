@@ -1,0 +1,854 @@
+{
+"en": {
+"q_memory": {
+"text": "Find the pairs!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_odd": {
+"text": "Which one is different?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_shadow": {
+"text": "Whose shadow is this?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_count": {
+"text": "How many do you see?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_bubbles": {
+"text": "Pop the bubbles!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_music": {
+"text": "Tap and make music!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_pattern": {
+"text": "What comes next?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"your_turn": {
+"text": "Your turn!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"listen": {
+"text": "Listen",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"memory_done": {
+"text": "You found all the pairs!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise0": {
+"text": "Great job!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise1": {
+"text": "Super!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise2": {
+"text": "Yay!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise3": {
+"text": "Well done!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_bailabu_bear": {
+"text": "Where is Bailabu?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_afacan": {
+"text": "Where is Kiko?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_paytak": {
+"text": "Where is Lulu?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_balli": {
+"text": "Where is Bibi?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_renkli": {
+"text": "Where is Rolly?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_minik_balik": {
+"text": "Where is Blub?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_pamuk": {
+"text": "Where is Pompom?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_findik": {
+"text": "Where is Toby?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_kuku": {
+"text": "Where is Kuku?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_red": {
+"text": "Find the red one!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_yellow": {
+"text": "Find the yellow one!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_blue": {
+"text": "Find the blue one!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_green": {
+"text": "Find the green one!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_pink": {
+"text": "Find the pink one!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_white": {
+"text": "Find the white one!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_orange": {
+"text": "Find the orange one!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n1": {
+"text": "One!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n2": {
+"text": "Two!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n3": {
+"text": "Three!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n4": {
+"text": "Four!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n5": {
+"text": "Five!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+}
+},
+"de": {
+"q_memory": {
+"text": "Finde die Paare!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_odd": {
+"text": "Welches ist anders?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_shadow": {
+"text": "Wessen Schatten ist das?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_count": {
+"text": "Wie viele siehst du?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_bubbles": {
+"text": "Lass die Blasen platzen!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_music": {
+"text": "Tippe und mach Musik!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_pattern": {
+"text": "Was kommt als Nächstes?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"your_turn": {
+"text": "Jetzt du!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"listen": {
+"text": "Hör zu",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"memory_done": {
+"text": "Du hast alle Paare gefunden!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise0": {
+"text": "Super!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise1": {
+"text": "Toll gemacht!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise2": {
+"text": "Juhu!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise3": {
+"text": "Prima!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_bailabu_bear": {
+"text": "Wo ist Bailabu?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_afacan": {
+"text": "Wo ist Kiko?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_paytak": {
+"text": "Wo ist Lulu?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_balli": {
+"text": "Wo ist Bibi?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_renkli": {
+"text": "Wo ist Rolly?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_minik_balik": {
+"text": "Wo ist Blub?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_pamuk": {
+"text": "Wo ist Pompom?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_findik": {
+"text": "Wo ist Toby?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_kuku": {
+"text": "Wo ist Kuku?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_red": {
+"text": "Was ist rot?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_yellow": {
+"text": "Was ist gelb?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_blue": {
+"text": "Was ist blau?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_green": {
+"text": "Was ist grün?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_pink": {
+"text": "Was ist rosa?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_white": {
+"text": "Was ist weiß?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_orange": {
+"text": "Was ist orange?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n1": {
+"text": "Eins!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n2": {
+"text": "Zwei!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n3": {
+"text": "Drei!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n4": {
+"text": "Vier!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n5": {
+"text": "Fünf!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+}
+},
+"es": {
+"q_memory": {
+"text": "¡Encuentra las parejas!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_odd": {
+"text": "¿Cuál es diferente?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_shadow": {
+"text": "¿De quién es esta sombra?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_count": {
+"text": "¿Cuántos ves?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_bubbles": {
+"text": "¡Revienta las burbujas!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_music": {
+"text": "¡Toca y haz música!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_pattern": {
+"text": "¿Qué sigue?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"your_turn": {
+"text": "¡Ahora tú!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"listen": {
+"text": "Escucha",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"memory_done": {
+"text": "¡Encontraste todas las parejas!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise0": {
+"text": "¡Muy bien!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise1": {
+"text": "¡Súper!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise2": {
+"text": "¡Bravo!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise3": {
+"text": "¡Genial!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_bailabu_bear": {
+"text": "¿Dónde está Bailabú?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_afacan": {
+"text": "¿Dónde está Kiko?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_paytak": {
+"text": "¿Dónde está Lulú?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_balli": {
+"text": "¿Dónde está Bibi?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_renkli": {
+"text": "¿Dónde está Rolly?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_minik_balik": {
+"text": "¿Dónde está Blub?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_pamuk": {
+"text": "¿Dónde está Pompom?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_findik": {
+"text": "¿Dónde está Toby?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_kuku": {
+"text": "¿Dónde está Kuku?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_red": {
+"text": "¿Dónde está el color rojo?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_yellow": {
+"text": "¿Dónde está el color amarillo?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_blue": {
+"text": "¿Dónde está el color azul?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_green": {
+"text": "¿Dónde está el color verde?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_pink": {
+"text": "¿Dónde está el color rosa?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_white": {
+"text": "¿Dónde está el color blanco?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_orange": {
+"text": "¿Dónde está el color naranja?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n1": {
+"text": "Uno!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n2": {
+"text": "Dos!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n3": {
+"text": "Tres!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n4": {
+"text": "Cuatro!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n5": {
+"text": "Cinco!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+}
+},
+"pt": {
+"q_memory": {
+"text": "Encontre os pares!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_odd": {
+"text": "Qual é diferente?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_shadow": {
+"text": "De quem é esta sombra?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_count": {
+"text": "Quantos você vê?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_bubbles": {
+"text": "Estoure as bolhas!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_music": {
+"text": "Toque e faça música!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_pattern": {
+"text": "O que vem depois?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"your_turn": {
+"text": "Agora é você!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"listen": {
+"text": "Escute",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"memory_done": {
+"text": "Você achou todos os pares!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise0": {
+"text": "Muito bem!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise1": {
+"text": "Super!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise2": {
+"text": "Oba!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise3": {
+"text": "Parabéns!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_bailabu_bear": {
+"text": "Onde está Bailabu?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_afacan": {
+"text": "Onde está Kiko?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_paytak": {
+"text": "Onde está Lulu?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_balli": {
+"text": "Onde está Bibi?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_renkli": {
+"text": "Onde está Rolly?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_minik_balik": {
+"text": "Onde está Blub?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_pamuk": {
+"text": "Onde está Pompom?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_findik": {
+"text": "Onde está Toby?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_kuku": {
+"text": "Onde está Kuku?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_red": {
+"text": "Onde está a cor vermelha?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_yellow": {
+"text": "Onde está a cor amarela?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_blue": {
+"text": "Onde está a cor azul?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_green": {
+"text": "Onde está a cor verde?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_pink": {
+"text": "Onde está a cor rosa?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_white": {
+"text": "Onde está a cor branca?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_orange": {
+"text": "Onde está a cor laranja?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n1": {
+"text": "Um!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n2": {
+"text": "Dois!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n3": {
+"text": "Três!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n4": {
+"text": "Quatro!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n5": {
+"text": "Cinco!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+}
+},
+"ar": {
+"q_memory": {
+"text": "جِدِ الأزواج المتشابهة!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_odd": {
+"text": "أيُّها مختلف؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_shadow": {
+"text": "ظِلُّ مَن هذا؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_count": {
+"text": "كم واحدًا ترى؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_bubbles": {
+"text": "فرقِعِ الفقاعات!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_music": {
+"text": "المسْ واصنعْ موسيقى!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"q_pattern": {
+"text": "ماذا يأتي بعد ذلك؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"your_turn": {
+"text": "دورُك!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"listen": {
+"text": "استمعْ",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"memory_done": {
+"text": "وجدتَ كل الأزواج!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise0": {
+"text": "أحسنت!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise1": {
+"text": "رائع!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise2": {
+"text": "ممتاز!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"praise3": {
+"text": "برافو!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_bailabu_bear": {
+"text": "أين بايلابو؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_afacan": {
+"text": "أين كيكو؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_paytak": {
+"text": "أين لولو؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_balli": {
+"text": "أين بيبي؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_renkli": {
+"text": "أين رولي؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_minik_balik": {
+"text": "أين بلوب؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_pamuk": {
+"text": "أين بومبوم؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_findik": {
+"text": "أين توبي؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"find_kuku": {
+"text": "أين كوكو؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_red": {
+"text": "أين اللون الأحمر؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_yellow": {
+"text": "أين اللون الأصفر؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_blue": {
+"text": "أين اللون الأزرق؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_green": {
+"text": "أين اللون الأخضر؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_pink": {
+"text": "أين اللون الوردي؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_white": {
+"text": "أين اللون الأبيض؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"color_orange": {
+"text": "أين اللون البرتقالي؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n1": {
+"text": "واحد!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n2": {
+"text": "اثنان!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n3": {
+"text": "ثلاثة!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n4": {
+"text": "أربعة!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"n5": {
+"text": "خمسة!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+}
+},
+"tr": {
+"q_memory": {
+"text": "Eşleri bul!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"q_odd": {
+"text": "Hangisi farklı?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"q_shadow": {
+"text": "Bu gölge kimin?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"q_count": {
+"text": "Kaç tane görüyorsun?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"q_bubbles": {
+"text": "Baloncukları patlat!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"q_music": {
+"text": "Dokun ve müzik yap!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"q_pattern": {
+"text": "Sırada ne var?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"your_turn": {
+"text": "Şimdi sen!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"listen": {
+"text": "Dinle",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"memory_done": {
+"text": "Bütün eşleri buldun!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"praise0": {
+"text": "Aferin!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"praise1": {
+"text": "Süper!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"praise2": {
+"text": "Yaşasın!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"praise3": {
+"text": "Harika!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"find_bailabu_bear": {
+"text": "Bailabu nerede?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"find_afacan": {
+"text": "Afacan nerede?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"find_paytak": {
+"text": "Paytak nerede?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"find_balli": {
+"text": "Ballı nerede?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"find_renkli": {
+"text": "Renkli nerede?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"find_minik_balik": {
+"text": "Minik Balık nerede?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"find_pamuk": {
+"text": "Pamuk nerede?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"find_findik": {
+"text": "Fındık nerede?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"find_kuku": {
+"text": "Kükü nerede?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"color_red": {
+"text": "Hangisi kırmızı?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"color_yellow": {
+"text": "Hangisi sarı?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"color_blue": {
+"text": "Hangisi mavi?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"color_green": {
+"text": "Hangisi yeşil?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"color_pink": {
+"text": "Hangisi pembe?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"color_white": {
+"text": "Hangisi beyaz?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"color_orange": {
+"text": "Hangisi turuncu?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"n1": {
+"text": "Bir!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"n2": {
+"text": "İki!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"n3": {
+"text": "Üç!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"n4": {
+"text": "Dört!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"n5": {
+"text": "Beş!",
+"voice": "2w5twzryiFg9VNnXphRP"
+}
+}
+}

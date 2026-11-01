@@ -561,6 +561,9 @@
     <div class="mt-8 rounded-[2rem] bg-white shadow-pop-lg ring-4 ring-sun/60 overflow-hidden">
       <div id="gameTabs" role="tablist" class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-1.5 sm:gap-2 p-2 sm:p-3 bg-sun/30"></div>
       <div class="flex items-center gap-2 px-4 pt-4">
+        <button id="sayBtn" type="button" class="shrink-0 rounded-full bg-sky-light p-2.5 transition active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" data-i18n-aria="say_again" aria-label="Hear it again">
+          <svg viewBox="0 0 24 24" class="w-6 h-6 text-sky-dark" fill="currentColor" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M15 8.2a5 5 0 0 1 0 7.6M17.6 5.6a8.6 8.6 0 0 1 0 12.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
         <p id="gamePrompt" class="font-display font-extrabold text-2xl md:text-3xl leading-tight" aria-live="polite"></p>
         <div class="ms-auto flex items-center gap-2">
           <span class="inline-flex items-center gap-1 rounded-full bg-sun-light px-3 py-1.5 font-extrabold" aria-live="polite"><span aria-hidden="true">⭐</span><span id="starCount">0</span></span>
@@ -939,6 +942,7 @@ en: {
   videos_badge: "New videos on the way", videos_lang: "TR or EN on a picture shows the language of the video. More languages are on the way.", watch: "Watch",
   cat_all: "All", cat_song: "Songs", cat_lullaby: "Lullabies", cat_quiz: "Quiz & games", cat_book: "Picture books", cat_story: "Stories",
   tag_dance: "Dance", tag_singalong: "Sing-along", tag_counting: "Counting", tag_colors: "Colors", tag_farm: "Farm animals", tag_lullaby: "Lullaby", tag_quiz: "Quiz", tag_book: "Picture book", tag_story: "Story",
+  say_again: "Hear it again",
   play_title: "Games & riddles", play_text: "Little games for little hands – no reading needed. Just tap!",
   g_memory: "Memory", g_odd: "Odd one out", g_shadow: "Shadows", g_count: "Counting",
   q_memory: "Find the pairs!", q_odd: "Which one is different?", q_shadow: "Whose shadow is this?", q_count: "How many do you see?",
@@ -999,6 +1003,7 @@ de: {
   videos_badge: "Neue Videos sind unterwegs", videos_lang: "TR oder EN auf dem Bild zeigt die Sprache des Videos. Weitere Sprachen sind unterwegs.", watch: "Ansehen",
   cat_all: "Alle", cat_song: "Lieder", cat_lullaby: "Schlaflieder", cat_quiz: "Rätsel & Spiele", cat_book: "Bilderbücher", cat_story: "Geschichten",
   tag_dance: "Tanzen", tag_singalong: "Mitsingen", tag_counting: "Zählen", tag_colors: "Farben", tag_farm: "Bauernhof", tag_lullaby: "Schlaflied", tag_quiz: "Rätsel", tag_book: "Bilderbuch", tag_story: "Geschichte",
+  say_again: "Nochmal hören",
   play_title: "Spiele & Rätsel", play_text: "Kleine Spiele für kleine Hände – ganz ohne Lesen. Einfach tippen!",
   g_memory: "Memory", g_odd: "Was passt nicht?", g_shadow: "Schatten", g_count: "Zählen",
   q_memory: "Finde die Paare!", q_odd: "Welches ist anders?", q_shadow: "Wessen Schatten ist das?", q_count: "Wie viele siehst du?",
@@ -1059,6 +1064,7 @@ es: {
   videos_badge: "Más videos en camino", videos_lang: "TR o EN en la imagen indica el idioma del video. Pronto habrá más idiomas.", watch: "Ver",
   cat_all: "Todos", cat_song: "Canciones", cat_lullaby: "Canciones de cuna", cat_quiz: "Adivinanzas y juegos", cat_book: "Libros ilustrados", cat_story: "Cuentos",
   tag_dance: "Baile", tag_singalong: "Para cantar", tag_counting: "Contar", tag_colors: "Colores", tag_farm: "Granja", tag_lullaby: "Canción de cuna", tag_quiz: "Adivinanza", tag_book: "Libro ilustrado", tag_story: "Cuento",
+  say_again: "Escuchar otra vez",
   play_title: "Juegos y adivinanzas", play_text: "Juegos pequeños para manos pequeñas, sin necesidad de leer. ¡Solo toca!",
   g_memory: "Memoria", g_odd: "El diferente", g_shadow: "Sombras", g_count: "Contar",
   q_memory: "¡Encuentra las parejas!", q_odd: "¿Cuál es diferente?", q_shadow: "¿De quién es esta sombra?", q_count: "¿Cuántos ves?",
@@ -1119,6 +1125,7 @@ pt: {
   videos_badge: "Mais vídeos a caminho", videos_lang: "TR ou EN na imagem indica o idioma do vídeo. Mais idiomas a caminho.", watch: "Assistir",
   cat_all: "Todos", cat_song: "Músicas", cat_lullaby: "Canções de ninar", cat_quiz: "Quiz e jogos", cat_book: "Livros ilustrados", cat_story: "Histórias",
   tag_dance: "Dança", tag_singalong: "Cante junto", tag_counting: "Contar", tag_colors: "Cores", tag_farm: "Fazenda", tag_lullaby: "Canção de ninar", tag_quiz: "Quiz", tag_book: "Livro ilustrado", tag_story: "História",
+  say_again: "Ouvir de novo",
   play_title: "Jogos e charadas", play_text: "Joguinhos para mãozinhas – não precisa saber ler. É só tocar!",
   g_memory: "Memória", g_odd: "O diferente", g_shadow: "Sombras", g_count: "Contar",
   q_memory: "Encontre os pares!", q_odd: "Qual é diferente?", q_shadow: "De quem é esta sombra?", q_count: "Quantos você vê?",
@@ -1179,6 +1186,7 @@ tr: {
   videos_badge: "Yeni videolar yolda", videos_lang: "Resimdeki TR veya EN videonun dilini gösterir. Yeni diller yolda.", watch: "İzle",
   cat_all: "Hepsi", cat_song: "Şarkılar", cat_lullaby: "Ninniler", cat_quiz: "Bilgi oyunları", cat_book: "Resimli kitaplar", cat_story: "Hikâyeler",
   tag_dance: "Dans", tag_singalong: "Birlikte söyle", tag_counting: "Sayılar", tag_colors: "Renkler", tag_farm: "Çiftlik", tag_lullaby: "Ninni", tag_quiz: "Oyun", tag_book: "Resimli kitap", tag_story: "Hikâye",
+  say_again: "Tekrar dinle",
   play_title: "Oyunlar ve bilmeceler", play_text: "Küçük eller için küçük oyunlar – okumaya gerek yok. Sadece dokun!",
   g_memory: "Hafıza", g_odd: "Hangisi farklı", g_shadow: "Gölgeler", g_count: "Sayalım",
   q_memory: "Eşleri bul!", q_odd: "Hangisi farklı?", q_shadow: "Bu gölge kimin?", q_count: "Kaç tane görüyorsun?",
@@ -1239,6 +1247,7 @@ ar: {
   videos_badge: "فيديوهات جديدة في الطريق", videos_lang: "يشير TR أو EN على الصورة إلى لغة الفيديو. لغات أخرى في الطريق.", watch: "شاهِدْ",
   cat_all: "الكل", cat_song: "أغانٍ", cat_lullaby: "تهويدات", cat_quiz: "مسابقات وألعاب", cat_book: "كتب مصوّرة", cat_story: "قصص",
   tag_dance: "رقص", tag_singalong: "غناء جماعي", tag_counting: "العدّ", tag_colors: "الألوان", tag_farm: "المزرعة", tag_lullaby: "تهويدة", tag_quiz: "مسابقة", tag_book: "كتاب مصوّر", tag_story: "قصة",
+  say_again: "استمعْ مرة أخرى",
   play_title: "ألعاب وألغاز", play_text: "ألعاب صغيرة للأيدي الصغيرة، بلا حاجة إلى القراءة. المسْ فقط!",
   g_memory: "الذاكرة", g_odd: "المختلف", g_shadow: "الظلال", g_count: "العدّ",
   q_memory: "جِدِ الأزواج المتشابهة!", q_odd: "أيُّها مختلف؟", q_shadow: "ظِلُّ مَن هذا؟", q_count: "كم واحدًا ترى؟",
@@ -1315,6 +1324,17 @@ function sfx(name) {
     a.currentTime = 0; a.volume = .7; a.play().catch(() => {});
   } catch {}
 }
+// Spoken game lines (ElevenLabs, assets/voice/<lang>/<key>.mp3). One element, so a tap unlocks it for the later automatic lines on phones.
+const voiceEl = new Audio();
+let voiceTimer = null;
+function stopVoice() { clearTimeout(voiceTimer); voiceEl.pause(); }
+function speak(key, delay = 150) {
+  stopVoice();
+  if (!soundOn || !game.active || !key) return;
+  voiceTimer = setTimeout(() => {
+    try { voiceEl.src = `assets/voice/${lang}/${key}.mp3`; voiceEl.volume = 1; voiceEl.play().catch(() => {}); } catch {}
+  }, delay);
+}
 function confetti() {
   if (reduceMotion) return;
   const colors = ["#FF5A5F", "#F6A23A", "#FFC83D", "#5CC85A", "#3DB8F5", "#8E6CF0", "#FF6F91"];
@@ -1330,7 +1350,9 @@ function confetti() {
   }
 }
 function praise(stage) {
-  const p = el("div", "praise rounded-full bg-white px-6 py-2 font-display font-extrabold text-3xl text-leaf shadow-pop-lg ring-4 ring-leaf/40 whitespace-nowrap", esc(pick(t("praise"))));
+  const i = Math.floor(Math.random() * t("praise").length);
+  const p = el("div", "praise rounded-full bg-white px-6 py-2 font-display font-extrabold text-3xl text-leaf shadow-pop-lg ring-4 ring-leaf/40 whitespace-nowrap", esc(t("praise")[i]));
+  speak("praise" + i, 280);
   stage.appendChild(p); setTimeout(() => p.remove(), 1400);
 }
 function retrigger(node, cls) { node.classList.remove(cls); void node.offsetWidth; node.classList.add(cls); }
@@ -1574,15 +1596,17 @@ const GAMES = [
   { id: "pattern", icon: "star_yellow",  label: "g_pattern", q: "q_pattern", start: startPattern },
 ];
 const game = {
-  cur: GAMES[0], timers: [], active: false,
+  cur: GAMES[0], timers: [], active: false, voice: "",
   later(fn, ms) { this.timers.push(setTimeout(fn, ms)); },
   clear() { this.timers.forEach(clearTimeout); this.timers = []; },
   select(g) { this.cur = g; this.active = true; renderTabs(); this.restart(); },
   restart() {
     this.clear(); stage.innerHTML = "";
     $("#starCount").textContent = num(stars);
+    this.voice = this.cur.q;
     const q = this.cur.start() || t(this.cur.q);
     promptEl.textContent = q;
+    speak(this.voice, 250);
   },
 };
 function renderTabs() {
@@ -1601,7 +1625,8 @@ function renderSound() {
   $("#soundOn").classList.toggle("hidden", !soundOn);
   $("#soundOff").classList.toggle("hidden", soundOn);
 }
-$("#soundBtn").addEventListener("click", () => { soundOn = !soundOn; store.set("sound", soundOn); renderSound(); });
+$("#soundBtn").addEventListener("click", () => { soundOn = !soundOn; store.set("sound", soundOn); renderSound(); if (!soundOn) stopVoice(); });
+$("#sayBtn").addEventListener("click", () => { game.active = true; speak(game.voice, 0); });
 
 function win(node) { game.active = true; addStar(); sfx("ding"); praise(stage); if (node) retrigger(node, "wiggle"); }
 function oops(node) { sfx("tick"); retrigger(node, "shake"); }
@@ -1649,7 +1674,7 @@ function startMemory() {
       const [a, b] = open; open = [];
       if (a.id === b.id) {
         found++;
-        game.later(() => { win(b.card); if (found === memoryPairs) game.later(() => { sfx("cheer"); confetti(); grid.appendChild(doneBox(t("memory_done"))); }, 700); }, 350);
+        game.later(() => { win(b.card); if (found === memoryPairs) game.later(() => { sfx("cheer"); confetti(); grid.appendChild(doneBox(t("memory_done"))); game.voice = "memory_done"; speak("memory_done", 300); }, 1100); }, 350);
       } else {
         lock = true;
         game.later(() => { [a, b].forEach(x => { x.card.classList.remove("flipped"); x.card.setAttribute("aria-label", "?"); }); lock = false; }, 950);
@@ -1728,7 +1753,7 @@ function startCount() {
     b.type = "button"; b.style.animationDelay = i * 90 + "ms"; b.setAttribute("aria-label", objName(id));
     b.addEventListener("click", () => {
       if (b.dataset.n) return;
-      counted++; b.dataset.n = counted; sfx("pop");
+      counted++; b.dataset.n = counted; sfx("pop"); speak("n" + counted, 60);
       b.insertAdjacentHTML("beforeend", `<span class="absolute -top-2 -end-2 grid place-items-center w-9 h-9 rounded-full bg-violet text-white font-extrabold text-lg shadow-pop popin">${num(counted)}</span>`);
     });
     field.appendChild(b);
@@ -1770,6 +1795,7 @@ function startFind() {
     grid.appendChild(b);
   });
   stage.appendChild(grid);
+  game.voice = "find_" + target.id;
   return t("q_find").replace("{n}", castName(target));
 }
 
@@ -1802,6 +1828,7 @@ function startColors() {
     grid.appendChild(b);
   });
   wrap.append(blob, grid); stage.appendChild(wrap);
+  game.voice = "color_" + c;
   return t("q_colors").replace("{c}", name);
 }
 
@@ -1881,9 +1908,9 @@ function startMusic() {
     const n = el("span", "note-fly", pick(["♪", "♫"])); btns[i].appendChild(n); setTimeout(() => n.remove(), 950);
   };
   const playSeq = () => {
-    busy = true; pos = 0; promptEl.textContent = t("listen");
+    busy = true; pos = 0; promptEl.textContent = t("listen"); game.voice = "listen"; speak("listen", 0);
     seq.forEach((n, k) => game.later(() => hit(n), 700 + k * 650));
-    game.later(() => { busy = false; promptEl.textContent = t("your_turn"); }, 700 + seq.length * 650 + 150);
+    game.later(() => { busy = false; promptEl.textContent = t("your_turn"); game.voice = "your_turn"; speak("your_turn", 0); }, 700 + seq.length * 650 + 150);
   };
   btns.forEach((b, i) => b.addEventListener("click", () => {
     if (busy) return;
@@ -1892,7 +1919,7 @@ function startMusic() {
     if (i !== seq[pos]) { oops(b); game.later(playSeq, 700); return; }
     if (++pos === seq.length) {
       seq = null; copyLen = Math.min(5, copyLen + 1);
-      game.later(() => { win(bear); promptEl.textContent = t("q_music"); copyBtn.classList.remove("invisible"); }, 350);
+      game.later(() => { win(bear); promptEl.textContent = t("q_music"); game.voice = "q_music"; copyBtn.classList.remove("invisible"); }, 350);
     }
   }));
   copyBtn.addEventListener("click", () => {
