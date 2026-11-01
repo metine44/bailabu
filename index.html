@@ -1370,8 +1370,10 @@ function retrigger(node, cls) { node.classList.remove(cls); void node.offsetWidt
 
 /* ---------------- Language ---------------- */
 function detectLang() {
-  const q = new URLSearchParams(location.search).get("lang");
-  if (q && T[q]) return q;
+  /* Old links with ?lang=xx keep working: the choice is saved and the address stays bailabu.com. */
+  const u = new URL(location.href), q = u.searchParams.get("lang");
+  if (q !== null) { u.searchParams.delete("lang"); history.replaceState(null, "", u); }
+  if (q && T[q]) { store.set("lang", q); return q; }
   const s = store.get("lang", null);
   if (s && T[s]) return s;
   for (const l of navigator.languages || [navigator.language || "en"]) {
@@ -1395,10 +1397,7 @@ function applyLang(code, user) {
   document.querySelectorAll("[data-i18n-alt]").forEach(n => { n.alt = t(n.dataset.i18nAlt); });
   $("#langCur").textContent = code.toUpperCase();
   $("#ctaWatch").href = `https://www.youtube.com/@${channelFor(code).handle}`;
-  if (user) {
-    store.set("lang", code);
-    const u = new URL(location.href); u.searchParams.set("lang", code); history.replaceState(null, "", u);
-  }
+  if (user) store.set("lang", code);
   renderLangMenu(); renderFriends(); renderVideos(); renderColoring(); renderChannels(); renderTabs(); game.restart();
   if (story.open) story.show(story.page);
 }
