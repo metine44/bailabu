@@ -396,6 +396,16 @@
           <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
         </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
         <span class="relative block overflow-hidden">
+          <img src="assets/songs/rainbow.webp" alt="The Rainbow of Bailabu Island" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
+          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
+          
+          
+        </span>
+        <span class="flex items-center gap-3 p-4">
+          <span class="font-display font-extrabold text-xl leading-tight">The Rainbow of Bailabu Island</span>
+          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
+        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
+        <span class="relative block overflow-hidden">
           <img src="assets/songs/veggies.webp" alt="Learning Vegetables with Bibi" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
           <span class="absolute top-3 start-3 rounded-full bg-leaf px-3 py-1 text-sm font-extrabold text-white shadow-pop">Picture book</span>
           
@@ -869,6 +879,7 @@ OBJ.renkli = { kind: "toy", cast: CAST.find(c => c.id === "renkli") };
 // live: channel codes where the video is online (cards elsewhere show "Coming soon"). Add the code when a video goes public.
 // yt: YouTube video ID per channel code; the card opens the video, otherwise a search on the channel.
 const VIDEOS = [
+  { id: "rainbow",  cat: "story",   tag: "story",     t: { en: "The Rainbow of Bailabu Island", es: "El Arcoíris de la Isla Bailabu", de: "Der Regenbogen der Bailabu-Insel", pt: "O Arco-Íris da Ilha Bailabu", ar: "قوسُ قزح جزيرة بايلابو", tr: "Tontiş Ada'nın Gökkuşağı" } },
   { id: "count10",  cat: "song",    tag: "counting",  live: ["tr"], yt: { tr: "_WOZQbbG74Y" }, t: { en: "Count to 10 with Rolly", es: "Cuenta hasta 10 con Rolly", de: "Zählen bis 10 mit Rolly", pt: "Conte até 10 com o Rolly", ar: "لِنَعُدَّ حتى ١٠ مع رولي", tr: "Sayıları Öğreniyorum" } },
   { id: "odd",      cat: "quiz",    tag: "quiz",      live: ["tr"], yt: { tr: "SM-wviZwHNU" }, t: { en: "Which One Is Different?", es: "¿Cuál es diferente?", de: "Welches ist anders?", pt: "Qual é diferente?", ar: "أيُّها مختلف؟", tr: "Hangisi Farklı?" } },
   { id: "honey",    cat: "story",   tag: "story",     trArt: true, live: ["tr", "en"], yt: { tr: "MkD3L4tKx-E", en: "zggZGoe0eC8" }, t: { en: "Who Ate the Honey?", es: "¿Quién se comió la miel?", de: "Wer hat den Honig genascht?", pt: "Quem comeu o mel?", ar: "مَن أكل العسل؟", tr: "Kim Yedi Balı?" } },
