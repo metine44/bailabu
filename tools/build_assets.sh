@@ -53,6 +53,8 @@ song "Geschichten/episodes/K03_Uc_Ayi/output/thumbnail.en.jpg" goldie
 song "Geschichten/episodes/K03_Uc_Ayi/output/thumbnail.tr.jpg" goldie-tr
 song "Geschichten/episodes/W01_Su_Birikintisi/output/thumbnail.en.jpg" puddle
 song "Geschichten/episodes/W01_Su_Birikintisi/output/thumbnail.tr.jpg" puddle-tr
+song "Geschichten/episodes/W02_Gunes_Nereye_Gider/output/thumbnail.en.jpg" sunnight
+song "Geschichten/episodes/W02_Gunes_Nereye_Gider/output/thumbnail.tr.jpg" sunnight-tr
 song "_shared/thumbnails/raw/E01.png" cake
 song "_shared/thumbnails/raw/E02.png" ball
 song "_shared/thumbnails/raw/E03.png" turn
