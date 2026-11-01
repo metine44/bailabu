@@ -51,10 +51,12 @@ song "Geschichten/episodes/M11_Sus_Tospik_Sus/output/thumbnail.en.jpg" toto
 song "Geschichten/episodes/M11_Sus_Tospik_Sus/output/thumbnail.tr.jpg" toto-tr
 song "Geschichten/episodes/K03_Uc_Ayi/output/thumbnail.en.jpg" goldie
 song "Geschichten/episodes/K03_Uc_Ayi/output/thumbnail.tr.jpg" goldie-tr
-song "Memo ve Tonton/episodes/E01_Cilekli_Pasta/images/raw/I04.png" cake
-song "Memo ve Tonton/episodes/E02_Kayip_Kirmizi_Top/images/final/T01.png" ball
-song "Memo ve Tonton/episodes/E03_Sira_Bende_Sira_Sende/images/final/T01.png" turn
-song "Memo ve Tonton/episodes/E04_Yagmurlu_Gun/images/final/T01.png" rain
+song "Geschichten/episodes/W01_Su_Birikintisi/output/thumbnail.en.jpg" puddle
+song "Geschichten/episodes/W01_Su_Birikintisi/output/thumbnail.tr.jpg" puddle-tr
+song "_shared/thumbnails/raw/E01.png" cake
+song "_shared/thumbnails/raw/E02.png" ball
+song "_shared/thumbnails/raw/E03.png" turn
+song "_shared/thumbnails/raw/E04.png" rain
 song "Tontis Ada/episodes/E01_Gokkusagi/images/final/T01.png" rainbow
 
 # story: Memo & Tonton E01 (raw 3:2 → 16:9), newest variant wins
