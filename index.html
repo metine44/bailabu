@@ -123,9 +123,9 @@
     <div class="relative ms-auto md:ms-2">
       <button id="langBtn" type="button" class="flex items-center gap-2 rounded-full bg-sky-light hover:bg-sky/25 px-3 py-2 font-bold focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu">
         <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
-        <span id="langCur">EN</span>
+        <span id="langCur" class="notranslate" translate="no">EN</span>
       </button>
-      <ul id="langMenu" role="listbox" class="hidden absolute end-0 mt-2 w-48 rounded-2xl bg-white shadow-xl ring-4 ring-sky-light p-2 font-bold"><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light bg-sky-light text-sky-dark" type="button" role="option" aria-selected="true" lang="en"><span class="inline-block w-8 text-ink/50">EN</span>English</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="es"><span class="inline-block w-8 text-ink/50">ES</span>Español</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="de"><span class="inline-block w-8 text-ink/50">DE</span>Deutsch</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="pt"><span class="inline-block w-8 text-ink/50">PT</span>Português</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="ar"><span class="inline-block w-8 text-ink/50">AR</span>العربية</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="tr"><span class="inline-block w-8 text-ink/50">TR</span>Türkçe</button></li></ul>
+      <ul id="langMenu" translate="no" role="listbox" class="notranslate hidden absolute end-0 mt-2 w-48 rounded-2xl bg-white shadow-xl ring-4 ring-sky-light p-2 font-bold"><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light bg-sky-light text-sky-dark" type="button" role="option" aria-selected="true" lang="en"><span class="inline-block w-8 text-ink/50">EN</span>English</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="es"><span class="inline-block w-8 text-ink/50">ES</span>Español</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="de"><span class="inline-block w-8 text-ink/50">DE</span>Deutsch</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="pt"><span class="inline-block w-8 text-ink/50">PT</span>Português</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="ar"><span class="inline-block w-8 text-ink/50">AR</span>العربية</button></li><li><button class="w-full text-start rounded-xl px-3 py-2 hover:bg-sky-light focus:outline-none focus-visible:bg-sky-light " type="button" role="option" aria-selected="false" lang="tr"><span class="inline-block w-8 text-ink/50">TR</span>Türkçe</button></li></ul>
     </div>
 
     <button id="menuBtn" type="button" class="md:hidden rounded-full bg-sun-light p-2.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-sun" aria-expanded="false" aria-controls="mobileNav" data-i18n-aria="menu" aria-label="Menu">
@@ -218,7 +218,7 @@
         <span class="relative block overflow-hidden">
           <img src="assets/songs/count10.webp" alt="Count to 10 with Rolly" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
           <span class="absolute top-3 start-3 rounded-full bg-sky px-3 py-1 text-sm font-extrabold text-white shadow-pop">Counting</span>
-          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">TR</span>
           <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
           </span>
@@ -230,7 +230,7 @@
         <span class="relative block overflow-hidden">
           <img src="assets/songs/odd.webp" alt="Which One Is Different?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
           <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Quiz</span>
-          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">TR</span>
           <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
           </span>
@@ -254,7 +254,7 @@
         <span class="relative block overflow-hidden">
           <img src="assets/songs/sleepy.webp" alt="Sleepy Time on the Farm" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
           <span class="absolute top-3 start-3 rounded-full bg-ink px-3 py-1 text-sm font-extrabold text-white shadow-pop">Lullaby</span>
-          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">TR</span>
           <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
           </span>
@@ -266,7 +266,7 @@
         <span class="relative block overflow-hidden">
           <img src="assets/songs/fruits.webp" alt="Learning Fruits with Bibi" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
           <span class="absolute top-3 start-3 rounded-full bg-leaf px-3 py-1 text-sm font-extrabold text-white shadow-pop">Picture book</span>
-          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">TR</span>
           <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
           </span>
@@ -278,7 +278,7 @@
         <span class="relative block overflow-hidden">
           <img src="assets/songs/shadow.webp" alt="Whose Shadow Is This?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
           <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Quiz</span>
-          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">TR</span>
           <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
           </span>
@@ -338,7 +338,7 @@
         <span class="relative block overflow-hidden">
           <img src="assets/songs/tractor.webp" alt="Putt Putt, Look at the Tractor!" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
           <span class="absolute top-3 start-3 rounded-full bg-tangerine px-3 py-1 text-sm font-extrabold text-white shadow-pop">Farm animals</span>
-          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">TR</span>
           <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
           </span>
@@ -350,7 +350,7 @@
         <span class="relative block overflow-hidden">
           <img src="assets/songs/rolly.webp" alt="Rolly the Rainbow Bus" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
           <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Sing-along</span>
-          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">TR</span>
           <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
           </span>
@@ -362,7 +362,7 @@
         <span class="relative block overflow-hidden">
           <img src="assets/songs/lumi.webp" alt="Lumi, the Little Star" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
           <span class="absolute top-3 start-3 rounded-full bg-ink px-3 py-1 text-sm font-extrabold text-white shadow-pop">Lullaby</span>
-          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">TR</span>
           <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
           </span>
@@ -374,7 +374,7 @@
         <span class="relative block overflow-hidden">
           <img src="assets/songs/bibi.webp" alt="Bibi the Busy Bee" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
           <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Colors</span>
-          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">TR</span>
           <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
           </span>
@@ -386,7 +386,7 @@
         <span class="relative block overflow-hidden">
           <img src="assets/songs/minik.webp" alt="Blub, the Little Fish" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
           <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Sing-along</span>
-          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">TR</span>
+          <span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">TR</span>
           <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
           </span>
@@ -1585,7 +1585,7 @@ function renderVideos() {
         <span class="relative block overflow-hidden">
           <img src="${cardArt(s)}" alt="${esc(name)}" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover ${live ? "group-hover:scale-105 transition duration-300" : "opacity-80"}">
           <span class="absolute top-3 start-3 rounded-full ${TAG_COLOR[s.tag]} px-3 py-1 text-sm font-extrabold text-white shadow-pop">${esc(t("tag_" + s.tag))}</span>
-          ${live && ch.code !== lang ? `<span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop">${ch.code.toUpperCase()}</span>` : ""}
+          ${live && ch.code !== lang ? `<span class="absolute top-3 end-3 rounded-full bg-white/90 px-2.5 py-1 text-sm font-extrabold text-ink shadow-pop notranslate" translate="no">${ch.code.toUpperCase()}</span>` : ""}
           ${live ? `<span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
             <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           </span>` : ""}
