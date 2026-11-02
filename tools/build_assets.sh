@@ -75,15 +75,16 @@ for c in afacan balli bailabu_bear findik kuku minik_balik pamuk paytak renkli a
   ff -i "$QUIZ/assets/objects/cut/$c.png" -vf "scale=360:360:force_original_aspect_ratio=decrease:flags=lanczos" -c:v libwebp -quality 82 -pix_fmt yuva420p "$A/chars/$c.webp"
 done
 
-# coloring pages (printables): English edition for every language for now; full 300-dpi PNG (download + big preview) + small grid preview
+# coloring pages: the picture is the same in every language, so one 300-dpi PNG (big preview) + small grid preview; the printable PDFs per language come from build_prints.py
 P="$Y/_shared/printables/en"
 mkdir -p "$A/print"
-rm -f "$A/print"/*
+rm -rf "$A/print"/*
 for f in "$P"/*_lineart.png; do
   n=$(basename "$f" _lineart.png)
   cp "$f" "$A/print/bailabu-coloring-$n.png"
   ff -i "$f" -vf "scale=320:-2:flags=lanczos" -c:v libwebp -quality 80 "$A/print/$n.webp"
 done
+python "$(dirname "$0")/build_prints.py"
 
 # sfx (locally synthesized, Quiz/scripts/make_sfx.py)
 for s in ding pop cheer confetti quack honk buzz blub swish tick; do
