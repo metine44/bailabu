@@ -47,10 +47,13 @@ song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.tr.jpg" fruits-tr
 song "Bilderbuch/episodes/E02_Sebzeler/output/thumbnail.en.jpg" veggies
 song "Bilderbuch/episodes/E02_Sebzeler/output/thumbnail.tr.jpg" veggies-tr
 song "Geschichten/episodes/K01_Rapunzel/output/thumbnail.en.jpg" rapunzel
+song "Geschichten/episodes/K01_Rapunzel/output/thumbnail.tr.jpg" rapunzel-tr
 song "Geschichten/episodes/M11_Sus_Tospik_Sus/output/thumbnail.en.jpg" toto
 song "Geschichten/episodes/M11_Sus_Tospik_Sus/output/thumbnail.tr.jpg" toto-tr
 song "Geschichten/episodes/K03_Uc_Ayi/output/thumbnail.en.jpg" goldie
 song "Geschichten/episodes/K03_Uc_Ayi/output/thumbnail.tr.jpg" goldie-tr
+song "Geschichten/episodes/M01_Pisir_Tencerem/output/thumbnail.en.jpg" pot
+song "Geschichten/episodes/M01_Pisir_Tencerem/output/thumbnail.tr.jpg" pot-tr
 song "Geschichten/episodes/W01_Su_Birikintisi/output/thumbnail.en.jpg" puddle
 song "Geschichten/episodes/W01_Su_Birikintisi/output/thumbnail.tr.jpg" puddle-tr
 song "Geschichten/episodes/W02_Gunes_Nereye_Gider/output/thumbnail.en.jpg" sunnight
