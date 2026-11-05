@@ -65,6 +65,7 @@ song "_shared/thumbnails/raw/E04.png" rain
 song "_shared/thumbnails/raw/E05.png" seed
 song "_shared/thumbnails/raw/E06.png" toys
 song "_shared/thumbnails/raw/E07.png" feelings
+song "_shared/thumbnails/raw/E08.png" picnic
 song "Tontis Ada/episodes/E01_Gokkusagi/images/final/T01.png" rainbow
 
 # story: Memo & Tonton E01 (raw 3:2 → 16:9), newest variant wins
