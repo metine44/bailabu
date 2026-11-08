@@ -46,6 +46,10 @@ song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.en.jpg" fruits
 song "Bilderbuch/episodes/E01_Meyveler/output/thumbnail.tr.jpg" fruits-tr
 song "Bilderbuch/episodes/E02_Sebzeler/output/thumbnail.en.jpg" veggies
 song "Bilderbuch/episodes/E02_Sebzeler/output/thumbnail.tr.jpg" veggies-tr
+song "Bilderbuch/episodes/E03_Tasitlar/output/thumbnail.en.jpg" vehicles
+song "Bilderbuch/episodes/E03_Tasitlar/output/thumbnail.tr.jpg" vehicles-tr
+song "Bilderbuch/episodes/E04_Evimizde/output/thumbnail.en.jpg" home
+song "Bilderbuch/episodes/E04_Evimizde/output/thumbnail.tr.jpg" home-tr
 song "Geschichten/episodes/K01_Rapunzel/output/thumbnail.en.jpg" rapunzel
 song "Geschichten/episodes/K01_Rapunzel/output/thumbnail.tr.jpg" rapunzel-tr
 song "Geschichten/episodes/M11_Sus_Tospik_Sus/output/thumbnail.en.jpg" toto
