@@ -62,6 +62,10 @@ song "Geschichten/episodes/W01_Su_Birikintisi/output/thumbnail.en.jpg" puddle
 song "Geschichten/episodes/W01_Su_Birikintisi/output/thumbnail.tr.jpg" puddle-tr
 song "Geschichten/episodes/W02_Gunes_Nereye_Gider/output/thumbnail.en.jpg" sunnight
 song "Geschichten/episodes/W02_Gunes_Nereye_Gider/output/thumbnail.tr.jpg" sunnight-tr
+song "Geschichten/episodes/W03_Ay_Kim_Isirdi/output/thumbnail.en.jpg" moonbite
+song "Geschichten/episodes/W03_Ay_Kim_Isirdi/output/thumbnail.tr.jpg" moonbite-tr
+song "Geschichten/episodes/W04_Dondurmam_Nereye_Gitti/output/thumbnail.en.jpg" icecream
+song "Geschichten/episodes/W04_Dondurmam_Nereye_Gitti/output/thumbnail.tr.jpg" icecream-tr
 song "_shared/thumbnails/raw/E01.png" cake
 song "_shared/thumbnails/raw/E02.png" ball
 song "_shared/thumbnails/raw/E03.png" turn
