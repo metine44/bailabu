@@ -1,0 +1,434 @@
+{
+  "newTemplates": [
+    {
+      "id": "birthday-cake",
+      "category": "party",
+      "labels": {
+        "en": "Birthday cake",
+        "de": "Geburtstagskuchen",
+        "es": "Pastel de cumpleaños",
+        "pt": "Bolo de aniversário",
+        "tr": "Doğum günü pastası",
+        "ar": "كعكة عيد الميلاد"
+      }
+    },
+    {
+      "id": "balloons",
+      "category": "party",
+      "labels": {
+        "en": "Balloons",
+        "de": "Luftballons",
+        "es": "Globos",
+        "pt": "Balões",
+        "tr": "Balonlar",
+        "ar": "بالونات"
+      }
+    },
+    {
+      "id": "cupcake",
+      "category": "food",
+      "labels": {
+        "en": "Cupcake",
+        "de": "Küchlein",
+        "es": "Magdalena",
+        "pt": "Bolinho",
+        "tr": "Kap kek",
+        "ar": "كب كيك"
+      }
+    },
+    {
+      "id": "rainbow",
+      "category": "nature",
+      "labels": {
+        "en": "Rainbow",
+        "de": "Regenbogen",
+        "es": "Arcoíris",
+        "pt": "Arco-íris",
+        "tr": "Gökkuşağı",
+        "ar": "قوس قزح"
+      }
+    },
+    {
+      "id": "ice-cream",
+      "category": "food",
+      "labels": {
+        "en": "Ice cream",
+        "de": "Eis",
+        "es": "Helado",
+        "pt": "Sorvete",
+        "tr": "Dondurma",
+        "ar": "مثلجات"
+      }
+    },
+    {
+      "id": "flower",
+      "category": "nature",
+      "labels": {
+        "en": "Flower",
+        "de": "Blume",
+        "es": "Flor",
+        "pt": "Flor",
+        "tr": "Çiçek",
+        "ar": "زهرة"
+      }
+    },
+    {
+      "id": "butterfly",
+      "category": "animals",
+      "labels": {
+        "en": "Butterfly",
+        "de": "Schmetterling",
+        "es": "Mariposa",
+        "pt": "Borboleta",
+        "tr": "Kelebek",
+        "ar": "فراشة"
+      }
+    },
+    {
+      "id": "house",
+      "category": "play",
+      "labels": {
+        "en": "House",
+        "de": "Haus",
+        "es": "Casa",
+        "pt": "Casa",
+        "tr": "Ev",
+        "ar": "بيت"
+      }
+    },
+    {
+      "id": "simple-car",
+      "category": "play",
+      "labels": {
+        "en": "Little car",
+        "de": "Kleines Auto",
+        "es": "Cochecito",
+        "pt": "Carrinho",
+        "tr": "Küçük araba",
+        "ar": "سيارة صغيرة"
+      }
+    },
+    {
+      "id": "kite",
+      "category": "play",
+      "labels": {
+        "en": "Kite",
+        "de": "Drachen",
+        "es": "Cometa",
+        "pt": "Pipa",
+        "tr": "Uçurtma",
+        "ar": "طائرة ورقية"
+      }
+    },
+    {
+      "id": "teddy-bear",
+      "category": "play",
+      "labels": {
+        "en": "Teddy bear",
+        "de": "Teddybär",
+        "es": "Osito",
+        "pt": "Ursinho",
+        "tr": "Oyuncak ayı",
+        "ar": "دب دمية"
+      }
+    },
+    {
+      "id": "sun",
+      "category": "nature",
+      "labels": {
+        "en": "Smiling sun",
+        "de": "Lachende Sonne",
+        "es": "Sol sonriente",
+        "pt": "Sol sorridente",
+        "tr": "Gülen güneş",
+        "ar": "شمس مبتسمة"
+      }
+    },
+    {
+      "id": "moon-stars",
+      "category": "nature",
+      "labels": {
+        "en": "Moon and stars",
+        "de": "Mond und Sterne",
+        "es": "Luna y estrellas",
+        "pt": "Lua e estrelas",
+        "tr": "Ay ve yıldızlar",
+        "ar": "قمر ونجوم"
+      }
+    },
+    {
+      "id": "dinosaur",
+      "category": "animals",
+      "labels": {
+        "en": "Dinosaur",
+        "de": "Dinosaurier",
+        "es": "Dinosaurio",
+        "pt": "Dinossauro",
+        "tr": "Dinozor",
+        "ar": "ديناصور"
+      }
+    },
+    {
+      "id": "rocket",
+      "category": "play",
+      "labels": {
+        "en": "Rocket",
+        "de": "Rakete",
+        "es": "Cohete",
+        "pt": "Foguete",
+        "tr": "Roket",
+        "ar": "صاروخ"
+      }
+    }
+  ],
+  "labels": {
+    "all": {
+      "en": "All pictures",
+      "de": "Alle Bilder",
+      "es": "Todos los dibujos",
+      "pt": "Todos os desenhos",
+      "tr": "Tüm resimler",
+      "ar": "كل الصور"
+    },
+    "animals": {
+      "en": "Animals",
+      "de": "Tiere",
+      "es": "Animales",
+      "pt": "Animais",
+      "tr": "Hayvanlar",
+      "ar": "حيوانات"
+    },
+    "food": {
+      "en": "Food & treats",
+      "de": "Essen & Süßes",
+      "es": "Comida y dulces",
+      "pt": "Comida e doces",
+      "tr": "Yiyecekler",
+      "ar": "طعام وحلوى"
+    },
+    "play": {
+      "en": "Toys & play",
+      "de": "Spielzeug",
+      "es": "Juguetes",
+      "pt": "Brinquedos",
+      "tr": "Oyuncaklar",
+      "ar": "ألعاب"
+    },
+    "nature": {
+      "en": "Nature",
+      "de": "Natur",
+      "es": "Naturaleza",
+      "pt": "Natureza",
+      "tr": "Doğa",
+      "ar": "طبيعة"
+    },
+    "party": {
+      "en": "Party",
+      "de": "Feier",
+      "es": "Fiesta",
+      "pt": "Festa",
+      "tr": "Kutlama",
+      "ar": "حفلة"
+    },
+    "bailabu": {
+      "en": "Bailabu",
+      "de": "Bailabu",
+      "es": "Bailabú",
+      "pt": "Bailabu",
+      "tr": "Bailabu",
+      "ar": "بايلابو"
+    },
+    "drawOnly": {
+      "en": "Draw on this picture",
+      "de": "Zeichne auf diesem Bild",
+      "es": "Dibuja sobre este dibujo",
+      "pt": "Desenhe nesta imagem",
+      "tr": "Bu resmin üzerine çiz",
+      "ar": "ارسم على هذه الصورة"
+    },
+    "lightgreen": {
+      "en": "Light green",
+      "de": "Hellgrün",
+      "es": "Verde claro",
+      "pt": "Verde-claro",
+      "tr": "Açık yeşil",
+      "ar": "أخضر فاتح"
+    },
+    "turquoise": {
+      "en": "Turquoise",
+      "de": "Türkis",
+      "es": "Turquesa",
+      "pt": "Turquesa",
+      "tr": "Turkuaz",
+      "ar": "فيروزي"
+    },
+    "lightblue": {
+      "en": "Light blue",
+      "de": "Hellblau",
+      "es": "Azul claro",
+      "pt": "Azul-claro",
+      "tr": "Açık mavi",
+      "ar": "أزرق فاتح"
+    },
+    "lightpink": {
+      "en": "Light pink",
+      "de": "Hellrosa",
+      "es": "Rosa claro",
+      "pt": "Rosa-claro",
+      "tr": "Açık pembe",
+      "ar": "وردي فاتح"
+    },
+    "brown": {
+      "en": "Brown",
+      "de": "Braun",
+      "es": "Marrón",
+      "pt": "Marrom",
+      "tr": "Kahverengi",
+      "ar": "بني"
+    },
+    "beige": {
+      "en": "Beige",
+      "de": "Beige",
+      "es": "Beis",
+      "pt": "Bege",
+      "tr": "Bej",
+      "ar": "بيج"
+    },
+    "black": {
+      "en": "Black",
+      "de": "Schwarz",
+      "es": "Negro",
+      "pt": "Preto",
+      "tr": "Siyah",
+      "ar": "أسود"
+    },
+    "gray": {
+      "en": "Gray",
+      "de": "Grau",
+      "es": "Gris",
+      "pt": "Cinza",
+      "tr": "Gri",
+      "ar": "رمادي"
+    },
+    "navy": {
+      "en": "Dark blue",
+      "de": "Dunkelblau",
+      "es": "Azul oscuro",
+      "pt": "Azul-escuro",
+      "tr": "Lacivert",
+      "ar": "أزرق داكن"
+    },
+    "lavender": {
+      "en": "Lavender",
+      "de": "Lavendel",
+      "es": "Lavanda",
+      "pt": "Lavanda",
+      "tr": "Lavanta",
+      "ar": "خزامي"
+    }
+  },
+  "categories": [
+    {
+      "id": "all",
+      "icon": "🌈"
+    },
+    {
+      "id": "animals",
+      "icon": "🦋"
+    },
+    {
+      "id": "food",
+      "icon": "🍎"
+    },
+    {
+      "id": "play",
+      "icon": "🪁"
+    },
+    {
+      "id": "nature",
+      "icon": "🌻"
+    },
+    {
+      "id": "party",
+      "icon": "🎈"
+    },
+    {
+      "id": "bailabu",
+      "icon": "🐻"
+    }
+  ],
+  "palette": [
+    {
+      "id": "red",
+      "value": "#ff5a5f"
+    },
+    {
+      "id": "orange",
+      "value": "#f6a23a"
+    },
+    {
+      "id": "yellow",
+      "value": "#ffc83d"
+    },
+    {
+      "id": "lightgreen",
+      "value": "#b6df74"
+    },
+    {
+      "id": "green",
+      "value": "#5cc85a"
+    },
+    {
+      "id": "turquoise",
+      "value": "#28b8aa"
+    },
+    {
+      "id": "lightblue",
+      "value": "#3db8f5"
+    },
+    {
+      "id": "blue",
+      "value": "#3465d9"
+    },
+    {
+      "id": "purple",
+      "value": "#8e6cf0"
+    },
+    {
+      "id": "pink",
+      "value": "#eb59a0"
+    },
+    {
+      "id": "lightpink",
+      "value": "#ff9cb9"
+    },
+    {
+      "id": "brown",
+      "value": "#895237"
+    },
+    {
+      "id": "beige",
+      "value": "#e8bd91"
+    },
+    {
+      "id": "black",
+      "value": "#202b38"
+    },
+    {
+      "id": "gray",
+      "value": "#9aa0a6"
+    },
+    {
+      "id": "white",
+      "value": "#ffffff"
+    },
+    {
+      "id": "navy",
+      "value": "#243c78"
+    },
+    {
+      "id": "lavender",
+      "value": "#c7b6f4"
+    }
+  ]
+}

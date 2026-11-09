@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="birthday-cake">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="cake" d="M160 460 H640 V780 Q400 840 160 780 Z"/>
+    <path id="icing" d="M160 460 Q400 400 640 460 V540 Q580 620 520 540 Q460 620 400 540 Q340 620 280 540 Q220 620 160 540 Z"/>
+    <path id="candle" d="M365 295 H435 V440 H365 Z"/>
+    <path id="flame" d="M400 190 Q470 265 400 295 Q330 265 400 190 Z"/>
+    <path id="plate" d="M110 800 Q400 870 690 800 L690 850 Q400 920 110 850 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="flower">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="stem" d="M375 500 H425 V890 H375 Z"/>
+    <path id="left-leaf" d="M375 780 Q175 810 170 625 Q330 610 375 780 Z"/>
+    <path id="right-leaf" d="M425 690 Q610 720 640 535 Q465 525 425 690 Z"/>
+    <path id="top-petal" d="M340 360 C210 80 590 80 460 360 Z"/>
+    <path id="left-petal" d="M340 360 C40 180 60 610 340 470 Z"/>
+    <path id="right-petal" d="M460 360 C760 180 740 610 460 470 Z"/>
+    <path id="bottom-petal" d="M340 470 C210 750 590 750 460 470 Z"/>
+    <path id="center" d="M400 310 A100 100 0 1 1 399 310 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+  </g>
+</svg>

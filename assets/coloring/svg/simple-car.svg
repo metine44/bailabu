@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="simple-car">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="body" d="M110 540 L200 510 L280 350 H510 L610 510 L690 550 V720 H110 Z"/>
+    <path id="left-window" d="M300 385 H380 V510 H240 Z"/>
+    <path id="right-window" d="M420 385 H490 L565 510 H420 Z"/>
+    <path id="left-wheel" d="M240 635 A85 85 0 1 1 239 635 Z"/>
+    <path id="right-wheel" d="M560 635 A85 85 0 1 1 559 635 Z"/>
+    <path id="headlight" d="M620 565 H690 V625 H620 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+  </g>
+</svg>

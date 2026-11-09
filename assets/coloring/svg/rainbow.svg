@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="rainbow">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="outer-band" d="M100 760 V620 A300 300 0 0 1 700 620 V760 H625 V620 A225 225 0 0 0 175 620 V760 Z"/>
+    <path id="middle-band" d="M175 760 V620 A225 225 0 0 1 625 620 V760 H550 V620 A150 150 0 0 0 250 620 V760 Z"/>
+    <path id="inner-band" d="M250 760 V620 A150 150 0 0 1 550 620 V760 H475 V620 A75 75 0 0 0 325 620 V760 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+  </g>
+</svg>

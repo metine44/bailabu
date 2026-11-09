@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="butterfly">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="upper-left" d="M370 470 C60 40 50 580 370 555 Z"/>
+    <path id="lower-left" d="M370 555 C60 515 180 930 370 690 Z"/>
+    <path id="upper-right" d="M430 470 C740 40 750 580 430 555 Z"/>
+    <path id="lower-right" d="M430 555 C740 515 620 930 430 690 Z"/>
+    <path id="body" d="M370 410 Q400 360 430 410 V690 Q400 770 370 690 Z"/>
+    <path id="head" d="M400 320 A55 55 0 1 1 399 320 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+    <path d="M375 335 Q300 220 280 270 M425 335 Q500 220 520 270"/>
+  </g>
+</svg>

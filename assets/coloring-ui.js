@@ -20,8 +20,8 @@
     tr: ['Boya','Çiz','Fırça','Pastel boya','Silgi','Boyut','Küçük','Orta','Büyük','Boş sayfa','Bir araç seç ve çiz!','Bu sayfa doldu. Kaydet, geri al veya yeniden başla.','Burada çizilemiyor. Boyamayı veya başka bir tarayıcıyı dene.'],
     ar: ['لوّن','ارسم','فرشاة','قلم شمع','ممحاة','الحجم','صغير','وسط','كبير','صفحة بيضاء','اختر أداة وارسم!','هذه الصفحة ممتلئة. احفظها أو تراجع أو ابدأ من جديد.','الرسم غير متاح هنا. جرّب التلوين أو متصفحًا آخر.']
   };
-  const ids = ['ball', 'apple', 'star', 'blank'];
-  const colors = ['#ff5a5f','#f6a23a','#ffc83d','#5cc85a','#3db8f5','#8e6cf0','#ff9cb9','#ffffff'];
+  const library = window.BailabuStudio;
+  const templates = library.templates, byId = new Map(templates.map(t=>[t.id,t]));
   const sessions = new Map(), definitions = new Map();
   definitions.set('blank', engine.BLANK);
   let active = 'ball', ticket = 0, loaded = false, busy = false, mode = 'color';
@@ -29,6 +29,8 @@
   const $ = s => root.querySelector(s);
   const text = key => {
     const lang = document.documentElement.lang;
+    const labels = library.labels[key] || byId.get(key)?.labels;
+    if (labels) return labels[lang] || labels.en;
     return drawKeys.includes(key) ? (drawWords[lang] || drawWords.en)[drawKeys.indexOf(key)] : (words[lang] || words.en)[keys.indexOf(key)];
   };
   function button(icon, key, action) {
@@ -54,7 +56,13 @@
     $('#color-undo').disabled = !state.past.length; $('#color-redo').disabled = !state.future.length;
     $('#color-reset').disabled = !state.strokes.length && Object.keys(state.fills).every(k => state.fills[k] === state.defaults[k]);
     root.dataset.mode = state.mode;
-    root.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === state.mode));
+    root.querySelectorAll('[data-mode]').forEach(b => {
+      b.setAttribute('aria-pressed', b.dataset.mode === state.mode);
+      b.disabled = !state.modes[b.dataset.mode];
+      b.title = b.disabled ? text('drawOnly') : '';
+    });
+    $('#color-capability').textContent = state.modes.color ? '' : text('drawOnly');
+    $('[data-print]').hidden = !byId.get(active).printable;
     root.querySelectorAll('[data-tool]').forEach(b => b.setAttribute('aria-pressed', b.dataset.tool === state.tool));
     root.querySelectorAll('[data-size]').forEach(b => b.setAttribute('aria-pressed', b.dataset.size === state.size));
     $('#draw-tools').hidden = state.mode !== 'draw'; $('#draw-sizes').hidden = state.mode !== 'draw';
@@ -95,6 +103,7 @@
     if (!gesture) return;
     const old = gesture; gesture = null; cancelAnimationFrame(frame); frame = 0;
     if (old.canvas.hasPointerCapture?.(old.id)) old.canvas.releasePointerCapture(old.id);
+    if (!engine.sessionRoom(sessions.values(), old.stroke)) { resize(); status('limit'); return; }
     apply({ type: 'stroke', stroke: old.stroke });
   }
   function drawSurface(def) {
@@ -142,8 +151,19 @@
     svg.setAttribute('aria-label', text(active)); svg.setAttribute('role','group');
     const bg = document.createElementNS(ns,'rect');
     bg.setAttribute('width',def.width); bg.setAttribute('height',def.height); bg.setAttribute('fill','#ffffff'); svg.append(bg);
+    function lines(paths) {
+      const group = document.createElementNS(ns,'g');
+      for (const [key,value] of Object.entries({fill:'none',stroke:'#202b38','stroke-width':'12','stroke-linecap':'round','stroke-linejoin':'round','pointer-events':'none','aria-hidden':'true'})) group.setAttribute(key,value);
+      for (const d of paths) { const p = document.createElementNS(ns,'path'); p.setAttribute('d',d); group.append(p); }
+      return group;
+    }
+    if (def.vector) svg.append(lines(def.underlay));
     def.regions.forEach((r,i) => {
       const p = document.createElementNS(ns,'path'); p.setAttribute('d',r.d); p.dataset.region = r.id;
+      if (def.vector) {
+        p.setAttribute('stroke','#202b38'); p.setAttribute('stroke-width','12'); p.setAttribute('stroke-linejoin','round');
+        p.style.pointerEvents = 'visibleFill';
+      }
       p.setAttribute('role','button'); p.setAttribute('tabindex','0'); p.setAttribute('class','color-region');
       p.setAttribute('aria-label', `${text(active)} · ${text('part')} ${i+1}`);
       // Click is the sole activation path for touch, mouse and pen: no duplicate pointer/touch listeners.
@@ -151,6 +171,9 @@
       p.onkeydown = e => { if (sessions.get(active).mode === 'color' && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); if (!e.repeat) apply({ type:'fill', region:r.id }); } };
       svg.append(p);
     });
+    if (def.vector) {
+      svg.append(lines(def.decoration));
+    }
     if (!def.ink) return svg;
     const ink = document.createElementNS(ns,'image'); ink.setAttribute('href',def.ink);
     ink.setAttribute('width',def.width); ink.setAttribute('height',def.height); ink.style.pointerEvents = 'none';
@@ -165,16 +188,17 @@
     try {
       let def = definitions.get(id);
       if (!def) {
-        const response = await fetch(`assets/coloring/${id}.json`, { credentials:'omit' });
+        const response = await fetch(byId.get(id).artwork, { credentials:'omit' });
         if (!response.ok) throw new Error('Missing picture');
         def = await response.json();
         if (!engine.validPicture(def) || def.id !== id) throw new Error('Invalid picture');
+        if (engine.capabilities(def).color !== byId.get(id).modes.color) throw new Error('Capability mismatch');
         definitions.set(id,def);
       }
       if (request !== ticket) return;
       if (!sessions.has(id)) sessions.set(id,engine.create(def));
-      if (id === 'blank') mode = 'draw';
-      sessions.set(id,engine.change(sessions.get(id),{type:'mode',mode}));
+      const nextMode = byId.get(id).modes[mode] ? mode : 'draw';
+      sessions.set(id,engine.change(sessions.get(id),{type:'mode',mode:nextMode}));
       mount(def);
       $('#color-tools').hidden = false; $('#color-actions').hidden = false; $('#color-extra .color-actions').hidden = false;
       status(''); update();
@@ -185,6 +209,7 @@
   }
   function mount(def) {
     const stage = document.createElement('div'); stage.className = 'color-stage';
+    stage.classList.toggle('blank-stage',def.blank === true);
     stage.style.aspectRatio = `${def.width} / ${def.height}`;
     stage.append(artwork(def), drawSurface(def)); $('#color-paper').replaceChildren(stage);
     observer?.disconnect();
@@ -193,12 +218,13 @@
   function build() {
     loaded = true;
     root.innerHTML = `<div class="color-header"><h1 id="color-title"></h1><a class="color-button" href="#top">⌂ <span data-home></span></a></div>
-      <div class="color-modes" role="group"></div><p id="color-hint"></p>
+      <div class="color-modes" role="group" aria-describedby="color-capability"></div><p id="color-capability"></p><p id="color-hint"></p>
       <div class="color-workspace"><div id="color-paper" class="color-paper"></div>
       <div id="color-tools" class="color-tools"><div id="draw-tools" class="draw-options" role="group"></div>
       <div id="draw-sizes" class="draw-options" role="group"></div><div class="color-palette" role="group"></div></div></div>
       <div id="color-actions" class="color-actions"></div><p id="color-status" class="color-status" role="status"></p>
-      <details id="color-extra" class="color-extra"><summary></summary><div class="color-pictures" role="group"></div><div class="color-actions"></div></details>`;
+      <div class="studio-browser"><div class="color-categories" role="group"></div><div class="studio-gallery"><div class="blank-picker"></div><div class="color-pictures" role="group"></div></div></div>
+      <details id="color-extra" class="color-extra" open><summary></summary><div class="color-actions"></div></details>`;
     for (const [key,icon] of [['color','🎨'],['draw','✎']]) {
       const b = button(icon,key,()=>{ mode = key; apply({type:'mode',mode}); }); b.dataset.mode = key; $('.color-modes').append(b);
     }
@@ -208,14 +234,23 @@
     for (const [key,icon] of [['small','●'],['medium','●'],['large','●']]) {
       const b = button(icon,key,()=>apply({type:'size',size:key})); b.dataset.size = key; $('#draw-sizes').append(b);
     }
-    ids.forEach(id => {
+    templates.forEach(template => {
+      const id = template.id;
       const b = document.createElement('button'); b.className='color-picker'; b.type='button'; b.dataset.picture=id;
-      b.innerHTML=id === 'blank' ? '<span aria-hidden="true">▢</span><span></span>' : `<img src="assets/print/${id}.webp" alt="" width="60" height="65"><span></span>`;
-      b.onclick=()=>choose(id); $('.color-pictures').append(b);
+      b.innerHTML=id === 'blank' ? '<span class="blank-icon" aria-hidden="true">▢</span><span></span>' : `<img src="${template.thumbnail}" alt="" width="80" height="90" loading="lazy"><span></span>`;
+      b.onclick=()=>choose(id); $(id === 'blank' ? '.blank-picker' : '.color-pictures').append(b);
     });
-    colors.forEach((color,i) => {
+    library.categories.forEach(({id,icon}) => {
+      const b=button(icon,id,()=>{
+        root.querySelectorAll('[data-category]').forEach(n=>n.setAttribute('aria-pressed',n===b));
+        root.querySelectorAll('.color-pictures [data-picture]').forEach(n=>n.hidden=id!=='all' && byId.get(n.dataset.picture).category!==id);
+        $('.color-pictures').scrollTop=0;
+      });
+      b.dataset.category=id; b.setAttribute('aria-pressed',id==='all'); $('.color-categories').append(b);
+    });
+    library.palette.forEach(({id,value:color}) => {
       const b = document.createElement('button'); b.type='button'; b.className='swatch'; b.dataset.color=color;
-      b.dataset.colorLabel=['red','orange','yellow','green','blue','purple','pink','white'][i]; b.style.background=color; b.onclick=()=>apply({type:'select', color});
+      b.dataset.colorLabel=id; b.style.background=color; b.onclick=()=>apply({type:'select', color});
       $('.color-palette').append(b);
     });
     for (const [id,icon,key,type] of [['undo','↶','undo','undo'],['redo','↷','redo','redo']]) {
@@ -239,6 +274,7 @@
     $('#color-title').textContent=text('title'); $('#color-hint').textContent=text('hint');
     $('[data-home]').textContent=text('back'); $('[data-print]').textContent='▤ '+text('print');
     $('.color-pictures').setAttribute('aria-label',text('pictures')); $('.color-palette').setAttribute('aria-label',text('palette'));
+    $('.color-categories').setAttribute('aria-label',text('pictures'));
     root.querySelectorAll('[data-label]').forEach(b=>b.lastElementChild.textContent=text(b.dataset.label));
     root.querySelectorAll('[data-picture]').forEach(b=>b.lastElementChild.textContent=text(b.dataset.picture));
     root.querySelectorAll('[data-color-label]').forEach(b=>b.setAttribute('aria-label',text(b.dataset.colorLabel)));

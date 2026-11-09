@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="balloons">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="underlay" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" pointer-events="none">
+    <path d="M290 560 Q200 710 300 850 M540 510 Q630 680 510 870 M420 690 Q400 790 420 920"/>
+  </g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="left-balloon" d="M290 560 C100 500 90 220 250 190 C420 180 450 440 290 560 Z"/>
+    <path id="right-balloon" d="M540 510 C370 440 385 160 540 160 C715 160 720 440 540 510 Z"/>
+    <path id="front-balloon" d="M420 690 C230 600 240 330 410 330 C590 330 605 595 420 690 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="rocket">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="left-fin" d="M290 585 L155 760 V465 L290 365 Z"/>
+    <path id="right-fin" d="M510 585 L645 760 V465 L510 365 Z"/>
+    <path id="flame" d="M325 735 Q310 855 400 935 Q490 855 475 735 Z"/>
+    <path id="hull" d="M290 330 Q285 220 400 105 Q515 220 510 330 V730 H290 Z"/>
+    <path id="nose" d="M290 330 Q285 220 400 105 Q515 220 510 330 Z"/>
+    <path id="window" d="M400 390 A85 85 0 1 1 399 390 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+  </g>
+</svg>

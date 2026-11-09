@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="moon-stars">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="moon" d="M465 160 C110 110 65 760 440 820 C290 660 270 340 465 160 Z"/>
+    <path id="top-star" d="M610 190 L640 270 L725 275 L660 330 L680 415 L610 365 L540 415 L560 330 L495 275 L580 270 Z"/>
+    <path id="bottom-star" d="M595 575 L620 640 L690 645 L635 690 L650 760 L595 720 L535 760 L550 690 L495 645 L565 640 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+    <path d="M260 395 V410 M230 480 Q250 505 280 480"/>
+  </g>
+</svg>

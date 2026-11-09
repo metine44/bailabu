@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="cupcake">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="wrapper" d="M190 520 H610 L550 820 H250 Z"/>
+    <path id="frosting" d="M190 520 C85 440 210 350 280 365 C240 260 350 240 400 290 C480 205 595 290 540 370 C680 355 705 490 610 520 Z"/>
+    <path id="cherry" d="M400 185 A55 55 0 1 1 399 185 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+    <path d="M290 580 L320 755 M400 580 V770 M510 580 L480 755"/>
+  </g>
+</svg>

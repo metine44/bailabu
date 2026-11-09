@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="ice-cream">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="cone" d="M230 560 H570 L400 880 Z"/>
+    <path id="bottom-scoop" d="M220 560 C140 480 195 340 285 355 C315 290 490 280 525 355 C630 345 660 500 580 560 Z"/>
+    <path id="top-scoop" d="M270 335 C220 240 295 155 400 155 C520 155 580 260 525 335 Q400 385 270 335 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+    <path d="M300 615 L470 735 M350 575 L510 675 M500 615 L330 735"/>
+  </g>
+</svg>

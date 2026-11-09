@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="teddy-bear">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="left-ear" d="M245 225 A80 80 0 1 1 244 225 Z"/>
+    <path id="right-ear" d="M555 225 A80 80 0 1 1 554 225 Z"/>
+    <path id="left-arm" d="M270 580 C60 520 60 790 260 750 Z"/>
+    <path id="right-arm" d="M530 580 C740 520 740 790 540 750 Z"/>
+    <path id="belly" d="M400 505 C140 500 180 900 400 900 C620 900 660 500 400 505 Z"/>
+    <path id="left-foot" d="M265 775 A85 85 0 1 1 264 775 Z"/>
+    <path id="right-foot" d="M535 775 A85 85 0 1 1 534 775 Z"/>
+    <path id="head" d="M400 235 C160 225 160 565 400 565 C640 565 640 225 400 235 Z"/>
+    <path id="muzzle" d="M400 420 C270 400 280 535 400 535 C520 535 530 400 400 420 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+    <path d="M335 370 L335 380 M465 370 L465 380 M380 455 L420 455 L400 475 Z M400 475 V495 Q375 515 355 495 M400 495 Q425 515 445 495"/>
+  </g>
+</svg>

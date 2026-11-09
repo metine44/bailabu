@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="house">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="wall" d="M190 460 H610 V840 H190 Z"/>
+    <path id="roof" d="M110 460 L400 180 L690 460 Z"/>
+    <path id="door" d="M340 840 V620 Q400 550 460 620 V840 Z"/>
+    <path id="left-window" d="M230 525 H315 V630 H230 Z"/>
+    <path id="right-window" d="M485 525 H570 V630 H485 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+    <path d="M395 700 H405"/>
+  </g>
+</svg>

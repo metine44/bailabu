@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" data-picture-id="dinosaur">
+  <!-- Original Bailabu vector artwork, authored for this repository. Stable semantic region IDs. -->
+  <g id="background" fill="#ffffff"><path d="M0 0 H800 V1000 H0 Z"/></g>
+  <g id="regions" fill="#ffffff" stroke="#202b38" stroke-width="12" stroke-linejoin="round">
+    <path id="tail" d="M290 630 Q130 630 90 475 Q60 765 310 775 Z"/>
+    <path id="body" d="M290 540 C170 610 220 830 400 830 H605 V735 H530 V425 H420 V650 Q370 490 290 540 Z"/>
+    <path id="head" d="M420 430 V300 Q420 205 535 205 H620 Q700 205 700 295 V425 Z"/>
+    <path id="front-foot" d="M450 755 H555 V850 H430 Z"/>
+    <path id="back-foot" d="M270 755 H375 V850 H250 Z"/>
+    <path id="belly" d="M310 650 Q430 565 470 725 Q380 805 310 650 Z"/>
+  </g>
+  <g id="decoration" fill="none" stroke="#202b38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pointer-events="none">
+    <path d="M575 290 V305 M620 360 Q655 380 680 355"/>
+  </g>
+</svg>
