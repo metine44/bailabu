@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Bailabu responsive review</title>
+<style>html,body{margin:0}iframe{display:block;border:0}</style>
+<iframe title="Bailabu responsive preview"></iframe>
+<script>
+const args=new URLSearchParams(location.search), frame=document.querySelector('iframe');
+frame.style.width=Number(args.get('width')||390)+'px';
+frame.style.height=Number(args.get('height')||844)+'px';
+frame.src='../?lang=en#'+(args.get('page')==='color'?'color-online':'top');
+</script></html>

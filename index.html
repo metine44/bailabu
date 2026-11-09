@@ -95,6 +95,7 @@
   }
 </style>
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/coloring.css">
 </head>
 <body class="bg-cream text-ink antialiased">
 
@@ -115,7 +116,7 @@
       <a href="#videos" class="px-3 py-1.5 rounded-full hover:bg-sky-light" data-i18n="nav_videos">Videos</a>
       <a href="#play" class="px-3 py-1.5 rounded-full hover:bg-sun-light" data-i18n="nav_play">Games</a>
       <a href="#stories" class="px-3 py-1.5 rounded-full hover:bg-coral-light" data-i18n="nav_stories">Stories</a>
-      <a href="#coloring" class="px-3 py-1.5 rounded-full hover:bg-violet-light" data-i18n="nav_coloring">Coloring</a>
+      <a href="#color-online" class="px-3 py-1.5 rounded-full hover:bg-violet-light" data-i18n="nav_coloring">Coloring</a>
       <a href="#channels" class="px-3 py-1.5 rounded-full hover:bg-leaf-light" data-i18n="nav_channels">Channels</a>
       <button type="button" hidden class="contact-open ms-1 px-4 py-1.5 rounded-full bg-coral-light hover:bg-coral hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-coral/50" data-i18n="contact">Contact</button>
     </nav>
@@ -137,7 +138,7 @@
       <a href="#videos" class="rounded-2xl bg-sky-light px-4 py-3" data-i18n="nav_videos">Videos</a>
       <a href="#play" class="rounded-2xl bg-sun-light px-4 py-3" data-i18n="nav_play">Games</a>
       <a href="#stories" class="rounded-2xl bg-coral-light px-4 py-3" data-i18n="nav_stories">Stories</a>
-      <a href="#coloring" class="rounded-2xl bg-violet-light px-4 py-3" data-i18n="nav_coloring">Coloring</a>
+      <a href="#color-online" class="rounded-2xl bg-violet-light px-4 py-3" data-i18n="nav_coloring">Coloring</a>
       <a href="#channels" class="rounded-2xl bg-leaf-light px-4 py-3" data-i18n="nav_channels">Channels</a>
       <button type="button" hidden class="contact-open rounded-2xl bg-coral-light px-4 py-3 text-start" data-i18n="contact">Contact</button>
     </div>
@@ -145,26 +146,20 @@
 </header>
 
 <main id="main">
+<div id="homepage">
 <!-- ============ Hero ============ -->
 <section id="top" class="relative overflow-hidden bg-sky-light">
   <img src="assets/brand/hero.webp" alt="Bailabu the bear and his friends on a sunny island" data-i18n-alt="alt_hero" width="2000" height="1116" fetchpriority="high"
        class="w-full h-60 sm:h-80 object-cover object-[78%_45%] md:absolute md:inset-0 md:h-full md:object-[62%_50%] rtl:-scale-x-100">
   <div class="hidden md:block absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-white/75 via-white/25 to-transparent"></div>
-  <span class="floaty pointer-events-none absolute top-8 start-[8%] text-4xl text-coral hidden md:block" aria-hidden="true">♪</span>
-  <span class="floaty pointer-events-none absolute top-24 start-[40%] text-5xl text-violet hidden md:block" style="animation-delay:-1.3s" aria-hidden="true">♫</span>
-  <span class="floaty pointer-events-none absolute bottom-40 start-[30%] text-3xl text-sun hidden md:block" style="animation-delay:-2.4s" aria-hidden="true">★</span>
 
-  <div class="relative mx-auto max-w-6xl px-4 pt-6 pb-10 md:pt-24 md:pb-36">
+  <div class="relative mx-auto max-w-6xl px-4 pt-6 pb-10 md:pt-12 md:pb-20">
     <div class="max-w-xl">
       <p class="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-1.5 font-bold text-sky-dark shadow-pop" data-i18n="kicker">Songs · quiz games · picture books · stories</p>
       <h1 class="mt-4 font-display font-extrabold text-4xl leading-[1.05] sm:text-5xl md:text-6xl text-ink" data-i18n="hero_title">Sing, dance & play on Bailabu Island!</h1>
       <p class="mt-4 text-lg md:text-xl font-semibold text-ink/80" data-i18n="hero_text">Happy songs and lullabies, quiz games, picture books and stories for toddlers and preschoolers (ages 1–5) – with Bailabu the bear and all his island friends.</p>
       <div class="mt-7 flex flex-wrap gap-3">
-        <a id="ctaWatch" href="https://www.youtube.com/@bailabuisland" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 rounded-full bg-berry px-6 py-3.5 text-lg font-extrabold text-white shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-berry/40">
-          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg>
-          <span data-i18n="cta_watch">Watch on YouTube</span>
-        </a>
+
         <a href="#play" class="inline-flex items-center gap-2 rounded-full bg-sun px-6 py-3.5 text-lg font-extrabold text-ink shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sun/60">
           <span aria-hidden="true">🎲</span><span data-i18n="cta_play">Let's play!</span>
         </a>
@@ -174,6 +169,7 @@
   <svg class="wave absolute bottom-0 inset-x-0 text-cream" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 40c120-30 240-30 360 0s240 30 360 0 240-30 360 0 240 30 360 0v40H0z"/></svg>
 </section>
 
+<nav class="activity-choices" aria-label="Activities"><a href="#videos" style="background:#ddf3ff"><img src="assets/songs/odd.webp" alt="" width="125" height="100"><span data-i18n="nav_videos"></span></a><a href="#play" style="background:#fff4d6"><img src="assets/chars/bailabu_bear.webp" alt="" width="125" height="100"><span data-i18n="nav_play"></span></a><a href="#stories" style="background:#ffe3ea"><img src="assets/songs/cake.webp" alt="" width="125" height="100"><span data-i18n="nav_stories"></span></a><a href="#color-online" style="background:#eee8ff"><img src="assets/chars/ball_blue.webp" alt="" width="125" height="100"><span data-i18n="nav_coloring"></span></a></nav>
 <!-- ============ Friends ============ -->
 <section id="friends" class="mx-auto max-w-6xl px-4 py-12 md:py-16">
   <div class="text-center">
@@ -250,397 +246,8 @@
         <span class="flex items-center gap-3 p-4">
           <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Learning Fruits with Bibi</span>
           <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=UbMRaPxTaHc" target="_blank" rel="noopener" data-count="video-veggies-en" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/veggies.webp" alt="Learning Vegetables with Bibi" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 start-3 rounded-full bg-leaf px-3 py-1 text-sm font-extrabold text-white shadow-pop">Picture book</span>
-          
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
-            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-          </span>
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Learning Vegetables with Bibi</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=w7uzDTdTQtY" target="_blank" rel="noopener" data-count="video-shadow-en" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/shadow.webp" alt="Whose Shadow Is This?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Quiz</span>
-          
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
-            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-          </span>
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Whose Shadow Is This?</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=H7UfZulavrc" target="_blank" rel="noopener" data-count="video-rapunzel-en" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/rapunzel.webp" alt="Rapunzel" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
-            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-          </span>
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Rapunzel</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=kYxTgfaNK2Y" target="_blank" rel="noopener" data-count="video-cake-en" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/cake.webp" alt="The Strawberry Cake" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
-            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-          </span>
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">The Strawberry Cake</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=Y97gXFzA_Ms" target="_blank" rel="noopener" data-count="video-ball-en" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/ball.webp" alt="The Lost Red Ball" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
-            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-          </span>
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">The Lost Red Ball</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=QRe8LPDa7Ck" target="_blank" rel="noopener" data-count="video-turn-en" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/turn.webp" alt="My Turn, Your Turn" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
-            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-          </span>
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">My Turn, Your Turn</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=_dtNcX-2DLA" target="_blank" rel="noopener" data-count="video-lumi-en" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/lumi.webp" alt="Lumi, the Little Star" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 start-3 rounded-full bg-ink px-3 py-1 text-sm font-extrabold text-white shadow-pop">Lullaby</span>
-          
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
-            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-          </span>
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Lumi, the Little Star</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=fKLz5a7mEmU" target="_blank" rel="noopener" data-count="video-toto-en" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/toto.webp" alt="Shh, Toto, Shh!" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
-            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-          </span>
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Shh, Toto, Shh!</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=LiYF8WxsTdg" target="_blank" rel="noopener" data-count="video-goldie-en" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/goldie.webp" alt="Goldilocks and the Three Bears" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
-            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-          </span>
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Goldilocks and the Three Bears</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white hover:ring-sky/40 transition"><a href="https://www.youtube.com/watch?v=ZsA4k5fzruk" target="_blank" rel="noopener" data-count="video-pot-en" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-sky">
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/pot.webp" alt="The Magic Pudding Pot" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover group-hover:scale-105 transition duration-300">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          <span class="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition" aria-hidden="true">
-            <span class="grid place-items-center w-16 h-16 rounded-full bg-white/90 shadow-pop-lg"><svg viewBox="0 0 24 24" class="w-8 h-8 text-berry ms-1 rtl:-scale-x-100" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-          </span>
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">The Magic Pudding Pot</span>
-          <span class="ms-auto shrink-0 rounded-full bg-sky-light px-3 py-1 font-extrabold text-sky-dark">Watch</span>
-        </span></a></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/rainbow.webp" alt="The Rainbow of Bailabu Island" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">The Rainbow of Bailabu Island</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/count10.webp" alt="Count to 10 with Rolly" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-sky px-3 py-1 text-sm font-extrabold text-white shadow-pop">Counting</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Count to 10 with Rolly</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/sleepy.webp" alt="Sleepy Time on the Farm" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-ink px-3 py-1 text-sm font-extrabold text-white shadow-pop">Lullaby</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Sleepy Time on the Farm</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/vehicles.webp" alt="Learning Vehicles with Bibi" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-leaf px-3 py-1 text-sm font-extrabold text-white shadow-pop">Picture book</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Learning Vehicles with Bibi</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/home.webp" alt="First Words at Home with Bibi" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-leaf px-3 py-1 text-sm font-extrabold text-white shadow-pop">Picture book</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">First Words at Home with Bibi</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/sound.webp" alt="Who Makes This Sound?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Quiz</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Who Makes This Sound?</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/peekaboo.webp" alt="Peekaboo! Who Is Hiding?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Quiz</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Peekaboo! Who Is Hiding?</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/colorhunt.webp" alt="Color Hunt: Find the Colors!" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Colors</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Color Hunt: Find the Colors!</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/howmany.webp" alt="How Many? Let's Count!" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-sky px-3 py-1 text-sm font-extrabold text-white shadow-pop">Counting</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">How Many? Let's Count!</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/whoeats.webp" alt="Who Eats What?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Quiz</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Who Eats What?</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/missing.webp" alt="What Is Missing? Memory Game" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Quiz</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">What Is Missing? Memory Game</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/riddles.webp" alt="Guess Who? Riddles for Kids" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Quiz</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Guess Who? Riddles for Kids</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/box.webp" alt="What's in the Box? Fruits" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Sing-along</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">What's in the Box? Fruits</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/garden.webp" alt="What's in the Garden? Vegetables" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Sing-along</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">What's in the Garden? Vegetables</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/rain.webp" alt="The Rainy Day" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">The Rainy Day</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/seed.webp" alt="The Little Seed" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">The Little Seed</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/toys.webp" alt="A Home for Every Toy" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">A Home for Every Toy</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/feelings.webp" alt="Tonton's Feelings" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Tonton's Feelings</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/picnic.webp" alt="Picnic Together" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Picnic Together</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/tractor.webp" alt="Putt Putt, Look at the Tractor!" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-tangerine px-3 py-1 text-sm font-extrabold text-white shadow-pop">Farm animals</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Putt Putt, Look at the Tractor!</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/rolly.webp" alt="Rolly the Rainbow Bus" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Sing-along</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Rolly the Rainbow Bus</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/bibi.webp" alt="Bibi the Busy Bee" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-violet px-3 py-1 text-sm font-extrabold text-white shadow-pop">Colors</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Bibi the Busy Bee</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/minik.webp" alt="Blub, the Little Fish" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Sing-along</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Blub, the Little Fish</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/puddle.webp" alt="Where Did the Puddle Go?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Where Did the Puddle Go?</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/sunnight.webp" alt="Where Does the Sun Go at Night?" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-coral px-3 py-1 text-sm font-extrabold text-white shadow-pop">Story</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Where Does the Sun Go at Night?</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/kiko.webp" alt="Kiko the Little Frog" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-leaf px-3 py-1 text-sm font-extrabold text-white shadow-pop">Dance</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Kiko the Little Frog</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li><li class="group rounded-[1.75rem] bg-white shadow-pop-lg overflow-hidden ring-4 ring-white "><div>
-        <span class="relative block overflow-hidden">
-          <img src="assets/songs/ducks.webp" alt="Five Little Ducks" width="800" height="450" loading="lazy" class="w-full aspect-video object-cover opacity-80">
-          <span class="absolute top-3 start-3 rounded-full bg-sky px-3 py-1 text-sm font-extrabold text-white shadow-pop">Counting</span>
-          
-          
-        </span>
-        <span class="flex items-center gap-3 p-4">
-          <span class="font-display font-extrabold text-xl leading-tight" lang="en" dir="auto">Five Little Ducks</span>
-          <span class="ms-auto shrink-0 rounded-full bg-ink/5 px-3 py-1 text-sm font-extrabold text-ink/50">Coming soon</span>
-        </span></div></li></ul>
+        </span></a></li></ul>
+    <button id="allVideos" type="button" class="collection-toggle" aria-expanded="false" aria-controls="videoGrid" data-i18n="show_videos">More videos</button>
     <p id="videoLangNote" class="mt-5 text-center font-semibold text-ink/60" data-i18n="videos_lang">EN on a picture means the video is in English. More languages are on the way.</p>
   </div>
 </section>
@@ -710,6 +317,7 @@
 </section>
 
 <!-- ============ Coloring pages ============ -->
+<div class="color-entry"><img src="assets/chars/ball_blue.webp" alt="" width="100" height="100" loading="lazy"><a href="#color-online" class="color-button"><span aria-hidden="true">🎨</span><span data-i18n="online_color">Color online</span></a><a href="#coloring" class="color-button"><span aria-hidden="true">▤</span><span data-i18n="coloring_title">Coloring pages</span></a></div>
 <section id="coloring" class="relative bg-violet-light">
   <svg class="wave text-coral-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
   <div class="mx-auto max-w-6xl px-4 pb-14 pt-4 md:pb-20">
@@ -724,36 +332,8 @@
        <span class="mt-2 block font-extrabold leading-tight">Bibi</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/rolly.webp" alt="Rolly coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
        <span class="mt-2 block font-extrabold leading-tight">Rolly</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/blub.webp" alt="Blub coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
        <span class="mt-2 block font-extrabold leading-tight">Blub</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/lumi.webp" alt="Lumi coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Lumi</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/memo.webp" alt="Memo coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Memo</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/tonton.webp" alt="Tonton coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Tonton</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/dot.webp" alt="Dot coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Dot</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/miko.webp" alt="Miko coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Miko</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/kuku.webp" alt="Kuku coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Kuku</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/zippy.webp" alt="Zippy coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Zippy</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/pofi.webp" alt="Pofi coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Pofi</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/lulu.webp" alt="Lulu coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Lulu</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/mama_duck.webp" alt="Mama Duck coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Mama Duck</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/duckling_siblings.webp" alt="Duckling Siblings coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Duckling Siblings</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/farmer_ali.webp" alt="Farmer Ali coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Farmer Ali</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/tractor.webp" alt="Tractor coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Tractor</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/pompom.webp" alt="Pompom coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Pompom</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/mumu.webp" alt="Mumu coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Mumu</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/tula_and_the_chicks.webp" alt="Tula and the Chicks coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Tula and the Chicks</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/badi.webp" alt="Badi coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Badi</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/toby.webp" alt="Toby coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Toby</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/the_moon.webp" alt="The Moon coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">The Moon</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/elephant.webp" alt="Elephant coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Elephant</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/flamingo.webp" alt="Flamingo coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Flamingo</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/kitten.webp" alt="Kitten coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Kitten</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/turtle.webp" alt="Turtle coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Turtle</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/car.webp" alt="Car coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Car</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/apple.webp" alt="Apple coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Apple</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/banana.webp" alt="Banana coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Banana</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/pear.webp" alt="Pear coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Pear</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/strawberry.webp" alt="Strawberry coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Strawberry</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/ball.webp" alt="Ball coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Ball</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/star.webp" alt="Star coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
-       <span class="mt-2 block font-extrabold leading-tight">Star</span></button></li></ul>
+       <span class="mt-2 block font-extrabold leading-tight">Lumi</span></button></li></ul>
+<button id="allPrints" type="button" class="collection-toggle" aria-expanded="false" aria-controls="coloringGrid" data-i18n="show_prints">All coloring pages</button>
   </div>
 </section>
 
@@ -765,7 +345,12 @@
       <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="channels_title">One island – many languages</h2>
       <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="channels_text">Bailabu sings in your language. Pick your channel and subscribe!</p>
     </div>
-    <ul id="channelGrid" class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"><li class="relative flex items-center gap-4 rounded-[1.75rem] bg-white p-4 shadow-pop ring-4" style="--tw-ring-color: #3DB8F5;">
+    <a id="ctaWatch" href="https://www.youtube.com/@bailabuisland" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 rounded-full bg-berry px-6 py-3.5 text-lg font-extrabold text-white shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-berry/40">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg>
+          <span data-i18n="cta_watch">Watch on YouTube</span>
+        </a>
+<ul id="channelGrid" class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"><li class="relative flex items-center gap-4 rounded-[1.75rem] bg-white p-4 shadow-pop ring-4" style="--tw-ring-color: #3DB8F5;">
       <span class="shrink-0 w-16 h-16 rounded-full p-1" style="background:#3DB8F5"><img src="assets/brand/bear-round.webp" alt="" width="64" height="64" loading="lazy" class="w-full h-full rounded-full object-cover"></span>
       <span class="min-w-0">
         <span class="block text-sm font-extrabold" style="color:#3DB8F5" lang="en">English · Your language</span>
@@ -819,6 +404,8 @@
     </div>
   </div>
 </section>
+</div>
+<section id="online-coloring" hidden aria-labelledby="color-title"></section>
 </main>
 
 <footer class="bg-ink text-white">
@@ -1438,6 +1025,19 @@ ar: {
 },
 };
 
+/* Homepage additions follow the existing six-language strategy. */
+const HOME_TEXT = {
+ en: ["Color online", "More videos", "Fewer videos", "All coloring pages", "Fewer coloring pages", "Songs, games and stories with your island friends."],
+ de: ["Online malen", "Mehr Videos", "Weniger Videos", "Alle Ausmalbilder", "Weniger Ausmalbilder", "Lieder, Spiele und Geschichten mit deinen Inselfreunden."],
+ es: ["Colorea en línea", "Más videos", "Menos videos", "Todos los dibujos", "Menos dibujos", "Canciones, juegos y cuentos con tus amigos de la isla."],
+ pt: ["Colorir online", "Mais vídeos", "Menos vídeos", "Todos os desenhos", "Menos desenhos", "Músicas, jogos e histórias com seus amigos da ilha."],
+ tr: ["Çevrimiçi boya", "Daha fazla video", "Daha az video", "Tüm boyama sayfaları", "Daha az boyama sayfası", "Ada arkadaşlarınla şarkılar, oyunlar ve hikayeler."],
+ ar: ["لوّن هنا", "المزيد من الفيديوهات", "فيديوهات أقل", "كل صفحات التلوين", "صفحات أقل", "أغانٍ وألعاب وقصص مع أصدقائك في الجزيرة."]
+};
+Object.entries(HOME_TEXT).forEach(([code, values]) => {
+ ["online_color","show_videos","less_videos","show_prints","less_prints","hero_text"].forEach((key,i) => T[code][key]=values[i]);
+});
+
 /* ---------------- Helpers ---------------- */
 const $ = (s, el = document) => el.querySelector(s);
 const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
@@ -1542,6 +1142,7 @@ function applyLang(code, user) {
   if (user) store.set("lang", code);
   renderLangMenu(); renderFriends(); renderVideos(); renderColoring(); renderChannels(); renderTabs(); game.restart();
   if (story.open) story.show(story.page);
+  window.dispatchEvent(new Event("bailabu-language"));
 }
 function renderLangMenu() {
   const ul = $("#langMenu"); ul.innerHTML = "";
@@ -1583,9 +1184,12 @@ function renderFriends() {
     li.appendChild(b); ul.appendChild(li);
   });
 }
+let printsExpanded = false;
 function renderColoring() {
+  $("#allPrints").setAttribute("aria-expanded", printsExpanded);
+  $("#allPrints").textContent = t(printsExpanded ? "less_prints" : "show_prints");
   const ul = $("#coloringGrid"); ul.innerHTML = "";
-  PRINTS.forEach(([id, names]) => {
+  (printsExpanded ? PRINTS : PRINTS.slice(0, 6)).forEach(([id, names]) => {
     const name = names[lang] || names.all;
     const li = el("li");
     const b = el("button", "group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet",
@@ -1596,6 +1200,11 @@ function renderColoring() {
     li.appendChild(b); ul.appendChild(li);
   });
 }
+$("#allPrints").addEventListener("click", () => {
+  printsExpanded = !printsExpanded; renderColoring();
+  $("#allPrints").setAttribute("aria-expanded", printsExpanded);
+  $("#allPrints").textContent = t(printsExpanded ? "less_prints" : "show_prints");
+});
 const printDlg = $("#printDlg");
 // PDF names as _pipeline/build_coloring_book.py writes them; tools/build_prints.py gives the Arabic ones the English page id
 const PRINT_SUFFIX = { tr: "boyama", en: "coloring", es: "colorear", de: "ausmalbild", pt: "colorir", ar: "talween" };
@@ -1626,7 +1235,7 @@ function videoChannel(s) {
   return null;
 }
 const cardArt = s => `assets/songs/${s.id}${s.trArt && lang === "tr" ? "-tr" : ""}.webp`;
-let videoCat = "all";
+let videoCat = "all", videosExpanded = false;
 function renderVideoTabs() {
   const box = $("#videoTabs"); box.innerHTML = "";
   CATS.forEach(c => {
@@ -1635,7 +1244,7 @@ function renderVideoTabs() {
       `<span aria-hidden="true">${c.icon}</span>${esc(t("cat_" + c.id))}`);
     b.type = "button"; b.setAttribute("aria-pressed", on);
     b.addEventListener("click", () => {
-      videoCat = c.id; renderVideos();
+      videoCat = c.id; videosExpanded = true; renderVideos();
       history.replaceState(null, "", "#" + (c.hash || "videos"));
     });
     box.appendChild(b);
@@ -1647,7 +1256,11 @@ function renderVideos() {
   const ul = $("#videoGrid"); ul.innerHTML = "";
   const isLive = s => !!videoChannel(s);
   const shown = VIDEOS.filter(s => videoCat === "all" || s.cat === videoCat);
-  [...shown.filter(isLive), ...shown.filter(s => !isLive(s))].forEach(s => {
+  const available = shown.filter(isLive);
+  $("#allVideos").hidden = available.length <= 3;
+  $("#allVideos").setAttribute("aria-expanded", videosExpanded);
+  $("#allVideos").textContent = t(videosExpanded ? "less_videos" : "show_videos");
+  (videosExpanded ? available : available.slice(0, 3)).forEach(s => {
     const live = isLive(s);
     const ch = videoChannel(s) || channelFor(lang);
     const title = s.t[ch.code] || s.t.en;
@@ -1676,9 +1289,10 @@ function renderVideos() {
   });
   $("#videoLangNote").classList.toggle("hidden", !shown.some(s => isLive(s) && videoChannel(s).code !== lang));
 }
+$("#allVideos").addEventListener("click", () => { videosExpanded = !videosExpanded; renderVideos(); });
 function catFromHash() {
   const c = CATS.find(c => c.hash === location.hash.slice(1));
-  if (c && c.id !== videoCat) { videoCat = c.id; renderVideos(); }
+  if (c && c.id !== videoCat) { videoCat = c.id; videosExpanded = true; renderVideos(); }
 }
 addEventListener("hashchange", catFromHash);
 
@@ -2197,9 +1811,13 @@ dlg.addEventListener("touchend", e => {
 $("#year").textContent = new Date().getFullYear();
 renderSound();
 videoCat = (CATS.find(c => c.hash === location.hash.slice(1)) || CATS[0]).id;
+videosExpanded = !!CATS.find(c => c.hash && c.hash === location.hash.slice(1));
 applyLang(detectLang(), false);
 count(`/${lang}`, false);
 })();
 </script>
+<script src="assets/coloring-engine.js" defer></script>
+<script src="assets/coloring-export.js" defer></script>
+<script src="assets/coloring-ui.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Coloring browser checks</title>
+<pre id="result">RUNNING</pre><iframe id="site" title="Bailabu test"></iframe>
+<script>
+(async()=>{
+ const frame=document.querySelector('iframe'), result=document.querySelector('#result');
+ const assert=(ok,msg)=>{if(!ok)throw Error(msg)};
+ const wait=async(fn)=>{for(let i=0;i<100;i++){if(fn())return;await new Promise(r=>setTimeout(r,50))}throw Error('Timed out')};
+ try {
+  frame.src='../?lang=en'; await new Promise(r=>frame.onload=r);
+  const w=frame.contentWindow,d=w.document, q=s=>d.querySelector(s);
+  assert(d.querySelectorAll('.activity-choices a').length===4,'four destinations');
+  for(const a of d.querySelectorAll('.activity-choices a')) assert(q(a.hash==='#color-online'?'#online-coloring':a.hash),'destination '+a.hash);
+  assert(d.querySelectorAll('#videoGrid li').length<=3,'video preview');
+  assert(d.querySelectorAll('#coloringGrid li').length===6,'print preview');
+  q('#allPrints').click(); assert(d.querySelectorAll('#coloringGrid li').length===35,'all printables');
+  q('#coloringGrid button').click(); assert(q('#printDlg').open && q('#printDl').getAttribute('href').endsWith('.pdf'),'print dialog and download');q('#printClose').click();
+  q('.activity-choices a[href="#color-online"]').click(); await wait(()=>q('[data-region]'));
+  assert(q('#homepage').hidden,'dedicated activity');
+  assert(w.matchMedia('(prefers-reduced-motion: reduce)').matches,'reduced motion browser setting');
+  assert(w.getComputedStyle(q('.swatch')).transitionDuration==='0s','reduced motion styles');
+  q('.swatch').click(); const p=q('[data-region]'), unfilled=p.getAttribute('fill');
+  p.focus();assert(d.activeElement===p,'region keyboard focus');
+  p.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Enter',bubbles:true}));
+  assert(p.getAttribute('fill')!==unfilled,'keyboard fill: '+unfilled+' -> '+p.getAttribute('fill')+' color '+q('.swatch').getAttribute('aria-pressed')); const painted=p.getAttribute('fill');
+  q('#color-undo').click(); assert(p.getAttribute('fill')===unfilled,'undo');
+  p.dispatchEvent(new w.MouseEvent('click',{bubbles:true}));assert(p.getAttribute('fill')===painted,'pointer click fill');
+  q('#color-undo').click();assert(p.getAttribute('fill')===unfilled,'single pointer activation');
+  q('#color-redo').click(); assert(p.getAttribute('fill')===painted,'redo');
+  q('#color-reset').click(); assert(p.getAttribute('fill')===unfilled,'reset');
+  q('#color-undo').click(); assert(p.getAttribute('fill')===painted,'recover reset');
+  q('[data-picture="apple"]').click(); await wait(()=>q('#color-paper svg')?.getAttribute('aria-label')==='Apple');
+  assert(d.querySelectorAll('[data-region]').length===5,'apple loaded');
+  q('[data-picture="ball"]').click(); await wait(()=>q('#color-paper svg')?.getAttribute('aria-label')==='Ball');
+  assert(q('[data-region]').getAttribute('fill')===painted,'switch retains drawing');
+  for(const [width,height] of [[320,568],[390,844],[768,1024],[1024,768],[1440,900]]) {
+   frame.style.width=width+'px';frame.style.height=height+'px'; await new Promise(r=>setTimeout(r,80));
+   assert(d.documentElement.scrollWidth<=width,'color overflow '+width);
+   assert(q('[data-region]').getAttribute('fill')===painted,'orientation retains state');
+   for(const b of d.querySelectorAll('.swatch')) assert(b.getBoundingClientRect().width>=48,'palette target');
+   w.location.hash='#top'; await wait(()=>!q('#homepage').hidden);
+   assert(d.documentElement.scrollWidth<=width,'home overflow '+width+' actual '+d.documentElement.scrollWidth+' '+[...d.querySelectorAll('#homepage *')].filter(n=>!n.closest('#friendsGrid')&&n.getBoundingClientRect().right>width+1).slice(0,8).map(n=>n.id||n.className).join(';'));
+   w.location.hash='#color-online'; await wait(()=>!q('#online-coloring').hidden);
+  }
+  // Capture the actual locally generated PNG without initiating a test download.
+  result.textContent='RUNNING: export';
+  let download, exported; const click=w.HTMLAnchorElement.prototype.click, objectURL=w.URL.createObjectURL;
+  w.URL.createObjectURL=function(blob){if(blob.type==='image/png')exported=blob;return objectURL.call(this,blob)};
+  w.HTMLAnchorElement.prototype.click=function(){if(this.download)download=this.href;else click.call(this)};
+  await w.downloadColoring(q('#color-paper svg'),'ball'); assert(download?.startsWith('blob:'),'PNG export');
+  result.textContent='RUNNING: PNG decode';
+  const blob=exported; assert(blob.type==='image/png' && blob.size>1000,'PNG bytes');
+  const bitmap=new w.Image(); await new Promise((resolve,reject)=>{bitmap.onload=resolve;bitmap.onerror=reject;bitmap.src=download}); assert(bitmap.width===1200,'export size');
+  result.textContent='RUNNING: PNG pixels';
+  const canvas=d.createElement('canvas');canvas.width=bitmap.width;canvas.height=bitmap.height;
+  const ctx=canvas.getContext('2d');ctx.drawImage(bitmap,0,0);
+  const pixels=ctx.getImageData(0,0,canvas.width,canvas.height).data;
+  let red=0;for(let i=0;i<pixels.length;i+=4)if(pixels[i]>240&&pixels[i+1]<120&&pixels[i+2]<130)red++;
+  assert(red>1000,'export includes painted region');
+  w.HTMLAnchorElement.prototype.click=click; w.URL.createObjectURL=objectURL;
+  const exporter=w.downloadColoring;w.downloadColoring=async()=>{throw Error('Unavailable')};
+  q('[data-label="save"]').click();await wait(()=>q('#color-status').textContent.includes('did not work'));
+  w.downloadColoring=exporter;
+  // A malformed definition must fail locally; another picture must remain usable.
+  result.textContent='RUNNING: malformed';
+  const fetch=w.fetch; w.fetch=async()=>({ok:true,json:async()=>({id:'star',regions:[]})});
+  q('[data-picture="star"]').click();await wait(()=>q('#color-paper button'));
+  assert(q('#color-status').textContent.includes('could not'),'malformed fallback'); w.fetch=fetch;
+  q('#color-paper button').click();await wait(()=>q('#color-paper svg'));
+  for(const lang of ['en','de','es','pt','tr','ar']) {
+   q('#langBtn').click();q('#langMenu button[lang="'+lang+'"]').click();
+   assert(d.documentElement.lang===lang,'language '+lang);
+   assert(q('#color-title').textContent && q('.swatch').getAttribute('aria-label'),'localized controls '+lang);
+   for(const [width,height] of [[320,568],[768,1024],[1024,768],[1440,900]]) {
+    frame.style.width=width+'px';frame.style.height=height+'px';
+    w.location.hash='#top';await wait(()=>!q('#homepage').hidden);
+    assert(d.documentElement.scrollWidth<=width,'localized homepage overflow '+lang+' '+width);
+    w.location.hash='#color-online';await wait(()=>!q('#online-coloring').hidden);
+    assert(d.documentElement.scrollWidth<=width,'localized coloring overflow '+lang+' '+width);
+   }
+  }
+  result.textContent='PASS: hierarchy, links, collections, keyboard focus/fill, undo/redo/reset, retained pictures, five viewport layouts, orientation, PNG pixels and failure fallback, malformed/retry, reduced motion and six languages';
+ }catch(e){result.textContent='FAIL: '+e.message}
+})();
+</script></html>
