@@ -1,9 +1,10 @@
 (function () {
   'use strict';
-  window.downloadColoring = async function (svg, id) {
+  window.downloadColoring = async function (svg, id, state) {
     if (!window.Blob || !URL.createObjectURL) throw new Error('Download unavailable');
     const copy = svg.cloneNode(true);
     copy.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    // Focus outlines and interaction attributes are never part of the exported artwork.
     copy.querySelectorAll('[tabindex]').forEach(n => {
       ['tabindex', 'role', 'aria-label'].forEach(a => n.removeAttribute(a));
       n.removeAttribute('class');
@@ -17,6 +18,11 @@
       const ctx = canvas.getContext('2d');
       if (!ctx) throw new Error('Canvas unavailable');
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      if (state) {
+        const drawing = document.createElement('canvas');
+        window.BailabuDrawing.render(drawing, state, canvas.width, canvas.height);
+        ctx.drawImage(drawing, 0, 0);
+      }
       const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
       if (!blob) throw new Error('Image unavailable');
       const url = URL.createObjectURL(blob), a = document.createElement('a');

@@ -5,5 +5,17 @@
 const args=new URLSearchParams(location.search), frame=document.querySelector('iframe');
 frame.style.width=Number(args.get('width')||390)+'px';
 frame.style.height=Number(args.get('height')||844)+'px';
-frame.src='../?lang=en#'+(args.get('page')==='color'?'color-online':'top');
+frame.src='../?lang=en#'+(['color','draw'].includes(args.get('page'))?'color-online':'top');
+if(args.get('page')==='draw')frame.onload=()=>{
+ const w=frame.contentWindow,d=w.document;
+ const ready=setInterval(()=>{
+  const canvas=d.querySelector('#draw-layer');if(!canvas)return;clearInterval(ready);
+  d.querySelector('[data-mode="draw"]').click();
+  d.querySelector('[data-color="#ff5a5f"]').click();
+  const r=canvas.getBoundingClientRect();
+  for(const [type,x,y] of [['pointerdown',.15,.2],['pointermove',.35,.1],['pointermove',.55,.2],['pointermove',.75,.1],['pointerup',.85,.2]]) {
+   canvas.dispatchEvent(new w.PointerEvent(type,{bubbles:true,pointerId:1,isPrimary:true,button:0,clientX:r.left+x*r.width,clientY:r.top+y*r.height}));
+  }
+ },50);
+};
 </script></html>

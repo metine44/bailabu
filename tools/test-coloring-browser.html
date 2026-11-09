@@ -1,5 +1,6 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><title>Coloring browser checks</title>
 <pre id="result">RUNNING</pre><iframe id="site" title="Bailabu test"></iframe>
+<script src="test-drawing-browser.js"></script>
 <script>
 (async()=>{
  const frame=document.querySelector('iframe'), result=document.querySelector('#result');
@@ -12,9 +13,20 @@
   for(const a of d.querySelectorAll('.activity-choices a')) assert(q(a.hash==='#color-online'?'#online-coloring':a.hash),'destination '+a.hash);
   assert(d.querySelectorAll('#videoGrid li').length<=3,'video preview');
   assert(d.querySelectorAll('#coloringGrid li').length===6,'print preview');
+  assert(q('.swatch')===null,'activity loads on entry');
   q('#allPrints').click(); assert(d.querySelectorAll('#coloringGrid li').length===35,'all printables');
   q('#coloringGrid button').click(); assert(q('#printDlg').open && q('#printDl').getAttribute('href').endsWith('.pdf'),'print dialog and download');q('#printClose').click();
+  assert([...d.querySelectorAll('#videoGrid a')].some(a=>a.href.includes('youtube.com')),'video destinations');
+  q('.activity-choices a[href="#play"]').click();
+  const tabs=d.querySelectorAll('#gameTabs button');assert(tabs.length===9,'game tabs');
+  tabs[1].click();assert(q('#gamePrompt').textContent&&q('#gameStage button'),'game opens');tabs[0].click();
+  q('.activity-choices a[href="#stories"]').click();q('#openStory').click();
+  assert(q('#storyDlg').open&&q('#storyText').textContent,'story reader');
+  const storyText=q('#storyText').textContent;q('#storyNext').click();assert(q('#storyText').textContent!==storyText,'story next');q('#storyClose').click();
+  q('#legalBtn').click();assert(q('#legalDlg').open&&q('#legalBody').textContent.includes('GoatCounter'),'privacy messaging');q('#legalClose').click();
   q('.activity-choices a[href="#color-online"]').click(); await wait(()=>q('[data-region]'));
+  assert(q('[data-color="#ff5a5f"]').getAttribute('aria-label')==='Red','red palette name');
+  assert(q('[data-color="#ffffff"]').getAttribute('aria-label')==='White','white palette name');
   assert(q('#homepage').hidden,'dedicated activity');
   assert(w.matchMedia('(prefers-reduced-motion: reduce)').matches,'reduced motion browser setting');
   assert(w.getComputedStyle(q('.swatch')).transitionDuration==='0s','reduced motion styles');
@@ -41,12 +53,21 @@
    assert(d.documentElement.scrollWidth<=width,'home overflow '+width+' actual '+d.documentElement.scrollWidth+' '+[...d.querySelectorAll('#homepage *')].filter(n=>!n.closest('#friendsGrid')&&n.getBoundingClientRect().right>width+1).slice(0,8).map(n=>n.id||n.className).join(';'));
    w.location.hash='#color-online'; await wait(()=>!q('#online-coloring').hidden);
   }
+  // Malformed artwork fails locally, then retry loads the valid repository definition.
+  const realFetch=w.fetch;w.fetch=async()=>({ok:true,json:async()=>({id:'star',regions:[]})});
+  q('[data-picture="star"]').click();await wait(()=>q('#color-paper button'));
+  assert(!q('#color-extra').hidden,'other pictures remain available after artwork error');
+  assert(q('#color-status').textContent.includes('could not'),'malformed fallback'); w.fetch=realFetch;
+  q('#color-paper button').click();await wait(()=>q('#color-paper svg'));
+  q('[data-picture="ball"]').click();await wait(()=>q('#color-paper svg')?.getAttribute('aria-label')==='Ball');
+  result.textContent='RUNNING: Draw checks';
+  const drawing=await checkDrawing(frame,assert,wait);
   // Capture the actual locally generated PNG without initiating a test download.
   result.textContent='RUNNING: export';
   let download, exported; const click=w.HTMLAnchorElement.prototype.click, objectURL=w.URL.createObjectURL;
   w.URL.createObjectURL=function(blob){if(blob.type==='image/png')exported=blob;return objectURL.call(this,blob)};
   w.HTMLAnchorElement.prototype.click=function(){if(this.download)download=this.href;else click.call(this)};
-  await w.downloadColoring(q('#color-paper svg'),'ball'); assert(download?.startsWith('blob:'),'PNG export');
+  await w.downloadColoring(q('#color-paper svg'),'ball',drawing.current()); assert(download?.startsWith('blob:'),'PNG export');
   result.textContent='RUNNING: PNG decode';
   const blob=exported; assert(blob.type==='image/png' && blob.size>1000,'PNG bytes');
   const bitmap=new w.Image(); await new Promise((resolve,reject)=>{bitmap.onload=resolve;bitmap.onerror=reject;bitmap.src=download}); assert(bitmap.width===1200,'export size');
@@ -54,31 +75,46 @@
   const canvas=d.createElement('canvas');canvas.width=bitmap.width;canvas.height=bitmap.height;
   const ctx=canvas.getContext('2d');ctx.drawImage(bitmap,0,0);
   const pixels=ctx.getImageData(0,0,canvas.width,canvas.height).data;
-  let red=0;for(let i=0;i<pixels.length;i+=4)if(pixels[i]>240&&pixels[i+1]<120&&pixels[i+2]<130)red++;
+  let red=0,blue=0,ink=0;for(let i=0;i<pixels.length;i+=4) {
+    if(pixels[i]>240&&pixels[i+1]<120&&pixels[i+2]<130)red++;
+    if(pixels[i]<90&&pixels[i+1]>150&&pixels[i+1]<210&&pixels[i+2]>230)blue++;
+    if(pixels[i]<60&&pixels[i+1]<60&&pixels[i+2]<60)ink++;
+  }
   assert(red>1000,'export includes painted region');
+  assert(blue>1000&&ink>1000,'export includes free strokes and base ink');
+  assert(ctx.getImageData(675,150,1,1).data.every(v=>v===255),'export eraser reveals base background');
+  result.textContent='RUNNING: blank PNG';
+  q('[data-picture="blank"]').click();await wait(()=>q('#color-paper svg')?.getAttribute('aria-label')==='Blank page');
+  q('#color-reset').click();q('[data-color="#3db8f5"]').click();drawing.stroke(100);
+  await w.downloadColoring(q('#color-paper svg'),'blank',drawing.current());
+  const blankImage=new w.Image();await new Promise((resolve,reject)=>{blankImage.onload=resolve;blankImage.onerror=reject;blankImage.src=download});
+  ctx.clearRect(0,0,canvas.width,canvas.height);ctx.drawImage(blankImage,0,0);
+  assert(ctx.getImageData(450,150,1,1).data[2]>230&&ctx.getImageData(450,150,1,1).data[0]<90,'blank PNG stroke pixels');
+  assert(ctx.getImageData(450,600,1,1).data.every(v=>v===255),'blank PNG white background');
   w.HTMLAnchorElement.prototype.click=click; w.URL.createObjectURL=objectURL;
   const exporter=w.downloadColoring;w.downloadColoring=async()=>{throw Error('Unavailable')};
   q('[data-label="save"]').click();await wait(()=>q('#color-status').textContent.includes('did not work'));
   w.downloadColoring=exporter;
-  // A malformed definition must fail locally; another picture must remain usable.
-  result.textContent='RUNNING: malformed';
-  const fetch=w.fetch; w.fetch=async()=>({ok:true,json:async()=>({id:'star',regions:[]})});
-  q('[data-picture="star"]').click();await wait(()=>q('#color-paper button'));
-  assert(q('#color-status').textContent.includes('could not'),'malformed fallback'); w.fetch=fetch;
-  q('#color-paper button').click();await wait(()=>q('#color-paper svg'));
   for(const lang of ['en','de','es','pt','tr','ar']) {
    q('#langBtn').click();q('#langMenu button[lang="'+lang+'"]').click();
    assert(d.documentElement.lang===lang,'language '+lang);
+   assert(q('[data-color="#ff5a5f"]').getAttribute('aria-label')===({en:'Red',de:'Rot',es:'Rojo',pt:'Vermelho',tr:'Kırmızı',ar:'أحمر'}[lang]),'localized red palette name');
    assert(q('#color-title').textContent && q('.swatch').getAttribute('aria-label'),'localized controls '+lang);
-   for(const [width,height] of [[320,568],[768,1024],[1024,768],[1440,900]]) {
+   q('[data-mode="draw"]').click();
+   for(const [width,height] of [[320,568],[390,844],[768,1024],[1024,768],[1440,900]]) {
     frame.style.width=width+'px';frame.style.height=height+'px';
     w.location.hash='#top';await wait(()=>!q('#homepage').hidden);
     assert(d.documentElement.scrollWidth<=width,'localized homepage overflow '+lang+' '+width);
     w.location.hash='#color-online';await wait(()=>!q('#online-coloring').hidden);
     assert(d.documentElement.scrollWidth<=width,'localized coloring overflow '+lang+' '+width);
+    for(const selector of ['[data-mode="draw"]','[data-tool="brush"]','[data-tool="crayon"]','[data-tool="eraser"]','[data-size="small"]','[data-size="medium"]','[data-size="large"]','[data-picture="blank"]']) {
+      const b=q(selector);assert(b.textContent.trim(),'translated '+selector+' '+lang);
+      if(lang!=='en')assert(!['Draw','Brush','Crayon','Eraser','Small','Medium','Large','Blank page'].includes(b.lastElementChild.textContent),'no English fallback '+lang);
+      assert(b.scrollWidth<=b.clientWidth+2,'unclipped control '+lang+' '+width+' '+selector);
+    }
    }
   }
-  result.textContent='PASS: hierarchy, links, collections, keyboard focus/fill, undo/redo/reset, retained pictures, five viewport layouts, orientation, PNG pixels and failure fallback, malformed/retry, reduced motion and six languages';
- }catch(e){result.textContent='FAIL: '+e.message}
+  result.textContent='PASS: hierarchy, links, collections, keyboard focus/fill, Draw controls, mouse/touch/pen Pointer Events, brush/crayon/eraser pixels, sizes, mixed undo/redo/reset, branching, retained pictures/blank, bounded samples, cancellation/secondary pointers/re-entry, five viewport layouts/orientation, composite/blank PNG pixels, null-blob/serialization/concurrent/failure fallback, malformed/retry, reduced motion and six languages';
+ }catch(e){result.textContent='FAIL: '+e.stack}
 })();
 </script></html>
