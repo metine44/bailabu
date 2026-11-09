@@ -16,6 +16,8 @@ One static `index.html` (semantic HTML5, vanilla JS) + compiled Tailwind `assets
 - No cookies, no ads. `localStorage` only keeps language, sound on/off, stars and memory size. Fonts are self-hosted.
 
 ## Editing
+- Homepage: four illustrated activity links, three live videos by default, six printable previews, and a compact friend strip. Collection buttons reveal the remaining live videos or all 35 printables; category deep links still open the matching video collection. Future videos remain in `VIDEOS`, summarized by one teaser instead of disabled cards.
+- Online coloring: `#color-online` is a dedicated view within the existing hash navigation. The header's Coloring links enter it; `#coloring` remains the printable collection. See [online coloring maintenance](docs/online-coloring.md) for prepared artwork, session state, export and checks.
 - Texts: `T` object in `index.html` (one block per language). Characters: `CAST`, videos of all formats: `VIDEOS`, channels: `CHANNELS`.
 - **When a channel launches**: set `live: true` for it in `CHANNELS`.
 - **What is online**: ProjektHub's `data/youtube_cache.json` (its read of the public channel pages) is the reference, not `VIDEOS`. `tools/check_videos.js` compares the two in every `build_page.sh` run and lists every main video missing from the site. It only warns and it does not refresh the read: press **Check online now** in ProjektHub first. Shorts are not listed on the site.
