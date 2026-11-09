@@ -53,6 +53,36 @@
   .confetti { position: fixed; top: -20px; width: 12px; height: 16px; border-radius: 3px; z-index: 80; pointer-events: none; animation: fall 1.8s ease-in forwards; }
   .praise { position: absolute; left: 50%; top: 40%; z-index: 20; pointer-events: none; animation: praise 1.3s ease-out forwards; }
 
+  /* Games: pictures carry the task; the short labels support older readers. */
+  .game-tabs { display: flex; gap: .5rem; padding: .65rem; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: #8E6CF0 #fff7d6; }
+  .game-tabs > button { flex: 0 0 calc((100% - 1rem) / 2.5); min-width: 0; scroll-snap-align: center; border: 3px solid transparent; }
+  .game-tabs > button[aria-selected="true"] { border-color: #16395a; box-shadow: 0 3px 0 #16395a; }
+  .game-tabs > button > span { width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .game-navigation { display: flex; align-items: stretch; background: #fff1c8; }
+  .game-navigation .game-tabs { flex: 1; min-width: 0; }
+  .game-tools { display: flex; flex-direction: column; justify-content: center; gap: .35rem; padding: .35rem; }
+  #gameTools button, #sayBtn { min-width: 48px; min-height: 48px; }
+  #gameStage button { min-width: 48px; min-height: 48px; touch-action: manipulation; }
+  .visual-prompt { display: flex; justify-content: center; align-items: center; gap: .75rem; margin: 0 auto 1rem; }
+  .visual-reference { display: grid; place-items: center; width: 136px; height: 136px; padding: .75rem; border-radius: 50%; border: 3px dashed #3DB8F5; background: #DDF3FF; }
+  .visual-reference img { width: 100%; height: 100%; object-fit: contain; }
+  .color-reference { width: 112px; height: 112px; border: 8px solid #fff7d6; outline: 2px dashed #16395a; border-radius: 50%; }
+  .memory-size { min-width: 88px; min-height: 48px; padding: .5rem; border-radius: 1rem; }
+  .memory-preview { display: grid; grid-template-columns: repeat(6, 8px); gap: 3px; }
+  .memory-preview i { width: 8px; height: 12px; border: 1px solid currentColor; border-radius: 2px; background: currentColor; }
+  .pattern-row { display: flex; align-items: center; justify-content: center; gap: 4px; padding: .75rem .25rem; border-radius: 1.5rem; background: #DDF3FF; }
+  .pattern-row > span { flex: 0 1 80px; min-width: 0; aspect-ratio: 1; height: auto; }
+  .pattern-row > .pattern-slot { flex-basis: 88px; }
+  .pad.lit { outline: 4px solid #16395a; outline-offset: 2px; }
+  .music-phase { display: flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; }
+  .music-phase:empty { display: none; }
+  .music-phase span { font-size: 1.75rem; }
+  .praise { font-size: 1.4rem; padding: .4rem .8rem; max-width: 90%; text-align: center; }
+  @media (min-width: 600px) { .game-tabs > button { flex-basis: calc((100% - 2rem) / 4.5); } }
+  @media (min-width: 1100px) { .game-tabs > button { flex: 1 0 0; } }
+  @media (min-width: 640px) { .visual-reference { width: 160px; height: 160px; } }
+  @media (prefers-reduced-motion: reduce) { #gameStage *, .game-tabs > button { transition: none !important; } .bubble.popped { opacity: 0; } .praise { transform: translateX(-50%); } }
+
   /* memory cards */
   .mcard { perspective: 800px; }
   .mcard-inner { position: relative; width: 100%; height: 100%; transition: transform .45s; transform-style: preserve-3d; }
@@ -257,26 +287,25 @@
   <svg class="wave text-sky-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
   <div class="mx-auto max-w-5xl px-4 pb-14 pt-4 md:pb-20">
     <div class="text-center">
-      <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="play_title">Games & riddles</h2>
+      <h2 class="font-display font-extrabold text-3xl md:text-5xl" id="gamesHeading" data-i18n="play_title">Games & riddles</h2>
       <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="play_text">Little games for little hands – no reading needed. Just tap!</p>
     </div>
 
     <div class="mt-8 rounded-[2rem] bg-white shadow-pop-lg ring-4 ring-sun/60 overflow-hidden">
-      <div id="gameTabs" role="tablist" class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-1.5 sm:gap-2 p-2 sm:p-3 bg-sun/30"></div>
-      <div class="flex items-center gap-2 px-4 pt-4">
+      <div class="game-navigation">
+      <div id="gameTabs" role="tablist" aria-labelledby="gamesHeading" class="game-tabs"></div>
+      <div id="gameTools" class="game-tools">
         <button id="sayBtn" type="button" class="shrink-0 rounded-full bg-sky-light p-2.5 transition active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" data-i18n-aria="say_again" aria-label="Hear it again">
           <svg viewBox="0 0 24 24" class="w-6 h-6 text-sky-dark" fill="currentColor" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M15 8.2a5 5 0 0 1 0 7.6M17.6 5.6a8.6 8.6 0 0 1 0 12.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
-        <p id="gamePrompt" class="font-display font-extrabold text-2xl md:text-3xl leading-tight" aria-live="polite"></p>
-        <div class="ms-auto flex items-center gap-2">
-          <span class="inline-flex items-center gap-1 rounded-full bg-sun-light px-3 py-1.5 font-extrabold" aria-live="polite"><span aria-hidden="true">⭐</span><span id="starCount">0</span></span>
           <button id="soundBtn" type="button" class="rounded-full bg-leaf-light p-2.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-leaf/50" aria-pressed="true" data-i18n-aria="sound" aria-label="Sound">
             <svg id="soundOn" viewBox="0 0 24 24" class="w-6 h-6 text-leaf" fill="currentColor" aria-hidden="true"><path d="M12 3v10.6A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
             <svg id="soundOff" viewBox="0 0 24 24" class="w-6 h-6 text-ink/40 hidden" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 13.6V3h6v4h-4M4 4l16 16"/><circle cx="10" cy="17" r="3.2"/></svg>
           </button>
-        </div>
       </div>
-      <div id="gameStage" class="relative min-h-[22rem] p-4 md:p-6"></div>
+      </div>
+      <p id="gamePrompt" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+      <div id="gameStage" role="tabpanel" tabindex="0" aria-describedby="gamePrompt" class="relative p-4 md:p-6"></div>
     </div>
   </div>
 </section>
@@ -708,7 +737,7 @@ en: {
     "Hosting: the site is served by GitHub Pages (GitHub, Inc., USA). To deliver the pages, GitHub technically processes access data such as your IP address, browser and time of access (Art. 6(1)(f) GDPR: legitimate interest in running the site).",
     "Visitor statistics: we count visits and which videos, games and coloring pages are opened, using GoatCounter (operated from Ireland, servers in Germany and Finland). We only see totals, such as language, country, browser type and the website a visit came from, never individual people. No cookies are used and nothing is stored on your device. Your IP address is used to work out the country and avoid double counting. It stays in memory for at most 8 hours and is never saved (Art. 6(1)(f) GDPR: legitimate interest in improving the site). If your browser sends Do Not Track or Global Privacy Control, nothing is counted.",
     "Contact form: your name, email and message are sent through Web3Forms (USA) to our mailbox and only used to answer you (Art. 6(1)(b) and (f) GDPR). We delete them when they are no longer needed.",
-    "Your device: the language, sound setting, stars and memory size are kept in your browser's local storage. They never leave your device, and you can delete them in your browser.",
+    "Your device: the language, sound setting and memory size are kept in your browser's local storage. They never leave your device, and you can delete them in your browser.",
     "YouTube: fonts, images and scripts all come from this site. YouTube is only contacted when you open a video or channel link. From then on, YouTube's (Google's) privacy policy applies.",
     "You have the right to information, correction, deletion, restriction and objection, and the right to complain to a data protection authority.",
   ],
@@ -770,7 +799,7 @@ de: {
     "Hosting: Die Seite wird über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Dabei verarbeitet GitHub technisch notwendige Zugriffsdaten wie IP-Adresse, Browser und Zeitpunkt des Abrufs (Art. 6 Abs. 1 lit. f DSGVO: berechtigtes Interesse am Betrieb der Website).",
     "Besucherstatistik: Wir zählen Besuche und welche Videos, Spiele und Malvorlagen geöffnet werden, mit GoatCounter (Betrieb aus Irland, Server in Deutschland und Finnland). Wir sehen nur Summen, etwa Sprache, Land, Browsertyp und die Website, von der ein Besuch kam, niemals einzelne Personen. Es werden keine Cookies verwendet und nichts auf deinem Gerät gespeichert. Deine IP-Adresse dient dazu, das Land zu bestimmen und Doppelzählungen zu vermeiden. Sie bleibt höchstens 8 Stunden im Arbeitsspeicher und wird nie gespeichert (Art. 6 Abs. 1 lit. f DSGVO: berechtigtes Interesse an der Verbesserung der Website). Sendet dein Browser Do Not Track oder Global Privacy Control, wird nichts gezählt.",
     "Kontaktformular: Name, E-Mail und Nachricht werden über Web3Forms (USA) an unser Postfach geschickt und nur zur Beantwortung genutzt (Art. 6 Abs. 1 lit. b und f DSGVO). Wir löschen sie, sobald sie nicht mehr gebraucht werden.",
-    "Dein Gerät: Sprache, Ton-Einstellung, Sterne und Memory-Größe werden im lokalen Speicher deines Browsers abgelegt. Sie verlassen dein Gerät nicht, und du kannst sie im Browser löschen.",
+    "Dein Gerät: Sprache, Ton-Einstellung und Memory-Größe werden im lokalen Speicher deines Browsers abgelegt. Sie verlassen dein Gerät nicht, und du kannst sie im Browser löschen.",
     "YouTube: Schriften, Bilder und Skripte kommen alle von dieser Website. YouTube wird erst kontaktiert, wenn du einen Video- oder Kanal-Link öffnest. Ab dann gilt die Datenschutzerklärung von YouTube (Google).",
     "Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung und Widerspruch sowie das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.",
   ],
@@ -832,7 +861,7 @@ es: {
     "Alojamiento: el sitio se sirve desde GitHub Pages (GitHub, Inc., EE. UU.). Para entregar las páginas, GitHub procesa datos técnicos de acceso como la dirección IP, el navegador y la hora (art. 6, apdo. 1, letra f del RGPD: interés legítimo en operar el sitio).",
     "Estadísticas de visitas: contamos las visitas y qué videos, juegos y dibujos para colorear se abren, con GoatCounter (operado desde Irlanda, servidores en Alemania y Finlandia). Solo vemos totales, como idioma, país, tipo de navegador y el sitio desde el que llegó una visita, nunca a personas concretas. No se usan cookies y no se guarda nada en tu dispositivo. Tu dirección IP sirve para conocer el país y evitar contar dos veces. Permanece en memoria 8 horas como máximo y nunca se guarda (art. 6, apdo. 1, letra f del RGPD: interés legítimo en mejorar el sitio). Si tu navegador envía Do Not Track o Global Privacy Control, no se cuenta nada.",
     "Formulario de contacto: tu nombre, correo y mensaje se envían a través de Web3Forms (EE. UU.) a nuestro buzón y solo se usan para responderte (art. 6, apdo. 1, letras b y f del RGPD). Los borramos cuando ya no se necesitan.",
-    "Tu dispositivo: el idioma, el sonido, las estrellas y el tamaño del juego de memoria se guardan en el almacenamiento local de tu navegador. No salen de tu dispositivo y puedes borrarlos desde el navegador.",
+    "Tu dispositivo: el idioma, el sonido y el tamaño del juego de memoria se guardan en el almacenamiento local de tu navegador. No salen de tu dispositivo y puedes borrarlos desde el navegador.",
     "YouTube: las fuentes, imágenes y scripts vienen de este sitio. Solo se contacta con YouTube cuando abres un enlace a un video o canal. A partir de ahí se aplica la política de privacidad de YouTube (Google).",
     "Tienes derecho de acceso, rectificación, supresión, limitación y oposición, y a reclamar ante una autoridad de protección de datos.",
   ],
@@ -894,7 +923,7 @@ pt: {
     "Hospedagem: o site é entregue pelo GitHub Pages (GitHub, Inc., EUA). Para isso, o GitHub processa dados técnicos de acesso, como endereço IP, navegador e horário (art. 6, n.º 1, al. f do RGPD: interesse legítimo em operar o site).",
     "Estatísticas de visitas: contamos as visitas e quais vídeos, jogos e desenhos para colorir são abertos, com o GoatCounter (operado a partir da Irlanda, servidores na Alemanha e na Finlândia). Só vemos totais, como idioma, país, tipo de navegador e o site de onde veio a visita, nunca pessoas individuais. Não usamos cookies e nada é guardado no seu dispositivo. Seu endereço IP serve para identificar o país e evitar contagens duplicadas. Ele fica na memória por no máximo 8 horas e nunca é salvo (art. 6, n.º 1, al. f do RGPD: interesse legítimo em melhorar o site). Se o seu navegador enviar Do Not Track ou Global Privacy Control, nada é contado.",
     "Formulário de contato: seu nome, e-mail e mensagem são enviados pelo Web3Forms (EUA) para a nossa caixa de entrada e usados apenas para responder a você (art. 6(1)(b) e (f) do RGPD). Nós os apagamos quando não forem mais necessários.",
-    "Seu dispositivo: idioma, som, estrelas e tamanho do jogo da memória ficam no armazenamento local do seu navegador. Eles não saem do seu dispositivo, e você pode apagá-los no navegador.",
+    "Seu dispositivo: idioma, som e tamanho do jogo da memória ficam no armazenamento local do seu navegador. Eles não saem do seu dispositivo, e você pode apagá-los no navegador.",
     "YouTube: fontes, imagens e scripts vêm deste site. O YouTube só é contatado quando você abre um link de vídeo ou canal. A partir daí vale a política de privacidade do YouTube (Google).",
     "Você tem direito a acesso, correção, exclusão, limitação e oposição, e a reclamar junto a uma autoridade de proteção de dados.",
   ],
@@ -956,7 +985,7 @@ tr: {
     "Barındırma: Site GitHub Pages (GitHub, Inc., ABD) üzerinden sunulur. Sayfaları iletmek için GitHub; IP adresi, tarayıcı ve erişim zamanı gibi teknik verileri işler (GDPR md. 6/1-f: sitenin işletilmesinde meşru menfaat).",
     "Ziyaretçi istatistikleri: Ziyaretleri ve hangi video, oyun ve boyama sayfalarının açıldığını GoatCounter ile sayıyoruz (İrlanda'dan işletilir, sunucular Almanya ve Finlandiya'dadır). Yalnızca dil, ülke, tarayıcı türü ve ziyaretin geldiği site gibi toplam sayıları görürüz, asla tek tek kişileri görmeyiz. Çerez kullanılmaz ve cihazınıza hiçbir şey kaydedilmez. IP adresiniz ülkeyi belirlemek ve iki kez saymamak için kullanılır. En fazla 8 saat bellekte kalır ve hiçbir zaman kaydedilmez (GDPR md. 6/1-f: siteyi geliştirmede meşru menfaat). Tarayıcınız Do Not Track veya Global Privacy Control gönderirse hiçbir şey sayılmaz.",
     "İletişim formu: adınız, e-posta adresiniz ve mesajınız Web3Forms (ABD) aracılığıyla e-posta kutumuza gönderilir ve yalnızca size yanıt vermek için kullanılır (GDPR md. 6(1)(b) ve (f)). Artık gerekmediğinde silinir.",
-    "Cihazınız: Dil, ses ayarı, yıldızlar ve hafıza oyunu boyutu tarayıcınızın yerel belleğinde tutulur. Cihazınızdan çıkmaz, tarayıcınızdan silebilirsiniz.",
+    "Cihazınız: Dil, ses ayarı ve hafıza oyunu boyutu tarayıcınızın yerel belleğinde tutulur. Cihazınızdan çıkmaz, tarayıcınızdan silebilirsiniz.",
     "YouTube: Yazı tipleri, görseller ve betikler bu siteden gelir. YouTube'a yalnızca bir video veya kanal bağlantısını açtığınızda bağlanılır. Bundan sonra YouTube'un (Google) gizlilik politikası geçerlidir.",
     "Bilgi alma, düzeltme, silme, kısıtlama ve itiraz haklarınız ile bir veri koruma kurumuna şikâyet hakkınız vardır.",
   ],
@@ -1018,7 +1047,7 @@ ar: {
     "الاستضافة: يُقدَّم الموقع عبر GitHub Pages (شركة GitHub، الولايات المتحدة). ولإيصال الصفحات تعالج GitHub بيانات تقنية مثل عنوان IP والمتصفح ووقت الزيارة (المادة 6(1)(و) من اللائحة العامة لحماية البيانات: المصلحة المشروعة في تشغيل الموقع).",
     "إحصاءات الزيارات: نحسب الزيارات وما يُفتح من الفيديوهات والألعاب وصفحات التلوين باستخدام GoatCounter (يُدار من أيرلندا، وخوادمه في ألمانيا وفنلندا). ولا نرى إلا أعدادًا إجمالية، مثل اللغة والبلد ونوع المتصفح والموقع الذي جاءت منه الزيارة، ولا نرى أفرادًا أبدًا. لا تُستخدم ملفات تعريف الارتباط ولا يُحفظ شيء على جهازكم. ويُستخدم عنوان IP لتحديد البلد وتجنب العد المكرر، ويبقى في الذاكرة 8 ساعات كحد أقصى ولا يُحفظ أبدًا (المادة 6(1)(و) من اللائحة العامة لحماية البيانات: المصلحة المشروعة في تحسين الموقع). وإذا أرسل متصفحكم إشارة Do Not Track أو Global Privacy Control فلن يُحسب شيء.",
     "نموذج الاتصال: يُرسل الاسم والبريد الإلكتروني والرسالة عبر Web3Forms (الولايات المتحدة) إلى بريدنا، وتُستخدم للرد عليكم فقط (المادة 6(1)(ب) و(و) من اللائحة العامة لحماية البيانات). ونحذفها عندما لا تعود هناك حاجة إليها.",
-    "جهازكم: تُحفظ اللغة وإعداد الصوت والنجوم وحجم لعبة الذاكرة في التخزين المحلي لمتصفحكم. ولا تغادر جهازكم، ويمكنكم حذفها من المتصفح.",
+    "جهازكم: تُحفظ اللغة وإعداد الصوت وحجم لعبة الذاكرة في التخزين المحلي لمتصفحكم. ولا تغادر جهازكم، ويمكنكم حذفها من المتصفح.",
     "يوتيوب: الخطوط والصور والبرامج النصية كلها من هذا الموقع. ولا يتم الاتصال بيوتيوب إلا عند فتح رابط فيديو أو قناة، وعندها تسري سياسة خصوصية يوتيوب (Google).",
     "لكم الحق في الاطلاع والتصحيح والحذف والتقييد والاعتراض، والحق في تقديم شكوى إلى هيئة حماية البيانات.",
   ],
@@ -1036,6 +1065,19 @@ const HOME_TEXT = {
 };
 Object.entries(HOME_TEXT).forEach(([code, values]) => {
  ["online_color","show_videos","less_videos","show_prints","less_prints","hero_text"].forEach((key,i) => T[code][key]=values[i]);
+});
+
+// Complete instructions and control names stay localized, even when no task text is visible.
+const GAME_TEXT = {
+ en: ["Find the shadow of {n}.", "Shadow {n}", "{n} pairs", "Turn over a card", "Listen, then repeat the highlighted pictures.", "Stop"],
+ de: ["Finde den Schatten von {n}.", "Schatten {n}", "{n} Paare", "Decke eine Karte auf", "Höre zu und wiederhole dann die hervorgehobenen Bilder.", "Stopp"],
+ es: ["Encuentra la sombra de {n}.", "Sombra {n}", "{n} parejas", "Da la vuelta a una carta", "Escucha y repite las imágenes resaltadas.", "Parar"],
+ pt: ["Encontre a sombra de {n}.", "Sombra {n}", "{n} pares", "Vire uma carta", "Ouça e repita as figuras destacadas.", "Parar"],
+ tr: ["{n} için doğru gölgeyi bul.", "Gölge {n}", "{n} çift", "Bir kartı çevir", "Dinle, sonra vurgulanan resimleri sırayla tekrarla.", "Durdur"],
+ ar: ["اعثر على ظل {n}.", "الظل {n}", "{n} أزواج", "اقلب بطاقة", "استمع ثم كرر الصور المميزة بالترتيب.", "توقف"],
+};
+Object.entries(GAME_TEXT).forEach(([code, values]) => {
+ ["shadow_prompt", "shadow_choice", "memory_pairs", "memory_card", "music_copy", "stop"].forEach((key, i) => T[code][key] = values[i]);
 });
 
 /* ---------------- Helpers ---------------- */
@@ -1358,8 +1400,30 @@ function renderChannels() {
 
 /* ---------------- Games ---------------- */
 const stage = $("#gameStage"), promptEl = $("#gamePrompt");
-let stars = store.get("stars", 0);
-const addStar = () => { stars++; store.set("stars", stars); $("#starCount").textContent = num(stars); };
+// A round may return visualPrompt, accessiblePromptKey/accessiblePrompt and audioPromptKey.
+// textPromptKey is optional secondary copy; no engine needs it.
+function renderVisualPrompt(prompt) {
+  if (!prompt || typeof prompt !== "object") return;
+  if (prompt.node instanceof HTMLElement && stage.contains(prompt.node)) {
+    prompt.node.dataset.visualPrompt = "";
+    return;
+  }
+  let reference;
+  if (prompt.kind === "object" && OBJ[prompt.id]) {
+    reference = el("div", "visual-reference", img(prompt.id, "", objName(prompt.id)));
+  } else if (prompt.kind === "color" && COLOR_HEX[prompt.color]) {
+    reference = el("div", "color-reference");
+    reference.style.background = COLOR_HEX[prompt.color];
+    reference.setAttribute("role", "img"); reference.setAttribute("aria-label", t("colors")[prompt.color]);
+  } else return; // Invalid optional prompts never take down the hub or leave empty space.
+  const row = el("div", "visual-prompt"); row.dataset.visualPrompt = "";
+  row.append(reference, $("#sayBtn")); stage.prepend(row);
+}
+function stopGameAudio() {
+  stopVoice(); Object.values(audioCache).forEach(a => a.pause());
+  tones.clear();
+  if (actx) { actx.close().catch(() => {}); actx = null; }
+}
 
 const GAMES = [
   { id: "memory",  icon: "kuku",         label: "g_memory",  q: "q_memory",  start: startMemory },
@@ -1373,40 +1437,88 @@ const GAMES = [
   { id: "pattern", icon: "star_yellow",  label: "g_pattern", q: "q_pattern", start: startPattern },
 ];
 const game = {
-  cur: GAMES[0], timers: [], active: false, voice: "",
-  later(fn, ms) { this.timers.push(setTimeout(fn, ms)); },
-  clear() { this.timers.forEach(clearTimeout); this.timers = []; },
+  cur: GAMES[0], timers: [], active: false, voice: "", paused: false,
+  later(fn, ms) {
+    const timer = setTimeout(() => { this.timers = this.timers.filter(t => t !== timer); fn(); }, ms);
+    this.timers.push(timer);
+  },
+  clear() { this.timers.forEach(clearTimeout); this.timers = []; stopGameAudio(); },
+  pause() { this.clear(); this.paused = true; },
   select(g) { this.cur = g; this.active = true; renderTabs(); this.restart(); },
+  instruction(key, audioKey = key, contextKey) {
+    promptEl.textContent = (contextKey ? t(contextKey) + " " : "") + t(key); this.voice = audioKey;
+  },
   restart() {
-    this.clear(); stage.innerHTML = "";
-    $("#starCount").textContent = num(stars);
+    const restoreFocus = stage.contains(document.activeElement);
+    this.clear(); $("#gameTools").prepend($("#sayBtn")); stage.innerHTML = "";
+    this.paused = false;
     this.voice = this.cur.q;
-    const q = this.cur.start() || t(this.cur.q);
-    promptEl.textContent = q;
-    speak(this.voice, 250);
+    const round = this.cur.start() || {};
+    promptEl.textContent = round.accessiblePrompt || t(round.accessiblePromptKey || this.cur.q);
+    this.voice = round.audioPromptKey || this.voice;
+    renderVisualPrompt(round.visualPrompt);
+    stage.setAttribute("aria-labelledby", "game-tab-" + this.cur.id);
+    // New questions are visual by default. Only the explicit speaker control reads them.
+    if (restoreFocus) stage.focus({ preventScroll: true });
   },
 };
 function renderTabs() {
-  const box = $("#gameTabs"); box.innerHTML = "";
-  GAMES.forEach(g => {
+  const box = $("#gameTabs"), focused = box.contains(document.activeElement);
+  box.innerHTML = "";
+  GAMES.forEach((g, i) => {
     const on = g === game.cur;
-    const b = el("button", `flex flex-col items-center gap-1 rounded-2xl px-1 py-2 sm:py-3 font-extrabold text-xs sm:text-base leading-tight transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50 ${on ? "bg-white shadow-pop text-ink" : "text-ink/70 hover:bg-white/60"}`,
-      `${img(g.icon, `w-10 h-10 sm:w-14 sm:h-14 object-contain ${g.silhouette ? "silhouette" : ""}`)}<span>${esc(t(g.label))}</span>`);
-    b.type = "button"; b.setAttribute("role", "tab"); b.setAttribute("aria-selected", on);
+    const b = el("button", `flex flex-col items-center gap-1 rounded-2xl px-1 py-2 font-extrabold text-sm leading-tight transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky ${on ? "bg-white text-ink" : "text-ink/70 hover:bg-white/60"}`,
+      `${img(g.icon, `w-12 h-12 object-contain ${g.silhouette ? "silhouette" : ""}`)}<span>${esc(t(g.label))}</span>`);
+    b.type = "button"; b.id = "game-tab-" + g.id; b.title = t(g.label);
+    b.setAttribute("role", "tab"); b.setAttribute("aria-selected", on);
+    b.setAttribute("aria-controls", "gameStage"); b.tabIndex = on ? 0 : -1;
     b.addEventListener("click", () => { game.select(g); count(`game-${g.id}`); });
+    b.addEventListener("keydown", e => {
+      const rtl = document.documentElement.dir === "rtl";
+      let next;
+      if (e.key === "Home") next = 0;
+      else if (e.key === "End") next = GAMES.length - 1;
+      else if (e.key === "ArrowRight") next = (i + (rtl ? -1 : 1) + GAMES.length) % GAMES.length;
+      else if (e.key === "ArrowLeft") next = (i + (rtl ? 1 : -1) + GAMES.length) % GAMES.length;
+      else return;
+      e.preventDefault(); game.select(GAMES[next]);
+      $("[aria-selected=true]", box).focus({ preventScroll: true });
+    });
     box.appendChild(b);
   });
+  const selected = $("[aria-selected=true]", box);
+  if (focused) selected.focus({ preventScroll: true });
+  keepGameVisible();
 }
+function keepGameVisible() {
+  const box = $("#gameTabs"), selected = $("[aria-selected=true]", box);
+  if (!selected) return;
+  const a = selected.getBoundingClientRect(), b = box.getBoundingClientRect();
+  if (a.left < b.left || a.right > b.right) {
+    box.scrollTo({ left: box.scrollLeft + (a.left + a.right - b.left - b.right) / 2, behavior: "instant" });
+  }
+}
+new ResizeObserver(keepGameVisible).observe($("#gameTabs"));
+window.addEventListener("hashchange", () => { if (location.hash !== "#play") game.pause(); });
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) game.pause();
+  else if (game.paused && $("#play").getBoundingClientRect().bottom > 0 && $("#play").getBoundingClientRect().top < innerHeight) game.restart();
+});
+// Leaving cancels pending input/audio; returning starts a fresh, unlocked task.
+new IntersectionObserver(([entry]) => {
+  if (!entry.isIntersecting) game.pause();
+  else if (game.paused && !document.hidden) game.restart();
+}).observe($("#play"));
 function renderSound() {
   $("#soundBtn").setAttribute("aria-pressed", soundOn);
   $("#soundOn").classList.toggle("hidden", !soundOn);
   $("#soundOff").classList.toggle("hidden", soundOn);
 }
-$("#soundBtn").addEventListener("click", () => { soundOn = !soundOn; store.set("sound", soundOn); renderSound(); if (!soundOn) stopVoice(); });
+$("#soundBtn").addEventListener("click", () => { soundOn = !soundOn; store.set("sound", soundOn); renderSound(); if (!soundOn) stopGameAudio(); });
 $("#sayBtn").addEventListener("click", () => { game.active = true; speak(game.voice, 0); });
 
-function win(node) { game.active = true; addStar(); sfx("ding"); praise(stage); if (node) retrigger(node, "wiggle"); }
-function oops(node) { sfx("tick"); retrigger(node, "shake"); }
+function win(node) { game.active = true; sfx("ding"); praise(stage); if (node) retrigger(node, "wiggle"); }
+function oops(node) { retrigger(node, "shake"); }
 function tile(id, extra = "") {
   const b = el("button", `relative grid place-items-center rounded-3xl bg-cream p-3 shadow-pop ring-4 ring-transparent hover:ring-sky/40 transition focus:outline-none focus-visible:ring-sky ${extra}`,
     img(id, "w-full h-full object-contain pointer-events-none"));
@@ -1423,12 +1535,12 @@ function doneBox(msg) {
 }
 
 // 1) Memory
-let memoryPairs = store.get("pairs", 3);
+let memoryPairs = store.get("pairs", 3) === 6 ? 6 : 3;
 function startMemory() {
   const sizes = el("div", "flex justify-center gap-2 mb-4");
   [3, 6].forEach(n => {
-    const b = el("button", `rounded-full px-4 py-1.5 font-extrabold ring-2 focus:outline-none focus-visible:ring-4 ${n === memoryPairs ? "bg-sky text-white ring-sky" : "bg-white ring-sky-light"}`, `${num(n)} ${esc(t("pairs"))}`);
-    b.type = "button"; b.setAttribute("aria-pressed", n === memoryPairs);
+    const b = el("button", `memory-size ring-2 focus:outline-none focus-visible:ring-4 ${n === memoryPairs ? "bg-sky text-white ring-sky" : "bg-white ring-sky-light"}`, `<span class="memory-preview" aria-hidden="true">${"<i></i>".repeat(n * 2)}</span>`);
+    b.type = "button"; b.setAttribute("aria-pressed", n === memoryPairs); b.setAttribute("aria-label", t("memory_pairs").replace("{n}", num(n)));
     b.addEventListener("click", () => { memoryPairs = n; store.set("pairs", n); game.restart(); });
     sizes.appendChild(b);
   });
@@ -1443,18 +1555,19 @@ function startMemory() {
          <span class="mface mback shadow-pop"><span class="text-4xl sm:text-5xl text-white/90 font-extrabold" aria-hidden="true">★</span></span>
          <span class="mface mfront bg-cream shadow-pop ring-4 ring-sun/60 p-2">${img(id, "w-full h-full object-contain")}</span>
        </span>`);
-    card.type = "button"; card.setAttribute("aria-label", "?");
+    card.type = "button"; card.setAttribute("aria-label", t("memory_card"));
     card.addEventListener("click", () => {
       if (lock || card.classList.contains("flipped")) return;
       card.classList.add("flipped"); card.setAttribute("aria-label", objName(id)); sfx("swish"); open.push({ card, id });
       if (open.length < 2) return;
       const [a, b] = open; open = [];
+      lock = true;
       if (a.id === b.id) {
         found++;
-        game.later(() => { win(b.card); if (found === memoryPairs) game.later(() => { sfx("cheer"); confetti(); grid.appendChild(doneBox(t("memory_done"))); game.voice = "memory_done"; speak("memory_done", 300); }, 1100); }, 350);
+        [a, b].forEach(x => x.card.setAttribute("aria-disabled", "true"));
+        game.later(() => { lock = false; win(b.card); if (found === memoryPairs) game.later(() => { sfx("cheer"); confetti(); grid.appendChild(doneBox(t("memory_done"))); $("button", grid.lastElementChild).focus({ preventScroll: true }); game.voice = "memory_done"; speak("memory_done", 300); }, 1100); }, 350);
       } else {
-        lock = true;
-        game.later(() => { [a, b].forEach(x => { x.card.classList.remove("flipped"); x.card.setAttribute("aria-label", "?"); }); lock = false; }, 950);
+        game.later(() => { [a, b].forEach(x => { x.card.classList.remove("flipped"); x.card.setAttribute("aria-label", t("memory_card")); }); lock = false; }, 950);
       }
     });
     grid.appendChild(card);
@@ -1498,22 +1611,22 @@ let lastShadow = null;
 function startShadow() {
   const target = pick(SHADOW_POOL.filter(k => k !== lastShadow)); lastShadow = target;
   const opts = shuffle([target, ...shuffle(SHADOW_POOL.filter(k => k !== target)).slice(0, 2)]);
-  const wrap = el("div", "grid gap-5 md:grid-cols-[1fr_1.4fr] items-center max-w-3xl mx-auto");
-  const shadowBox = el("div", "rounded-[2rem] bg-sky-light p-6 grid place-items-center", img(target, "silhouette w-44 h-44 md:w-56 md:h-56 object-contain", ""));
-  const grid = el("div", "grid grid-cols-3 gap-3");
+  const grid = el("div", "grid grid-cols-3 gap-3 max-w-xl mx-auto");
   opts.forEach((id, i) => {
     const b = tile(id, "aspect-square popin"); b.style.animationDelay = i * 90 + "ms";
+    $("img", b).classList.add("silhouette"); b.setAttribute("aria-label", t("shadow_choice").replace("{n}", num(i + 1)));
     b.addEventListener("click", () => {
       if (grid.dataset.done) return;
       if (id !== target) return oops(b);
-      grid.dataset.done = 1; $("img", shadowBox).classList.add("revealed"); b.classList.add("ring-leaf", "bg-leaf-light");
-      win(shadowBox);
+      grid.dataset.done = 1; $("img", b).classList.add("revealed"); b.classList.add("ring-leaf", "bg-leaf-light");
+      win(b);
       const c = OBJ[id].cast; if (c && c.sfx !== "pop") game.later(() => sfx(c.sfx), 500);
       game.later(() => game.restart(), 2000);
     });
     grid.appendChild(b);
   });
-  wrap.append(shadowBox, grid); stage.appendChild(wrap);
+  stage.appendChild(grid);
+  return { visualPrompt: { kind: "object", id: target }, accessiblePrompt: t("shadow_prompt").replace("{n}", objName(target)) };
 }
 
 // 4) How many?
@@ -1551,6 +1664,7 @@ function startCount() {
     answers.appendChild(b);
   });
   stage.append(field, answers);
+  return { visualPrompt: { node: field } };
 }
 
 // 5) Where is …?
@@ -1573,7 +1687,7 @@ function startFind() {
   });
   stage.appendChild(grid);
   game.voice = "find_" + target.id;
-  return t("q_find").replace("{n}", castName(target));
+  return { visualPrompt: { kind: "object", id: target.id }, accessiblePrompt: t("q_find").replace("{n}", castName(target)), audioPromptKey: "find_" + target.id };
 }
 
 // 6) Colors
@@ -1590,9 +1704,6 @@ function startColors() {
   const others = shuffle(Object.keys(COLOR_OBJ).filter(k => k !== c && !(COLOR_NEAR[c] || []).includes(k))).slice(0, wrong).map(k => pick(COLOR_OBJ[k]));
   const target = pick(COLOR_OBJ[c]), name = t("colors")[c];
   const wrap = el("div", "flex flex-col items-center gap-5");
-  const blob = el("button", "w-20 h-20 sm:w-24 sm:h-24 rounded-full shadow-pop-lg ring-8 ring-sun-light outline outline-2 outline-ink/10 popin focus:outline-none focus-visible:ring-sky");
-  blob.type = "button"; blob.style.background = COLOR_HEX[c]; blob.setAttribute("aria-label", name);
-  blob.addEventListener("click", () => { retrigger(blob, "wiggle"); });
   const grid = el("div", `grid gap-3 sm:gap-4 w-full ${wrong === 2 ? "grid-cols-3 max-w-xl" : "grid-cols-2 sm:grid-cols-4 max-w-2xl"}`);
   shuffle([target, ...others]).forEach((id, i) => {
     const b = tile(id, "aspect-square popin"); b.style.animationDelay = 120 + i * 80 + "ms";
@@ -1604,46 +1715,46 @@ function startColors() {
     });
     grid.appendChild(b);
   });
-  wrap.append(blob, grid); stage.appendChild(wrap);
+  wrap.appendChild(grid); stage.appendChild(wrap);
   game.voice = "color_" + c;
-  return t("q_colors").replace("{c}", name);
+  return { visualPrompt: { kind: "color", color: c }, accessiblePrompt: t("q_colors").replace("{c}", name), audioPromptKey: "color_" + c };
 }
 
-// 7) Bubbles: nothing to get wrong, a star every 10 pops
+// 7) Bubbles: direct play, no score or failure state
 function startBubbles() {
   const field = el("div", "relative mx-auto max-w-3xl h-[22rem] sm:h-[26rem] rounded-[2rem] overflow-hidden");
   field.style.background = "linear-gradient(180deg, #DDF3FF, #9EE0F7)";
-  const counter = el("div", "absolute top-3 end-3 z-10 rounded-full bg-white/90 px-4 py-1 font-display font-extrabold text-2xl shadow-pop", num(0));
-  counter.setAttribute("aria-live", "polite");
-  field.appendChild(counter);
   const pool = Object.keys(OBJ);
-  let count = 0, first = 4;
-  const spawn = () => {
+  let first = 4, lane = 0;
+  const spawn = (schedule = true) => {
     if (!field.isConnected) return;
     if (field.querySelectorAll(".bubble:not(.popped)").length < 6) {
-      const id = pick(pool), size = Math.round(84 + Math.random() * 40);
+      const id = pick(pool), size = Math.min(104, (field.clientWidth - 16) / 3);
+      const column = lane++ % 3;
       const b = el("button", "bubble focus:outline-none focus-visible:ring-4 focus-visible:ring-sky", `<span>${img(id, "w-3/5 h-3/5 object-contain pointer-events-none")}</span>`);
       b.type = "button"; b.setAttribute("aria-label", objName(id));
-      Object.assign(b.style, { width: size + "px", height: size + "px", left: `calc(${4 + Math.random() * 84}% - ${size / 2}px)` });
-      const dur = 6 + Math.random() * 3;
+      Object.assign(b.style, { width: size + "px", height: size + "px", left: `calc(${(column + .5) * 100 / 3}% - ${size / 2}px)` });
+      const dur = 12 + Math.random() * 3;
       b.style.setProperty("--dur", dur.toFixed(1) + "s");
       if (first > 0) { first--; b.style.animationDelay = `-${(dur * (.15 + first * .15)).toFixed(1)}s`; }   // the field starts full, not empty
       b.firstElementChild.style.animationDelay = -Math.random() * 2 + "s";
-      if (reduceMotion) { b.style.bottom = "auto"; b.style.top = `${8 + Math.random() * 60}%`; }
+      if (reduceMotion) { b.style.bottom = "auto"; b.style.top = `${lane % 2 ? 12 : 55}%`; }
       b.addEventListener("animationend", e => { if (e.animationName === "rise") b.remove(); });
       b.addEventListener("click", () => {
         if (b.classList.contains("popped")) return;
         b.style.transform = getComputedStyle(b).transform;   // freeze where it was hit
         b.classList.add("popped"); sfx("pop");
-        count++; counter.textContent = num(count); retrigger(counter, "wiggle");
-        if (count % 10 === 0) { win(null); confetti(); }
-        setTimeout(() => b.remove(), 320);
+        if (document.activeElement === b) {
+          const next = [...field.querySelectorAll(".bubble:not(.popped)")][0];
+          (next || stage).focus({ preventScroll: true });
+        }
+        game.later(() => b.remove(), 320);
       });
       field.appendChild(b);
     }
-    game.later(spawn, reduceMotion ? 1400 : 750);
+    if (schedule) game.later(spawn, reduceMotion ? 1400 : 1500);
   };
-  stage.appendChild(field); spawn();
+  stage.appendChild(field); for (let i = 0; i < 4; i++) spawn(false); spawn();
 }
 
 // 8) Music: free play on six pads + "Copy me!" (Bailabu plays, the child repeats; grows from 2 to 5 notes)
@@ -1653,21 +1764,25 @@ const PADS = [
   { id: "renkli", c: "#FF6F91" }, { id: "balli", c: "#8E6CF0" }, { id: "findik", c: "#2EC4D6" },
 ];
 let actx = null, copyLen = 2;
+const tones = new Map();
 function tone(f, dur = .7) {
   if (!soundOn) return;
   try {
     actx = actx || new (window.AudioContext || window.webkitAudioContext)();
     if (actx.state === "suspended") actx.resume();
+    // Re-tapping a pad replaces that note instead of layering duplicate starts.
+    (tones.get(f) || []).forEach(o => { try { o.stop(); } catch {} });
     const t0 = actx.currentTime, g = actx.createGain(), o = actx.createOscillator(), o2 = actx.createOscillator(), g2 = actx.createGain();
     o.type = "sine"; o.frequency.value = f; o2.type = "sine"; o2.frequency.value = f * 4; g2.gain.value = .1;   // soft marimba-ish
     g.gain.setValueAtTime(.0001, t0); g.gain.exponentialRampToValueAtTime(.32, t0 + .012); g.gain.exponentialRampToValueAtTime(.0001, t0 + dur);
     o.connect(g); o2.connect(g2); g2.connect(g); g.connect(actx.destination);
     [o, o2].forEach(x => { x.start(t0); x.stop(t0 + dur + .05); });
+    const pair = [o, o2]; tones.set(f, pair);
+    o.onended = () => { if (tones.get(f) === pair) tones.delete(f); };
   } catch {}
 }
 function startMusic() {
   const wrap = el("div", "flex flex-col items-center gap-4");
-  const bear = el("div", "w-28 h-28 sm:w-36 sm:h-36", img("bailabu_bear", "w-full h-full object-contain"));
   const pads = el("div", "grid grid-cols-3 sm:grid-cols-6 gap-3 w-full max-w-3xl");
   const btns = PADS.map(p => {
     const b = el("button", "pad relative aspect-square rounded-3xl p-2 shadow-pop-lg ring-4 ring-white/70 transition active:scale-95 focus:outline-none focus-visible:ring-sky",
@@ -1676,36 +1791,51 @@ function startMusic() {
     pads.appendChild(b); return b;
   });
   const copyBtn = el("button", "rounded-full bg-violet px-6 py-3 font-extrabold text-lg text-white shadow-pop-lg hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-violet/40",
-    `<span aria-hidden="true">🎵</span> ${esc(t("copy_me"))}`);
-  copyBtn.type = "button";
+    `<span aria-hidden="true">${img("bailabu_bear", "w-10 h-10 inline-block object-contain")} ♪ → ${img("afacan", "w-10 h-10 inline-block object-contain")}</span>`);
+  copyBtn.type = "button"; copyBtn.setAttribute("aria-label", t("music_copy"));
+  const phase = el("div", "music-phase");
+  const stop = el("button", "rounded-full bg-sky-light p-3", '<span aria-hidden="true">■</span>');
+  stop.type = "button"; stop.setAttribute("aria-label", t("stop")); stop.hidden = true;
   let seq = null, pos = 0, busy = false;
+  let lastHit = 0;
   const hit = i => {
-    tone(NOTES[i]); retrigger(btns[i], "wiggle"); retrigger(bear, "bop");
-    btns[i].classList.add("lit"); setTimeout(() => btns[i].classList.remove("lit"), 260);
-    const n = el("span", "note-fly", pick(["♪", "♫"])); btns[i].appendChild(n); setTimeout(() => n.remove(), 950);
+    tone(NOTES[i]); retrigger(btns[i], "wiggle");
+    btns[i].classList.add("lit"); game.later(() => btns[i].classList.remove("lit"), 500);
+    const n = el("span", "note-fly", pick(["♪", "♫"])); btns[i].appendChild(n); game.later(() => n.remove(), 950);
   };
   const playSeq = () => {
-    busy = true; pos = 0; promptEl.textContent = t("listen"); game.voice = "listen"; speak("listen", 0);
+    busy = true; pos = 0; game.instruction("listen", "listen", "music_copy");
+    phase.innerHTML = `<span aria-hidden="true">${img("bailabu_bear", "w-10 h-10 inline-block object-contain")} ♪ →</span>`;
     seq.forEach((n, k) => game.later(() => hit(n), 700 + k * 650));
-    game.later(() => { busy = false; promptEl.textContent = t("your_turn"); game.voice = "your_turn"; speak("your_turn", 0); }, 700 + seq.length * 650 + 150);
+    game.later(() => {
+      busy = false; game.instruction("your_turn", "your_turn", "music_copy"); phase.innerHTML = '<span aria-hidden="true">☝ ♪</span>';
+      if (document.activeElement === stop) btns[0].focus({ preventScroll: true });
+    }, 700 + seq.length * 650 + 150);
   };
   btns.forEach((b, i) => b.addEventListener("click", () => {
-    if (busy) return;
-    hit(i);
+    if (busy || performance.now() - lastHit < 120) return;
+    lastHit = performance.now(); hit(i);
     if (!seq) return;
-    if (i !== seq[pos]) { oops(b); game.later(playSeq, 700); return; }
+    if (i !== seq[pos]) { busy = true; oops(b); game.later(playSeq, 700); return; }
     if (++pos === seq.length) {
       seq = null; copyLen = Math.min(5, copyLen + 1);
-      game.later(() => { win(bear); promptEl.textContent = t("q_music"); game.voice = "q_music"; copyBtn.classList.remove("invisible"); }, 350);
+      game.later(() => { win(b); game.instruction("q_music"); phase.innerHTML = ""; stop.hidden = true; copyBtn.hidden = false; }, 350);
     }
   }));
   copyBtn.addEventListener("click", () => {
-    game.active = true;
+    if (busy || seq) return;
+    game.active = true; stop.hidden = false;
     seq = [Math.floor(Math.random() * 6)];
     while (seq.length < copyLen) { const n = Math.floor(Math.random() * 6); if (n !== seq[seq.length - 1]) seq.push(n); }
-    copyBtn.classList.add("invisible"); playSeq();
+    copyBtn.hidden = true; stop.focus({ preventScroll: true }); playSeq();
   });
-  wrap.append(bear, pads, copyBtn); stage.appendChild(wrap);
+  stop.addEventListener("click", () => {
+    game.clear(); seq = null; busy = false; phase.innerHTML = "";
+    btns.forEach(b => b.classList.remove("lit"));
+    copyBtn.hidden = false; stop.hidden = true; game.instruction("q_music"); copyBtn.focus({ preventScroll: true });
+  });
+  const controls = el("div", "flex items-center gap-3"); controls.append(copyBtn, stop);
+  wrap.append(pads, phase, controls); stage.appendChild(wrap);
 }
 
 // 9) What comes next? AB first, then AAB / ABB, then ABC
@@ -1719,12 +1849,12 @@ function startPattern() {
   const seqv = Array.from({ length: len }, (_, i) => unit[i % unit.length]);
   const answer = seqv[len - 1];
   const opts = shuffle([...new Set([answer, ...Object.values(map), pool[3]])].filter(x => x !== answer)).slice(0, 2);
-  const row = el("div", "flex flex-wrap justify-center items-center gap-1.5 sm:gap-3 rounded-[2rem] bg-sky-light p-4 sm:p-6 max-w-3xl mx-auto");
+  const row = el("div", "pattern-row max-w-3xl mx-auto");
   seqv.slice(0, -1).forEach((id, i) => {
     const s = el("span", "block w-12 h-12 sm:w-20 sm:h-20 popin", img(id, "w-full h-full object-contain", objName(id)));
     s.style.animationDelay = i * 110 + "ms"; row.appendChild(s);
   });
-  const slot = el("span", "grid place-items-center w-14 h-14 sm:w-24 sm:h-24 rounded-2xl border-4 border-dashed border-sky bg-white font-display font-extrabold text-3xl sm:text-5xl text-sky-dark popin", "?");
+  const slot = el("span", "pattern-slot grid place-items-center w-14 h-14 sm:w-24 sm:h-24 rounded-2xl border-4 border-dashed border-sky bg-white font-display font-extrabold text-3xl sm:text-5xl text-sky-dark popin", "?");
   slot.style.animationDelay = (len - 1) * 110 + "ms"; row.appendChild(slot);
   const grid = el("div", "mt-5 mx-auto grid grid-cols-3 gap-3 sm:gap-4 max-w-md");
   shuffle([answer, ...opts]).forEach((id, i) => {
@@ -1733,7 +1863,7 @@ function startPattern() {
       if (grid.dataset.done) return;
       if (id !== answer) return oops(b);
       grid.dataset.done = 1; b.classList.add("ring-leaf", "bg-leaf-light");
-      slot.className = "block w-14 h-14 sm:w-24 sm:h-24 rounded-2xl bg-leaf-light ring-4 ring-leaf p-1 popin"; slot.innerHTML = img(id, "w-full h-full object-contain");
+      slot.className = "pattern-slot block w-14 h-14 sm:w-24 sm:h-24 rounded-2xl bg-leaf-light ring-4 ring-leaf p-1 popin"; slot.innerHTML = img(id, "w-full h-full object-contain");
       win(slot); patRound++;
       if (patRound % 5 === 0) game.later(() => { sfx("cheer"); confetti(); }, 400);
       game.later(() => game.restart(), 2000);
@@ -1741,6 +1871,7 @@ function startPattern() {
     grid.appendChild(b);
   });
   stage.append(row, grid);
+  return { visualPrompt: { node: row } };
 }
 
 /* ---------------- Story reader ---------------- */
