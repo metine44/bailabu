@@ -3,5 +3,5 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 node tools/check_videos.js
-python tools/prerender.py
+python3 tools/prerender.py
 npx -y tailwindcss@3.4.17 -c tools/tailwind.config.js -i tools/tailwind.css -o assets/site.css --minify

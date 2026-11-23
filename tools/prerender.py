@@ -4,7 +4,10 @@ import os, re, subprocess, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGE = os.path.join(ROOT, "index.html")
+import glob
 EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+if not os.path.exists(EDGE):  # WSL: Playwright's Chromium instead of Windows Edge
+    EDGE = (sorted(glob.glob(os.path.expanduser("~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome"))) or [EDGE])[-1]
 GRIDS = ["langMenu", "friendsGrid", "videoTabs", "videoGrid", "coloringGrid", "channelGrid"]
 
 with tempfile.TemporaryDirectory() as profile:
