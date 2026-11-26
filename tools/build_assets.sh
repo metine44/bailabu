@@ -25,6 +25,7 @@ song "Bes Kücük Ördek/images/final/I01.png"       ducks
 song "Ari Viz Viz/images/final/I03.png"           bibi
 song "Ali Babanin Ciftligi/images/final/I03.png"  tractor
 song "Parla Yildiz/images/final/I01.png"          lumi
+song "Aydede ile Iyi Geceler/images/final/I01.png" moon
 song "Ciftlikte Uyku Vakti/images/final/I03.png"  sleepy
 song "Minik Balik/Bilder/V2/N05_Flucht_mit_Schwarm_v1.png" minik
 song "Sayilari Ögreniyorum/images/final/G10.png"  count10
