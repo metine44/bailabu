@@ -28,6 +28,7 @@ song "Parla Yildiz/images/final/I01.png"          lumi
 song "Ciftlikte Uyku Vakti/images/final/I03.png"  sleepy
 song "Minik Balik/Bilder/V2/N05_Flucht_mit_Schwarm_v1.png" minik
 song "Sayilari Ögreniyorum/images/final/G10.png"  count10
+song "Bas Omuz Diz Ayak/images/final/I01.png"      headtoes
 # video cards of the other formats = the real YouTube thumbnail; -tr = Turkish variant where the thumbnail has text
 song "Quiz/episodes/E01_Hangisi_Farkli/output/thumbnail.jpg" odd
 song "Quiz/episodes/E02_Kimin_Golgesi/output/thumbnail.jpg"  shadow
