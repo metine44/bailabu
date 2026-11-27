@@ -21,7 +21,10 @@ SOURCE = SOURCE.replace('/* ---------------- Boot ---------------- */',
                         'window.gameCheck = expression => eval(expression);\n/* ---------------- Boot ---------------- */')
 
 with sync_playwright() as pw:
-    browser = pw.chromium.launch(channel='msedge', headless=True)
+    try:
+        browser = pw.chromium.launch(channel='msedge', headless=True)
+    except Exception:  # WSL/Linux: no Edge, use Playwright's Chromium
+        browser = pw.chromium.launch(headless=True)
     for locale in ([] if '--flows-only' in sys.argv else ['en', 'de', 'es', 'pt', 'tr', 'ar']):
         for width, height in LAYOUTS:
             context = browser.new_context(viewport={'width': width, 'height': height}, has_touch=True,
@@ -34,7 +37,7 @@ with sync_playwright() as pw:
             page.add_init_script('''window.plays=[];
                 HTMLMediaElement.prototype.play=function(){ plays.push(this.src); return Promise.resolve() };
                 window.playedTones=0;''')
-            page.goto(BASE + '/?lang=' + locale + '#play')
+            page.goto(BASE + '/?lang=' + locale + '#play-memory')
             page.locator('#gameTabs').scroll_into_view_if_needed()
             page.wait_for_timeout(120)
             check = lambda expression: page.evaluate('(s)=>gameCheck(s)', expression)
@@ -99,7 +102,7 @@ with sync_playwright() as pw:
     page = context.new_page()
     context.route('**/*', lambda r: r.fulfill(body=SOURCE, content_type='text/html')
                   if r.request.url.split('?')[0].rstrip('/') == BASE else r.continue_())
-    page.goto(BASE + '/?lang=en#play')
+    page.goto(BASE + '/?lang=en#play-memory')
     page.locator('#gameTabs').scroll_into_view_if_needed()
     page.wait_for_timeout(100)
     check = lambda expression: page.evaluate('(s)=>gameCheck(s)', expression)
@@ -234,7 +237,7 @@ with sync_playwright() as pw:
     page.evaluate('location.hash="color-online"')
     page.wait_for_timeout(200)
     assert check('actx') is None and check('game.timers.length') == 0
-    page.evaluate('location.hash="play"')
+    page.evaluate('location.hash="play-music"')
     page.locator('#gameTabs').scroll_into_view_if_needed(); page.wait_for_timeout(100)
     assert not check('game.paused'), 'return creates an unlocked game'
     print('PASS: Bubbles emulated touch, Music notes/echo/stop/mute/switch/leave cleanup, optional prompt failure, keyboard tabs', flush=True)
@@ -243,7 +246,7 @@ with sync_playwright() as pw:
     # Normal motion has the same task and no page overflow; bubbles stay within their field.
     context = browser.new_context(viewport={'width': 320, 'height': 568}, reduced_motion='no-preference')
     page = context.new_page()
-    page.goto(BASE + '/?lang=en#play')
+    page.goto(BASE + '/?lang=en#play-memory')
     page.locator('#gameTabs').scroll_into_view_if_needed()
     page.locator('#game-tab-bubbles').click()
     page.wait_for_timeout(1000)

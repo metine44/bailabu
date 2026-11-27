@@ -154,6 +154,31 @@
     nav.activity-choices img { height:84px; }
     nav.activity-choices a:first-child img, nav.activity-choices a:nth-child(3) img { height:70px; margin-block:7px; }
   }
+  /* Games: own page (#play) with big game cards; a game opens at #play-<id> */
+  .game-cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+  @media (min-width: 700px) { .game-cards { grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; } }
+  .game-card { display:flex; flex-direction:column; height:100%; border-radius:30px; overflow:hidden; background:#fff; border:4px solid #fff; color:#16395a;
+    box-shadow:0 7px 0 var(--e), 0 16px 30px rgba(22,57,90,.10); transition:transform .2s cubic-bezier(.2,.9,.3,1.4), box-shadow .2s; }
+  .game-card:hover { transform:translateY(-6px) rotate(-1deg); }
+  li:nth-child(even) > .game-card:hover { transform:translateY(-6px) rotate(1deg); }
+  .game-card:active { transform:translateY(5px); box-shadow:0 2px 0 var(--e); }
+  .game-card:focus-visible { outline:4px solid #16395a; outline-offset:4px; }
+  .gc-art { position:relative; display:grid; place-items:center; aspect-ratio:4/3; border-radius:24px 24px 0 0; background:
+      radial-gradient(circle at 18% 22%, rgba(255,255,255,.75) 0 7%, transparent 7.5%), radial-gradient(circle at 84% 78%, rgba(255,255,255,.6) 0 10%, transparent 10.5%),
+      radial-gradient(circle at 80% 16%, rgba(255,255,255,.5) 0 4%, transparent 4.5%), var(--c); }
+  .gc-art img { width:62%; height:82%; object-fit:contain; filter:drop-shadow(0 8px 8px rgba(22,57,90,.18)); transition:transform .25s cubic-bezier(.2,.9,.3,1.4); }
+  .gc-art img.silhouette { filter:brightness(0) saturate(100%) opacity(.82); }
+  .game-card:hover .gc-art img { transform:scale(1.08) rotate(-4deg); }
+  .gc-body { display:flex; flex-direction:column; gap:.15rem; padding:.8rem 1rem 1rem; flex:1; }
+  .gc-title { font-weight:800; font-size:1.3rem; line-height:1.15; }
+  .gc-q { font-weight:600; color:rgba(22,57,90,.65); line-height:1.25; }
+  .gc-play { display:inline-flex; align-items:center; gap:.35rem; align-self:flex-start; margin-top:auto; padding:.35rem 1rem; border-radius:9999px; background:var(--e); font-weight:800; }
+  .gc-q + .gc-play { margin-top:.6rem; }
+  @media (max-width: 480px) { .gc-title { font-size:1.1rem; } .gc-q { display:none; } .gc-body { padding:.6rem .75rem .8rem; } }
+  .back-pill { display:inline-flex; align-items:center; gap:.4rem; min-height:48px; padding:.45rem 1.1rem; border-radius:9999px; background:#fff; font-weight:800; box-shadow:0 4px 0 rgba(22,57,90,.13); transition:transform .15s; }
+  .back-pill:hover { transform:translateY(-2px); }
+  .back-pill:focus-visible { outline:4px solid #16395a; outline-offset:3px; }
+  @media (prefers-reduced-motion: reduce) { .game-card, .gc-art img { transition:none; } }
   @media (prefers-reduced-motion: reduce) { .nav-pill, nav.activity-choices a, nav.activity-choices img, .coloring-actions a { transition:none; } }
 
   dialog::backdrop { background: rgba(22,57,90,.55); backdrop-filter: blur(3px); }
@@ -328,31 +353,16 @@
   </div>
 </section>
 
-<!-- ============ Games ============ -->
-<section id="play" class="relative sprinkles bg-sun-light">
+<!-- ============ Games (teaser; the games themselves live on the Games page #play) ============ -->
+<section id="games" class="relative bg-sun-light sprinkles">
   <svg class="wave text-sky-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
-  <div class="mx-auto max-w-5xl px-4 pb-14 pt-4 md:pb-20">
+  <div class="mx-auto max-w-6xl px-4 pb-14 pt-4 md:pb-20">
     <div class="text-center">
-      <h2 class="squiggle font-display font-extrabold text-3xl md:text-5xl" style="--sq:#F59E0B" id="gamesHeading" data-i18n="play_title">Games & riddles</h2>
+      <h2 class="squiggle font-display font-extrabold text-3xl md:text-5xl" style="--sq:#F59E0B" data-i18n="play_title">Games & riddles</h2>
       <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="play_text">Little games for little hands – no reading needed. Just tap!</p>
     </div>
-
-    <div class="mt-8 rounded-[2rem] bg-white shadow-pop-lg ring-4 ring-sun/60 overflow-hidden">
-      <div class="game-navigation">
-      <div id="gameTabs" role="tablist" aria-labelledby="gamesHeading" class="game-tabs"></div>
-      <div id="gameTools" class="game-tools">
-        <button id="sayBtn" type="button" class="shrink-0 rounded-full bg-sky-light p-2.5 transition active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" data-i18n-aria="say_again" aria-label="Hear it again">
-          <svg viewBox="0 0 24 24" class="w-6 h-6 text-sky-dark" fill="currentColor" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M15 8.2a5 5 0 0 1 0 7.6M17.6 5.6a8.6 8.6 0 0 1 0 12.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </button>
-          <button id="soundBtn" type="button" class="rounded-full bg-leaf-light p-2.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-leaf/50" aria-pressed="true" data-i18n-aria="sound" aria-label="Sound">
-            <svg id="soundOn" viewBox="0 0 24 24" class="w-6 h-6 text-leaf" fill="currentColor" aria-hidden="true"><path d="M12 3v10.6A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
-            <svg id="soundOff" viewBox="0 0 24 24" class="w-6 h-6 text-ink/40 hidden" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 13.6V3h6v4h-4M4 4l16 16"/><circle cx="10" cy="17" r="3.2"/></svg>
-          </button>
-      </div>
-      </div>
-      <p id="gamePrompt" class="sr-only" aria-live="polite" aria-atomic="true"></p>
-      <div id="gameStage" role="tabpanel" tabindex="0" aria-describedby="gamePrompt" class="relative p-4 md:p-6"></div>
-    </div>
+    <ul id="gameTeaser" class="game-cards mt-8"></ul>
+    <div class="mt-8 text-center"><a href="#play" class="inline-flex items-center gap-2 rounded-full bg-sun px-7 py-3.5 text-lg font-extrabold text-ink shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sun/60"><span aria-hidden="true">🎲</span><span data-i18n="all_games">All games</span></a></div>
   </div>
 </section>
 
@@ -476,6 +486,51 @@
         <li class="rounded-2xl bg-sky-light p-4"><p class="text-2xl" aria-hidden="true">🔢</p><h3 class="font-extrabold text-lg" data-i18n="p2_t">Made for learning</h3><p class="font-semibold text-ink/70" data-i18n="p2">Counting, colors, animals and sharing – through music and play.</p></li>
         <li class="rounded-2xl bg-sun-light p-4"><p class="text-2xl" aria-hidden="true">🌙</p><h3 class="font-extrabold text-lg" data-i18n="p3_t">Calm by design</h3><p class="font-semibold text-ink/70" data-i18n="p3">Slower songs for little ones and soft lullabies for bedtime. No ads and no cookies here, only simple visitor totals.</p></li>
       </ul>
+    </div>
+  </div>
+</section>
+</div>
+<!-- ============ Games page (#play = all games, #play-<id> = one game) ============ -->
+<div id="gamesPage" hidden>
+<section id="gamesHero" class="relative overflow-hidden bg-sun-light sprinkles">
+  <div class="relative mx-auto max-w-6xl px-4 pt-6 pb-16 md:pt-10 md:pb-24 grid md:grid-cols-[1fr_auto] items-center gap-4">
+    <div>
+      <a href="#top" class="back-pill"><span aria-hidden="true" class="rtl:-scale-x-100 inline-block">←</span><span data-i18n="back_home">Home</span></a>
+      <h1 id="gamesTitle" class="mt-5 font-display font-extrabold text-4xl sm:text-5xl md:text-6xl leading-[1.05]" data-i18n="play_title">Games & riddles</h1>
+      <p class="mt-3 text-lg md:text-xl font-semibold text-ink/75 max-w-xl" data-i18n="play_text">Little games for little hands – no reading needed. Just tap!</p>
+    </div>
+    <div class="hidden sm:flex items-end justify-center gap-2" aria-hidden="true">
+      <img src="assets/chars/afacan.webp" alt="" width="360" height="360" class="w-24 md:w-32 floaty" style="animation-delay:-1.3s">
+      <img src="assets/chars/bailabu_bear.webp" alt="" width="360" height="360" class="w-40 md:w-56 floaty">
+      <img src="assets/chars/balli.webp" alt="" width="360" height="360" class="w-24 md:w-32 floaty" style="animation-delay:-2.4s">
+    </div>
+  </div>
+  <svg class="wave absolute bottom-0 inset-x-0 text-cream" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 40c120-30 240-30 360 0s240 30 360 0 240-30 360 0 240 30 360 0v40H0z"/></svg>
+</section>
+<section id="gamesList" class="relative" aria-labelledby="gamesTitle">
+  <div class="mx-auto max-w-6xl px-4 pt-6 pb-16 md:pb-24">
+    <ul id="gamePicker" class="game-cards"></ul>
+    <div id="gamePlayer" hidden>
+      <div class="mb-4 flex flex-wrap items-center gap-3">
+        <a href="#play" class="back-pill"><span aria-hidden="true">▦</span><span data-i18n="all_games">All games</span></a>
+        <h2 id="gamesHeading" class="font-display font-extrabold text-2xl md:text-4xl"></h2>
+      </div>
+    <div class="rounded-[2rem] bg-white shadow-pop-lg ring-4 ring-sun/60 overflow-hidden">
+        <div class="game-navigation">
+        <div id="gameTabs" role="tablist" aria-labelledby="gamesHeading" class="game-tabs"></div>
+        <div id="gameTools" class="game-tools">
+          <button id="sayBtn" type="button" class="shrink-0 rounded-full bg-sky-light p-2.5 transition active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" data-i18n-aria="say_again" aria-label="Hear it again">
+            <svg viewBox="0 0 24 24" class="w-6 h-6 text-sky-dark" fill="currentColor" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4z"/><path d="M15 8.2a5 5 0 0 1 0 7.6M17.6 5.6a8.6 8.6 0 0 1 0 12.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+            <button id="soundBtn" type="button" class="rounded-full bg-leaf-light p-2.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-leaf/50" aria-pressed="true" data-i18n-aria="sound" aria-label="Sound">
+              <svg id="soundOn" viewBox="0 0 24 24" class="w-6 h-6 text-leaf" fill="currentColor" aria-hidden="true"><path d="M12 3v10.6A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+              <svg id="soundOff" viewBox="0 0 24 24" class="w-6 h-6 text-ink/40 hidden" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 13.6V3h6v4h-4M4 4l16 16"/><circle cx="10" cy="17" r="3.2"/></svg>
+            </button>
+        </div>
+        </div>
+        <p id="gamePrompt" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+        <div id="gameStage" role="tabpanel" tabindex="0" aria-describedby="gamePrompt" class="relative p-4 md:p-6"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -742,7 +797,7 @@ en: {
   kicker: "Stories · quiz games · picture books · songs",
   hero_title: "Listen, play & learn on Bailabu Island!",
   hero_text: "Calm stories, puzzle games, picture books, songs and lullabies for children aged 1–6 – with Bailabu the bear and his island friends.",
-  cta_watch: "Watch on YouTube", cta_play: "Let's play!",
+  cta_watch: "Watch on YouTube", cta_play: "Let's play!", all_games: "All games", play_btn: "Play", back_home: "Home",
   friends_title: "Meet the island friends", friends_text: "Tap a friend to say hello!", hello: "Hello",
   videos_title: "Videos for little ones", videos_text: "Songs, lullabies, quiz games, picture books and stories. Pick what fits the moment!",
   videos_badge: "New videos on the way", videos_lang: "EN on a picture means the video is in English. More languages are on the way.", watch: "Watch",
@@ -804,7 +859,7 @@ de: {
   kicker: "Geschichten · Ratespiele · Bilderbücher · Lieder",
   hero_title: "Zuhören, spielen & entdecken auf der Bailabu-Insel!",
   hero_text: "Ruhige Geschichten, Ratespiele, Bilderbücher, Lieder und Schlaflieder für Kinder von 1 bis 6 Jahren – mit Bailabu, dem Bären, und seinen Inselfreunden.",
-  cta_watch: "Auf YouTube ansehen", cta_play: "Los, spielen!",
+  cta_watch: "Auf YouTube ansehen", cta_play: "Los, spielen!", all_games: "Alle Spiele", play_btn: "Spielen", back_home: "Startseite",
   friends_title: "Das sind die Inselfreunde", friends_text: "Tippe auf einen Freund und sag Hallo!", hello: "Hallo",
   videos_title: "Videos für die Kleinsten", videos_text: "Lieder, Schlaflieder, Ratespiele, Bilderbücher und Geschichten. Such aus, was gerade passt!",
   videos_badge: "Neue Videos sind unterwegs", videos_lang: "EN auf dem Bild bedeutet: Das Video ist auf Englisch. Weitere Sprachen sind unterwegs.", watch: "Ansehen",
@@ -866,7 +921,7 @@ es: {
   kicker: "Cuentos · adivinanzas · libros · canciones",
   hero_title: "¡Escucha, juega y aprende en la Isla Bailabú!",
   hero_text: "Cuentos tranquilos, juegos de adivinanzas, libros ilustrados, canciones y canciones de cuna para niños de 1 a 6 años, con el osito Bailabú y sus amigos de la isla.",
-  cta_watch: "Ver en YouTube", cta_play: "¡A jugar!",
+  cta_watch: "Ver en YouTube", cta_play: "¡A jugar!", all_games: "Todos los juegos", play_btn: "Jugar", back_home: "Inicio",
   friends_title: "Conoce a los amigos de la isla", friends_text: "¡Toca a un amigo para saludar!", hello: "¡Hola",
   videos_title: "Videos para los más pequeños", videos_text: "Canciones, canciones de cuna, juegos de adivinanzas, libros ilustrados y cuentos. ¡Elige lo que mejor te venga!",
   videos_badge: "Más videos en camino", videos_lang: "EN en la imagen significa que el video está en inglés. Pronto habrá más idiomas.", watch: "Ver",
@@ -928,7 +983,7 @@ pt: {
   kicker: "Histórias · quiz · livros · músicas",
   hero_title: "Ouça, brinque e aprenda na Ilha Bailabu!",
   hero_text: "Histórias tranquilas, jogos de perguntas, livros ilustrados, músicas e canções de ninar para crianças de 1 a 6 anos, com o ursinho Bailabu e os amigos da ilha.",
-  cta_watch: "Assistir no YouTube", cta_play: "Vamos brincar!",
+  cta_watch: "Assistir no YouTube", cta_play: "Vamos brincar!", all_games: "Todos os jogos", play_btn: "Jogar", back_home: "Início",
   friends_title: "Conheça os amigos da ilha", friends_text: "Toque em um amigo para dizer oi!", hello: "Oi",
   videos_title: "Vídeos para os pequenos", videos_text: "Músicas, canções de ninar, jogos de perguntas, livros ilustrados e histórias. Escolha o que combina com o momento!",
   videos_badge: "Mais vídeos a caminho", videos_lang: "EN na imagem significa que o vídeo está em inglês. Mais idiomas a caminho.", watch: "Assistir",
@@ -990,7 +1045,7 @@ tr: {
   kicker: "Hikâyeler · oyunlar · kitaplar · şarkılar",
   hero_title: "Tontiş Ada'da dinle, oyna ve öğren!",
   hero_text: "1–6 yaş için sakin hikâyeler, bilmece oyunları, resimli kitaplar, şarkılar ve ninniler – Bailabu ayıcık ve adanın tüm arkadaşlarıyla.",
-  cta_watch: "YouTube'da izle", cta_play: "Hadi oynayalım!",
+  cta_watch: "YouTube'da izle", cta_play: "Hadi oynayalım!", all_games: "Tüm oyunlar", play_btn: "Oyna", back_home: "Ana sayfa",
   friends_title: "Adanın arkadaşlarıyla tanış", friends_text: "Merhaba demek için bir arkadaşa dokun!", hello: "Merhaba",
   videos_title: "Küçükler için videolar", videos_text: "Şarkılar, ninniler, bilgi oyunları, resimli kitaplar ve hikâyeler. O ana en uygun olanı seçin!",
   videos_badge: "Yeni videolar yolda", videos_lang: "Resimdeki EN, videonun İngilizce olduğunu gösterir. Yeni diller yolda.", watch: "İzle",
@@ -1052,7 +1107,7 @@ ar: {
   kicker: "قصص · مسابقات · كتب · أغانٍ",
   hero_title: "استمعْ والعبْ وتعلّمْ في جزيرة بايلابو!",
   hero_text: "قصص هادئة وألعاب أسئلة وكتب مصوّرة وأغانٍ وتهويدات للأطفال من سنة إلى ست سنوات, مع الدبدوب بايلابو وأصدقائه في الجزيرة.",
-  cta_watch: "شاهِدْ على يوتيوب", cta_play: "هيّا نلعب!",
+  cta_watch: "شاهِدْ على يوتيوب", cta_play: "هيّا نلعب!", all_games: "كل الألعاب", play_btn: "العب", back_home: "الرئيسية",
   friends_title: "تعرَّفْ على أصدقاء الجزيرة", friends_text: "المسْ صديقًا لتقول له: مرحبًا!", hello: "مرحبًا",
   videos_title: "فيديوهات للصغار", videos_text: "أغانٍ وتهويدات وألعاب أسئلة وكتب مصوّرة وقصص. اختاروا ما يناسبكم!",
   videos_badge: "فيديوهات جديدة في الطريق", videos_lang: "يعني EN على الصورة أن الفيديو باللغة الإنجليزية. لغات أخرى في الطريق.", watch: "شاهِدْ",
@@ -1235,7 +1290,7 @@ function applyLang(code, user) {
   $("#ctaWatch").href = `https://www.youtube.com/@${channelFor(code).handle}`;
   $("#ctaWatch").dataset.count = `youtube-${channelFor(code).code}`;
   if (user) store.set("lang", code);
-  renderLangMenu(); renderFriends(); renderVideos(); renderColoring(); renderChannels(); renderTabs(); game.restart();
+  renderLangMenu(); renderFriends(); renderVideos(); renderColoring(); renderChannels(); renderTabs(); game.restart(); renderGameCards();
   if (story.open) story.show(story.page);
   window.dispatchEvent(new Event("bailabu-language"));
 }
@@ -1497,7 +1552,11 @@ const game = {
   },
   clear() { this.timers.forEach(clearTimeout); this.timers = []; stopGameAudio(); },
   pause() { this.clear(); this.paused = true; },
-  select(g) { this.cur = g; this.active = true; renderTabs(); this.restart(); },
+  select(g) {
+    this.cur = g; this.active = true; renderTabs(); this.restart();
+    $("#gamesHeading").textContent = t(g.label);
+    if (location.hash.startsWith("#play-") && location.hash !== "#play-" + g.id) history.replaceState(null, "", "#play-" + g.id);
+  },
   instruction(key, audioKey = key, contextKey) {
     promptEl.textContent = (contextKey ? t(contextKey) + " " : "") + t(key); this.voice = audioKey;
   },
@@ -1552,16 +1611,51 @@ function keepGameVisible() {
   }
 }
 new ResizeObserver(keepGameVisible).observe($("#gameTabs"));
-window.addEventListener("hashchange", () => { if (location.hash !== "#play") game.pause(); });
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) game.pause();
-  else if (game.paused && $("#play").getBoundingClientRect().bottom > 0 && $("#play").getBoundingClientRect().top < innerHeight) game.restart();
+  else if (game.paused && !$("#gamePlayer").hidden && $("#gamePlayer").getBoundingClientRect().bottom > 0 && $("#gamePlayer").getBoundingClientRect().top < innerHeight) game.restart();
 });
 // Leaving cancels pending input/audio; returning starts a fresh, unlocked task.
 new IntersectionObserver(([entry]) => {
   if (!entry.isIntersecting) game.pause();
   else if (game.paused && !document.hidden) game.restart();
-}).observe($("#play"));
+}).observe($("#gamePlayer"));
+const CARD_COLORS = [["#DDF3FF", "#9FD8F7"], ["#FFF4D6", "#F4D27C"], ["#FFE3EA", "#F6B3C3"], ["#EEE8FF", "#C9B9F7"], ["#E2F7E1", "#A9DFA7"], ["#FFE8D6", "#F7C08F"]];
+function gameCard(g, i) {
+  const [c, e] = CARD_COLORS[i % CARD_COLORS.length];
+  return el("li", "", `<a href="#play-${g.id}" class="game-card" style="--c:${c};--e:${e}" data-count="game-${g.id}">
+    <span class="gc-art">${img(g.icon, g.silhouette ? "silhouette" : "")}</span>
+    <span class="gc-body"><span class="gc-title">${esc(t(g.label))}</span><span class="gc-q">${esc(cardQuestion(g))}</span>
+    <span class="gc-play"><svg viewBox="0 0 24 24" class="w-4 h-4 rtl:-scale-x-100" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>${esc(t("play_btn"))}</span></span></a>`);
+}
+function cardQuestion(g) {
+  const friend = CAST.find(c => c.id === "paytak") || CAST[0];
+  return t(g.q).replace("{n}", friend.name[lang] || friend.name.all).replace("{c}", Object.values(t("colors"))[2] || "");
+}
+function renderGameCards() {
+  const pick = $("#gamePicker"), teaser = $("#gameTeaser");
+  pick.innerHTML = ""; teaser.innerHTML = "";
+  GAMES.forEach((g, i) => { pick.appendChild(gameCard(g, i)); if (i < 6) teaser.appendChild(gameCard(g, i)); });
+  $("#gamesHeading").textContent = t(game.cur.label);
+}
+let gamesWasOn = false;
+function gamesRoute() {
+  const h = location.hash, on = h === "#play" || h.startsWith("#play-");
+  $("#gamesPage").hidden = !on;
+  if (on) {
+    $("#homepage").hidden = true;
+    const g = GAMES.find(g => h === "#play-" + g.id);
+    $("#gamesHero").hidden = !!g; $("#gamePicker").hidden = !!g; $("#gamePlayer").hidden = !g;
+    if (g) { game.select(g); $("#gamesHeading").textContent = t(g.label); } else game.pause();
+    window.scrollTo({ top: 0, behavior: "instant" });
+  } else {
+    game.pause();
+    if (gamesWasOn) { const target = h && document.getElementById(h.slice(1)); target ? target.scrollIntoView() : window.scrollTo({ top: 0, behavior: "instant" }); }
+  }
+  gamesWasOn = on;
+}
+// After the deferred coloring script, whose router also shows/hides #homepage.
+document.addEventListener("DOMContentLoaded", () => { addEventListener("hashchange", gamesRoute); gamesRoute(); });
 function renderSound() {
   $("#soundBtn").setAttribute("aria-pressed", soundOn);
   $("#soundOn").classList.toggle("hidden", !soundOn);
