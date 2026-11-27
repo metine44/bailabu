@@ -115,6 +115,47 @@
   .wave { display: block; width: 100%; height: 48px; }
   @media (min-width: 768px) { .wave { height: 72px; } }
 
+  /* Design refresh 2026-11-27 (ideas: colour-coded nav pills, chunky tap tiles, confetti sprinkles, squiggle headings) */
+  .nav-pill { display:inline-flex; align-items:center; white-space:nowrap; gap:.35rem; padding:.35rem .85rem; border-radius:9999px; box-shadow:0 3px 0 rgba(22,57,90,.13); transition:transform .15s ease, box-shadow .15s ease; }
+  .nav-pill:hover { transform:translateY(-2px); box-shadow:0 5px 0 rgba(22,57,90,.13); }
+  .nav-pill:active { transform:translateY(2px); box-shadow:none; }
+  .nav-pill:focus-visible { outline:3px solid #16395a; outline-offset:2px; }
+  .sprinkles { background-image:
+      radial-gradient(circle, rgba(255,200,61,.55) 0 5px, transparent 6px),
+      radial-gradient(circle, rgba(255,111,145,.45) 0 4px, transparent 5px),
+      radial-gradient(circle, rgba(61,184,245,.45) 0 6px, transparent 7px),
+      radial-gradient(circle, rgba(92,200,90,.45) 0 4px, transparent 5px),
+      radial-gradient(circle, rgba(142,108,240,.40) 0 3px, transparent 4px);
+    background-size: 430px 390px, 530px 470px, 610px 550px, 470px 610px, 370px 310px;
+    background-position: 40px 90px, 310px 40px, 150px 280px, 430px 340px, 230px 170px; }
+  nav.activity-choices { position:relative; z-index:2; margin-top:-1.75rem; gap:18px; }
+  nav.activity-choices a { position:relative; gap:.25rem; padding:14px 12px 16px; border:4px solid #fff; border-radius:32px; font-family:"Baloo 2", system-ui, sans-serif; color:#16395a;
+    box-shadow:0 7px 0 var(--edge, rgba(22,57,90,.16)), 0 16px 28px rgba(22,57,90,.10); transition:transform .2s cubic-bezier(.2,.9,.3,1.4), box-shadow .2s; }
+  nav.activity-choices a:nth-child(1) { --edge:#9fd8f7; } nav.activity-choices a:nth-child(2) { --edge:#f4d27c; }
+  nav.activity-choices a:nth-child(3) { --edge:#f6b3c3; } nav.activity-choices a:nth-child(4) { --edge:#c9b9f7; }
+  nav.activity-choices a:hover { transform:translateY(-6px) rotate(-1.5deg); }
+  nav.activity-choices a:nth-child(even):hover { transform:translateY(-6px) rotate(1.5deg); }
+  nav.activity-choices a:active { transform:translateY(5px); box-shadow:0 2px 0 var(--edge); }
+  nav.activity-choices img { max-width:170px; height:118px; filter:drop-shadow(0 6px 6px rgba(22,57,90,.16)); transition:transform .2s; }
+  nav.activity-choices a:first-child img, nav.activity-choices a:nth-child(3) img { border-radius:18px; object-fit:cover; height:100px; margin-block:9px; }
+  nav.activity-choices a:hover img { transform:scale(1.06); }
+  h2.squiggle::after { content:""; display:block; width:96px; height:14px; margin:.35rem auto 0; background:var(--sq, #3DB8F5);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 14'%3E%3Cpath d='M3 7c7-6 13-6 20 0s13 6 20 0 13-6 20 0 13 6 20 0 9-4 10-3' fill='none' stroke='black' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 14'%3E%3Cpath d='M3 7c7-6 13-6 20 0s13 6 20 0 13-6 20 0 13 6 20 0 9-4 10-3' fill='none' stroke='black' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat; }
+  h2.squiggle.start::after { margin-inline:0; }
+  @media (min-width: 768px) and (max-width: 1100px) { header div:has(> #langBtn) { margin-inline-start:auto; } }
+  @media (min-width: 1024px) { #coloringGrid { grid-template-columns:repeat(6,minmax(0,1fr)); } }
+  .coloring-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:1.25rem; }
+  .coloring-actions a { display:inline-flex; align-items:center; gap:.5rem; min-height:52px; padding:.6rem 1.4rem; border-radius:9999px; font-weight:800; font-size:1.15rem; transition:transform .15s; }
+  .coloring-actions a:hover { transform:translateY(-2px); }
+  .coloring-actions a:focus-visible { outline:4px solid #16395a; outline-offset:3px; }
+  @media (max-width: 640px) {
+    nav.activity-choices { margin-top:-1rem; gap:12px; }
+    nav.activity-choices img { height:84px; }
+    nav.activity-choices a:first-child img, nav.activity-choices a:nth-child(3) img { height:70px; margin-block:7px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .nav-pill, nav.activity-choices a, nav.activity-choices img, .coloring-actions a { transition:none; } }
+
   dialog::backdrop { background: rgba(22,57,90,.55); backdrop-filter: blur(3px); }
 
   @media (prefers-reduced-motion: reduce) {
@@ -142,12 +183,13 @@
       </span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-1 ms-auto font-bold text-lg" aria-label="Main">
-      <a href="#videos" class="px-3 py-1.5 rounded-full hover:bg-sky-light" data-i18n="nav_videos">Videos</a>
-      <a href="#play" class="px-3 py-1.5 rounded-full hover:bg-sun-light" data-i18n="nav_play">Games</a>
-      <a href="#stories" class="px-3 py-1.5 rounded-full hover:bg-coral-light" data-i18n="nav_stories">Stories</a>
-      <a href="#color-online" class="px-3 py-1.5 rounded-full hover:bg-violet-light" data-i18n="nav_coloring">Coloring</a>
-      <a href="#channels" class="px-3 py-1.5 rounded-full hover:bg-leaf-light" data-i18n="nav_channels">Channels</a>
+    <nav class="hidden md:flex items-center gap-2 ms-auto font-bold text-base lg:text-lg" aria-label="Main">
+      <a href="#videos" class="nav-pill bg-sky-light"><span aria-hidden="true">🎬</span><span data-i18n="nav_videos">Videos</span></a>
+      <a href="#play" class="nav-pill bg-sun-light"><span aria-hidden="true">🎲</span><span data-i18n="nav_play">Games</span></a>
+      <a href="#stories" class="nav-pill bg-coral-light"><span aria-hidden="true">📖</span><span data-i18n="nav_stories">Stories</span></a>
+      <a href="#color-online" class="nav-pill bg-violet-light"><span aria-hidden="true">🎨</span><span data-i18n="nav_coloring">Coloring</span></a>
+      <a href="#channels" class="nav-pill bg-leaf-light hidden lg:inline-flex"><span aria-hidden="true">🌍</span><span data-i18n="nav_channels">Channels</span></a>
+      <a href="#parents" class="nav-pill bg-white ring-2 ring-ink/10 text-sm text-ink/70 hidden xl:inline-flex"><span aria-hidden="true">👪</span><span data-i18n="parents_title">For parents</span></a>
       <button type="button" hidden class="contact-open ms-1 px-4 py-1.5 rounded-full bg-coral-light hover:bg-coral hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-coral/50" data-i18n="contact">Contact</button>
     </nav>
 
@@ -165,11 +207,12 @@
   </div>
   <nav id="mobileNav" class="md:hidden hidden border-t-2 border-sky-light bg-white" aria-label="Mobile">
     <div class="grid grid-cols-2 gap-2 p-3 font-bold text-lg">
-      <a href="#videos" class="rounded-2xl bg-sky-light px-4 py-3" data-i18n="nav_videos">Videos</a>
-      <a href="#play" class="rounded-2xl bg-sun-light px-4 py-3" data-i18n="nav_play">Games</a>
-      <a href="#stories" class="rounded-2xl bg-coral-light px-4 py-3" data-i18n="nav_stories">Stories</a>
-      <a href="#color-online" class="rounded-2xl bg-violet-light px-4 py-3" data-i18n="nav_coloring">Coloring</a>
-      <a href="#channels" class="rounded-2xl bg-leaf-light px-4 py-3" data-i18n="nav_channels">Channels</a>
+      <a href="#videos" class="rounded-2xl bg-sky-light px-4 py-3"><span aria-hidden="true">🎬</span> <span data-i18n="nav_videos">Videos</span></a>
+      <a href="#play" class="rounded-2xl bg-sun-light px-4 py-3"><span aria-hidden="true">🎲</span> <span data-i18n="nav_play">Games</span></a>
+      <a href="#stories" class="rounded-2xl bg-coral-light px-4 py-3"><span aria-hidden="true">📖</span> <span data-i18n="nav_stories">Stories</span></a>
+      <a href="#color-online" class="rounded-2xl bg-violet-light px-4 py-3"><span aria-hidden="true">🎨</span> <span data-i18n="nav_coloring">Coloring</span></a>
+      <a href="#channels" class="rounded-2xl bg-leaf-light px-4 py-3"><span aria-hidden="true">🌍</span> <span data-i18n="nav_channels">Channels</span></a>
+      <a href="#parents" class="rounded-2xl bg-cream px-4 py-3"><span aria-hidden="true">👪</span> <span data-i18n="parents_title">For parents</span></a>
       <button type="button" hidden class="contact-open rounded-2xl bg-coral-light px-4 py-3 text-start" data-i18n="contact">Contact</button>
     </div>
   </nav>
@@ -193,6 +236,9 @@
         <a href="#play" class="inline-flex items-center gap-2 rounded-full bg-sun px-6 py-3.5 text-lg font-extrabold text-ink shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sun/60">
           <span aria-hidden="true">🎲</span><span data-i18n="cta_play">Let's play!</span>
         </a>
+        <a href="#videos" class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-lg font-extrabold text-ink shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50">
+          <svg viewBox="0 0 24 24" class="w-5 h-5 text-berry rtl:-scale-x-100" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span data-i18n="nav_videos">Videos</span>
+        </a>
       </div>
     </div>
   </div>
@@ -201,9 +247,9 @@
 
 <nav class="activity-choices" aria-label="Activities"><a href="#videos" style="background:#ddf3ff"><img src="assets/songs/odd.webp" alt="" width="125" height="100"><span data-i18n="nav_videos"></span></a><a href="#play" style="background:#fff4d6"><img src="assets/chars/bailabu_bear.webp" alt="" width="125" height="100"><span data-i18n="nav_play"></span></a><a href="#stories" style="background:#ffe3ea"><img src="assets/songs/cake.webp" alt="" width="125" height="100"><span data-i18n="nav_stories"></span></a><a href="#color-online" style="background:#eee8ff"><img src="assets/chars/ball_blue.webp" alt="" width="125" height="100"><span data-i18n="nav_coloring"></span></a></nav>
 <!-- ============ Friends ============ -->
-<section id="friends" class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+<section id="friends" class="sprinkles mx-auto max-w-6xl px-4 py-12 md:py-16">
   <div class="text-center">
-    <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="friends_title">Meet the island friends</h2>
+    <h2 class="squiggle font-display font-extrabold text-3xl md:text-5xl" style="--sq:#FF6F91" data-i18n="friends_title">Meet the island friends</h2>
     <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="friends_text">Tap a friend to say hello!</p>
   </div>
   <ul id="friendsGrid" class="mt-8 grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-3 md:gap-4"><li><button class="group w-full flex flex-col items-center gap-1 rounded-3xl p-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky/50" type="button"><span class="block w-full aspect-square rounded-full p-2 shadow-pop ring-4 ring-white transition group-hover:-translate-y-1" style="background:#DDF3FF"><img src="assets/chars/bailabu_bear.webp" alt="" width="360" height="360" draggable="false" class="w-full h-full object-contain"></span>
@@ -228,13 +274,13 @@
 </section>
 
 <!-- ============ Videos ============ -->
-<section id="videos" class="relative bg-sky-light">
+<section id="videos" class="relative sprinkles bg-sky-light">
   <span id="songs"></span><span id="lullabies"></span><span id="quiz"></span><span id="books"></span><span id="tales"></span>
   <svg class="wave text-cream" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
   <div class="mx-auto max-w-6xl px-4 pb-14 pt-4 md:pb-20">
     <div class="flex flex-col md:flex-row md:items-end gap-4 md:justify-between">
       <div>
-        <h2 id="videosHeading" class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="videos_title">Videos for little ones</h2>
+        <h2 id="videosHeading" style="--sq:#3DB8F5" class="squiggle start font-display font-extrabold text-3xl md:text-5xl" data-i18n="videos_title">Videos for little ones</h2>
         <p class="mt-2 text-lg font-semibold text-ink/70 max-w-2xl" data-i18n="videos_text">Songs, lullabies, quiz games, picture books and stories. Pick what fits the moment!</p>
       </div>
       <p class="inline-flex self-start md:self-auto shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2 font-extrabold text-sky-dark shadow-pop"><span aria-hidden="true">🎬</span><span data-i18n="videos_badge">New videos on the way</span></p>
@@ -283,11 +329,11 @@
 </section>
 
 <!-- ============ Games ============ -->
-<section id="play" class="relative bg-sun-light">
+<section id="play" class="relative sprinkles bg-sun-light">
   <svg class="wave text-sky-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
   <div class="mx-auto max-w-5xl px-4 pb-14 pt-4 md:pb-20">
     <div class="text-center">
-      <h2 class="font-display font-extrabold text-3xl md:text-5xl" id="gamesHeading" data-i18n="play_title">Games & riddles</h2>
+      <h2 class="squiggle font-display font-extrabold text-3xl md:text-5xl" style="--sq:#F59E0B" id="gamesHeading" data-i18n="play_title">Games & riddles</h2>
       <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="play_text">Little games for little hands – no reading needed. Just tap!</p>
     </div>
 
@@ -311,11 +357,11 @@
 </section>
 
 <!-- ============ Stories ============ -->
-<section id="stories" class="relative bg-coral-light">
+<section id="stories" class="relative sprinkles bg-coral-light">
   <svg class="wave text-sun-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
   <div class="mx-auto max-w-6xl px-4 pb-14 pt-4 md:pb-20">
     <div class="text-center">
-      <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="stories_title">Picture stories</h2>
+      <h2 class="squiggle font-display font-extrabold text-3xl md:text-5xl" style="--sq:#FF6F91" data-i18n="stories_title">Picture stories</h2>
       <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="stories_text">Read together, count together, laugh together.</p>
     </div>
     <div class="mt-8 grid gap-5 lg:grid-cols-3">
@@ -346,14 +392,14 @@
 </section>
 
 <!-- ============ Coloring pages ============ -->
-<div class="color-entry"><img src="assets/chars/ball_blue.webp" alt="" width="100" height="100" loading="lazy"><a href="#color-online" class="color-button"><span aria-hidden="true">🎨</span><span data-i18n="online_color">Color online</span></a><a href="#coloring" class="color-button"><span aria-hidden="true">▤</span><span data-i18n="coloring_title">Coloring pages</span></a></div>
-<section id="coloring" class="relative bg-violet-light">
+<section id="coloring" class="relative sprinkles bg-violet-light">
   <svg class="wave text-coral-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
   <div class="mx-auto max-w-6xl px-4 pb-14 pt-4 md:pb-20">
     <div class="text-center">
-      <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="coloring_title">Coloring pages</h2>
+      <h2 class="squiggle font-display font-extrabold text-3xl md:text-5xl" style="--sq:#8E6CF0" data-i18n="coloring_title">Coloring pages</h2>
       <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="coloring_text">Print, grab your crayons and color in your island friends!</p>
       <p class="mt-1 text-sm font-semibold text-ink/60" data-i18n="coloring_hint">PDF, ready to print on A4 or Letter. Free for use at home, in daycare and in kindergarten.</p>
+      <div class="coloring-actions"><a href="#color-online" class="bg-violet text-white shadow-pop-lg"><span aria-hidden="true">🎨</span><span data-i18n="online_color">Color online</span></a><a href="#coloringGrid" class="bg-white text-ink shadow-pop"><span aria-hidden="true">🖨️</span><span data-i18n="coloring_title">Coloring pages</span></a></div>
     </div>
     <ul id="coloringGrid" class="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/bailabu.webp" alt="Bailabu coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
        <span class="mt-2 block font-extrabold leading-tight">Bailabu</span></button></li><li><button class="group block w-full text-start rounded-[1.5rem] bg-white p-3 shadow-pop ring-4 ring-white hover:ring-violet/40 hover:-translate-y-0.5 transition focus:outline-none focus-visible:ring-violet" type="button"><img src="assets/print/kiko.webp" alt="Kiko coloring page" width="320" height="400" loading="lazy" class="w-full aspect-[4/5] object-contain">
@@ -367,15 +413,15 @@
 </section>
 
 <!-- ============ Channels ============ -->
-<section id="channels" class="relative bg-leaf-light">
+<section id="channels" class="relative sprinkles bg-leaf-light">
   <svg class="wave text-violet-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
   <div class="mx-auto max-w-6xl px-4 pb-14 pt-4 md:pb-20">
     <div class="text-center">
-      <h2 class="font-display font-extrabold text-3xl md:text-5xl" data-i18n="channels_title">One island – many languages</h2>
+      <h2 class="squiggle font-display font-extrabold text-3xl md:text-5xl" style="--sq:#5CC85A" data-i18n="channels_title">One island – many languages</h2>
       <p class="mt-2 text-lg font-semibold text-ink/70" data-i18n="channels_text">Bailabu sings in your language. Pick your channel and subscribe!</p>
     </div>
     <a id="ctaWatch" href="https://www.youtube.com/@bailabuisland" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 rounded-full bg-berry px-6 py-3.5 text-lg font-extrabold text-white shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-berry/40">
+           class="mt-6 mx-auto flex w-fit items-center gap-2 rounded-full bg-berry px-6 py-3.5 text-lg font-extrabold text-white shadow-pop-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none transition focus:outline-none focus-visible:ring-4 focus-visible:ring-berry/40">
           <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg>
           <span data-i18n="cta_watch">Watch on YouTube</span>
         </a>
@@ -420,7 +466,7 @@
 </section>
 
 <!-- ============ Parents ============ -->
-<section id="parents" class="mx-auto max-w-6xl px-4 py-14 md:py-20">
+<section id="parents" class="sprinkles mx-auto max-w-6xl px-4 py-14 md:py-20">
   <div class="rounded-[2rem] bg-white p-6 md:p-10 shadow-pop-lg ring-4 ring-violet-light grid gap-8 md:grid-cols-[220px_1fr] items-center">
     <img src="assets/brand/bear-round.webp" alt="" width="512" height="512" loading="lazy" class="w-40 md:w-full mx-auto floaty">
     <div>
@@ -438,6 +484,7 @@
 </main>
 
 <footer class="bg-ink text-white">
+  <svg class="wave text-cream" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 0h1440v40c-120 30-240 30-360 0s-240-30-360 0-240 30-360 0S120 10 0 40z"/></svg>
   <div class="mx-auto max-w-6xl px-4 py-10 flex flex-col md:flex-row items-center gap-4 md:justify-between text-center md:text-start">
     <div class="flex items-center gap-3">
       <img src="assets/brand/badge.webp" alt="" width="48" height="48" loading="lazy" class="w-12 h-12 rounded-full">
