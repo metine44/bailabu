@@ -46,7 +46,7 @@ The focusable tabpanel is associated with the selected tab and the complete loca
 
 ## Audio, lifecycle and progress
 
-Instructions never autoplay when selecting or advancing games. The optional speaker explicitly requests a local `assets/voice/<locale>/<key>.mp3`. One voice element replaces prior requests. Sound is optional and all tasks remain visual. Existing sound preferences apply to speech, effects and notes. There is no remote speech fallback; missing recordings fail quietly. Do not create audio for new semantic strings without the established offline voice workflow and cost accounting.
+Opening a game with a tap (a game card or a tab) says the game's name and then its task once (`announceGame`, user 2026-11-27); a page load without a tap and advancing rounds stay silent. The optional speaker explicitly requests a local `assets/voice/<locale>/<key>.mp3`. One voice element replaces prior requests. Sound is optional and all tasks remain visual. Existing sound preferences apply to speech, effects and notes. There is no remote speech fallback; missing recordings fail quietly. Do not create audio for new semantic strings without the established offline voice workflow and cost accounting.
 
 Round timers and audio are cleared when switching games or leaving the activity, including scrolling away, another hash destination or a hidden document. Completed timers remove themselves from the active list, keeping long Bubbles/Music sessions bounded. Returning starts a fresh unlocked task. Responsive relayout alone preserves the current round. Muting immediately stops cached effects, speech and the WebAudio context. Music Stop cancels the current echo and restores free play.
 

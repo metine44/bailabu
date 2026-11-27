@@ -139,148 +139,340 @@
 "n5": {
 "text": "Five!",
 "voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"v_hello": {
+"text": "Hello! Welcome to Bailabu Island! Tap a picture!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"v_pick": {
+"text": "Pick a game!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_memory": {
+"text": "Memory!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_odd": {
+"text": "Odd one out!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_shadow": {
+"text": "Shadows!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_count": {
+"text": "Counting!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_find": {
+"text": "Where is?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_colors": {
+"text": "Colors!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_bubbles": {
+"text": "Bubbles!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_music": {
+"text": "Music!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_pattern": {
+"text": "What's next?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_videos": {
+"text": "Videos!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_play": {
+"text": "Games!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_stories": {
+"text": "Stories!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_coloring": {
+"text": "Coloring!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_bailabu_bear": {
+"text": "Hi! I'm Bailabu!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_afacan": {
+"text": "Hi! I'm Kiko!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_paytak": {
+"text": "Hi! I'm Lulu!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_balli": {
+"text": "Hi! I'm Bibi!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_renkli": {
+"text": "Hi! I'm Rolly!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_minik_balik": {
+"text": "Hi! I'm Blub!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_pamuk": {
+"text": "Hi! I'm Pompom!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_findik": {
+"text": "Hi! I'm Toby!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_kuku": {
+"text": "Hi! I'm Kuku!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
 }
 },
 "de": {
 "q_memory": {
 "text": "Finde die Paare!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "q_odd": {
 "text": "Welches ist anders?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "q_shadow": {
 "text": "Wessen Schatten ist das?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "q_count": {
 "text": "Wie viele siehst du?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "q_bubbles": {
 "text": "Lass die Blasen platzen!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "q_music": {
 "text": "Tippe und mach Musik!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "q_pattern": {
 "text": "Was kommt als Nächstes?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "your_turn": {
 "text": "Jetzt du!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "listen": {
 "text": "Hör zu",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "memory_done": {
 "text": "Du hast alle Paare gefunden!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "praise0": {
 "text": "Super!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "praise1": {
 "text": "Toll gemacht!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "praise2": {
 "text": "Juhu!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "praise3": {
 "text": "Prima!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "find_bailabu_bear": {
 "text": "Wo ist Bailabu?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "find_afacan": {
 "text": "Wo ist Kiko?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "find_paytak": {
 "text": "Wo ist Lulu?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "find_balli": {
 "text": "Wo ist Bibi?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "find_renkli": {
 "text": "Wo ist Rolly?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "find_minik_balik": {
 "text": "Wo ist Blub?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "find_pamuk": {
 "text": "Wo ist Pompom?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "find_findik": {
 "text": "Wo ist Toby?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "find_kuku": {
 "text": "Wo ist Kuku?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "color_red": {
 "text": "Was ist rot?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "color_yellow": {
 "text": "Was ist gelb?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "color_blue": {
 "text": "Was ist blau?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "color_green": {
 "text": "Was ist grün?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "color_pink": {
 "text": "Was ist rosa?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "color_white": {
 "text": "Was ist weiß?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "color_orange": {
 "text": "Was ist orange?",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "n1": {
 "text": "Eins!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "n2": {
 "text": "Zwei!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "n3": {
 "text": "Drei!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "n4": {
 "text": "Vier!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 },
 "n5": {
 "text": "Fünf!",
-"voice": "kC1WIuSSgwH2T8iOV4iJ"
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"v_hello": {
+"text": "Hallo! Willkommen auf der Bailabu-Insel! Tipp auf ein Bild!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"v_pick": {
+"text": "Such dir ein Spiel aus!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"g_memory": {
+"text": "Memory!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"g_odd": {
+"text": "Was passt nicht?",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"g_shadow": {
+"text": "Schatten!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"g_count": {
+"text": "Zählen!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"g_find": {
+"text": "Wo ist?",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"g_colors": {
+"text": "Farben!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"g_bubbles": {
+"text": "Blasen!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"g_pattern": {
+"text": "Was kommt?",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"nav_videos": {
+"text": "Videos!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"nav_play": {
+"text": "Spiele!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"nav_stories": {
+"text": "Geschichten!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"nav_coloring": {
+"text": "Malen!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"hi_bailabu_bear": {
+"text": "Hallo! Ich bin Bailabu!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"hi_afacan": {
+"text": "Hallo! Ich bin Kiko!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"hi_paytak": {
+"text": "Hallo! Ich bin Lulu!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"hi_balli": {
+"text": "Hallo! Ich bin Bibi!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"hi_renkli": {
+"text": "Hallo! Ich bin Rolly!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"hi_minik_balik": {
+"text": "Hallo! Ich bin Blub!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"hi_pamuk": {
+"text": "Hallo! Ich bin Pompom!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"hi_findik": {
+"text": "Hallo! Ich bin Toby!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"hi_kuku": {
+"text": "Hallo! Ich bin Kuku!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
+},
+"g_music": {
+"text": "Musik!",
+"voice": "xOKkuQfZt5N7XfbFdn9W"
 }
 },
 "es": {
@@ -422,6 +614,102 @@
 },
 "n5": {
 "text": "Cinco!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"v_hello": {
+"text": "¡Hola! ¡Bienvenido a la Isla Bailabú! ¡Toca un dibujo!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"v_pick": {
+"text": "¡Elige un juego!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_memory": {
+"text": "¡Memoria!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_odd": {
+"text": "¡El diferente!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_shadow": {
+"text": "¡Sombras!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_count": {
+"text": "¡Contar!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_find": {
+"text": "¿Dónde está?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_colors": {
+"text": "¡Colores!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_bubbles": {
+"text": "¡Burbujas!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_music": {
+"text": "¡Música!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_pattern": {
+"text": "¿Qué sigue?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_videos": {
+"text": "¡Videos!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_play": {
+"text": "¡Juegos!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_stories": {
+"text": "¡Cuentos!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_coloring": {
+"text": "¡Colorear!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_bailabu_bear": {
+"text": "¡Hola! ¡Soy Bailabú!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_afacan": {
+"text": "¡Hola! ¡Soy Kiko!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_paytak": {
+"text": "¡Hola! ¡Soy Lulú!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_balli": {
+"text": "¡Hola! ¡Soy Bibi!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_renkli": {
+"text": "¡Hola! ¡Soy Rolly!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_minik_balik": {
+"text": "¡Hola! ¡Soy Blub!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_pamuk": {
+"text": "¡Hola! ¡Soy Pompom!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_findik": {
+"text": "¡Hola! ¡Soy Toby!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_kuku": {
+"text": "¡Hola! ¡Soy Kuku!",
 "voice": "kC1WIuSSgwH2T8iOV4iJ"
 }
 },
@@ -565,6 +853,102 @@
 "n5": {
 "text": "Cinco!",
 "voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"v_hello": {
+"text": "Olá! Bem-vindo à Ilha Bailabu! Toque em uma figura!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"v_pick": {
+"text": "Escolha um jogo!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_memory": {
+"text": "Memória!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_odd": {
+"text": "O diferente!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_shadow": {
+"text": "Sombras!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_count": {
+"text": "Contar!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_find": {
+"text": "Onde está?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_music": {
+"text": "Música!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_pattern": {
+"text": "O que vem?",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_videos": {
+"text": "Vídeos!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_play": {
+"text": "Jogos!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_stories": {
+"text": "Histórias!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_coloring": {
+"text": "Colorir!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_bailabu_bear": {
+"text": "Oi! Meu nome é Bailabu!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_afacan": {
+"text": "Oi! Meu nome é Kiko!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_paytak": {
+"text": "Oi! Meu nome é Lulu!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_balli": {
+"text": "Oi! Meu nome é Bibi!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_renkli": {
+"text": "Oi! Meu nome é Rolly!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_minik_balik": {
+"text": "Oi! Meu nome é Blub!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_pamuk": {
+"text": "Oi! Meu nome é Pompom!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_findik": {
+"text": "Oi! Meu nome é Toby!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_kuku": {
+"text": "Oi! Meu nome é Kuku!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_bubbles": {
+"text": "Bolhas!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_colors": {
+"text": "Cores!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
 }
 },
 "ar": {
@@ -707,6 +1091,102 @@
 "n5": {
 "text": "خمسة!",
 "voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"v_pick": {
+"text": "اخترْ لعبة!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_memory": {
+"text": "الذاكرة!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_odd": {
+"text": "المختلف!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_shadow": {
+"text": "الظلال!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_count": {
+"text": "العدّ!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_find": {
+"text": "أين؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_colors": {
+"text": "الألوان!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_bubbles": {
+"text": "الفقاعات!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_music": {
+"text": "موسيقى!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"g_pattern": {
+"text": "ماذا بعد؟",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_videos": {
+"text": "فيديوهات!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_play": {
+"text": "ألعاب!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_stories": {
+"text": "قصص!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"nav_coloring": {
+"text": "تلوين!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_bailabu_bear": {
+"text": "مرحبًا! أنا بايلابو!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_afacan": {
+"text": "مرحبًا! أنا كيكو!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_paytak": {
+"text": "مرحبًا! أنا لولو!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_balli": {
+"text": "مرحبًا! أنا بيبي!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_renkli": {
+"text": "مرحبًا! أنا رولي!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_minik_balik": {
+"text": "مرحبًا! أنا بلوب!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_pamuk": {
+"text": "مرحبًا! أنا بومبوم!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_findik": {
+"text": "مرحبًا! أنا توبي!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"hi_kuku": {
+"text": "مرحبًا! أنا كوكو!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
+},
+"v_hello": {
+"text": "مرحبًا! أهلًا بك في جزيرة بايلابو! المسْ صورة!",
+"voice": "kC1WIuSSgwH2T8iOV4iJ"
 }
 },
 "tr": {
@@ -848,6 +1328,102 @@
 },
 "n5": {
 "text": "Beş!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"v_hello": {
+"text": "Merhaba! Tontiş Ada'ya hoş geldin! Bir resme dokun!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"v_pick": {
+"text": "Bir oyun seç!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"g_memory": {
+"text": "Hafıza!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"g_odd": {
+"text": "Hangisi farklı!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"g_shadow": {
+"text": "Gölgeler!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"g_count": {
+"text": "Sayalım!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"g_find": {
+"text": "Nerede?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"g_colors": {
+"text": "Renkler!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"g_bubbles": {
+"text": "Baloncuk!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"g_music": {
+"text": "Müzik!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"g_pattern": {
+"text": "Sırada ne?",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"nav_videos": {
+"text": "Videolar!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"nav_play": {
+"text": "Oyunlar!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"nav_stories": {
+"text": "Hikâyeler!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"nav_coloring": {
+"text": "Boyama!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"hi_bailabu_bear": {
+"text": "Merhaba! Ben Bailabu!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"hi_afacan": {
+"text": "Merhaba! Ben Afacan!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"hi_paytak": {
+"text": "Merhaba! Ben Paytak!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"hi_balli": {
+"text": "Merhaba! Ben Ballı!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"hi_renkli": {
+"text": "Merhaba! Ben Renkli!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"hi_minik_balik": {
+"text": "Merhaba! Ben Minik Balık!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"hi_pamuk": {
+"text": "Merhaba! Ben Pamuk!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"hi_findik": {
+"text": "Merhaba! Ben Fındık!",
+"voice": "2w5twzryiFg9VNnXphRP"
+},
+"hi_kuku": {
+"text": "Merhaba! Ben Kükü!",
 "voice": "2w5twzryiFg9VNnXphRP"
 }
 }

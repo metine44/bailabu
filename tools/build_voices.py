@@ -10,9 +10,10 @@ import argparse, json, os, subprocess, tempfile, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "assets", "voice")
 MANIFEST = os.path.join(OUT, "manifest.json")
-ELLA, DENIZ = "kC1WIuSSgwH2T8iOV4iJ", "2w5twzryiFg9VNnXphRP"
-VOICES = {"en": ELLA, "es": ELLA, "de": ELLA, "pt": ELLA, "ar": ELLA, "tr": DENIZ}
-SPOKEN = {("de", "n4"): "Vier, ", ("ar", "praise1"): "رَائِعٌ!"}   # spelled for the voice: "Vier!" came out with a w, bare "رائع!" garbled
+ELLA, DENIZ = "kC1WIuSSgwH2T8iOV4iJ", "2w5twzryiFg9VNnXphRP"   # "Ella" = library voice "Tilly the Storyteller"
+LUCY = "xOKkuQfZt5N7XfbFdn9W"   # Lucy Fennek, German children's narrator (library voice, used by id; chosen 2026-11-27)
+VOICES = {"en": ELLA, "es": ELLA, "de": LUCY, "pt": ELLA, "ar": ELLA, "tr": DENIZ}
+SPOKEN = {("de", "n4"): "Vier, ", ("ar", "praise1"): "رَائِعٌ!", ("pt", "g_colors"): "As cores!", ("ar", "v_hello"): "مرحبًا! أهلًا بك في جزيرة بايلابو! هيّا، المسْ صورة!"}   # spelled for the voice: "Vier!" came out with a w, bare "رائع!" garbled
 SETTINGS = {"stability": 0.5, "similarity_boost": 0.75, "speed": 1.0}   # same as the quiz voices
 TRIM = "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse"
 
